@@ -1,0 +1,2303 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+2.4
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="2.3.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+2.4.
+Создание таблиц
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для того
+чтобы двигаться дальше, давайте
+рассмотрим такой пример. Допустим,
+мы хотим поместить на свою
+страничку таблицу результатов
+хоккейного турнира. Поскольку для
+хорошего восприятия вид у таблицы
+должен быть стандартный,
+придумывать здесь особенно нечего
+— надо только правильно
+расположить имеющийся материал.
+Это вполне можно сделать
+стандартными средствами
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+HTML.
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ В результате может
+получиться вполне симпатичная
+табличка, как на рис. 2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+2.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.13.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+Рис.
+2.1
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+2
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+. Таблица, созданная
+простейшими средствами
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+ HTML
+</i>
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как же
+сделана эта таблица? Для того чтобы
+это понять, давайте рассмотрим
+сначала соответствующие средства
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+HTML.
+</i>
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Формирование
+структуры таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Любая
+таблица определяется в
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+HTML
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ с помощью тега
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Все,
+что расположено между тегами
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;
+и &lt;/TABLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ считается таблицей.
+Однако не спешите! Если вы напишете
+что-нибудь вроде
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Это уже
+таблица?
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+то, скорее
+всего, результат вас разочарует:
+броузер отобразит просто обычный
+текст. Дело в том, что мало создать
+таблицу, надо в ней еще создать хотя
+бы одну строку, а в строке хотя бы
+одну ячейку. Строки таблицы
+создаются с помощью тега
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и его
+закрывающего тега, а ячейки — с
+помощью тега
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и его
+закрывающего тега.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако,
+написав
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt; Это
+уже таблица?
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+мы получим
+тот же результат, что и раньше (по
+крайней мере, в большинстве
+броузеров). В чем же дело? А дело в
+том, что по умолчанию таблицы
+обычно отображаются без рамки. Если
+мы хотим, чтобы наша таблица из
+одной ячейки имела рамку, мы должны
+явно задать ее ширину, установив
+атрибут
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ BORDER=,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ например, вот так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+BORDER=&quot;3&quot;&gt; &lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt; Это
+уже таблица! &lt;/TD&gt; &lt;/TR&gt; &lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот теперь
+это уже на что-то похоже (рис. 2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+3
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+).
+Кстати, довольно интересно
+рассмотреть рамку, установив
+что-нибудь вроде
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BORDER=&quot;30&quot;.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Основные
+атрибуты таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите,
+наша таблица получилась ровно
+такой ширины, какая нуж- ная, чтобы
+вместить написанную нами фразу, и
+ни на пиксел больше. С помощью
+атрибута
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ WIDTH=
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ можно
+устанавливать любую желаемую
+ширину
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+таблицы.
+Например, если мы напишем
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;50&quot; BORDER=&quot;3&quot;&gt;,
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.14.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис.
+2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+3
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Таблица из одной
+ячейки
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+то броузер
+отобразит таблицу шириной в 50
+пикселов. При этом во фразе Это уже
+таблица! последнее слово, скорее
+всего, не поместится в длину
+таблицы и автоматически
+перенесется на другую строку. А
+если установить
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+WIDTH-50%,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ то таблица растянется
+на половину ширины окна броузеоа
+(рис. 2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+4).
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.15.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис.
+2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+4
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Установка ширины
+таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А что делать,
+чтобы текст не “прилеплялся” так
+сильно к границе ячейки как
+показано на рис. 2.14 и 2.15? Для этого
+тоже существует специальный
+атрибут —
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ CELLPADDING=.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Его значение
+определяет, на сколько точек текст
+будет отступать от края ячейки. Для
+лучшей иллюстрации этого атрибута
+выберем в качестве его значения
+какое-нибудь большое число
+например,20:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;50%&quot; BORDER=&quot;3&quot;
+CELLPADDING=&quot;20&quot;&gt; &lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt; Это
+уже таблица! &lt;/TD&gt; &lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат
+показан на рис. 2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+5
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Разумеется, в
+обычных ситуациях величину
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ CELLPADDING=
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ устанавливают
+приблизительно равной 3-5 точек,
+чтобы просто немного отступить от
+края ячейки.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.16.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис.
+2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+5. 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Применение атрибута
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ CELLPADDING=
+</font>
+</p>
+<p align="right">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме
+того, имеется еще атрибут
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ CELLSPACING=,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ который задает
+расстояние между ячейками таблицы.
+В данном случае мы можем увидеть
+действие этого атрибута по
+изменению расстояния между
+границами нашей единственной
+ячейки и рамкой таблицы. Для
+красоты сделаем при этом толщину
+табличной рамки чуть побольше:
+</font>
+</p>
+<p align="right">
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;50%&quot; BORDER=&quot;6&quot;
+CELLSPACING=&quot;6&quot; CELLPADDING=&quot;20&quot;&gt;
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt; Это
+уже таблица! &lt;/TD&gt; &lt;/TR&gt; &lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат
+представлен на рис. 2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+6.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.17.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис.
+2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+6
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Применение атрибута
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ CELLSPACING=
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, рамка
+таблицы совершенно не обязана быть
+серой, по крайней мере в броузере
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Internet Explorer
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (версии 3 и выше). Для
+этого служит атрибут
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BORDERCOLOR=,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+которому можно дать в качестве
+значения любой доступный цвет.
+Однако, если вставить в наш пример
+что-нибудь вроде 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BORDERCOLOR=&quot;green&quot;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и сравнить
+результат с предыдущим, то он,
+скорее всего, вам не понравится: в
+предыдущем случае табличная рамка
+слева и
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+сверху выводилась
+более светлым оттенком, чем снизу и
+справа, за счет чего возникало
+впечатление “выпуклости”. А
+теперь вся рамка стала одноцветной
+— зеленой — и смотрится гораздо
+“скучнее”. То же справедливо и для
+рамки ячейки (которая была,
+наоборот, “вогнутой”).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поэтому
+вместо одного атрибута
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BORDERCOLOR=
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ мы
+рекомендуем употреблять два:
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ BORDERCOLORLIGHT=
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BORDERCOLORDARK=,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+задающие цвет, соответственно,
+светлой и темной сторон рамки.
+Правда, эти атрибуты
+поддерживаются только броузером
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Internet Explorer.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;50%&quot; BORDER==&quot;6&quot;
+CELLSPACING=&quot;6&quot; CELLPADDING=&quot;20&quot;
+BORDERCOLORLIGHT=&quot;lime&quot;
+BORDERCOLORDARK=&quot;green&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt; Это
+уже таблица! &lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат
+показан на рис. 2.17. Кстати, при
+просмотре на экране компьютера
+обратите внимание на то, что
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ lime
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ green —
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+в принципе подходящее, но не самое
+лучшее сочетание значений данных
+атрибутов. Для придания
+естественности табличной рамке
+полезно немного
+поэкспериментировать с оттенками
+цветов.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.18.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис.
+2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+7
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Окрашивание рамки
+таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Цвет фона
+таблицы можно задать с помощью
+атрибута
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ BGCOLOR=.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Он может
+отличаться от цвета общего фона
+всей страницы, определенного
+атрибутом
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ BGCOLOR=
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ тега
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы
+выровнять таблицу по центру или
+правому краю, можно установить в
+теге
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ атрибут
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Все
+это мы сейчас проиллюстрируем, а
+заодно.давайте добавим еще одну
+ячейку в нашу таблицу:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;50%&quot; BORDER=&quot;6&quot;
+CELLSPACING=&quot;6&quot; CELLPADDING=&quot;20&quot;
+ALIGN=&quot;center&quot; BORDERCOLORLIGHT=&quot;Lime&quot;
+BORDERCOLORDARK=&quot;Green&quot; BGCOLOR=&quot;#DFFFDF&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТD&gt;Это
+первая ячейка&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТD&gt;Это
+вторая ячейка&lt;/ТD&gt; &lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат
+представлен на рис. 2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+8
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Как видите,
+расстояние между ячейками
+сохраняется равным значению
+атрибута
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ CELLSPACING= 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+теперь это
+заметно особенно хорошо.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.19.jpg">
+  
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис.
+2.1
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+8
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Таблица из двух ячеек
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь
+добавим в нашу таблицу вторую
+строку:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;50%&quot; BORDER=&quot;6&quot;
+CELLSPACING=&quot;6&quot; CELLPADDING=&quot;20&quot;
+ALIGN==&quot;center&quot; BORDERCOLORLIGHT=&quot;Lime&quot;
+BORDERCOLORDARK=&quot;Green&quot; BGCOLOR=&quot;#DFFFDF&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТD&gt;Это
+первая ячейка&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;Это
+вторая ячейка&lt;/ТD&gt; &lt;/TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТD&gt;Это
+первая ячейка второй строки&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt; 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку во
+второй строке всего одна ячейка (см.
+рис. 2.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+19
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+), на месте
+отсутствующей второй ячейки второй
+строки осталось пустое
+пространство.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Иногда это
+бывает полезно, но чаще требуется
+оставить пустую рамку
+незаполненной ячейки. Как это
+сделать? Если мы просто добавим в
+таблицу пару тегов
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt; &lt;/TD&gt;,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ то, как ни странно,
+ничего не изменится — вокруг
+пустой ячейки рамка не
+отображается! Добавление пробела
+между тегами ячейки также ничего не
+дает, поскольку в
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+HTML
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ лишние пробелы
+игнорируются...
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.20.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+Рис.
+2.
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+19
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+. Пример таблицы с
+“недостающей” ячейкой 
+</i>
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.21.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+Рис.
+2.2
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+0
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+. Пример таблицы с
+пустой ячейкой
+</i>
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+До сих пор мы
+рассматривали только атрибуты тега
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;TD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ тоже могут иметь
+собственные атрибуты, такие, как 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BGCOLOR=, BORDERCOLOR=, BORDERCOLORLIGHT=,
+BORDERCOLORDARK=
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Их значения распространяются
+только на одну строку или ячейку
+таблицы. Кроме того, имеется
+атрибут
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ VALIGN=,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ с помощью
+которого можно управлять
+вертикальным выравниванием текста
+строки или ячейки. Этот атрибут
+может принимать значения
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ top
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(выровнять по верхнему краю), 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+middle
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(по середине) и
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ bottom
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (по нижнему краю).
+Кроме того, в некоторых броузерах,
+например
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Opera,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ поддерживается
+также атрибут
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ NOWRAP, 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+запрещающий
+перенос текста ячейки на следующую
+строку.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Управление
+шириной столбцов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если вы
+посмотрите на рис. 2.2
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+0
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, то увидите, что
+ширина столбцов в нашей таблице
+разная. Это происходит потому, что
+броузер распределяет место в
+таблице в зависимости от
+количества текста, которого в
+первом столбце оказалось больше.
+Однако, если в теге первой ячейки
+указать
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD WIDTH=&quot;50%&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ то
+оба столбца станут равными по
+ширине. Таким образом, можно
+пользоваться атрибутом
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+WIDTH=
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ в теге
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ так же, как и в
+теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+определяя ширину каждой ячейки
+либо в пикселах, либо в процентах от
+общей ширины окна броузера. Правда,
+строго говоря, нельзя задать ширину
+каждой ячейки, а лишь ширину
+каждого столбца, поскольку в
+большинстве броузеров все ячейки в
+столбце всегда имеют одинаковую
+ширину.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Более того,
+надо иметь в виду, что большинство
+броузеров могут произвольно
+отходить от заданных нами значений
+ширины ячеек, если сочтут нужным.
+Так что никогда нельзя полностью
+полагаться на атрибут
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+WIDTH=. 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А если
+совершенно необходимо точно задать
+ширину какой-либо ячейки, следует
+пользоваться более изощренными
+средствами. Например, для задания
+минимальной ширины можно поместить
+в ячейку таблицы прозрачный
+рисунок соответствующего размера.
+О том, как это делается.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Объединение
+ячеек
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Иногда в
+таблицах встречаются так
+называемые 
+<i>
+объединенные ячейки —
+</i>
+когда несколько расположенных
+рядом ячеек сливаются в одну
+большую. Это можно сделать,
+установив атрибуты
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+COLSPAN=
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (для
+объединения соседних столбцов) или
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ ROWSPAN=
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(для объединения соседних строк):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;50%&quot; BORDER=&quot;6&quot;
+CELLSPACING=&quot;6&quot; CELLPADDING=&quot;20&quot;
+ALIGN=&quot;center&quot; BORDERCOLORLIGHT=&quot;Lime&quot;
+BORDERCOLORDARK=&quot;Green&quot; BGCOLOR=&quot;#DFFFDF&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;33%&quot;&gt;Этo первая
+ячейка&lt;/ТD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;33%&quot;&gt;Это вторая
+ячейка&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ROWSPAN=&quot;3&quot;&gt;A это три ячейки
+третьего столбца объединились в
+одну большую ячейку&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+COLSPAN=&quot;2&quot;&gt;Это единственная
+ячейка второй строки, объединяющая
+оба столбца&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;3ro
+первая ячейка третьей строки&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;A это
+вторая ячейка третьей строки&lt;/ТD&gt;
+&lt;/TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат
+показан на рис. 2.21. Здесь, как
+видите, отображена таблица из трех
+строк по три ячейки. Однако третья
+ячейка первой строки с помощью
+атрибута
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ ROWSPAN=&quot;3&quot;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ объединена с
+остальными двумя ячейками третьего
+столбца. Поэтому в следующих
+строках мы можем спокойно забыть
+про третий столбец — место уже
+занято. Поэтому в третьей строке
+таблицы всего две ячейки. А во
+второй строке происходит
+следующее: мы с помощью атрибута
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ COLSPAN=&quot;2&quot;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ объединяем две
+оставшиеся ячейки этого ряда в
+одну.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати,
+обратите внимание на то, что, хотя
+ширина первых двух столбцов
+таблицы задана равной 33%, то есть
+примерно треть ширины таблицы
+приходится на каждый столбец,
+правый столбец на самом деле
+занимает явно больше места. Это
+произошло потому, что иначе
+броузеру не удалось бы уместить в
+ширину этого столбца длинное слово
+“объединились”. В результате
+броузер самостоятельно чуть
+расширил этот столбец за счет двух
+остальных.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Мы с вами еще
+не рассмотрели такие элементы
+таблицы, как заголовок и
+заключение. В
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<i>
+HTML 4.0
+</i>
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ можно все
+основное содержание таблицы
+обозначить тегом
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;TBODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Тогда заголовок
+таблицы обозначается тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;THEAD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ а
+заключение — тегом
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TFOOT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Все
+три тега употребляются с
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.22.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.21. Пример
+объединения ячеек таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+закрывающими тегами и
+могут иметь различные атрибуты,
+например BGCOLOR=, ALIGN=, VALIGN=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А для ячеек заголовка
+таблицы вместо тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+обычно используют тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТН&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. В принципе, это одно и то же,
+однако в ячейках 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТН&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+текст по умолчанию выравнивается
+по центру и отображается
+полужирным начертанием шрифта.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для примера добавим в
+нашу учебную таблицу заголовок и
+заключение:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;50%&quot; BORDER=&quot;6&quot;
+CELLSPACING=&quot;6&quot; CELLPADDING=&quot;20&quot;
+ALIGN=&quot;center&quot; BORDERCOLORLIGHT=&quot;Lime&quot;
+BORDERCOLORDARK=&quot;Green&quot; BGCOLOR=&quot;#DFFFDF&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;THEAD
+BGCOLOR=&quot;Aqua&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;&lt;TH
+COLРАN=&quot;3&quot;&gt;УЧЕБНАЯ
+ТАБЛИЦА&lt;/ТН&gt;&lt;/ТR&gt; &lt;/THEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TBODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;33%&quot;&gt; первая ячейка&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;33%&quot;&gt; вторая ячейка&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ROWSPAN=&quot;3&quot;&gt;A это три ячейки
+третьего столбца объединились в
+одну большую&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+строки 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR
+COLSPAN=&quot;2&quot;&gt;единственная ячейка
+второй строки, объединяющая оба
+столбца&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТD&gt;Это
+первая ячейка третьей строки&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;A это
+вторая ячейка третьей строки&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TBODY&gt;
+&lt;TFOOT BGCOLOR=&quot;Yellow&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;&lt;TD
+COLSPAN=&quot;3&quot; ALIGN=&quot;center&quot;SMALL
+&gt;Понравилось
+делать?&lt;/Small&gt;&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/ТR&gt;
+&gt;&lt;Small&gt;Понравилось
+таблицы&lt;/TFOOT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p align="center">
+<img src="2.23.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.22.
+Использование заголовка
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+2.22. Осталось добавить, что
+использование обсуждавшегося выше
+атрибута RULES= со значением
+&quot;groups&quot; подразумевает именно эти
+“группы”: заголовок, основное
+содержание и заключение таблицы,
+обозначенные тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;THEAD&gt;,
+&lt;TBODY&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;TFOOT&gt;.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Анализ
+примера
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь, вооружившись
+полученными знаниями, давайте
+вернемся к таблице, представленной
+на рис. 2.13 и посмотрим, как же она
+сделана. В качестве основного цвета
+таблицы здесь выбран серебристый
+(#Е4Е4Е4), Атрибут WIDTH=&quot;100%&quot;
+растягивает ее на всю ширину окна
+броузера, а значение CELLSPACING=&quot;0&quot;
+“прижимает” ячейки друг к другу. С
+помощью значения CELLPADDING=&quot;2&quot;
+обеспечивается наличие небольших
+“полей” в каждой ячейке.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В первой строке таблицы
+задается ширина столбцов. Ширина
+первого столбца с номерами
+хоккейных команд задана равной 20
+пикселам, а всех столбцов с
+результатами матчей — 40 пикселам.
+Ширина столбца с названиями команд
+задана равной 20% от ширины окна.
+Ширина двух последних столбцов не
+задана вообще — им отводится все
+оставшееся место.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Во многих ячейках таблицы
+задан атрибут ALIGN=&quot;center&quot;, без
+которого выравнивание текста
+происходило бы по левому краю. Во
+всех ячейках с результатами встреч
+задан белый фон (BGCOLOR=&quot;white&quot;), в
+ячейках с количеством очков и
+заброшенных/пропущенных шайб для
+лучшего визуального выделения
+использован другой цвет фона.
+Количество очков, как главная
+информация в каждой строке таблицы,
+выделено просто полужирным и чуть
+увеличенным шрифтом (с помощью
+тегов &lt;В&gt; и &lt;ВЮ&gt;). Для лучшего
+“разнесения” в разные стороны
+количества заброшенных и
+пропущенных шайб между ними
+использовано длинное тире — это
+специальный символ &amp;mdash;.
+</font>
+</p>
+<p align="left">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Зачерненные
+квадраты турнирной таблицы сделаны
+просто — с помощью ячеек с черным
+цветом фона (BGCOLOR=&quot;black&quot;)“ И,
+наконец, для отобра-I жения рамки
+вокруг пустой ячейки (левой
+верхней) туда был помещен
+неразрывный пробел (&amp;nbsp;).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте посмотрим
+на текст этой странички целиком:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+&lt;HTML&gt; &lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;TypHMpHan
+таблица&lt;/Тitle&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+BGCOLOR=&quot;#FFFFB3&quot; TEXT=&quot;02020&quot;
+LINK=&quot;400080&quot; VLINK=&quot;#400080&quot;
+ALINK=&quot;H00080&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;ЧЕМПИОНАТ
+ГОРОДА ПО ХОККЕЮ&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;НЗ&gt;ТАБЛИЦА
+РЕЗУЛЬТАТОВ&lt;/НЗ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+ALIGN=&quot;center&quot; BGCOLOR=&quot;#E4E4E4&quot;
+WIDTH=&quot;100%&quot; CELLSPACING=&quot;0&quot;
+CELLPADDING=&quot;2&quot; BORDER=&quot;3&quot;&gt; &lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;20&quot;
+ALIGN=&quot;center&quot;&gt;&amp;nbsp;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;20%&quot;&gt;Koмaндa&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=Э40&quot; ALIGN=Эcenter&quot;&gt;1&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;40&quot; ALIGN=&quot;center&quot;&gt;2&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;40&quot; ALIGN=&quot;center&quot;&gt;3&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;40&quot; ALIGN=&quot;center&quot;&gt;4&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;40&quot; ALIGN=&quot;center&quot;&gt;5&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;40&quot; ALIGN=&quot;center&quot;&gt;6&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;Шайбы&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;Очки&lt;/TD&gt; &lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;center&quot;&gt;1&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&amp;laquo;POTOP&amp;raquo;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BGCOLOR=&quot;black&quot;&gt;&lt;/TD&gt;
+&lt;TD 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;center&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BGCOLOR=&quot;white&quot;&gt;6:4&lt;/TD&gt;
+&lt;TD 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;center&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BGCOLOR=&quot;white&quot;&gt;2:3&lt;/TD&gt;
+&lt;TD
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;center&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BGCOLOR=&quot;white&quot;&gt;7:3&lt;/TD&gt;
+&lt;TD
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;center&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BGCOLOR=&quot;white&quot;&gt;2:1&lt;/TD&gt;
+&lt;TD
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;center&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BGCOLOR=&quot;white&quot;&gt;0:0&lt;/TD&gt;
+&lt;TD
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;center&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BGCOLOR=&quot;#DFFFDF&quot;&gt;17&amp;mdash;11&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#FF8484&quot;&gt;&lt;B&gt;&lt;BIG&gt;7&lt;/BIG&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=”center”2&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&amp;laquo;POTATOP&amp;raquo;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=”center” BGCOLOR=”white&gt;”4:6&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+BGCOLOR=”black”&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot; BGCOLOR=&quot;white&quot;5: 4&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;5:3&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;5:5&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;2:2&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#DFFFDF&quot;&gt;21&amp;mdash;20&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#FF8484&quot;&gt;&lt;B&gt;&lt;BIG&gt;6&lt;/BIG&gt;
+&lt;/B&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;3&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТD&gt;&amp;lаquo;УРОЖАЙ&amp;raquo;&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;3:2&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;4:5&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+BGCOLOR=&quot;black&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;1:1&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;11:2&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;14:4&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#DFFFDF&quot;&gt;33&amp;mdash;14&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#FF8484&quot;&gt;&lt;B&gt;&lt;BIG&gt;5&lt;/BIG&gt;
+&lt;/B&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;4&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&amp;laquo;МЕЧТА&amp;raquo;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;3:7&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot; BGCOLOR==&quot;white&quot;&gt;3 ;
+5&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;l:1&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+BGCOLOR=&quot;black&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;l:1&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot; BGCOLOR=&quot;white&quot;&gt; 10 :
+0&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#DFFFDF&quot;&gt;18&amp;mdash;14&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#FF8484&quot;&gt;&lt;B&gt;&lt;BIG&gt;4&lt;/BIG&gt;
+&lt;/B&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;5&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&amp;laquo;МЕЧТА&amp;
+raquo;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;l:2&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;5:5&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;2:11&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALI.GN=&quot;center&quot; BGCOLOR=&quot;white&quot;&gt;l:
+1&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+BGCOLOR=&quot;black&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;8:3&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALING=&quot;'center&quot;BGCOLOR=&quot;#DFFFDF&quot;&gt;17&amp;mdash;22&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#FF8484&quot;&gt;&lt;B&gt;&lt;BIG&gt;4&lt;/BIG&gt;
+&lt;/B&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;6&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&amp;laquo;OKA3ИЯ&amp;raquo;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;0:0&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;2:2&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;white&quot;&gt;4:14&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot; BGCOLOR=&quot;white&quot;&gt;0
+:10&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot; BGCOLOR=&quot;white&quot;&gt;3 :
+8&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+BGCOLOR=&quot;black&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#DFFFDF&quot;&gt;9&amp;mdash;34&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#FF8484&quot;&gt;&lt;B&gt;&lt;BIG&gt;2&lt;/BIG&gt;
+&lt;/B&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, здесь
+использованы далеко не все
+возможности 
+<i>
+HTML-таблиц а
+</i>
+результат, тем не менее, вполне
+приемлемый.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Разумеется, только что
+рассмотренная таблица является
+“статичной”: при изменении,
+например, одного из результатов
+матчей нам придется вновь вручную
+подсчитывать шайбы и очки.
+Интересно сделать таблицу, которая
+могла бы это делать сама. Например,
+изначально будучи вообще пустой,
+она могла бы реагировать на
+постепенное внесение результатов
+матчей.
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="2.3.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

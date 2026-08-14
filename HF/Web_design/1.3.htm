@@ -1,0 +1,814 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+1.3
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="1.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="1.4.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+1.3. Как
+написать веб-страницу
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как же приступить к
+созданию веб-страницы? Вообще
+говоря, главное — придумать и
+представить себе то, что на этой
+странице должно содержаться. В этой
+книге мы больше не будем обращать
+ваше внимание на этот момент,
+однако стоит помнить, что
+приведенные примеры являются лишь
+иллюстрацией возможностей, а уж как
+эти возможности применять — решать
+только вам. В любом случае никогда
+не стоит применять тот или иной
+трюк только ради того, чтобы его
+применить. Всегда исходите из
+содержания, стиля оформления и
+удобства пользователя.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, начнем. В принципе,
+даже если написать простой текст в
+любом текстовом редакторе, то он
+уже может отображаться программой
+просмотра веб-стравиц. Например,
+воспользуйтесь программой Блокнот
+(Пуск &gt; Программы &gt; Стандартные
+&gt; Блокнот) и напишите:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Домашняя страница Сергея
+Сергеева.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сергей Сергеев - писатель
+юморист, автор 20 рассказов.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни большой любитель
+собак и компьютерных игр.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь сохраните этот
+файл с расширением имени .html
+</font>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+</p>
+<p align="center">
+<img src="1.2.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 1.2. Простой
+текст, загруженный в броузер
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Теги HTML
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Пользователь увидит эту
+страничку так, как показано на рис.
+1.2. Это уже что-то, хотя и не слишком
+привлекательно: во-первых, исчезло
+форматирование текста (абзацы),
+во-вторых, — как-то скучно
+смотрится. Кроме того, есть такие
+строгие броузеры, которые вообще не
+отобразят этот текст, если не
+увидят в нем подтверждение того,
+что он написан на языке HTML (языке
+гипертекстовой разметки, на
+котором и пишутся веб-страницы).
+Расширение .html такой броузер может
+посчитать недостаточным
+подтверждением, поэтому придется
+написать несколько дополнительных
+строк:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Домашняя
+страница Сергея Сергеева
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сергей
+Сергеев - писатель-юморист, автор 20
+рассказов.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Слова, заключенные в
+угловые скобки, являются
+служебными словами языка HTML. Их
+принято называть тегами (tags). Теги
+никогда не отображаются при
+просмотре страницы — они служат
+для управления оформлением.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Существуют разные
+транскрипции слова browser,
+означающего просто программу
+просмотра веб-странип. Некоторые
+пишут “броузер”, а другие —
+“браузер”. Мы будем
+придерживаться второго варианта.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, который
+вы видите в первой строке, означает,
+что наш текст действительно
+написан на языке HTML. Большинство
+тегов языка HTML — парные. Они
+обязательно требует присутствия
+закрывающего тега. Например, в этом
+примере в первой строке стоит
+открывающий тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, а в
+последней — закрывающий тег
+&lt;/HTML&gt;. Все, что расположено между
+ними, считается .HTML-документом.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В языке HTML совершенно не
+имеет значения, строчными или
+прописными буквами записаны теги.
+Можно написать 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ или 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;html&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ — для броузера это одно и то
+же. Однако принято писать теги HTML
+прописными буквами, чтобы они лучше
+выделялись на фоне основного
+текста.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В рассмотренном примере
+вы видите еще один тег — 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Все, что расположено между
+ним и его закрывающим тегом (
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+), считается “телом”
+документа и отображается на экране.
+HTML,-документы, помимо “тела”,
+обычно содержат еще и заголовок, в
+котором заключена различная
+служебная информация. Заголовок
+располагается между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Например, следующий код будет
+отображен в броузере так, как
+показано на рис. 1.3.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;Домашняя
+страница Сергея Сергеева &lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Домашняя
+страница Сергея Сергеева.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сергей
+Сергеев - писатель-юморист, автор 20
+рассказов.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр. 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p align="center">
+<img src="1.3.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис.
+1.3. Простейшая страничка: текст и
+заголовок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите
+внимание на то, что в заголовке окна
+броузера также появились слова
+“Домашняя страница Сергея
+Сергеева”. Это произошло потому,
+что в разделе заголовка 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ мы поместили этот
+текст между тегами
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;TITLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь
+вспомним о том, что при отображении
+в броузере наш текст потерял
+форматирование. Это произошло
+потому, что броузер игнорирует
+перевод строки. Однако если вы все
+же хотите видеть свой текст с таким
+же разбиением на строки, какое было
+в редакторе Блокнот, нужно
+заключить его между тегами &lt;PRE&gt; и
+&lt;/PRE&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;Домашняя
+страница Сергея Сергеева&lt;/ТIТLЕ&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PRE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Домашняя
+страница Сергея Сергеева
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сергей
+Сергеев - писатель-юморист, автор 20
+рассказов.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/PRE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+1.4. Уже лучше, не правда ли? Однако
+есть два момента, из-за которых мы
+не советовали бы без крайней
+необходимости употреблять тег
+&lt;PRE&gt;. Во-первых, как видно из
+рисунка, текст теперь отображается
+так называемым моноширинным
+шрифтом, похожим на шрифт пишущей
+машинки. Большинство броузеров
+отображают текст,
+</font>
+</p>
+<p align="center">
+<img src="1.3.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 1.4. Страничка,
+отформатированная с помощью тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PRE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+заключенный между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PRE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/PRE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, именно так. Во-вторых (и это
+главное), в том, что броузер
+игнорирует разбиение текста на
+строки, есть свой глубокий смысл.
+Например, написанная строка может
+не поместиться в окне просмотра, и
+тогда, если бы не было тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PRE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, броузер автоматически
+перенес бы ее часть на следующую
+строку, чтобы пользователю было
+удобно читать весь текст. Тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PRE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ не позволяет этого сделать, и
+если строка “вылезет” за пределы
+окна просмотра, то для ее чтения
+придется воспользоваться
+горизонтальной полосой прокрутки,
+что неудобно и обычно раздражает.
+Другими словами, если вы
+используете тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PRE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, вам
+придется специально заботиться о
+длине строк, а это затруднительно,
+поскольку никто заранее не знает,
+какой размер окна броузера будет у
+пользователя. Без тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PRE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ броузер позаботится об
+удобстве просмотра сам (это будет
+проиллюстрировано далее на рис. 1.6).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для форматирования
+текста существует множество
+специальных тегов. Сейчас
+рассмотрим самый простой из них —
+тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. В том месте, где он стоит,
+происходит принудительный переход
+на новую строку. (Причем в исходной
+записи можно продолжать текст на
+этой же строке — это не имеет
+значения.) Тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ не имеет
+закрывающего парного тега, он
+употребляется сам по себе. Вот как
+сохранить наше форматирование
+текста без использования тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PRE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;Домашняя
+страница Сергея Сергеева.&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Домашняя
+страница Сергея Сергеева. 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сергей
+Сергеев - писатель-юморист, автор 20
+рассказов.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+1.5. Как видите, форматирование
+текста сохранено, шрифт остался
+пропорциональным и не превратился
+в моноширинный, а кроме того, если
+пользователь почему-либо будет
+просматривать страничку в очень
+узком окне, он все равно увидит весь
+текст (рис. 1.6).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И, наконец, еще одна
+деталь: иногда броузеры или другие
+программы обработки требуют, чтобы
+в начале HTML-документа обязательно
+стоял служебный тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, в
+атрибутах которого должна быть
+указана версия языка и некоторая
+другая информация. Так что в
+корректном виде наша страничка
+будет выглядеть вот так:
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="1,5.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+рuc. 1.5. Страничка с
+простейшим 
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="1,6.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 1.6. Та же
+страничка в форматированием текста
+узком окне броузера
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;Домашняя
+страница Сергея Сергеева &lt;/TITLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Домашняя
+страница Сергея Сергеева
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сергей
+Сергеев - писатель-юморист, автор 20
+рассказов.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В данном случае в первой
+строке стоит указание, что в
+документе использована версия 4.0
+языка HTML. В дальнейшем мы будем
+ориентироваться именно на нее, хотя
+приведенный выше пример с таким же
+успехом мог бы быть написан и с
+использованием версии 3.2, и даже
+более ранней. Однако HTML 4.0
+предоставляет такие возможности
+создания веб-страниц, которых не
+было в предыдущих версиях. И хотя
+некоторые старые программы
+просмотра не в силах адекватно
+отобразить страницы, написанные с
+использованием особенностей новой
+версии, все же подавляющее
+большинство читателей сегодня
+пользуются новыми броузерами. Мы
+будем ориентироваться именно на
+них.
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="1.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="1.4.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

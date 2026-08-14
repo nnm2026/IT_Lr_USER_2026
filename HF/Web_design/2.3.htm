@@ -1,0 +1,1581 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+2.3
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="2.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="2.4.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+2.3. Как
+создать списки на веб-странице
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Иногда при создании
+веб-страниц бывает полезно (а порой
+даже необходимо) как-то упорядочить
+представленную на них информацию. В
+традиционном языке HTML для этого
+применяют списки и таблицы. Более
+гибко это можно сделать с помощью
+каскадных таблиц стилей, однако
+сначало мы рассмотрим стандартные
+методы.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В качестве первого
+примера давайте рассмотрим
+веб-страницу гипотетической фирмы
+“Лентяй”. Допустим, мы сначала
+хотим перечислить предоставляемые
+услуги, а затем указать
+последовательность действий,
+необходимых для их заказа.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Маркированные
+и нумерованные списки
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Перечисление услуг
+хорошо смотрится в виде
+маркированного списка. Для его
+организации применяется тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Все, что находится между ним и
+его открывающим тегом (
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+), считается маркированным
+списком. Каждый элемент списка
+должен быть при этом обозначен
+тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Этот тег можно употреблять
+без закрывающего (хотя можно и с
+ним). То есть, можно написать:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Вкручивание
+электрических лампочек или
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Вкручивание
+электрических лампочек&lt;/LI&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И то и другое будет
+считаться элементом списка, и
+практически все броузеры
+интерпретируют эти записи
+корректно. Каждый элемент
+маркированного списка будет при
+просмотре отмечаться закрашенным
+кружком.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Что о касается
+перечисления порядка действий для
+заказа, то его целесооб- разно
+организовать в виде нумерованного
+списка. Для этого служит тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, а элементы списка также
+обозначаются тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. И
+нумерованные, и маркированные
+списки в большинстве броузеров
+выделяются небольшим отступом.
+Итак, давайте посмотрим, как может
+выглядеть эта страничка.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;
+фирма &quot;ЛЕНТЯЙ&quot;&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+BGCOLOR=&quot;#D2FFFF&quot; TEXT=&quot;#003737&quot;
+LINK=&quot;#006A6A&quot; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+VLINK=&quot;#006A6A&quot;
+ALINK=&quot;#006A6A&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN&quot;&quot;center&quot;&gt;&lt;H1&gt; фирма
+&amp;laquo;ЛЕНТЯЙ &amp;laquo;&lt;/H1&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT
+SIZE=&quot;+l&quot;&gt;Haшa фирма
+предоставляет следующие услуги
+&lt;/FONT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL&gt;
+&lt;li&gt;Вкручивание электрических
+лампочек 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Подметание
+пола 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Вынесение
+мусора из квартиры 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Мытье
+посуды 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Дефрагментация
+жестких дисков &lt;/UL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT
+SIZE=&quot;+l&quot;&gt;Чтобы воспользоваться
+нашими услугами,следует: &lt;/FONT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Зарегистрироваться
+(&lt;a HRЕF=&quot;#reg.html&quot;&gt; здесь&lt;/a&gt;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Заполнить
+форму заказа 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(&lt;a
+HRЕF=&quot;forml.html&quot;&gt;здесь&lt;/a&gt;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Получив
+письмо с паролем, послать пустой
+ответ
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Заполнить
+форму-подтверждение заказа 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(&lt;a
+HRЕF=&quot;form2.html&quot;&gt;здесь&lt;/a&gt;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Приготовить
+деньги для оплаты услуг &lt;/OL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p align="center">
+<img src="2.10.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.9.
+Применение маркированного и
+нумерованного списков
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+2.9. Как видите, мы здесь не
+употребляли закрывающий тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/LI&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Броузер обычно все равно
+понимает, где кончается элемент
+списка, поскольку после любого
+элемента стоит либо тег следующего
+элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;U&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, либо тег
+завершения списка 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ или 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/OL&gt;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Другой вопрос, что будет,
+если код написан некорректно:
+например, указаны теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ без тега списка 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OL&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+или 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, или в
+списке есть элементы без тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вообще говоря, такого
+допускать не следует, так как
+некоторые “строгие” браузеры в
+этом случае не будут отображать
+практически ничего. Большинство
+популярных броузеров, правда,
+попытаются угодить даже автору
+странички, написавшему такой код.
+Например, Internet Explorer 5, если встретит
+теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ без тега начала списка,
+интерпретирует их как маркирован
+ный список, хотя и не будет выделять
+его отступом, а не помеченные тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ элементы списка оставит без
+маркера. Однако, повторяю, это из
+ряда вон выходящие случаи.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Благодаря тому, что
+списки отображаются с отступом,
+легко можно организовывать
+вложенные списки с помощью тех же
+тегов. Для этого надо просто начать
+новый список внутри уже начатого.
+Схема расположения тегов списка
+при этом получится примерно такая:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Разумеется, отступы здесь
+обозначены только для наглядности
+— чтобы не перепутать, какой
+закрывающий тег к какому
+открывающему тегу относится. Далее,
+при вложении нескольких
+маркированных списков хочется
+каждый из них обозначить своим
+типом маркера. Некоторые броузеры
+так и делают по умолчанию. Например,
+Internet Explorer элементы первого списка
+из серии вложенных обозначает
+закрашенным кружком, элементы
+второго — незакрашенным кружком, а
+элементы всех следующих —
+квадратиком. Однако, во-первых, так
+поступают не все броузеры, а
+во-вторых, нам может захотеться
+изменить порядок маркеров. Для
+явного определения типа маркера в
+теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ следует установить атрибут
+TYPE=. У него могут быть три значения:
+&quot;disc&quot;, &quot;square&quot; и &quot;circle&quot;,
+что означает, соответственно,
+закрашенный кружок, квадратик и
+незакрашенный кружок.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В теге нумерованного
+списка 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ можно установить атрибут TYPE=
+для определения типа нумерации.
+Если не указано ничего или
+установлено значение TYPE=&quot;1&quot;, то
+нумерация происходит обычными
+цифрами. Если установить TYPE=&quot;I&quot;
+или &quot;i&quot;, то получится нумерацию
+римскими цифрами (соответственно, с
+использованием прописных или
+строчных букв).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И, наконец, для буквенных
+обозначений элементов списка
+устанавливают атрибут TYPE=&quot;A&quot;
+или &quot;а&quot;. Кроме того, иногда
+может потребоваться начать
+нумерацию не с единицы, а с
+какого-нибудь иного числа. Для
+этого существует атрибут START=.
+Например, запись 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OL START=&quot;43&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ вызовет нумерацию элементов
+списка, начиная с числа 43. Далее
+пойдут элементы с номерами 44, 45 и т.
+д.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Может возникнуть
+естественный вопрос: а как
+использовать другие типы маркеров
+списков — разнообразные галочки,
+цветные кружки и прочие, которые мы
+так часто видим в WWW,? Действительно,
+такая возможность есть, однако мы
+рассмотрим ее несколько позже, в
+разделе Si.3. А пока приведем пример
+веб-странички фирмы “Лентяй” с
+использованием вложенных списков:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;head&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;title&gt;Фирма
+&quot;ЛЕНТЯЙ&quot;&lt;/title&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/head&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;body
+BGCOLOR=&quot;#D2FFFF&quot; TEXT=&quot;#003737&quot;
+LINK=&quot;#006A6A&quot; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+VLINK=&quot;#006A6A&quot;
+ALINK=&quot;#006A6A&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALING=&quot;center&quot;&gt;&lt;H1&gt;Фирма
+&amp;laquo;ЛEHTЯЙ&amp;raquo;&lt;/H1&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;FONT
+SIZE=&quot;+l&quot;&gt;Haшa фирма
+предоставляет следующие услуги:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FONТ&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+TYPE=&quot;disc&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Бытовые
+услуги 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+TYPE=&quot;square&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Вкручивание
+электрических лампочек 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Услуги
+по наведению чистоты 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+TYPE=&quot;circle&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Подметание
+пола 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Вынесение
+мусора из квартиры 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Мытье
+посуды 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Приготовление
+пищи 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Компьютерные
+услуги 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+TYPE=&quot;square&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Дефрагментация
+жестких дисков
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Переустановка
+Windows 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT
+SIZE=&quot;+1&quot;&gt;Для того, чтобы
+воспользоваться нашими услугами, 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+следует:&lt;/FONT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Зарегистрироваться
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(&lt;A
+HREF=&quot;reg.html&quot;&gt;здесь&lt;/A&gt;) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Заполнить
+форму заказа 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(&lt;A
+HREF=&quot;forml.htm1&quot;&gt;здесь&lt;/А&gt;) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Пoдтвepдить
+заказ: 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OL
+TYPE=&quot;I&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Получив
+письмо с паролем подтверждения,
+послать пустой ответ,
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+нажав
+&quot;Reply&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Заполнить
+форму-подтверждение заказа 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(&lt;A
+HREF=&quot;form2.html&quot;&gt;здесь&lt;/A&gt;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/OL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Приготовить
+деньги для оплаты услуг 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/OL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/body&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/html&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис
+.2.10. Между прочим, при желании можно
+изменить вид маркера даже у
+отдельного элемента списка. Для
+этого следует установить атрибут
+TYPE= у тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Однако
+это не будет смотреться очень
+хорошо, за исключением специальных
+случаев.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Мы пока намеренно не
+приводим примеры того, что могло бы
+быть в файлах reg.html, form! .html и form2.html,
+на которые есть ссылки в этом
+примере. Списки определений
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте
+рассмотрим совершенно иной пример.
+Допустим, у нас уже есть сайт, на
+котором используется довольно
+много терминов, и мы хотим сделать
+отдельную страничку, поясняющую их.
+Давайте попробуем организовать
+такую страничку-словарь, а заодно
+рассмотрим еще один вид HTML-списка.
+Кстати, впоследствии мы вполне
+сможем использовать эту страничку
+как шаблон для своего словаря
+терминов.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, нам необходима
+страничка, организованная, как
+словарик. Это значит, что в ее
+начале целесообразно расположить
+алфавит, чтобы читатель, щелкнувший
+на какой-либо букве, мог тотчас
+попасть на соответствую-
+</font>
+</p>
+<p align="center">
+<img src="2.11.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.10.
+Применение вложенных списков
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+щее место в словаре. Для
+этого каждая буква алфавита должна
+быть оформлена как гиперссылка,
+например:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;#BukvaV&quot;&gt;B&lt;/A&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+а в соответствующее место
+в словаре нужно не забыть поставить
+соответствующий якорь, например:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+NAME=&quot;BukvaV&quot;&gt;B&lt;/A&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для улучшения наглядного
+отделения раздела одной буквы от
+другой выделим каждую букву
+словаря самым крупным шрифтом,
+используя тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, а также
+введем разделительную
+горизонтальную черту. Поскольку
+словарь — вещь достаточно
+официальная и строгая, пусть наши
+горизонтальные разделители тоже
+примут строгий вид — для этого
+достаточно выровнять их не по
+центру, а по левому краю, и сделать
+относительно короткими, например,
+вот так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, цветовую схему
+нужно в этом случае выбрать тоже
+достаточно строгую. Можно вообще
+подать черные буквы на белом фоне,
+но в нашем примере мы решили все же
+чуть-чуть смягчить контраст. 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, читателю
+нужно предоставить возможность
+быстрого перемещения в любое место
+словаря. Вы скажете, что у нас уже
+есть для этого алфавит? Но ведь он
+расположен в верхней части
+страницы, а в поисках описаний
+терминов (кроме нескольких первых),
+пользователь неизбежно уйдет по
+страничке вниз и алфавит ему будет
+недоступен. Идеальный случай, когда
+алфавит все время виден сверху, а
+пока примем простое решение: время
+от времени (лучше всего в конце
+каждой буквенной рубрики) поставим
+небольшие (в смысле напечатанные
+мелким шрифтом) гиперссылки,
+ведущие наверх, к алфавиту:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SMALL&gt;&lt;A
+HREF=&quot;#Top&quot;&gt;B начало&lt;/А&gt;&lt;/SMALL&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь обсудим, как
+организовать объяснение терминов.
+Для этого в 
+<i>
+HTML
+</i>
+ предусмотрен тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+<b>
+</b>
+Все, что находится между
+ним и его закрывающей парой 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, считается списком
+определений. Внутри этого списка
+возможно применение тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ для выделения самих терминов
+и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ для их определений. Теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ могут использоваться без
+соответствующей закрывающей пары
+(сравните с рассмотренным ранее
+тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+). Элементы, обозначенные как
+термины (
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+),
+выводятся практически без отступа,
+а элементы, обозначенные как
+определения (
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+) — с
+довольно большим отступом. Ни те, ни
+другие элементы не маркируются.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+На наш взгляд, хорошо бы
+еще элементы-термины выделять,
+например полужирным начертанием.
+Некоторые броузеры так и делают,
+однако большинство — нет. Поэтому в
+нашем примере мы сами на всякий
+случай заботимся об этом, заключая
+каждый термин между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;В&gt;...&lt;/В&gt;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, приведем пример
+странички-словаря терминов. Для
+экономии места алфавит здесь
+обрывается на букве “Е”. Далее его
+легко можно продолжить
+самостоятельно (а если терминов
+много, то, возможно, стоит его
+продолжить в другом файле, чтобы не
+заставлять пользователя ждать
+загрузки слишком большого файла с
+сервера). Более того, здесь
+заполнены только разделы на буквы
+“А” и “Б”, чего для примера вполне
+достаточно.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Словарь
+терминов&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;META
+HTTP-EQUIV=&quot;CONTENT-TYPE&quot;
+CONTENT=&quot;text/html;charset=windows-1251&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+BGCOLOR=&quot;#EAEAEA&quot; TEXT=&quot;Black&quot;
+LINK=&quot;#7A3F51&quot; VLINK=&quot;#7A3F51&quot;
+ALINK=&quot;#7A3F51&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NАМЕ=&quot;Тор&quot;&gt;Словарь
+терминов&lt;/А&gt;&lt;/Н1&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF==&quot;#BukvaA&quot;&gt;A&lt;/A&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;#BukvaB&quot;&gt;Б&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;#BukvaV&quot;&gt;B&lt;/A&gt; &lt;А
+HREF=&quot;#BukvaG&quot;&gt;Г&lt;/A&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;#BukvaD&quot;&gt;Д&lt;/A&gt; &lt;А
+HREF=&quot;#BukvaE&quot;&gt;E&lt;/A&gt; &lt;/НR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME=&quot;BukvaA&quot;&gt;A&lt;/A&gt;&lt;/H&gt; &lt;DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;&lt;A
+NAME=&quot;avtentich&quot;&gt;&lt;B&gt;ABTEHTИЧECKИЙ
+КАДАНС&lt;/В&gt;&lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;кадансовый
+оборот, в котором заключительная
+тоническая гармония предваряется
+доминантовой
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;&lt;A
+NAME=&quot;aliquot&quot;&gt;&lt;B&gt;AЛИKBOTHЫE
+СТРУНЫ&lt;/В&gt;&lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;резонирующие
+струны, к которым исполнитель не
+прикасается во время игры 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;&lt;A
+NAME=&quot;atakta&quot;&gt;&lt;B&gt;ATAKTA&lt;/B&gt;&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;гармоническйй
+элемент на басу нижнего или
+верхнего вводного тона
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SMALL&gt;&lt;A
+HREF=&quot;#Top&quot;&gt;B начало&lt;/А&gt;&lt;/SMALL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME=&quot;BukvaB&quot;&gt;B&lt;/A&gt;&lt;/H1&gt; &lt;DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;&lt;A
+NAME=&quot;bagatel&quot;&gt;&lt;B&gt;БАГАТЕЛЬ&lt;/B&gt;&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;небольшая
+нетрудная для исполнения пьеса
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;&lt;A
+NAME=&quot;bartok&quot;&gt;&lt;B&gt;БAPTOKOBCKOE
+ПИЦЦИКАТО&lt;/В&gt;&lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;сильный
+щипок струны с последующим ударом
+струны о гриф
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;&lt;A
+NAME=&quot;bonang&quot;&gt;&lt;B&gt;БOHAHГ&lt;/B&gt;&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;Ha6op
+из 10-12 гонгов разного размера &lt;/DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SMALL&gt;&lt;A
+HREF=&quot;#Top&quot;&gt;B начало&lt;/А&gt;&lt;/SMALL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME=&quot;BukvaV&quot;&gt;B&lt;/A&gt;&lt;/Hl&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SMALL&gt;&lt;A
+HREF=&lt;&quot;#Top&quot;&gt;B
+начало&lt;/А&gt;&lt;/SMALL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1XA
+NAME=&lt;&quot;#BukvaG&quot;&gt;Г&lt;/A&gt;&lt;/H1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DL&gt;
+&lt;SMALL&gt;&lt;A HREF=&quot;#Top&quot;&gt;B
+начало&lt;/А&gt;&lt;/Small&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME==&quot;#BukvaD&quot;&gt;A&lt;/A&gt;&lt;/H1&gt; &lt;DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SMALL&gt;&lt;A
+HREF=&quot;#Top&quot;&gt;B начало&lt;/А&gt;&lt;/Small&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME=&quot;BukvaE&quot;&gt;E&lt;/A&gt;&lt;/Hl&gt; &lt;DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SMALL&gt;&lt;A
+HREF=&quot;#Top&quot;&gt;B начало&lt;/А&gt;&lt;/Small&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+2.11. Как видите, все достаточно
+строго и наглядно. Кстати, обратите
+внимание на то, что каждый термин мы
+также оформили как якорь. Это
+сделано для того, чтобы с других
+страниц нашего предполагаемого
+сайта можно было ссылаться
+непосредственно на объяснение
+этого термина. Например, если наш
+файл-словарь терминов называется
+glossary, html, то в каком-нибудь другом
+файле на этом сайте мы можем
+написать приблизительно следующее:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+...характеризуется частым
+использованием
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А HREF=&quot;glossary.html
+#bartok&quot;&gt;6apтоковскoгo
+пиццикато&lt;/А&gt;, а
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+также приемов типа
+постукивания по декам и обечайке...
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этом случае,
+пользователь, читающий этот текст и
+не понявший смысл термина 
+<i>
+бартоковское
+пиццикато
+</i>
+ может щелкнуть на нем и
+попасть в
+</font>
+</p>
+<p align="center">
+<img src="2.12.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.11.
+Использование списка терминов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+соответствующий раздел
+словаря терминов, причем не
+куда-нибудь, а точно в то место, где
+этот термин поясняется.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если вы внимательно
+просмотрели последний листинг, то,
+вероятно, заметили еще одну строку,
+значение которой ранее не
+пояснялось:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;META
+HTTP-EQUIV=&quot;CONTENT-TYPE&quot; CONTENT=&quot;text/html;
+charset=windows-1251&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здесь применен тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt; МЕТА&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Он может, вообще говоря,
+использоваться для ввода различной
+дополнительной информации:
+ключевых слов, описания
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+веб-страницы, указания ее
+автора, программы-генератора и т. п.
+Но в дан- ном случае этот тег
+используется для определения
+кодировки символов. Поскольку в
+тексте используются русские буквы,
+то есть, символы с ASCII-кодами,
+большими 128, необходимо указать, в
+какой кодировке эти символы нужно
+отображать. Если кто не совсем
+понял, о чем речь, тому можно это
+место пропустить, но лучше
+обратиться к соответствующей
+литературе. Большинство броузеров
+обычно это делают автоматически, и
+кроме того, имеют встроенную
+возможность выбора кодировки. Как
+правило она находится в меню View
+(Вид). Однако иногда бывает полезно
+указать кодировку в явном виде.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В данном случае мы имеем
+дело с файлом в кодировке Windows,
+поэтому в качестве значение
+свойства charset указано &quot;windows-1251&quot;.
+Кстати, если вы работаете в другой
+кодировке, например, 
+<i>
+KOI8,
+</i>
+ вам
+следует ввести другое значение —
+&quot;koi8-r&quot;, иначе эта страничка
+будет нечитаемой.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+К сожалению, для явного
+указания кодировки приходится
+использовать столь длинный тег.
+Правда, многие броузеры сейчас
+начинают понимать и просто
+указание “без лишних слов”: 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;МЕТА
+CHARSET=&quot;windows-1251&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+Однако этот метод не универсален,
+поэтому для лучшей совместимости
+стоит всегда писать длинную строку,
+приведенную выше.
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="2.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="2.4.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>
