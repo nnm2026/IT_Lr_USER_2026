@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML lang="ru">
+<HEAD>
+<title>WEBalley - dhtml - netscape</TITLE>
+<META name="author" content="Gerben Hoekstra">
+<META NAME="Keywords" CONTENT="dhtml, динамический html, javascript, слои, div, введение, web дизайн, webdesing, webdesgn, webdesgin, webdseign, webdsign, wbdesign, wedesign, webdesihn, html, htlm, hmtl, hlmt, webpagina, www, домашняя, страница, homepge, homepaeg, нидерланды, курс, учебник">
+<META NAME="Description" CONTENT="Эта страница расскажет, как работает динамический html в браузерах Netscape. Учебник по dhtml, входит в состав статей для начинающих на WEBalley.">
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+
+<body bgcolor="#FFFFFF" link="#006666" vlink="#009999">
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<!-- logo starts here -->
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="weballey_logo.gif" tppabs="http://www.weballey.net/resources/weballey_logo.gif" WIDTH=150 HEIGHT=96 BORDER=0 ALT="weballey logo"></A><BR>
+
+<!-- logo ends here -->
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+
+<!-- header starts here -->
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR>
+<td width="20" bgcolor="#99FFFF">
+<img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 alt="налево"></TD>
+<td width="288" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="4"><B>
+DHTML - netscape</B></FONT></TD>
+
+<TD bgcolor="#99FFFF"><A HREF="index-5.html" tppabs="http://www.weballey.net/russian/dhtml/index.html"><IMG SRC="bar-lft.gif" tppabs="http://www.weballey.net/resources/bar-lft.gif" NAME="left" WIDTH=36 HEIGHT=25 BORDER=0 ALT="назад"></A><A HREF="internetexplorer.html" tppabs="http://www.weballey.net/russian/dhtml/internetexplorer.html"><IMG SRC="bar-rgt.gif" tppabs="http://www.weballey.net/resources/bar-rgt.gif" NAME="right" WIDTH=36 HEIGHT=25 BORDER=0 ALT="вперед"></A></TD>
+
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 alt="направо"></TD>
+
+</TR></TABLE>
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="home.gif" tppabs="http://www.weballey.net/russian/graphics/home.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="домой"></A><A HREF="index.html" tppabs="http://www.weballey.net/russian/search/index.html"><IMG SRC="search.gif" tppabs="http://www.weballey.net/russian/graphics/search.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="поиск"></A><A HREF="sitemap.html" tppabs="http://www.weballey.net/russian/sitemap.html"><IMG SRC="sitemap.gif" tppabs="http://www.weballey.net/russian/graphics/sitemap.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="карта сайта"></A><A HREF="contact.html" tppabs="http://www.weballey.net/russian/misc/contact.html"><IMG SRC="email.gif" tppabs="http://www.weballey.net/russian/graphics/email.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="e-mail"></A>
+
+<!-- header ends here -->
+
+</td></tr></table>
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<CENTER>
+<FONT SIZE="-1" FACE="arial,helvetica">
+<B>
+
+<!-- navigation starts here -->
+
+<A HREF="index-5.html" tppabs="http://www.weballey.net/russian/dhtml/index.html">введение</A><BR>
+&lt; netscape &gt;<br>
+<a href="internetexplorer.html" tppabs="http://www.weballey.net/russian/dhtml/internetexplorer.html">internet explorer</a><br>
+<a href="dynamiccontent.html" tppabs="http://www.weballey.net/russian/dhtml/dynamiccontent.html">динамика</a><br>
+<a href="movingelements.html" tppabs="http://www.weballey.net/russian/dhtml/movingelements.html">движение</a><br>
+<a href="crossbrowser.html" tppabs="http://www.weballey.net/russian/dhtml/crossbrowser.html">переносимость</a><br>
+<a href="crossbrowser.html#resource" tppabs="http://www.weballey.net/russian/dhtml/crossbrowser.html#resource">литература</a><BR>
+
+
+
+<!-- navigation ends here -->
+
+</B>
+</FONT>
+</CENTER>
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+<FONT SIZE=2 FACE="arial,helvetica,sans-serif">
+
+<!-- main section starts here -->
+
+&nbsp; &nbsp; Хорошо это или плохо, решайте сами, но DHTML в NS 4 совершенно прост и сводится, в сущности, к одному слову - Слой (layer). Я и сам очень удивился, но это действительно так - все волшебство DHTML в NS 4 полностью держится на одном новом теге &lt;layer&gt;. Динамичность этого тега заключается в том, что его можно расположить в любом месте страницы (без привязки к остальному тексту), перемещать туда-сюда, изменять по требованию его содержимое, и многое другое.<p>
+
+<B>Основной синтаксис</B><BR>
+&nbsp; &nbsp; Основной синтаксис тега &lt;layer&gt; до чрезвычайности прост (а где вы вообще видели сложные теги в HTML!):<p>
+
+<font color="#009999" face="Courier"><B>&lt;layer&gt;</B>Текст внутри слоя<B>&lt;/layer&gt;</B></font><p>
+
+&nbsp; &nbsp; Тег &lt;layer&gt; относится к разряду тегов с содержанием, то есть, в него можно (как в &lt;table&gt;) что-то поместить. Не стесняйтесь, вставьте этот код в свою страницу... и вы заметите, что текст внутри слоя <B>плавает</B> над остальным текстом, перекрывая его. Слой можно представить листком бумаги, который лежит на поверхности страницы, не занимая места в тексте самого документа.<p>
+
+<B>Атрибуты слоя</B><BR>
+Сам по себе слой совершенно не интересен, не говоря уж о том, что бесполезен. Но к счастью, он не так прост. Слой поддерживает атрибуты, которые позволяют расположить его в любой точке по координатам x, y, снабдить его фоном, обрезать (сделать видимой лишь некоторую область слоя), скрыть и так далее. Ниже перечислены наиболее важные атрибуты слоя:
+
+<DL>
+<DT>id</DT>
+<DD>Имя слоя, используется для обозначения его в скрипте</DD>
+<DT>left</DT>
+<DD>Положение слоя по отношению к координате x</DD>
+<DT>top</DT>
+<DD>Положение слоя по отношению к координате y</DD>
+<DT>width</DT>
+<DD>Ширина слоя в пикселях или %</DD>
+<DT>height</DT>
+<DD>Высота слоя в пикселях или %</DD>
+<DT>bgColor</DT>
+<DD>Фоновый цвет слоя</DD>
+<DT>background</DT>
+<DD>Фоновый рисунок слоя</DD>
+<DT>src</DT>
+<DD>Внешний документ html, содержащийся внутри слоя</DD>
+</DL>
+
+&nbsp; &nbsp; Вы можете смешивать и сочетать атрибуты, как угодно. Вот пример слоя, использующего некоторые из перечисленных атрибутов:<p>
+
+<font color="#009999" face="Courier">&lt;layer id=&quot;mylayer&quot; width=100px height=70px bgColor=&quot;yellow&quot;&gt;&lt;h3&gt;Просто слой&lt;/h3&gt;&lt;/layer&gt;</font><P>
+
+<ilayer>
+<layer name="mylayer" width=100px height=70px bgColor="yellow"><center><b>Просто слой</b></center></layer>
+</ilayer>
+
+&nbsp; &nbsp; Заметьте, я не указал атрибуты left и top. Если они не указаны, слой располагается там, где вы его определили.<p>
+
+<B>Программирование слоев</B><BR>
+Самое важное, чему надо научиться, это как программировать слои. Ведь, в конечном итоге, именно скрипты заставляют слой оживать. Чтобы получить доступ к слою, нужно использовать следующий синтаксис:<p>
+
+<font color="#009999" face="Courier">document.layername</font><p>
+
+&nbsp; &nbsp; Получение доступа к слою, это всего лишь первый шаг. Добравшись до слоя, вы можете производить динамические эффекты, меняя один из его атрибутов. Я приведу простой пример, в котором фоновый цвет слоя меняется между красным и синим:<p>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%" height="88" valign="top" align="left">
+<ilayer name="test1">
+<layer name="test2" width=80px height=80px></layer>
+</ilayer>
+
+</td>
+</tr>
+</table>
+
+<font face="Garamond"><!--webbot bot="HTMLMarkup" startspan --><script language="JavaScript1.2">
+var thecolor=true
+if (document.layers)
+document.test1.document.test2.bgColor="blue"
+function changecol(){
+if (thecolor)
+document.test1.document.test2.bgColor="blue"
+else
+document.test1.document.test2.bgColor="red"
+thecolor=!thecolor
+setTimeout("changecol()",1000)
+}
+if (document.layers)
+changecol()
+</script><!--webbot
+bot="HTMLMarkup" endspan --></font>А это код, который я использовал:</p>
+<p><font face="Arial" color="#009999"><small>&lt;layer id=&quot;test&quot; width=80px
+height=80px&gt;&lt;/layer&gt;</small></font></p>
+<p><font face="Arial" color="#009999"><small>&lt;script
+language=&quot;JavaScript1.2&quot;&gt;</small><br>
+<small>//переменная, помогающая переключаться между красным и синим<br>
+var thecolor=true</small><br>
+<small>//Применение синего bgColor в качестве начального цвета<br>
+document.test.bgColor=&quot;blue&quot;<br>
+function changecol(){</small><br>
+<small>//если thecolor=истина<br>
+if (thecolor)<br>
+document.test.bgColor=&quot;blue&quot;<br>
+else<br>
+document.test.bgColor=&quot;red&quot;</small><br>
+<small>//перевод thecolor в противоположное состояние<br>
+thecolor=!thecolor<br>
+setTimeout(&quot;changecol()&quot;,1000)<br>
+}<br>
+changecol()<br>
+&lt;/script&gt;</small></font><p>
+
+&nbsp; &nbsp; Все атрибуты слоя можно считывать и записывать, так что обязательно поэкспериментируйте с каждым из них!
+
+<!-- main section ends here -->
+
+</font>
+</td></tr></table>
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+<TR><td width="150" align="CENTER" valign="BOTTOM" bgcolor="#99FFFF"><A HREF="#top"><img src="bottom.gif" tppabs="http://www.weballey.net/resources/bottom.gif" WIDTH=150 HEIGHT=59 border=0 ALT="наверх"></A></TD>
+<td width="30">&nbsp;</td>
+<TD WIDTH="400" VALIGN="BOTTOM">
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR><td bgcolor="#99FFFF" width="20"><img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 ALT="налево"></td>
+
+<td width="288" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="1">Copyright &copy; Gerben Hoekstra - All rights reserved</FONT></TD>
+
+<td bgcolor="#99FFFF">
+<A HREF="index-5.html" tppabs="http://www.weballey.net/russian/dhtml/index.html"><IMG src="bar-lft.gif" tppabs="http://www.weballey.net/resources/bar-lft.gif" NAME="prev" WIDTH=36 HEIGHT=25 BORDER=0 ALT="назад"></A><A HREF="internetexplorer.html" tppabs="http://www.weballey.net/russian/dhtml/internetexplorer.html"><IMG src="bar-rgt.gif" tppabs="http://www.weballey.net/resources/bar-rgt.gif" NAME="next" WIDTH=36 HEIGHT=25 BORDER=0 ALT="вперед"></A></td>
+
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 ALT="направо"></TD></TR></TABLE>
+
+</TD>
+</TR>
+</TABLE>
+</body>
+</HTML>

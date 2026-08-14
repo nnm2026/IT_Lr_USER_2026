@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML lang="ru">
+<HEAD>
+<title>WEBalley - dhtml - движение</TITLE>
+<META name="author" content="Gerben Hoekstra">
+<META NAME="Keywords" CONTENT="dhtml, динамический html, javascript, слои, div, введение, web дизайн, webdesing, webdesgn, webdesgin, webdseign, webdsign, wbdesign, wedesign, webdesihn, html, htlm, hmtl, hlmt, webpagina, www, домашняя, страница, homepge, homepaeg, нидерланды, курс, учебник">
+<META NAME="Description" CONTENT="Эта страница покажет, как двигать элементы на web странице с помощью динамического html. Учебник по dhtml, входит в состав статей для начинающих на WEBalley.">
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+
+<body bgcolor="#FFFFFF" link="#006666" vlink="#009999">
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<!-- logo starts here -->
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="weballey_logo.gif" tppabs="http://www.weballey.net/resources/weballey_logo.gif" WIDTH=150 HEIGHT=96 BORDER=0 ALT="weballey logo"></A><BR>
+
+<!-- logo ends here -->
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+
+<!-- header starts here -->
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR>
+<td width="20" bgcolor="#99FFFF">
+<img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 alt="налево"></TD>
+<td width="288" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="4"><B>
+DHTML - движение</B></FONT></TD>
+
+<TD bgcolor="#99FFFF"><A HREF="dynamiccontent.html" tppabs="http://www.weballey.net/russian/dhtml/dynamiccontent.html"><IMG SRC="bar-lft.gif" tppabs="http://www.weballey.net/resources/bar-lft.gif" NAME="left" WIDTH=36 HEIGHT=25 BORDER=0 ALT="назад"></A><A HREF="crossbrowser.html" tppabs="http://www.weballey.net/russian/dhtml/crossbrowser.html"><IMG SRC="bar-rgt.gif" tppabs="http://www.weballey.net/resources/bar-rgt.gif" NAME="right" WIDTH=36 HEIGHT=25 BORDER=0 ALT="вперед"></A></TD>
+
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 alt="направо"></TD>
+
+</TR></TABLE>
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="home.gif" tppabs="http://www.weballey.net/russian/graphics/home.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="домой"></A><A HREF="index.html" tppabs="http://www.weballey.net/russian/search/index.html"><IMG SRC="search.gif" tppabs="http://www.weballey.net/russian/graphics/search.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="поиск"></A><A HREF="sitemap.html" tppabs="http://www.weballey.net/russian/sitemap.html"><IMG SRC="sitemap.gif" tppabs="http://www.weballey.net/russian/graphics/sitemap.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="карта сайта"></A><A HREF="contact.html" tppabs="http://www.weballey.net/russian/misc/contact.html"><IMG SRC="email.gif" tppabs="http://www.weballey.net/russian/graphics/email.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="e-mail"></A>
+
+<!-- header ends here -->
+
+</td></tr></table>
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<CENTER>
+<FONT SIZE="-1" FACE="arial,helvetica">
+<B>
+
+<!-- navigation starts here -->
+
+<A HREF="index-5.html" tppabs="http://www.weballey.net/russian/dhtml/index.html">введение</A><BR>
+<a href="netscape.html" tppabs="http://www.weballey.net/russian/dhtml/netscape.html">netscape</a><br>
+<a href="internetexplorer.html" tppabs="http://www.weballey.net/russian/dhtml/internetexplorer.html">internet explorer</a><br>
+<a href="dynamiccontent.html" tppabs="http://www.weballey.net/russian/dhtml/dynamiccontent.html">динамика</a><br>
+&lt; движение &gt;<br>
+<a href="crossbrowser.html" tppabs="http://www.weballey.net/russian/dhtml/crossbrowser.html">переносимость</a><br>
+<a href="crossbrowser.html#resource" tppabs="http://www.weballey.net/russian/dhtml/crossbrowser.html#resource">литература</a><BR>
+
+
+
+<!-- navigation ends here -->
+
+</B>
+</FONT>
+</CENTER>
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+
+<!-- main section starts here -->
+
+<FONT SIZE="2" FACE="arial,helvetica, sans-serif">
+
+<b>Перемещение элементов</b><br>
+&nbsp; &nbsp; Если вам нравится работать с анимацией, то радуйтесь - с появлением DHTML можно заниматься ею прямо на web страницах! Можно, например, создать объект, свободно парящий по всему экрану. В Netscape это достигается изменением атрибутов left и top тега &lt;layer&gt;. В IE 4 тот же эффект получается при изменении свойств pixelLeft и pixelTop объекта style.<p>
+<b>Движущиеся элементы в NS 4</b><br>
+&nbsp; &nbsp; Вы еще не забыли, что слои обладают свойствами left и top, определяющими их смещение от левого верхнего угла документа?  Отлично. Теперь с помощью несложной арифметики и пары строчек скрипта мы можем  изменять эти свойства, и слой придет в движение! Приведенный ниже пример изменяет свойство left, в результате, после нажатия кнопки, слой движется горизонтально.<p>
+
+<layer name="space" left="35" top="275" width="100" height="59">
+<img src="TN00018A.gif" tppabs="http://www.weballey.net/dhtml/TN00018A.gif" width=100 height=59 border=0 alt="звездолет">
+</layer>
+
+<script language="JavaScript1.2">
+function moving(){
+if (!document.layers){
+alert("Для запуска этого примера нужен NS 4!")
+return
+}
+if (document.space.left<1000)
+document.space.left+=5
+moveid=setTimeout("moving()",50)
+}
+
+function come_back(){
+clearTimeout(moveid)
+document.space.left=35
+}
+</script>
+
+<form method="POST">
+<input type="button" value="Поехали" name="B1" onClick="moving()">
+<input type="button" value="Назад" name="B2" onClick="come_back()">
+</form>
+
+<font face="times new roman, times, serif">
+&lt;layer name=&quot;space&quot; left=35&gt;<br>
+&lt;img src=&quot;TN00018A.gif&quot;&gt;<br>
+&lt;/layer&gt;<br>
+&lt;script&gt;<br>
+function moving(){<br>
+if (document.space.left&lt;1000)<br>
+<font color="#FF0080">document.space.left+=5</font><br>
+moveid=setTimeout(&quot;moving()&quot;,50)<br>
+}<br>
+function come_back(){<br>
+clearTimeout(moveid)<br>
+<font color="#FF0080">document.space.left=35</font><br>
+}<br>
+&lt;/script&gt;<br>
+<br>
+&lt;form&gt;<br>
+&lt;input type=&quot;button&quot; value=&quot;Поехали&quot; onClick=&quot;moving()&quot;&gt;<br>
+&lt;input type=&quot;button&quot; value=&quot;Назад&quot;
+onClick=&quot;come_back()&quot;&gt;<br>
+&lt;/form&gt;
+</font>
+<p>
+
+&nbsp; &nbsp; Видите, все, что я делал, это добавлял &quot;пробелы&quot; к свойству left, чтобы заставить слой двигаться, и возвращал свойству исходное значение, когда хотел вернуть слой назад.<p>
+
+<b>Движущиеся элементы в IE 4</b><br>
+
+&nbsp; &nbsp; Между прочим, как только NS и IE договорятся по поводу реализации DHTML, я сразу же перестану писать по две версии всего на свете (просто хочется немного поворчать). Перемещение элемента в IE 4 сводится, в общих чертах, к заключению его в позиционированный span или div, и затем к изменению свойств pixelLeft и pixelTop. Может, с виду, это и сложно, но на самом деле проще простого:<p>
+
+<div id="spaceship" style="position:relative">
+<img src="TN00018A.gif" tppabs="http://www.weballey.net/dhtml/TN00018A.gif" width=100 height=59 border=0 alt="">
+</div>
+
+<script>
+function moving2(){
+if (!document.all){
+alert("Для запуска этого примера нужен IE 4!")
+return
+}
+if (spaceship.style.pixelLeft<1000)
+spaceship.style.pixelLeft+=5
+moveid2=setTimeout("moving2()",50)
+}
+
+function come_back2(){
+clearTimeout(moveid2)
+spaceship.style.pixelLeft=0
+}
+</script>
+
+<form>
+<input type="button" value="Поехали" onClick="moving2()">
+<input type="button" value="Назад" onClick="come_back2()">
+</form>
+
+<font face="times new roman, times, serif">
+&lt;div id=&quot;spaceship&quot;
+<font color="#FF0080">style=&quot;position:relative&quot;</font>&gt;<br>
+&lt;img src=&quot;TN00018A.gif&quot;&gt;<br>
+&lt;/div&gt;<br>
+&lt;script&gt;<br>
+function moving2(){<br>
+if (spaceship.style.pixelLeft&lt;1000)<br>
+<font color="#FF0080">spaceship.style.pixelLeft+=5</font><br>
+moveid2=setTimeout(&quot;moving2()&quot;,50)<br>
+}<br>
+function come_back2(){<br>
+clearTimeout(moveid2)<br>
+<font color="#FF0080">spaceship.style.pixelLeft=0</font><br>
+}<br>
+&lt;/script&gt;<br>
+<br>
+&lt;form&gt;<br>
+&lt;input type=&quot;button&quot; value=&quot;Поехали&quot; onClick=&quot;moving2()&quot;&gt;<br>
+&lt;input type=&quot;button&quot; value=&quot;Назад&quot;
+onClick=&quot;come_back2()&quot;&gt;<br>
+&lt;/form&gt;
+</font>
+<p>
+
+&nbsp; &nbsp; Сначала я определил внешний &lt;div&gt; по имени &quot;spaceship&quot;, как имеющий относительную позицию. Это делает элемент перемещаемым (можно, также определить позицию, как абсолютную). Затем, изменением свойства pixelLeft объекта style, элемент приводится в движение. 
+
+<!-- main section ends here -->
+
+</font>
+</td></tr></table>
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+<TR><td width="150" align="CENTER" valign="BOTTOM" bgcolor="#99FFFF"><A HREF="#top"><img src="bottom.gif" tppabs="http://www.weballey.net/resources/bottom.gif" WIDTH=150 HEIGHT=59 border=0 ALT="наверх"></A></TD>
+<td width="30">&nbsp;</td>
+<TD WIDTH="400" VALIGN="BOTTOM">
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR><td bgcolor="#99FFFF" width="20"><img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 ALT="налево"></td>
+
+<td width="288" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="1">Copyright &copy; Gerben Hoekstra - All rights reserved</FONT></TD>
+
+<td bgcolor="#99FFFF">
+<A HREF="dynamiccontent.html" tppabs="http://www.weballey.net/russian/dhtml/dynamiccontent.html"><IMG src="bar-lft.gif" tppabs="http://www.weballey.net/resources/bar-lft.gif" NAME="prev" WIDTH=36 HEIGHT=25 BORDER=0 ALT="назад"></A><A HREF="crossbrowser.html" tppabs="http://www.weballey.net/russian/dhtml/crossbrowser.html"><IMG src="bar-rgt.gif" tppabs="http://www.weballey.net/resources/bar-rgt.gif" NAME="next" WIDTH=36 HEIGHT=25 BORDER=0 ALT="вперед"></A></td>
+
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 ALT="направо"></TD></TR></TABLE>
+
+</TD>
+</TR>
+</TABLE>
+</body>
+</HTML>

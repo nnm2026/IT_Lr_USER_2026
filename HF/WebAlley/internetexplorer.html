@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML lang="ru">
+<HEAD>
+<title>WEBalley - dhtml - internet explorer</TITLE>
+<META name="author" content="Gerben Hoekstra">
+<META NAME="Keywords" CONTENT="dhtml, динамический html, javascript, слои, div, введение, web дизайн, webdesing, webdesgn, webdesgin, webdseign, webdsign, wbdesign, wedesign, webdesihn, html, htlm, hmtl, hlmt, webpagina, www, домашняя, страница, homepge, homepaeg, нидерланды, курс, учебник">
+<META NAME="Description" CONTENT="Эта страница расскажет, как использовать динамический html в Internet Explorer. Учебник по dhtml, входит в состав статей для начинающих на WEBalley.">
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+
+<body bgcolor="#FFFFFF" link="#006666" vlink="#009999">
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<!-- logo starts here -->
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="weballey_logo.gif" tppabs="http://www.weballey.net/resources/weballey_logo.gif" WIDTH=150 HEIGHT=96 BORDER=0 ALT="weballey logo"></A><BR>
+
+<!-- logo ends here -->
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+
+<!-- header starts here -->
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR>
+<td width="20" bgcolor="#99FFFF">
+<img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 alt="налево"></TD>
+<td width="288" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="4"><B>
+DHTML - internet explorer</B></FONT></TD>
+
+<TD bgcolor="#99FFFF"><A HREF="netscape.html" tppabs="http://www.weballey.net/russian/dhtml/netscape.html"><IMG SRC="bar-lft.gif" tppabs="http://www.weballey.net/resources/bar-lft.gif" NAME="left" WIDTH=36 HEIGHT=25 BORDER=0 ALT="назад"></A><A HREF="dynamiccontent.html" tppabs="http://www.weballey.net/russian/dhtml/dynamiccontent.html"><IMG SRC="bar-rgt.gif" tppabs="http://www.weballey.net/resources/bar-rgt.gif" NAME="right" WIDTH=36 HEIGHT=25 BORDER=0 ALT="вперед"></A></TD>
+
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 alt="направо"></TD>
+
+</TR></TABLE>
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="home.gif" tppabs="http://www.weballey.net/russian/graphics/home.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="домой"></A><A HREF="index.html" tppabs="http://www.weballey.net/russian/search/index.html"><IMG SRC="search.gif" tppabs="http://www.weballey.net/russian/graphics/search.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="поиск"></A><A HREF="sitemap.html" tppabs="http://www.weballey.net/russian/sitemap.html"><IMG SRC="sitemap.gif" tppabs="http://www.weballey.net/russian/graphics/sitemap.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="карта сайта"></A><A HREF="contact.html" tppabs="http://www.weballey.net/russian/misc/contact.html"><IMG SRC="email.gif" tppabs="http://www.weballey.net/russian/graphics/email.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="e-mail"></A>
+
+<!-- header ends here -->
+
+</td></tr></table>
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<CENTER>
+<FONT SIZE="-1" FACE="arial,helvetica">
+<B>
+
+<!-- navigation starts here -->
+
+<A HREF="index-5.html" tppabs="http://www.weballey.net/russian/dhtml/index.html">введение</A><BR>
+<a href="netscape.html" tppabs="http://www.weballey.net/russian/dhtml/netscape.html">netscape</a><br>
+&lt; internet explorer &gt;<br>
+<a href="dynamiccontent.html" tppabs="http://www.weballey.net/russian/dhtml/dynamiccontent.html">динамика</a><br>
+<a href="movingelements.html" tppabs="http://www.weballey.net/russian/dhtml/movingelements.html">движение</a><br>
+<a href="crossbrowser.html" tppabs="http://www.weballey.net/russian/dhtml/crossbrowser.html">переносимость</a><br>
+<a href="crossbrowser.html#resource" tppabs="http://www.weballey.net/russian/dhtml/crossbrowser.html#resource">литература</a><BR>
+
+
+
+<!-- navigation ends here -->
+
+</B>
+</FONT>
+</CENTER>
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+<FONT SIZE=2 FACE="arial,helvetica,sans-serif">
+
+<!-- main section starts here -->
+
+&nbsp; &nbsp; Когда я начал изучать реализацию DHTML в IE 4, я сразу увидел, насколько она шире, чем в NS. DHTML в IE полагается не на один единственный тег (как в NS), а скорее на новые объекты и свойства, происходящие из обычных тегов HTML, таких как, например, &lt;div&gt; и &lt;table&gt;. Эта реализация DHTML значительно мощнее, но и освоить ее совсем не так просто.<p>
+
+<B>Объект style в IE 4</B><BR>
+&nbsp; &nbsp; Теперь все элементы HTML в IE 4 поддерживают объект style (стиль), который, в сущности, является &quot;динамическим&quot; объектом и используется для управления внешним видом и поведением элемента. Подобно тегу &lt;layer&gt;, элементам можно присвоить атрибут &quot;id&quot;, который затем используется для обозначения элемента в скриптах. Например:<p>
+
+<font face="Courier">&lt;div id=&quot;adiv&quot;&gt;&lt;/div&gt;</font><p>
+
+&nbsp; &nbsp; Теперь для доступа к объекту &quot;adiv&quot; нужно использовать следующий синтаксис:<p>
+
+<p><font face="Courier">adiv.style</font></p>
+
+<B>Свойства объекта style</B><BR>
+&nbsp; &nbsp; Объект style обладает многими свойствами, манипулируя которыми можно динамически изменять внешний вид элемента. Сейчас я покажу некоторые из них:
+
+<DL>
+<DT>backgroundColor</DT>
+<DD>Фоновый цвет элемента</DD>
+<DT>backgroundImage</DT>
+<DD>Фоновый рисунок элемента</DD>
+<DT>color</DT>
+<DD>Цвет элемента</DD>
+<DT>position</DT>
+<DD>Тип положения элемента. Может принимать значения &quot;absolute&quot; (абсолютное) и &quot;relative&quot; (относительное)</DD>
+<DT>pixelWidth</DT>
+<DD>Ширина элемента</DD>
+<DT>pixelHeight</DT>
+<DD>Высота элемента</DD>
+<DT>pixelLeft</DT>
+<DD>Положение элемента по координате x</DD>
+<DT>pixelTop</DT>
+<DD>Положение элемента по координате y</DD>
+</DL>
+
+&nbsp; &nbsp; Приведенный выше перечень свойств далеко не полон. Он содержит лишь наиболее употребимые из них. Основной синтаксис управления свойствами стиля совершенно одинаков для всех свойств, и чуть позже я его продемонстрирую. Воздействуя на эти свойства можно изменять вид и стиль большинства элементов HTML (в отличие от единственного тега &lt;layer&gt; в Netscape)!<br>
+
+&nbsp; &nbsp; Приведу простой пример. Текст под этим абзацем изменяет цвет, если навести на него мышью:<p>
+
+<b><big><span onMouseover="this.style.color='red'" onMouseout="this.style.color='black'">Наведите сюда мышью</span></big></b><p>
+
+А вот исходный код этого примера:<p>
+
+<font face="Courier"><small>&lt;span id=&quot;название&quot; onMouseover=&quot;название.style.color='red'&quot; onMouseout=&quot;название.style.color='black'&quot;&gt;Наведите сюда мышью&lt;/span&gt;</small></font><p>
+
+Обратите внимание, как я менял цвет текста:<p>
+
+<font face="Courier"><small>название.style.color='red'</small></font><p>
+
+&nbsp; &nbsp; Сначала я ввел обозначение (id) элемента. Затем, через объект style и, наконец, через свойство стиля color я смог изменить цвет текста по требованию!<br>
+
+&nbsp; &nbsp; Все свойства стиля можно считывать и записывать, и синтаксис доступа к ним совершенно одинаков: обозначение элемента-&gt;объект style-&gt;свойство.<br>
+
+&nbsp; &nbsp; А вот еще пример, который увеличивает рисунок при наведении на него мышью и возвращает ему прежний размер, когда мышь убирают:<p>
+
+<img id="aimage" src="TN00054A.gif" tppabs="http://www.weballey.net/dhtml/TN00054A.gif" onMouseover="enlarge()" onMouseout="revertback()">
+
+<script language="JavaScript1.2">
+function enlarge(){
+aimage.style.pixelWidth=164
+aimage.style.pixelHeight=202
+}
+
+function revertback(){
+aimage.style.pixelWidth=82
+aimage.style.pixelHeight=101
+}
+</script>
+<p>
+
+<font face="Courier"><small>&lt;img id=&quot;aimage&quot; src=&quot;piza.gif&quot; onMouseover=&quot;enlarge()&quot; onMouseout=&quot;revertback()&quot;&gt;</p>
+&lt;script language=&quot;JavaScript1.2&quot;&gt;<br>
+function enlarge(){<br>
+aimage.style.pixelWidth=164<br>
+aimage.style.pixelHeight=202<br>
+}<br>
+<br>
+function revertback(){<br>
+aimage.style.pixelWidth=82<br>
+aimage.style.pixelHeight=101<br>
+}<br>
+&lt;/script&gt;</small></font><p>
+
+&nbsp; &nbsp; Да, я понимаю, что это не самый полезный в мире пример, но он достаточно хорошо иллюстрирует работу DHTML. Рисунок изменяет размеры по требованию, и при этом не приходится перезагружать страницу. Одним лишь JavaScript такого никогда не получишь.
+
+<!-- main section ends here -->
+
+</font>
+</td></tr></table>
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+<TR><td width="150" align="CENTER" valign="BOTTOM" bgcolor="#99FFFF"><A HREF="#top"><img src="bottom.gif" tppabs="http://www.weballey.net/resources/bottom.gif" WIDTH=150 HEIGHT=59 border=0 ALT="наверх"></A></TD>
+<td width="30">&nbsp;</td>
+<TD WIDTH="400" VALIGN="BOTTOM">
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR><td bgcolor="#99FFFF" width="20"><img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 ALT="налево"></td>
+
+<td width="288" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="1">Copyright &copy; Gerben Hoekstra - All rights reserved</FONT></TD>
+
+<td bgcolor="#99FFFF">
+<A HREF="netscape.html" tppabs="http://www.weballey.net/russian/dhtml/netscape.html"><IMG src="bar-lft.gif" tppabs="http://www.weballey.net/resources/bar-lft.gif" NAME="prev" WIDTH=36 HEIGHT=25 BORDER=0 ALT="назад"></A><A HREF="dynamiccontent.html" tppabs="http://www.weballey.net/russian/dhtml/dynamiccontent.html"><IMG src="bar-rgt.gif" tppabs="http://www.weballey.net/resources/bar-rgt.gif" NAME="next" WIDTH=36 HEIGHT=25 BORDER=0 ALT="вперед"></A></td>
+
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 ALT="направо"></TD></TR></TABLE>
+
+</TD>
+</TR>
+</TABLE>
+</body>
+</HTML>
