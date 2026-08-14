@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML lang="ru">
+<HEAD>
+<title>WEBalley - прочее - обработка ошибок</TITLE>
+<META name="author" content="Gerben Hoekstra">
+<META NAME="Keywords" CONTENT="ошибка, документ, 404, не найдена, web дизайн, html, учебник">
+<META NAME="Description" CONTENT="Большинство web серверов генерирует достаточно безликое сообщение об ошибке или сообщение с логотипом провайдера. Эта краткая статья научит вас создавать свои собственные страницы с сообщениями об ошибках.">
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+
+<body bgcolor="#FFFFFF" link="#006666" vlink="#009999">
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<!-- logo starts here -->
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="weballey_logo.gif" tppabs="http://www.weballey.net/resources/weballey_logo.gif" WIDTH=150 HEIGHT=96 BORDER=0 ALT="weballey logo"></A><BR>
+
+<!-- logo ends here -->
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+
+<!-- header starts here -->
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR>
+<td width="20" bgcolor="#99FFFF">
+<img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 alt="налево"></TD>
+<td width="360" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="4"><B>
+Прочее - обработка ошибок</B></FONT></TD>
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 alt="направо"></TD>
+
+</TR></TABLE>
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="home.gif" tppabs="http://www.weballey.net/russian/graphics/home.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="домой"></A><A HREF="index.html" tppabs="http://www.weballey.net/russian/search/index.html"><IMG SRC="search.gif" tppabs="http://www.weballey.net/russian/graphics/search.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="поиск"></A><A HREF="sitemap.html" tppabs="http://www.weballey.net/russian/sitemap.html"><IMG SRC="sitemap.gif" tppabs="http://www.weballey.net/russian/graphics/sitemap.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="карта сайта"></A><A HREF="contact.html" tppabs="http://www.weballey.net/russian/misc/contact.html"><IMG SRC="email.gif" tppabs="http://www.weballey.net/russian/graphics/email.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="e-mail"></A>
+
+<!-- header ends here -->
+
+</td></tr></table>
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<CENTER>
+<FONT SIZE="-1" FACE="arial,helvetica">
+<B>
+
+<!-- navigation starts here -->
+
+
+<A HREF="index-4.html" tppabs="http://www.weballey.net/russian/misc/index.html">шрифты</A><BR>
+<A HREF="metas.html" tppabs="http://www.weballey.net/russian/misc/metas.html">мета теги</A><BR>
+<A HREF="chars.html" tppabs="http://www.weballey.net/russian/misc/chars.html">особые символы</A><BR>
+<A HREF="charlist.html" tppabs="http://www.weballey.net/russian/misc/charlist.html">таблица символов</A><BR>
+&lt; обработка ошибок &gt;<BR>
+
+
+
+<!-- navigation ends here -->
+
+</B>
+</FONT>
+</CENTER>
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+<FONT SIZE=2 FACE="arial,helvetica,sans-serif">
+
+<!-- main section starts here -->
+
+&nbsp; &nbsp; Большинство web серверов генерирует достаточно безликое сообщение об ошибке или сообщение с логотипом провайдера. Эта краткая статья научит вас создавать свои собственные страницы с сообщениями об ошибках.
+<br>
+&nbsp; &nbsp; Для начала нужно убедиться, что ваш провайдер и web сервер поддерживают файлы .htaccess. Как правило, эти файлы поддерживаются, но некоторые системные администраторы их запрещают в пользу собственных сообщений об ошибках или из соображений безопасности.
+<br>
+&nbsp; &nbsp; Чаще всего встречается ошибка, связанная с отсутствием страницы - '404 not found error', как правило, призывающая написать владельцу сайта и рассказать, как вы ее получили. Впрочем, никто никогда этого не делает, так что можете эту часть спокойно опустить. Теперь давайте разберемся, как сообщить серверу, что мы хотим использовать свой	собственный документ.
+<p>
+<font face="times new roman, times, serif" size="3">
+ErrorDocument 404 /notfound.html</font>
+<p>
+<b>.htaccess</b><br>
+&nbsp; &nbsp; Сначала вы создаете файл .htaccess с приведенным выше текстом. Здесь в одной строке указаны три аргумента. Первый - 'ErrorDocument' - сообщает серверу, что мы хотим использовать свой собственный документ с сообщением об ошибке. Второй - это число, указывающее номер ошибки, к которой относится документ. Это число совпадает с ответным кодом сервера. Их существует несколько. Чаще всего используется '200 OK', но вы никогда его не видите, поскольку он сообщает браузеру, что страница найдена, и ее можно показать.
+<br>
+&nbsp; &nbsp; Ошибки с кодами 400 касаются ошибок в документах. Ошибка 404 сообщает браузеру, что запрошенный документ не найден. Обычно достаточно простого сообщения 404, чтобы браузер вывел сообщение о не найденном документе. Тем не менее, некоторые серверы посылают вместо этого специальный документ html.
+<p>
+<b>Документ с сообщением об ошибке</b><br>
+&nbsp; &nbsp; Как раз о нем и сообщает третий аргумент. Он говорит серверу показать файл 'notfound.html', расположенный в корневой директории вашего сайта. То есть, там же, где и домашняя страница 'index.html'. Если вы собираетесь создать несколько документов с сообщениями об ошибках, то можете поместить их в отдельную директорию, назвав ее, например, 'errors' или 'errordocuments'.
+<br>
+&nbsp; &nbsp; Самому документу с сообщением об ошибке тоже следует уделить внимание. Обязательно используйте абсолютные ссылки на рисунки и страницы. Почему? Да потому что, если какой-то документ в директории не найден, вместо него будет показан документ с сообщением об ошибке. Если последний использует относительные ссылки, то они будут ссылаться в эту же самую директорию. Так что после щелчка, скорее всего, появится еще одна ошибка 404 или покажется не тот документ, если в этой директории существует файл с таким же именем, что указано в ссылке.
+<p>
+<b>Дополнительные функции</b><br>
+&nbsp; &nbsp; В <a href="404.html" tppabs="http://www.weballey.net/russian/404.html">свой документ</a> с сообщением об ошибке я вставил ссылку на домашнюю страницу, на страницу поиска и на карту сайта. Этого достаточно, чтобы наставить заблудившегося посетителя на путь истинный. При желании можно добавить и более экзотические вещи. Например, использовать скрипт cgi для регистрации ошибки, страницы, ее вызвавшей, страницы, на которую была ссылка и т.д. Это может оказаться полезным, если вы не имеете доступа к файлам журналов на сервере, для определения этих ошибок.
+<p>
+<b>Если нет .htaccess</b><br>
+&nbsp; &nbsp; Если ваш провайдер не поддерживает файлы .htaccess, можно применить другие решения. Некоторые провайдеры настраивают сервер на отображение стандартной страницы, типа 'missing.html' или 'notfound.html' из директории пользователя.<p>
+
+<!-- main section ends here -->
+
+</font>
+</td></tr></table>
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+<TR><td width="150" align="CENTER" valign="BOTTOM" bgcolor="#99FFFF"><A HREF="#top"><img src="bottom.gif" tppabs="http://www.weballey.net/resources/bottom.gif" WIDTH=150 HEIGHT=59 border=0 ALT="наверх"></A></TD>
+<td width="30">&nbsp;</td>
+<TD WIDTH="400" VALIGN="BOTTOM">
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR><td bgcolor="#99FFFF" width="20"><img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 ALT="налево"></td>
+
+<td width="360" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="1">Copyright &copy; Gerben Hoekstra - All rights reserved</FONT></TD>
+
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 ALT="направо"></TD></TR></TABLE>
+
+</TD>
+</TR>
+</TABLE>
+</body>
+</HTML>
