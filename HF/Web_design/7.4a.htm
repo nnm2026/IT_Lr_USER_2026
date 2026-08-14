@@ -1,0 +1,760 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.4.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.5.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Использование
+других свойств при работе с текстом
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Помимо рассмотренного
+здесь свойства innerHTML, каждый
+элемент веб страницы имеет еще три
+похожих свойства:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+• innerText — то же, что и
+innerHTML, однако не может содержать HTML
+теги;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+• outerHTML — то же, что и
+innerHTML, но включает в себя
+открывающий и закрывающий теги
+данного элемента, а также вложенные
+элементы:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+• и, наконец, outerText — то
+же, что и outerHTML, однако не может
+содер жать HTML-tens..
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Другими словами, свойства
+innerText и innerHTML каждого элемента содер
+жат только внутренний текст этого
+элемента, а свойства outerText и outerHTM L —
+весь текст элемента, включая
+вложенные элементы и теги самого
+элемента. При этом innerText и outerText не
+содержат HTML.-форматирования, innerHTML и
+outerHTML могут его содержать. Из всех
+этих свойств у начина ющих обычно
+вызывает вопросы только outerText.
+Однако оно используется довольно
+редко. Изменив его, можно
+практически убрать со страницы
+весь элемент.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, существуют
+удобные методы для вставки текста и
+HTML-sop,” на страницу. Они называются
+insertAdjacentText и insertAdjacentHTML. Давайте
+рассмотрим такой пример. Допустим,
+мы хотим, чтобы на “домашней
+странице Сергея Сергеева” через
+минуту после нажатия на любую из
+наших мнимых “гиперссылок” и,
+соответственно, отображения текста
+одного из рассказов, перед ним
+появлялась красная надпись “Ну
+что, нравится?”
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Потом к ней можно еще
+добавить разные кнопки типа ДА, НЕТ,
+НЕ ОЧЕНЬ
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И связать с ними еще
+какие-либо действия, например,
+никогда больше не отображать
+рассказ, который не понравился.
+Однако сейчас давайте добавим
+только надпись.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Добавление
+дополнительных надписей
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для этого можно сделать
+следующее. Определим
+соответствующий стиль.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Н3 { text-align:
+center; color: red; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В нашем примере для
+запроса к пользователю мы
+используем тег &lt;НЗ&gt;. После этого
+вставим нашу надпись таким образом:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.rasskaz.insertAdjacentHTML(&quot;AfterBegin&quot;,
+'&lt;H3&gt;Hy что, нравится?&lt;НЗ&gt;');
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здесь используется метод
+insertAdjacentHTML, что позволяет вставлять
+не только текст, но и HTML-тети.
+Аргумент AfterBegin означает, что
+вставля-емый код будет помещен в
+начало блока 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV ID='rasskaz'&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+Если бы мы напи-сали BeforeEnd, то код
+был бы вставлен в конец блока.
+Кстати, методы lnsertAdjacentText и
+insertAdjacentHTML позволяют вставить текст
+(и HTML-код) не только внутрь
+какого-либо элемента, но и
+непосредственно перед и им или
+после него! Для этого используются
+аргументы BeforeBegin и, соответственно,
+AfterEnd. Как вы уже поняли, в качестве
+второго аргумента используется
+строка с текстом или HTML-кодом,
+который надо вставить.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Остальное уже просто.
+Добавим в каждую функцию
+отображения текста при введенную
+выше строку в сочетании с
+установкой таймера — setTimeout:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout(&quot;document.all.rasskaz.insertAdjacentHTML
+('AfterBegin','&lt;H3&gt;Hy что,
+нравится?&lt;НЗ&gt;') &quot;, &quot;60000&quot;);
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Правда, это еще не все.
+Если оставить страницу в таком
+виде, то таймер включит метод
+добавления текста через минуту
+после щелчка на мнимой гипересылке,
+даже если пользователь за это время
+успеет щелкнуть на другой, а это
+нами не задумывалось. Поэтому во
+время щелчка на каждой мнимой
+гиперссылке следует останавливать
+предыдущий таймер. Для этого
+достаточно определить глобальную
+переменную:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var timer; И
+присвоить ей значение запущенного
+таймера:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+time=setTimeout(&quot;document.all.rasskaz.insertAdjacentHTML
+('AfterBegin','&lt;H3&gt;Hy что,
+нравится?&lt;НЗ&gt;') &quot;, &quot;60000&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Тогда для
+его остановки достаточно будет
+написать следующее:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+clearTimeout(timer);
+В тот момент таймер будет
+остановлен.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И так давайте еще раз
+посмотрим на текст получившейся
+страницы. В ней использована одна
+функция show() для отображения любого
+из текстов. Обратите внимание на то,
+что при ее написании использован
+тот факт, что имя переменной,
+содержащей текст каждого рассказа,
+если к нему приба- вить окончание Ink,
+совпадает с именем соответствующей
+мнимой гипер- ссылки. Подобный
+разумный выбор имен позволяет
+передавать функции не два
+параметра (ivanink и ivan), а только один,
+что экономит время и ресурсы
+компьютера. В данном случае это не
+столь существенно, поскольку раз
+мер страницы невелик, но в
+некоторых случаях может сыграть
+большую роль.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLЕ&gt;Домашняя
+страница Сергея Сергеева.&lt;/TITLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!-- 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BODY {
+background-color: #BABAAO; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color:
+rgb(29,29,24); } H1,H2 { text-align: center;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} H3 { text-align:
+center; color: red; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .Ink { color:
+#634438; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-decoration:
+underline;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+cursor: hand; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .Ink0 { color:
+rgb(29,29,24);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-decoration:
+none;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+cursor: default;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} HR { margin-top:
+24px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+width: 75%;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+DIV.epig {
+text-align: justify; font-size: smaller;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+width: 130;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} DIV.pdps {
+font-style: italic;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align: right;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} DIV.ab {
+text-align: justify; text-indent: 2em; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;
+TYPE=&quot;text/javascript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!--var
+oldlnk=&quot;ivanlnk&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var timer;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var hammer”'
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H2&gt;MOЛTOK&lt;BR&gt;&lt;SPAN
+STYLE=&quot;font-style: italic; &quot;&gt;
+paccrap&lt;/SPAN&gt;&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right; &quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;epig&quot;&gt;Mы кузнецы, и дух наш
+молод.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;pdps&quot;&gt;(Из песни)
+&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt; &lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;ab&quot;&gt;Это случилось очень
+давно, уж и не помню в каком году, в
+каком веке и в каком тысячелетии...
+(Здесь располагается текст
+рассказа) &lt;/DIV&gt;' ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var
+ivan='&lt;Н2&gt;ИВАН-ЦАРЕВИЧ И СЕРЫЙ
+ЗАЯЦ&lt;ВR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SРАN
+STYLE=&quot;font-style: italic;
+&quot;&gt;CKА3KА&lt;/SPAN&gt;&lt;/H2&gt;&lt;DIV
+STYLE=&quot;text-align: right;&quot;&gt;&lt;DIV
+CLASS=&quot;epig&quot;&gt;Hy, погоди!..
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;pdps&quot;&gt; (Из мультфильма)
+&lt;/DIV&gt;&lt;/DIV&gt; &lt;/DIV&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;ab&quot;&gt;Жил да был
+Иван-Царевич, и все у него было: и
+злато-серебро, и невест полный
+дворец, и книжек много умных, и
+тренажерный зал огромный. Однако
+тоскливо было у него на душе -как
+встанет утром с постели царской,
+так и начнет горевать, и горюет до
+вечера.&lt;/DIV&gt;&lt;DIV CLASS=&quot;ab&quot;&gt;Дoлгo
+ли, коротко ли... &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;ab&quot;&gt;И они жили долго и
+счастливо и умерли в один
+день.&lt;/DIV&gt;&lt;НR&gt;';
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function show(arg)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+clearTimeout(timer) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.rasskaz.innerHTML=eval(arg);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[oldink].className=&quot;lnk&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+oldlnk=arg+'Ink';
+document.all[oldink].className=&quot;lnk0&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+timer=setTimeout(&quot;document.all.rasskaz.insertAdjacentHTML
+(&quot;AfterBegin&quot;,'&lt;H3&gt;Hy что,
+нравится?&lt;НЗ&gt;') &quot;, &quot;60000&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//--&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;Домашняя
+страница Сергея Сергеева&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;font-size: larger;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-weight: bold;&quot; Сергей
+CepreeB&lt;/SPAN&gt; &amp;mdash;
+писатель-авангардист, автор 20
+рассказов.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр. 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+Некоторые его рассказы вы можете
+прочитать прямо здесь.&lt;/DIV&gt; &lt;HR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: center;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+CLASS=&quot;lnk&quot; ID=&quot;ivanlnk&quot;
+onClick=&quot;show('ivan')&quot;&gt;Сказка
+&amp;laquo;Иван-царевич и серый
+заяц&amp;гадио;&lt;/SPAN&gt;&amp;nbsp;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+CLASS=&quot;lnk&quot; ID=&quot;hammerlnk&quot;
+onClick=&quot;show('hammer')&quot;&gt;Рассказ
+&amp;laquo;МОЛОTOK&amp;raquo;&lt;/SPAN&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ID=&quot;rasskaz&quot;&gt; &lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, переменная
+oldink играет здесь еще одну,
+вспомогательную роль: ей
+присваивается результат
+“вычисления” имени мнимой
+гиперссылки, и она используется при
+обоих сменах ее стиля. Кроме того, в
+этом тексте используется функция
+eval(), которую мы с вами еще не
+рассматривали:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.rasskaz.innerHTML=eval(arg)
+;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для чего она нужна?
+Давайте разберемся. Наша функция
+show() получает аргумент в виде
+текстовой строки:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+onClick=&quot;show('ivan')&quot;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Это сделано, чтобы легче
+было получить имя мнимой
+гиперссылки, про сто сцепив эту
+строку со строкой Ink (ivan + Ink = ivanink).
+Однако если Tenepь написать просто:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.rasskaz.innerHTML=arg;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+то содержимое блока 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV ID='rasskaz'&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ будет заменено именем
+переменной. то есть строкой,
+поступившей в качестве аргумента.
+Использование функции 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+eval() здесь позволяет
+получить ссылку не на имя
+переменной, а на ее значение,
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+То, что увидит
+пользователь, читающий в течение
+хотя бы минуты один и тот же рассказ
+на этой странице, изображено на рис.
+7.12. Для упражнения попробуйте
+добавить еще вставку кнопок с
+вариантами ответа на поставленный
+вопрос, а также запрет отображения
+в данном сеансе работы не
+понравившихся рассказов.
+</font>
+</p>
+<p align="center">
+<img src="7.16.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.12. Через
+минуту после появления текста
+рассказа возникает красная надпись
+“Ну что, нравится?”
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.4.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.5.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

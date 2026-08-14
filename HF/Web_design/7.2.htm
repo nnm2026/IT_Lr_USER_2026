@@ -1,0 +1,1681 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+7.2
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.2a.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+7.2.
+Страница, управляемая при помощи
+мыши
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Мы уже говорили о том, что
+одним из самых привлекательных
+нововведе ний HTML 4.0 является
+возможность динамически изменять
+страницы и реагировать на действия
+пользователя. Давайте рассмотрим,
+как такая реакция может
+осуществляться.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Помните, как в примерах
+Главы 4 мы изменяли цвет
+гиперссылки при наведении на нее
+мыши? Это происходило с помощью
+псевдокласса :hover. Однако этот
+псевдокласс пока что определен
+только для тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. А как быть,
+если мы хотим изменить цвет
+обычного текста при наведении на
+него мыши?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рассмотрим, как это
+делается. Допустим, мы написали
+небольшую тесто вую страницу.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;Обработка
+событий мыши&lt;/ТIТLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+Этот текст не изменит свой цвет.
+Этот текст изменит свой цвет, если
+навести на него мышь! Этот текст не
+изменит свой цвет. 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Реакция на
+наведение
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте сделаем
+так, чтобы вторая строка этого
+текста действительно изменяла свой
+цвет при наведении указателя мыши.
+Для начала давайте выделим ее в
+отдельный блок:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;Этот
+текст изменит свой цвет, если
+навести на него мышь!&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы при наведении мыши
+что-нибудь произошло, нужно
+добавить обработчик событий onMouseOver:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+onMouseOver=&quot;&quot;&gt;Этот текст изменит
+свой цвет, если навести на него
+мышь&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, обработчик
+добавлен, однако пока он ничего не
+делает. В кавычки нужно поместить
+то действие, которое он должен
+выполнить. А что он дол жен сделать?
+Изменить цвет этого блока 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, например, на красный. Доступ к
+свойствам текущего элемента
+осуществляется с помощью ключевого
+слова this:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+onMouseOver=&quot;this.style.colors'red&quot;&gt;Этот
+текст изменит свой цвет, если
+навести на него мышь!&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если теперь открыть эту
+страницу в броузере, то при
+наведении указателя мыши на вторую
+строку текста, цвет строки
+действительно изменится на
+красный. Однако, один раз
+изменившись, он так и останется
+красным. Чтобы при уводе указателя
+мыши со строки цвет изменился
+обратно на черный, добавим
+обработчик событий, реагирующий на
+увод указателя. Он называется
+onMouseOut:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+onMouseOver=&quot;this.style.color&quot;'red'&quot;
+onMouseOut=&quot;this.style.color='black'&quot;&gt;Этот
+текст изменит свой цвет, если
+навести на него мышь!&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь при наведении
+указателя мыши на эту строку, ее
+цвет изменится на красный, а при
+уводе указателя — обратно на
+черный. Можно также использовать и
+доступ по названию элемента.
+Например, если установить в этом
+блоке атрибут ID=&quot;text1&quot;, то можно
+будет написать так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ID=&quot;textl&quot;
+onMouseOver=&quot;textl.style.color='red'&quot;
+onMouseOut=&quot;textl.style.color='black'&quot;&gt;Этот
+текст изменит цвет, если навести на
+него мышь!&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ID=&quot;textl&quot;
+onMouseOver=&quot;document.all.textl.style.color='red'&quot;
+onMouseOut=&quot;document.all.textl.style.color”'black'&quot;&gt;Этот
+изменит свой цвет, если навести на
+него мышь!&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что внутри кавычек расположен
+текст, написанный на языке JavaScript.
+Чтобы не загромождать текст
+HTML-документа, можно заранее
+определить соответствующие
+функции в разделе 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;Обработка
+событий мыши&lt;/ТIТLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function change()
+{ document, all. textl. style. color=&quot;red&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .function
+change2() { document.all.textl.style.color=&quot;black&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} //--&gt;
+&lt;/SCRIPT&gt; &lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+а при
+определении обработчиков событий
+писать только имена функций:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ID=&quot;textl&quot; onMouseOver=&quot;change()&quot;
+onMouseOut=&quot;change2()&quot;&gt;Этот текст
+изменит свой цвет, если навести на
+него мышь!&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат будет тот же,
+что и в прошлый раз.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Таким же образом можно
+изменить не только тот блок текста,
+на который мы навели указатель
+мыши, но и любые другие элементы,
+если только присвоить им имя.
+Например, если мы хотим
+одновременно с изменением цвета
+второй строки на красный изменять
+цвет третьей строки, скажем, на
+зеленый, достаточно будет сначала
+присвоить третьей строке имя:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ID=&quot;text2&quot;&gt;Этот текст изменит
+свой цвет, если мышь навести на
+вторую строку!&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+а потом соответствующим
+образом изменить функции:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function change()
+{ document.all.textl.style.color=&quot;red&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.text2.style.color=&quot;green&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} function
+change2() {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.textl.style.coior=&quot;black&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.text2.style.color=&quot;black&quot;;
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь при наведении мыши
+на вторую строку ее цвет будет
+изменяться на красный, а цвет
+третьей строки — на зеленый. К
+сожалению, здесь начинают сильно
+сказываться различия между
+броузерами. Доступ через метод
+documental! будет работать в Internet Explorer,
+но не сработает в Netscape. Чтобы этот
+пример мог работать в Netscape 6,
+необходимо доступ через метод document,
+all заменить на доступ через метод
+document. getElementByld( ). А как быть, если мы
+хотим, чтобы этот пример работал и в
+Internet Explorer, и в Netscape 6?
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Учет
+различий между броузерами
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Такие вопросы обычно
+решаются не просто. Но в данном
+случае мы можем осуществить
+проверку версии броузера и, в
+зависимости от ее результата,
+присвоить переменной textl либо
+значение document.all.textl, либо значение
+document.getElementByld(&quot;text1&quot;). А затем в
+функциях замены цвета просто
+подставлять эту переменную. То же
+самое можно проделать и с
+переменной text2. Только нужно не
+забыть заранее определить эти
+переменные:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var text1, text2;
+function brws()
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ if
+(navigator.appName!=&quot;Net scape&quot;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+textl=document.all.textl; text2=document.all.text2 ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} else {
+textl=document.getElementById(&quot;textl&quot;) ; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text2=document.getElementById(&quot;text2&quot;);
+} }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь необходимо
+сделать так, чтобы нагла функция brws(
+) выполнялась сразу после загрузки
+страницы. Для этого установим в
+теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ обработчик событий,
+реагирующий на загрузку элемента.
+Он называется onLoad:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onLoad=&quot;brws( )&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Посмотрим, что у нас
+получается в целом.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;06pa6oткa
+событий мыши (1Е4, NN6)&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var textl, text2;
+function brws()
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ if
+(navigator.appName!=&quot;Netscape&quot;) (
+textl=document.all.textl; text2=document.all.text2;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} else {
+textl=document.getElementById(&quot;textl&quot;) ;
+text2=document.getElementById(&quot;text2&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} } function
+change () { textl.style.color=&quot;red&quot;;
+text2.style.color=&quot;green&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function change2()
+{ textl.style.color=&quot;black&quot;; text2. style.
+color=&quot;blacl&lt;&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} //--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onLoad=&quot;brws()&quot;&gt; Этот текст не
+изменит свой цвет.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+!D=&quot;textl&quot; onMouseOver=&quot;change() &quot;
+onMouseOut=&quot;change2()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Этот
+текст изменит свой цвет, если
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+навести
+на него мышь!
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+&lt;DIV !D=&quot;text2&quot;&gt;Этот текст
+изменит свой цвет, если мышь
+навести на вторую строку!&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt; 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат можно увидеть
+на рис. 7.5. Теперь этот пример
+работает и в броузере Internet Explorer, и в
+броузере Netscape 6. Конечно, хотелось
+бы создавать такие страницы,
+которые бы работали по крайней мере
+в этих двух броузерах, потому что в
+Netscape версии 4 поддержка
+динамических страниц вообще очень
+слабая. Однако это не всегда
+возможно. В этой книге в дальнейшем
+все примеры будут ориентированы на
+броузер Internet Explorer версии 4 и выше
+(если специально не оговорено
+обратное).
+</font>
+</p>
+<p align="center">
+<img src="7.5.jpg">
+</p></font>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.5. Страница,
+на которой цвет строк может
+изменяться
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кнопки, влияющие на вид
+страницы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь рассмотрим такой
+пример. Предположим, мы разместили
+на веб- странице сказку, с
+градиентным феном. Однако,
+возможно, кому-то этот фон может
+помешать читать текст, и, заботясь о
+пользователе, хочется
+предусмотреть кнопку, при нажатии
+на которую фон становился бы
+равномерно зеленоватым. Для
+пользователей, пред почитающих
+читать черные буквы на белом фоне,
+можно предусмотреть возможность
+смены цвета фона на белый.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для начала в соответствии
+с требованиями HTML 4.0 заменим
+атрибуты BGCOLOR= и BACKGROUND= тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ на соответствующие стилевые
+свойства:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #BFFFBF; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+background-image:
+url(&quot;Images/gradi.jpg&quot;); }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Что же касается тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, то ему желательно присвоить
+имя для облегчения доступа к его
+свойствам:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+ID=&quot;doc&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь добавим сверху две
+кнопки: одну для выключения
+фонового рисунка, а другую — для
+смены цвета фона на белый:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt; &lt;INPUT TYPE=&quot;button&quot;
+VALUE=&quot;Убрать фоновый рисунок&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; VALUE=&quot;Сделать фон
+белым&quot;&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кнопки созданы, но пока
+при их нажатии ничего не
+происходит. Нам надо написать
+функцию, убирающую фоновый рисунок.
+Для этого нужно всего лишь
+стилевому свойству background-image
+присвоить значение none:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function noBg() {
+document.all.doc.style.backgroundlmage='none'; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что в тексте на языке JavaScript (а не на
+языке CSS) нужно обязательно
+преобразовать название стилевого
+свойства с дефисом, как объяснялось
+выше.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь нужно сделать так,
+чтобы наша функция noBg() выполнялась
+при щелчке мыши на первой из кнопок.
+Для этого надо в соответствующий
+тег кнопки добавить обработчик
+событий, реагирующий на щелчок
+мыши. Он называется onClick:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; VALUE=&quot;y6paть фоновый
+рисунок&quot; onClick=&quot;noBg ()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Аналогично
+создадим функцию для смены цвета
+фона на белый:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+colChangeO ( document.all.doc.stylе.backgroundColor='white'; }
+и добавим ко второй кнопке
+обработчик события onClick:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; VALUE=&quot;Cделать фон
+белым&quot; onClick=&quot;colChange()&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если теперь открыть эту
+страницу в броузере, то при нажатии
+на кнопку Убрать фоновый рисунок
+градиентный фоновый перелив
+исчезнет, уступив место
+зеленоватому цвету, а при нажатии
+на кнопку Сделать фон белым фон
+страницы действительно станет
+белым.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако неплохо бы дать
+пользователю и возможность
+обратной смены цвета и включения
+градиента. Он, конечно, может для
+этого нажать в броузере кнопку
+Обновить, однако рассчитывать на
+это некорректно, да и нс всякий
+пользователь сразу сообразит это
+сделать. Поэтому давайте при
+выключении фонового рисунка сменим
+надпись на кнопке. Для этого
+желательно дать кнопкам имена,
+например вот так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; NAME=&quot;buttl&quot;
+VALUE=&quot;Убрать фоновый рисунок&quot;
+onClick=&quot;noBg()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot;
+NAME=&quot;butt2&quot;VALUE=&quot;Сделать фон
+белым&quot; onClick=&quot;colChange()&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Можно было, разумеется,
+использовать и атрибут ID= вместо
+NAME=. Для того чтобы изменить надпись
+на первой кнопке, достаточно
+изменить значение ее атрибута VALUE=:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.butti.value='Вернуть
+фоновый рисунок';
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте подумаем,
+как нам переделать функцию поВд().
+Ведь она должна убирать фоновый
+рисунок, если он есть, и включать
+его, если его нет. Одновременно
+нужно соответствующим образом
+изменять надпись на кнопке.
+Следовательно, нужно сначала
+проверить, есть ли фоновый рисунок:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function noBg() {
+if (document.all.doc.style.backgroundlmage=&quot;none&quot;) {
+document.all.doc.style.backgroundlmage='none' ; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.butti.value='Вернуть
+фоновый рисунок'; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} else {
+document.all.doc.style.backgroundlmage=&quot;url('Images/gradi.jpg')&quot;';
+document.all.butti.values'Убрать фоновый
+рисунок'; } }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В первой строке функции
+мы сравниваем значение стилевого
+свойства backgroundlmage со значением none, и
+если оно с ним не совпадает, то,
+значит, фоновый рисунок есть. В этом
+случае мы присваиваем этому спой
+ятву значение none и изменяем надпись
+на кнопке на Вернуть фоновый рису
+(нок. В противном же случае мы
+присваиваем свойству backgroundlmage
+значение, содержащее имя файла
+фонового рисунка, и изменяем
+надпись на кнопке на
+первоначальную.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Таким же способом мы
+переделываем функцию colChange().
+Сначала проверим значение свойства
+backgroundColor, и, если оно не совпадает со
+значением white (белый), присвоим ему
+это значение, а в противном случае
+присвоим первоначальное значение
+#BFFFBF. Одновременно будем изме нять и
+надпись на второй кнопке: function
+colChange() { it
+(document.all.doc.style.backgroundColor!='white'){ 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.doc.style.backgroundColor&quot;'white'
+;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.butt2.value='Сделать
+фон зеленым';
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else {
+document.all.doc.style.backgroundColor='#BFFFBF' ;
+document.all.butt2,value='Сделать фон белым'; } } 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь пользователь может с
+помощью первой кнопки включать и
+вык- лючать фоновый рисунок по
+желанию, а с помощью второй —
+переклю чать цвет фона с
+зеленоватого на белый и обратно.
+Однако остался еще один нерешенный
+вопрос. Дело в том, что если включен
+фоновый рису- нок, то переключение
+цвета фона не дает никакого
+видимого результат”, что может
+смутить пользователя. Поэтому, пока
+включен фоновый рису нок, лучше
+вообще не давать возможности
+нажимать на вторую кнопку. Internet
+Explorer позволяет сделать ее
+недоступной с помощью атрибут DISABLED.
+Поскольку изначально фоновый
+рисунок включен, установим этот
+атрибут сразу же при создании
+второй кнопки:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; NAME=&quot;butt2&quot;
+VALUE=&quot;Сделать фон белым&quot; DISABLED
+onClick=&quot;colChange()&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А в функцию noBg( ) следует
+включить сброс атрибута DISABLED для
+второй кнопки при выключении
+фонового рисунка и, соответственно,
+уста новку этого атрибута при
+включении фона:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function noBg() {
+if (document.all.doc.style.backgroundlmage!=&quot;none&quot;) {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.doc.style.backgroundlmage='none';
+document.all.butti.value='Вернуть фоновый
+рисунок'; document.all.butt2.disabled=false; } else {
+document.a
+11.doc.style.backgroundlmage=&quot;url('Images/gradi.jpg')&quot;;
+document.all.butti.value='Убрать фоновый
+рисунок'; document.all.butt2.disabled=true; } } 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот теперь все становится
+на свои места. Пользователь сможет
+только тогда воспользоваться
+кнопкой для смены цвета фона, когда
+фоновый рисунок выключен. Можно
+было бы, конечно, и просто сделать
+вторую кнопку невидимой (с помощью
+стилевого свойства visibility), однако,
+на наш взгляд, это было бы менее
+наглядно. Давайте посмотрим, что у
+нас получилось в целом.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 TRANSITIONAL//EN&quot;&gt;
+&lt;HTML&gt; &lt;HEAD&gt; &lt;TITLE&gt;CKА3KА&lt;/TITLE&gt;
+&lt;STYLE&gt; BODY { background-color: #BFFFBF; background-image:
+url(&quot;Images/gradi.jpg&quot;) ; } &lt;/STYLE&gt;
+&lt;SCRIPT&gt; &lt;!--function noBg() { if
+(document.all.doc.style.backgroundlmage!=&quot;none&quot;) {
+document.all.doc.style,backgroundlmage='none' ;
+document.all.butti.value='Вернуть фоновый
+рисунок'; document.all.butt2.disabled=false; } else {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.doc.style.backgroundlmage=
+&quot;url('Images/gradl.jpg')&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document, all
+.buttl .value='Убрать фоновый рисунок';
+document.all.butt2.disabled=true;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+colChangef) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ if
+(document.all.doc.style.backgroundColor!='white') 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+document.all.doc.style.backgroundColor='white' ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.butt2.value='Сделать
+фон зеленым'; } 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else {
+document.all.doc.style.backgroundColor='#BFFFBF''
+document.all.butt2.value='Сделать фон белым';
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+ID=&quot;doc&quot;&gt; &lt;DIV ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; NAME-&quot;buttl&quot;
+VALUE=&quot;y6paть фоновый рисунок&quot;
+onClick=&quot;noBg()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; NAME-&quot;butt2
+VALUE=&quot;Сделать фон белым&quot; DISABLED
+onClick=&quot;colChange()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/hr2.gif&quot; WIDTH=&quot;508&quot;
+HEIGHT=&quot;18&quot; BORDER=&quot;0&quot;
+ALT&quot;&quot;&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/skazk.gif&quot; WIDTH=&quot;359&quot;
+HEIGHT=&quot;150&quot; BORDER=&quot;0&quot;
+ALT=&quot;CKA3KA&quot;&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H2&gt; О
+ТОМ, КАК ИВАН-ДУРАК ПОСРАМИЛ ЦАРЯ
+ГOPOXA&lt;/H2&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;justify&quot;&gt;&lt;IMG
+SRC=&quot;Images/bukvical.gif&quot; WIDTH=&quot;121&quot;
+HEIGHT=&quot;111&quot; BORDER=&quot;0&quot;
+ALIGN=&quot;LEFT&quot; ALT=&quot;Д&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+авным-давно
+жил-был на белом свете царь Горох. И
+были у него поля гороховые, и леса
+гороховые, и степи гороховые, и даже
+моря гороховые. Все было гороховым.
+И была у него дочь &amp;mdash; царевна
+Горошина. Волосы у нее были зеленые,
+и глаза тоже зеленые, потому что с
+детства только на горох и смотрела.
+Но вообще-то она была писаной
+красавицей. Все придворные царские,
+и бояре, и пажи, и лакеи, и даже слуги
+и повара дворцовые были по уши
+влюблены в нее. Но была у царевны
+Горошины одна странность &amp;mdash;
+любила она смотреть по ночам на
+далекую звезду Адырлетавру,
+которая светила в том царстве так
+ярко, что обычные люди на той
+стороне, где звезда была, даже окон
+в домах не делали. &lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT
+SIZE=&quot;+3&quot;&gt;............................................
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FONT&gt;&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Тут и
+сказке конец, а кто слушал &amp;mdash;
+молодец, ему пряник в награду и кило
+мармеладу.&lt;BR&gt;&amp;nbsp;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;&lt;IMG SRC=&quot; Images/hr2
+.gif&quot; WIDTH=&quot;508&quot; HEIGHT=&quot;18&quot;
+BORDER=&quot;0&quot; ALT=&quot;&quot;&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+7.6. Так страница будет выглядеть
+сразу после загрузки. Обратите
+внимание на то, что вторая кнопка
+изначально недоступна. Для красоты
+мы отделили наши кнопки от
+основного текста тем же
+разделителем, который использован
+в конце страницы.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="7.7.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.6.
+Веб-страница, на которой
+“бесполезная” в данный момент
+кнопка недоступна
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Заметим, что приведенная
+выше страница будет работать
+только в Internet Explorer. Ее можно
+заставить работать и в Netscape 6 тем же
+способом, который мы применили в
+предыдущем примере — путем
+написания функции, присваивающей
+одной и той же переменной либо
+значение document.all, либо document.getElementByld,
+в зависимости от типа броузера:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var doc, butti,
+butt2; function brws(),
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ if
+(navigator.appName!&quot;&quot;Netscape&quot;) ( buttl=dofc.ument
+.all. butti; butt2=docwnent.all.butt2; doc=docunysnt. all. doc;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<sup>
+}
+</sup>
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else ( 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+buttl=document.getElementById(&quot;buttl&quot;)
+; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+butt2=document.getElementById(&quot;butt2&quot;)
+; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+doc=document.getElementById(&quot;doc&quot;)
+;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Затем
+следует переписать функции noBg() и
+colChange( ), убрав из них обра щение
+document.all:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function noBg() {
+if (doc.style.backgroundlmage!=&quot;none&quot;) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+doc.style.backgroundlmage='none' ; butti,value='Вернуть
+фоновый рисунок'; butt2.disabled=false;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<sup>
+} 
+</sup>
+else
+{
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+doc.style.backgroundlmage=&quot;url('Images/gradi.jpg')&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+butti.value='Убрать
+фоновый рисунок'; butt2.disabled=true;
+</font>
+</p>
+<p>
+<font  face="Verdana, Arial, Helvetica, sans-serif">&nbsp;
+</font></p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+colChange()
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ if
+(doc.style.backgroundColor!='white') 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+doc.style.backgroundColor='white' ; butt2.value='Сделать
+фон зеленым';
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} else {
+doc.style.backgroundColor='#BFFFBF' ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+butt2.value='Сделать
+фон белым'; } 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И, наконец, назначить
+выполнение функции brws() сразу после
+загрузки страницы:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+ID=&quot;doc&quot; onLoad=&quot;brws()&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь наш код будет
+одинаково работать и в Internet Explorer 4+,
+и в Netscape 6. Что касается Netscape 4, то,
+если постараться, можно заставить
+эту стра ницу работать и там, но это
+будет довольно сложно. В Netscape 4
+нельзя получить доступ
+непосредственно к свойствам тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, однако броузер можно
+“обмануть”, использовав либо тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LAYER&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и коллекцию document.layers, либо
+свойства типа document.body.bgColor. Давайте
+лучше не будем этим заниматься, тем
+более что смотреть нашу страницу в
+Netscape 4 все равно можно, просто обе
+наши кнопки в нем вообще не
+отобразятся (этот броу зер не
+воспринимает теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+вне
+элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FORM&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+).
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Реализация
+операций перетаскиванием
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, мы рассмотрели
+несколько основных обработчиков
+событий. Однако существуют и другие
+события мыши. Например,
+веб-страница может отдельно
+реагировать на нажатие кнопки мыши,
+на ее отпускание и даже на ее
+движение. Для чего это может
+понадобиться? Одно из возможных
+применений — это реализация так
+называемой технологии drag-and-drop,
+(проще говоря — перетаскивания
+экранных объектов с помощью мыши.
+Для иллюстрации рассмотрим
+несложный пример.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Предположим, вы хотите
+проиллюстрировать на своей
+странице знаменитую игру Лойда
+“Пятнадцать”, например так, как
+показано на рис. 7.7. Нужно, вроде бы,
+сначала просто задать стиль для
+текста:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ . background-color: #979797; color: #FEFEFE; text-align:
+center;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-weight: bold;
+font-size: 30рх;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-family:
+sans-serif; . } &lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+затем вывести на экран
+заголовок; потом создать
+центрированный блок (
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+) с фиксированной шириной и
+высотой, а также небольшим отсту-
+пом сверху, заданным с помощью
+стилевого свойства margin-top:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot; STYLE=&quot;width: 400px; height: 400px;
+margin-top: 25px;&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь осталось вставить
+в этот блок таблицу, у которой был
+бы опреде лен фоновый цвет,
+отличающийся от основного фона
+страницы, а также тонкие границы
+между ячейками:
+</font>
+</p>
+<p align="center">
+<img src="7.8.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.7. Страница,
+иллюстрирующая игру “Пятнадцать”
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+BGCOLOR=&quot;#COCOCO&quot; WIDTH=&quot;100%&quot;
+CELLSPACING=&quot;0&quot; CELLPADDING=&quot;0&quot;
+BORDER=&quot;1&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и в каждую ячейку этой
+таблицы поместить заранее
+подготовленное изображение плашки
+с цифрой', например, вот так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+WIDTH=&quot;25%&quot; ID=&quot;cl&quot;&gt;&lt;IMG
+SRC=&quot;Images/digitl.gif&quot; WIDTH=&quot;100&quot;
+HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;1&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вообще говоря, поскольку
+ширина (и высота) рисунков
+определены в 100 пикселов, атрибут
+WIDTH= указывать для тега &lt;TD&gt; совсем
+не обязательно. Что же касается
+атрибута ID=, то мы здесь указали его
+с расчетом на то, что плашки
+придется переставлять, и тогда
+потребуется доступ к ячейкам
+таблицы.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Все это замечательно,
+если исходная позиция задана
+изначально. Однако предположим, что
+мы хотим дать пользователю
+возможность самому рас ставить
+плашки. Пусть в начале игры все они
+расположены вне игрового поля.
+Можно даже расположить их друг на
+друге. Пользователь при этом должен
+иметь возможность перетянуть мышью
+каждую из плашек на одну из клеток
+игрового поля. Для этого придется
+сделать три вещи.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Во-первых, при нажатии
+кнопки мыши нужно определить, в
+каком месте окна броузера она
+нажата. Если нажатие произошло на
+рисунке плашки, нужно сразу же
+“привязать” этот рисунок к
+указателю мыши, чтобы он
+передвигался вместе с ним, пока
+кнопка не будет отпущена.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Во-вторых, во время
+движения указателя необходимо
+передвигать вслед за ним этот
+рисунок (но только в том случае,
+если пользователь еще не отпустил
+кнопку мыши). Если же мышь
+передвигается с отпущенной
+кнопкой, ничего происходить не
+должно.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И, в-третьих, при
+отпускании кнопки мыши нужно
+оставить рисунок на том месте, куда
+он был передвинут.
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.2a.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1180 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+7.4
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.3.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.4a.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+7.4.
+Динамическое отображение текста
+веб-страницы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этом разделе мы
+рассмотрим, какими способами можно
+динамически изменять текстовое
+содержание страницы. В предыдущих
+разделах, как иы помните, мы
+изменяли, как правило, только
+внешний вид текстовых ;элементов
+(цвет текста, начертание шрифта и т.
+д.). Однако иногда бывает нужно
+изменить “на ходу”
+непосредственно текстовое
+содержание.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вообще-то говоря, в
+разделе 7.2 мы уже один раз немного
+изменяли текст, но это был текст на
+кнопке. Если помните, тогда мы
+меняли надписи Сде лать фон белым и
+Сделать фон зеленым. Надпись на
+кнопке изменялась при помощи
+значения атрибута VALUE= тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Однако что делать, если текст,
+подлежащий изменению, не является
+кнопкой?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте рассмотрим такой
+пример. Предположим, нам надо
+несколько усовершенствовать
+“Домашнюю страницу Сергея
+Сергеева”, которую мы создавали в
+Главах 1, 2 и 4. К примеру, нам хочется,
+чтобы сначала на странице
+отображался только вступительный
+текст и текст первого рас сказа. А
+при нажатии на ссылку вместо текста
+первого рассказа появлялся бы
+текст второго рассказа и т. д.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(Оказывается, это
+осуществить очень легко! Заключим
+для начала текст первого рассказа в
+блок &lt;DIV&gt; и присвоим ему
+уникальное имя:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+DIV ID=&quot;rasskaz&quot;&gt;
+&lt;Н2&gt;ИВАН-ЦАРЕВИЧ И СЕРЫЙ
+ЗАЯЦ&lt;ВР&gt; OPAN STYLE=&quot;font-style: italic;
+&quot;&gt;cкaзкa&lt;/SPAN&gt;&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right;&quot;&gt; &lt;DIV
+CLASS=&quot;epig&quot;&gt; Ну, погоди!.. &lt;DIV
+CLASS=&quot;pdps&quot;&gt;(Из
+мультфильма)&lt;/DIV&gt; &lt;/DIV&gt; &lt;/DIV&gt;
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Жил да был
+Иван-Царевич, и все у него было: и
+злато-серебро, и невест полный
+дворец, и книжек много умных, и
+тренажерный зал огромный. Однако
+тоскливо было у него на душе - как
+встанет утром с постели царской,
+так и начнет горевать, и горюет до
+вечера.&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Долго ли, коротко ли
+...&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;И они жили долго и
+счастливо и умерли в один
+день.&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR&gt;
+&lt;/DIV&gt; Теперь вместо ссылки на
+второй рассказ напишем просто
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+onClick=&quot;show_hammer()&quot;&gt;Рассказ
+&amp;laquo;МОЛОTOK&amp;raquo;&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, теперь, если
+пользователь щелкнет мышью на
+словах Рассказ “Молоток”, то будет
+выполнена функция show_hammer(). По нашей
+задумке, она должна заменить текст
+сказки на текст рассказа
+“Молоток”.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вспомним, что весь текст
+сказки был заключен в блок 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. А у любого блока 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, как и у большинства других
+элементов, имеется свойство innerHTML,
+значение которое содержит весь
+HTML-код данного элемента! Это
+означает, что если мы изменим
+значение этого свойства, изменится
+и HTML-V.OJS,, а значит, и текст,
+содержащийся на странице. Наша
+функция show_hammer() может выглядеть,
+например, вот так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+show_hammer() { document .all. rasskaz . innerHTML='
+&lt;H2&gt;MOЛOTOK&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style: italic
+;&quot;&gt;paccкaз&lt;/SPAN&gt;&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;epig&quot;&gt;Mы кузнецы, и дух наш
+молод.&lt;DIV CLASS=&quot;pdps&quot;&gt;(Из песни)
+&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Это случилось очень
+давно, уж и не помню в каком году, в
+каком веке и в каком тысячелетии. . .
+(Здесь располагается текст
+рассказа) &lt;/DIV&gt;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, эта функция
+выполняет всего одно действие —
+присваивает свойству document.all. rasskaz.
+innerHTML значение, содержащее
+длинную-предлинную строку. В этой
+строке содержится весь HTML-код,
+рассказа “Молоток”
+</font>
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Имитация
+гиперссылок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Но как пользователь
+узнает, что на словосочетании
+Рассказ “Молоток” нужно щелкнуть,
+как на гиперссылке, для появления
+текста рассказа на кране? Для этого
+придется либо действительно
+оформить его как гипер-ссылку, то
+есть заключить в тег &lt;А HREF='#'&gt;,
+либо просто подчеркнуть его, а
+также изменить вид указателя мыши
+над ним:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;text-decoration: underline; cursor: hand;&quot;
+onClick=&quot;show hammer()&quot;&gt;Рассказ
+&amp;laquo;MonoTOK&amp;raquo;&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Можно сюда же добавить и
+изменение цвета, и тогда с точки
+зрения пользователя эта строка
+вообще не будет ничем отличаться от
+гиперссылки. Помните, в предыдущей
+“версии” этой страницы мы с вами
+определяли для гиперссылок
+коричневатый цвет с помощью таблиц
+CSS:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+A:link,A:visited {
+color: #634438; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь же наша мнимая
+гиперссылка на самом деле является
+элементом &lt;SPAN&gt;.Mы могли бы просто
+заменить в приведенном выше
+определении стиля A:link, A:visited на SPAN.
+Но поскольку этот элемент может
+использоваться еще для чего-нибудь
+на той же странице, лучше определим
+для него специальный класс,
+допустим, под названием Ink:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.Ink { color:
+#634438; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, подчеркивание и
+изменение формы указателя мыши
+можно также внести непосредственно
+в таблицу стилей:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.Ink { color:
+#634438; text-decoration: underline; cursor: hand; } Теперь
+осталось написать сам код нашей
+мнимой гиперссылки:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+CLASS=&quot;ink&quot;
+onClick=&quot;show_hammer()&quot;&gt;Рассказ
+&amp;laquo;МОЛОTOK &amp;raquo;&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, теперь эта страница
+приобрела внешний вид, показанный
+на рис. 7.11. После щелчка на мнимой
+гиперссылке Рассказ “Молоток” ее
+вид изменится (см. рис. 7.12).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот исходный текст этой
+страницы.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLE&gt;Домашняя
+страница Сергея Сергеева.&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!-- 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BODY {
+background-color: #BABAAO; color: rgb(29,29,24);
+</font>
+</p>
+<p align="center">
+<img src="7.13.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.12. Щелчок на
+“гиперссылке” изменяет текст в
+нижней части страницы
+</font>
+</p>
+<p align="center">
+<img src="7.14.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.13. Та же
+страница после щелчка на
+“гиперссылке”
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} Н1,Н2 {
+text-align: center; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .Ink ( color:
+#634438; text-decoration: underline; cursor: hand; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} HR ( margin-top:
+24px; width: 75%;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+) DIV.epig {
+text-align: justify; font-size: smaller; width: 130;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} DIV.pdps {
+font-style: italic; text-align: right; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} DIV.ab {
+text-align: justify; text-indent: 2em; } --&gt; &lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;
+TYPE=&quot;text/javascript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!--
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+show_hammer() 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ document. all.
+rasskaz . innerHTML=' 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H2&gt;MOЛOTOK&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style:
+italic;&quot;&gt;paccкaз&lt;/SPAN&gt;&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right; &quot;&gt;&lt;DIV
+CLASS=&quot;epig&quot;&gt;Mы кузнецы, и дух наш
+молод.&lt;DIV CLASS=&quot;pdps&quot;&gt;(Из песни)
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Это случилось очень
+давно, уж и не помню в каком году, в
+каком веке и в каком тысячелетии...
+(Здесь располагается текст
+рассказа) &lt;/DIV&gt;';
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} //--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+&lt;Н1&gt;Домашняя страница Сергея
+Сергеева&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: center;&quot;&gt;Сказка
+&amp;laquo;Иван-царевич и серый
+заяц&amp;гаquо;&amp;nbsp;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+CLASS=&quot;lnk&quot;
+onClick=&quot;show_hammer()&quot;&gt;Рассказ &amp;laquo
+;МОЛОTOK&amp;raquo;&lt;/SPAN&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;font-size: larger; &quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-weight: bold;&quot;&gt; Сергей
+CepreeB&lt;/SPAN&gt; &amp;mdash;
+писатель-авангардист, автор 20
+рассказов.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр.&lt;ВR&gt;&lt;ВR&gt;
+Некоторые его рассказы вы можете
+прочитать прямо здесь.&lt;/DIV&gt; &lt;HR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ID=&quot;rasskaz&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;ИВАН-ЦАРЕВИЧ
+И СЕРЫЙ ЗАЯЦ&lt;ВR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style:
+italic;&quot;&gt;CАKЗKА&lt;/SPAN&gt;&lt;/H2&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right;&quot;&gt; &lt;DIV
+CLASS=&quot;epig&quot;&gt; Ну, погоди!.. 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;pdps&quot;&gt;(Из
+мультфильма)&lt;/DIV&gt; &lt;/DIV&gt; &lt;/DIV&gt;
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Жил да был
+Иван-Царевич, и все у него было: и
+злато-серебро, и невест полный
+дворец, и книжек много умных, и
+тренажерный зал огромный. Однако
+тоскливо было у него на душе -как
+встанет утром с постели царской,
+так и начнет горевать, и горюет до
+вечера.&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Долго ли, коротко ли
+...&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;ab&quot;&gt;И они жили долго и
+счастливо и умерли в один
+день.&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR&gt;
+&lt;/DIV&gt; &lt;/BODY&gt; &lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Подобная смена
+содержимого довольно большого
+фрагмента страницы всегда выглядит
+привлекательно. Заметьте, что
+изменение произойдет практически
+мгновенно, так как весь нужный
+текст на самом деле загру жается в
+память пользовательского
+компьютера еще при загрузке
+страницы. В момент нажатия на
+мнимую гиперссылку он уже не должен
+загружаться через Интернет, а
+просто отобразится на экране.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Произвольный
+выбор текста
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако в таком виде эта
+страница представляется еще не
+совсем завер шенной, поскольку,
+когда на экране отобразится текст
+рассказа “Молоток”, вернуть
+обратно текст сказки не удастся
+(если, конечно, пользователь
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+сообразит нажать в
+броузере кнопку Reload (Обновить), но
+рассчитывать это некорректно).
+Поэтому надо сделать еще одну
+мнимую гиперссылку, которая
+загружала бы текст сказки.
+Поскольку стиль уже определен,
+сде-лать это совсем нетрудно:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+CLA3S=&quot;lnk&quot;
+onClick=&quot;show_ivan()&quot;&gt;Сказка
+&amp;1аquо;Иван- царевич и серый
+заяц&amp;гадио;&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Одновременно нужно
+написать функцию show_ivan(), во всем
+аналогичную функции show_hammer(). Она
+должна просто заменять значение
+свойства document.all.rasskaz.innerHTML обратно
+на текст сказки:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+show_ivan'() { document.all.rasskaz.innerHTML='
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;ИВАН-
+ЦАРЕВИЧ И СЕРЫЙ ЗAЯЦ&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style: italic;&quot;&gt;
+сказка&lt;/SPAN&gt;&lt;/Н2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right; &quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;epig&quot;&gt;Hy, погоди!.. 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;pdps&quot;&gt;(Из мультфильма
+&lt;/DIV&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;&lt;BR&gt;&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Жил да был
+Иван-Царевич, и все у него было: и
+злато-серебро, и невест полный
+дворец, и книжек много умных, и
+тренажерный зал огромный. Однако
+тоскливо было у него на душе - как
+встанет утром с постели царской,
+так и начнет горевать, и горюет до
+вечера.&lt;/DIV&gt;&lt;DIV
+СЬАЗЗ=&quot;аЬ&quot;&gt;Долго ли, коротко
+ли. . ,&lt;/DIV&gt;&lt;DIV CLASS=&quot;ab&quot;&gt;H они
+жили долго и счастливо и умерли в
+один день .&lt;/DIV&gt;&lt;HR&gt;';
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+обращаем
+ваше внимание на то, что .HTML-код,
+находящийся внутри функции, должен
+представлять собой одну строку, то
+есть в нем не должно ододержаться
+ни одного служебного символа
+перевода строки, которые мы для
+удобства иногда вставляем в
+обычный HTML-текст. Если такие
+символы в нем останутся, то
+интерпретатор JavaScript “подумает”,
+что мы просто написали одну
+незавершенную строку, а потом еще и
+начали дру-гую строку с
+неопределенного объекта.
+Соответственно, при этом появятся
+вообщения об ошибках, и страница
+вообще не будет “работать”.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Честно
+говоря, определять такие длинные
+строки в “теле” функции можно, нo
+неудобно, и потому не принято. Лучше
+сразу определить переменные,
+содержащие эти строки, и из функций
+обращаться уже к этим перемен-
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var
+hammer='&lt;H2&gt;MOnOTOK&lt;BRXSPAN STYLE=&quot;font-style:
+italic;&quot;&gt; paccкaз&lt;/SPAN&gt;&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right; &quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;ерig&quot;&gt;Мы кузнецы, и дух наш
+молод.&lt;DIV CLASS=&quot;pdps&quot;&gt;(Из песни)
+&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Это случилось очень
+давно, уж и не помню в каком году, в
+каком веке и в каком тысячелетии...
+(Здесь располагается текст
+рассказа)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var ivan='
+&lt;Н2&gt;ИВАН-ЦАРЕВИЧ И СЕРЫЙ 3AЯЦ
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style: italic;
+&quot;&gt;CKА3KА&lt;/SPAN&gt;&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;epig&quot;&gt;Hy, погоди!..
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;pdps&quot;&gt;(H3 мультфильма)&lt;/DIV&gt;
+&lt;/DIV&gt;&lt;/DIV&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Жил да был
+Иван-Царевич, и все у него было: и
+злато-серебро, и невест полный
+дворец, и книжек много умных, и
+тренажерный зал огромный. Однако
+тоскливо было у него на душе - как
+встанет утром с постели царской,
+так и начнет горевать, и горюет до
+вечера. &lt;/DIV&gt;&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Долго ли, коротко ли. .
+.&lt;/DIV&gt;&lt;DIV CLASS=&quot;ab&quot;&gt;И они жили
+долго и счастливо i умерли в один
+день .&lt;/DIV&gt;&lt;HR&gt;';
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+show_hammer() { document.all.rasskaz.innerHTML=hammer; function
+show__ivan() ( document.all.rasskaz.innerHTML=ivan; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Это, во-первых, намного
+нагляднее, а кроме того, если одна
+из этих “ строк ” вдруг
+потребуется еще в какой-либо
+функции, то можно будет легко к ней
+обратиться по имени переменной, не
+вводя всего этого “крокодила”
+заново. Кстати, теперь, когда у нас
+есть две мнимые гиперссылки на оба
+текста, можно первоначально не
+отображать на экране ни один из них:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ID=&quot;rasskaz&quot;&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Такое начало будет
+смотреться эффектнее (рис. 7.14), а
+заодно мы избавимся
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+от дублирования кода.
+Кстати, если вам все-таки хочется
+сразу отобразить текст какого-либо
+из рассказов, то все равно не
+следует вводить один и тот же HTML-код
+второй раз, особенно если он
+длинный. Лучше напишите что-нибудь
+вроде
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onLoad=&quot;show ivan()&quot;&gt;
+</font>
+</p>
+<p align="center">
+<img src="7.15.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.14. На этой
+странице изначально не видно ни
+одного из рассказов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь еще одна маленькая
+деталь. Хорошо бы сделать так, чтобы
+мнимая
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+гиперссылка на тот текст,
+который уже отображается на экране,
+в выглядела бы, как гиперссылка.
+Этого легко достичь, поскольку вид
+определен как класс в таблице
+стилей. Итак, определим еще один
+класс для “посещаемой в данный
+момент” части страницы:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Ink() { color: rgb(29,29,24) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-decoration:
+none; cursor: default; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ В данном случае мы определили
+внешний вид текущего текста таким
+же, как вид обычного текста, однако
+можно было придумать и какое-нибудь
+особое начертание). Теперь
+модифицируем наши функции show_ivan() и
+show_hammer() так, чтобы они изменяли
+класс (а значит, и внешний вид) наших
+мнимых гиперссылок: 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function show_hammer() 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ document, all
+.rasskaz . innerHTML=hanimer; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.ivanink.className=&quot;lnk&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.hammerlnk.className=&quot;lnk0&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} function
+show_ivan() { document.all.rasskaz.innerHTML=ivan; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.ivanink.className=&quot;lnk0&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.hammerlnk.className=&quot;lnk&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Обратите внимание на то, что
+для доступа к атрибуту CLASS= нужно
+исполь- повать свойство className, а не
+class, поскольку слово class является
+заре- зервированным ключевым
+словом JavaScript.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Разумеется, если на
+странице сменяют друг друга не два,
+а три, четыре, десять или более
+подобных текстов, можно
+действовать точно так же. Однако
+здесь есть две тонкости.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Во-первых, при наличии,
+например, 100 сменяющихся текстов,
+при щел чке на одной из мнимых
+гиперссылок нужно определить,
+какой из них нужно вернуть внешний
+вид гиперссылки (класс Ink). Придется
+опреде лить глобальную переменную
+и каждый раз записывать в нее имя
+исполь зованной ссылки. Например,
+если назвать эту переменную,
+допустим, oldink, то наша функция
+show_hammer() приобретет такой вид: function
+show_hammer() 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+document.all.rasskaz.innerHTML=hammer; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[oldink].className=&quot;lnk&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.hammerlnk.className=&quot;lnkO&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+oldlnk='hammerlnk';
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При этом лучше сразу при
+инициализации присвоить
+переменной oldlnk имя одного из
+идентификаторов, чтобы не делать
+лишнюю проверку, не является ли oldink
+пустой строкой. Да и вообще, если
+сменяющихся текстов много, лучше не
+писать для отображения каждого
+отдельную функ цию, а просто
+написать обобщенную функцию show(),
+которая может полу чать
+идентификатор ссылки в качестве
+аргумента или даже просто брать его
+из значения свойства window.event.srcElement.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вторая тонкость
+заключается в следующем. Не
+забывайте, что все тексты при
+данном подходе загружаются из
+Интернета сразу (а щелчки на мни мых
+гиперссылках только управляют их
+отображением). Поэтому при большом
+их количестве на странице при
+первоначальной загрузке не будет
+отображено вообще ничего, пока они
+все не загрузятся. Для пользователя
+это может означать длительное
+ожидание перед пустым экраном, то
+есть весьма сомнительное
+удовольствие. Лучше попытаться
+этого избежать. Например, можно
+расположить эти тексты уже после
+тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<sup>
+</sup>
+— тогда они начнут
+загружаться одновременно с
+отображением страницы, и
+пользователь вместо ожидания перед
+пустым экраном сможет за время
+загрузки почитать вступительный
+текст, а то и текст первого
+рассказа. Другим выходом может
+стать загрузка текстов по мере
+необходимости. Для этого можно
+применить, например, фреймы.
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.3.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.4a.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,792 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+7.3
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.4.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+7.3.
+Страница, управляемая с клавиатуры
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А теперь давайте
+рассмотрим, как можно обрабатывать
+еще некоторые события, которые
+могут возникать при просмотре
+веб-страниц. Если в прошлом разделе
+мы в основном занимались
+обработкой событий мыши, то сейчас
+займемся событиями, связанными с
+клавиатурой.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Действительно, в
+некоторых случаях бывает удобно
+использовать клавиатуру, например,
+для навигации по странице. В
+качестве примера давайте немного
+усовершенствуем словарь терминов.
+Не правда ли, логично было бы, если
+бы пользователь мог перейти к
+соответствующей букве алфавита,
+просто нажав клавишу с ее символом
+на клавиатуре?
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Реакция на
+нажатие клавиши
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте попробуем
+реализовать эту возможность. Для
+начала назначим элементу 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ обработчик событий,
+реагирующий на нажатие клавиш. Он
+называется onKeyPress:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onKeyPress=&quot;press()&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте напишем
+саму функцию press(), которая будет
+вызываться при нажатии какой-либо
+клавиши. Поскольку у нас в примере
+букв всего шесть (от А до Е), то пусть
+нажатие на эти клавиши будет
+перемещать нашу страницу к
+соответствующей букве. Нажатие на
+любую другую клавишу можно
+обработать как перемещение в
+начало файла.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что для организации доступа к
+каждой букве (и к началу файла) нам
+не придется прикладывать никаких
+дополнительных усилий! Ведь мы уже
+ранее создали соответствующие
+якоря с помо щью тега &lt;А&gt;, и хотя
+они и не имеют атрибута ID=, у них
+есть атрибут NAME=, который тоже можно
+использовать для доступа к
+элементам.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, при нажатии на
+клавишу нужно проверить, какая
+буква была нажата. Это можно
+сделать, прочитав значение
+свойства window event keyCode. Оно равно
+ASCIIJ-коду нажатой клавиши. Например,
+если нажата клавиша с русской
+буквой а, то значение свойства window
+event keyCode равно 1072, то есть коду этой
+буквы.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Таким образом, мы можем
+использовать оператор switch, чтобы
+назначить различные действия в
+зависимости от кода нажатой
+клавиши:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+switch(window.event.keyCode) { case 1072: //
+какие-то действия case 1073: // какие-то
+действия и т.д.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы прокрутить
+страницу к заданному элементу,
+можно воспользоваться методом
+scrolllntoView( ). Например, если мы напишем
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.BukvaA.scrolllntoView() ;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+то в результате страница
+будет прокручена так, что якорь BukvaA
+окажется в верхней части окна
+броузера.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Учет
+раскладки клавиатуры
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь надо подумать еще
+о том, что пользователь может
+забыть переклю- читься на русскую
+раскладку клавиатуры. Давайте не
+будем заставлять его это делать.
+Поскольку мы знаем, что на одной
+клавише с русской бук вой а
+расположена буква f, на одной
+клавише с б — знак &lt; и т. д., мы
+можем осуществить проверку не
+только кодов букв а, б, в, г, д, е, но и
+кодов сим волов f, &lt;, d, u, I, t. Можно
+написать, например, так: case 1072: case 102:
+document.all.BukvaA.scrolllntoViewO; break; case 1073: case 44: 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.BukvaB.scrollIntoView()
+; break;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этом случае прокрутка к
+букве а осуществится, даже если
+пользователь нажмет клавишу с
+буквой а или f, забыв переключиться
+на русскую рас-кладку клавиатуры.
+Аналогично можно осуществить
+прокрутку и к дру- им буквам. Чтобы
+при нажатии какой-нибудь иной
+клавиши вернуться началу файла,
+можно присвоить это возвращение
+случаю “default”:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+default”:
+document.all.Top.scrollIntoView(); break;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот, собственно говоря, и
+все. Но чтобы изучить еще некоторые
+обработчики событий, давайте
+добавим еще эффект уменьшения
+яркости текста во время нажатия
+клавиши. Так обращают внимание
+пользователя на то, что “что-то
+происходит” (а именно: прокрутка).
+Для этого нужно использо-вать
+обработчики событий, реагирующие
+раздельно на нажатие и на
+отпускание клавиши. Они называются,
+соответственно: onKeyDown и onKeyUp:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onKeyPress=&quot;press ()&quot;
+onKeyDown=&quot;this.style.color='gray'&quot; onKeyUp=&quot;this
+style.color='black'&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь во время нажатия
+на клавишу цвет текста изменится на
+серый, а после отпускания клавиши —
+обратно на черный. Как видите,
+ничего сложного.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Подсказка
+для читателя
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И в качестве последнего
+штриха давайте добавим подсказку
+для пользователя. Пусть, когда он
+начнет прокручивать страницу
+вручную (с помощью полосы
+прокрутки), в строке состояния
+отобразится такая подсказка: Вы
+можете перемещаться к нужной букве,
+используя клавиатуру'. Это можно
+сделать, используя обработчик
+событий, реагирующий на прокрутку
+страницы (есть и такой!). Он
+называется onScroll:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onKeyPress=&quot;press ()&quot;
+onKeyDown=&quot;this.style.color='gray'&quot; 'Вы можете
+перемещаться к нужной букве,
+используя клавиатуру''&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, один раз
+появившись, подсказка так и
+останется в строке состояния, но в
+данном случае в этом нет ничего
+плохого. Строка состояния — место
+не самое заметное, так что
+подсказка в ней выглядит вполне
+корректно. Вот чего делать не надо,
+так это использовать бросающиеся в
+глаза методы типа alert:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onKeyPress=&quot;press ()&quot;
+onKeyDown=&quot;this.style.color='gray'&quot;
+onKeyUp=&quot;this.style.color='black'&quot;
+onScroll=&quot;alert('Вы можете перемещаться
+к нужной букве, используя
+клавиатуру'')&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этом случае при попытке
+прокрутки страницы вручную
+пользователь &lt; разу же получит
+окно-предупреждение. Если же он
+просто хочет почему- либо
+использовать ручную прокрутку, это
+окно будет его раздражать и мешать
+работе. Так что предыдущее решение
+как нельзя более подходит для
+данного случая — небольшая
+подсказка в строке состояния и все.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Ладно, давайте посмотрим,
+что у нас получилось, здесь введено
+еще несколько усовершен ствований,
+связанных с использованием таблицы
+стилей. Например, нет необходимости
+каждый термин заключать в теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;В&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;/В&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Вместо
+этого для тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ заранее
+определено стилевое свойство
+font-weight: bold;.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Словарь
+терминов&lt;/ТIТLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;META
+HTTP-EQUIV=&quot;CONTENT-TYPE&quot; CONTENT=&quot;text/html&quot;
+CHARSET=&quot;windows-1251&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+( background-color: #EAEAEA; color: black; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} A:link,
+A:active, A:visited { color: #7A3F51;}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+DT { font-weight:
+bold; } &lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;
+TYPE=&quot;text/javascript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!--
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function press ()
+switch(window.event.keyCode)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ case 1072: case
+102: document.all.BukvaA.scrollIntoView() ; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+break; case 1073:
+case 44: document.all.BukvaB.scrollIntoView() ; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+break; case 1074:
+case 100: document.all.BukvaV.scrollIntoView () ; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+break; case 1075:
+case 117: document.all.BukvaG.scrollIntoView() ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.BukvaD.scrollIntoView()
+;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+break; case 1077:
+case 116: document.all.BukvaE.scrollIntoView() ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+break; default:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.Top.scrollIntoView()
+; break;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//--&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onKeyPress=&quot;press()&quot;
+onKeyDown=&quot;this.style.color='gray'&quot;
+onKeyUp=&quot;this.style.color='black'&quot;
+onScroll=&quot;window.status= 'Вы можете
+перемещаться к нужной букве,
+используя клавиатуру!'&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;&lt;А
+NAME=&quot;Top&quot;&gt;Cловарь
+терминов&lt;/А&gt;&lt;/Н1&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;НЗ&gt;
+&lt;А HREF=&quot;#BukvaA&quot;&gt;A&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;#BukvaB&quot;&gt;Б&lt;/A&gt; &lt;А
+HREF=&quot;#BukvaV&quot;&gt;B&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;#BukvaG&quot;&gt;Г&lt;/A&gt; &lt;А
+HREF=&quot;#BukvaD&quot;&gt;Д&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;#BukvaE&quot;&gt;E&lt;/A&gt; &lt;/НЗ&gt; Для
+перемещения к соответствующей
+букве вы можете использовать
+клавиатуру
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;&lt;А
+NAME=&quot;BukvaA&quot;&gt;A&lt;/A&gt;&lt;/Hl&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DL&gt;
+&lt;DT&gt;&lt;A NAME=&quot;avtentich&quot;&gt;AБTEHTИЧECKИЙ
+КАДАНС&lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;кадансовый
+оборот, в котором заключительная
+тоническая гармония предваряется
+доминантовой
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+NAME=&quot;aliquot&quot;&gt;AЛИKBOTHЫE СТРУНЫ&lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;резонирующие
+струны, к которым исполнитель не
+прикасается во время игры
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DT&gt;&lt;A
+NAME=&quot;atakta&quot;&gt;ATAKTA&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;гармонический
+элемент на басу нижнего или
+верхнего вводного тона
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DL&gt;
+&lt;SMALLXA HREF=&quot;#Top&quot;&gt;B начало&lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SМАLL&gt;
+&lt;HR ALIGN=&quot;'left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME=&quot;BukvaB&quot;&gt;Б&lt;/A&gt;&lt;/Hl&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DL&gt;
+&lt;DT&gt;&lt;A
+NAME=&quot;bagatel&quot;&gt;БАГАТЕЛЬ&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;небольшая
+нетрудная для исполнения пьеса
+&lt;DT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+NAME=&quot;bartok&quot;&gt;БAPTOKOBCKOE
+ПИЦЦИКАТО&lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DD&gt;сильный
+щипок струны с последующим ударом о
+струны о гриф &lt;DT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+NAME=&quot;bonang&quot;&gt;БОНАНГ&lt;/A&gt; &lt;DD&gt;Ha6op
+из 10-12 гонгов разного размера &lt;/DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SMALL&gt;&lt;A
+HREF=&quot;#Top&quot;&gt;B Haчaлo&lt;/A&gt;&lt;/SMALL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME=&quot;BukvaV&quot;&gt;B&lt;/A&gt;&lt;/Hl&gt; &lt;DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DL&gt;
+&lt;SMALL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;#Top&quot;&gt;B Haчaлo&lt;/A&gt;&lt;/SMALL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME=&quot;BukvaG&quot;&gt;Г&lt;/A&gt;&lt;/Hl&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DL&gt;
+&lt;/DL&gt; &lt;SMALL&gt;&lt;A HREF=&quot;#Top&quot;&gt;B
+Haчano&lt;/A&gt;&lt;/SMALL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME=&quot;BukvaD&quot;&gt;Д&lt;/A&gt;&lt;/Hl&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DL&gt;
+&lt;/DL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SMALL&gt;&lt;A
+HREF=&quot;#Top&quot;&gt;B Haчaлo&lt;/A&gt;&lt;/SMALL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+ALIGN=&quot;left&quot; WIDTH=&quot;40%&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;A
+NAME=&quot;BukvaE&quot;&gt;E&lt;/A&gt;&lt;/Hl&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DL&gt;&lt;/DL&gt;
+&lt;SMALL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;#Top&quot;&gt;B начало&lt;/A&gt;&lt;/SMALL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, мы познакомились со
+всеми основными обработчиками
+событий. Конечно, существуют и
+другие обработчики, но они
+применяются реже. 
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.4.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1741 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+Динамическое управление позиционированием элементов
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.3.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Динамическое
+управление позиционированием
+элементов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы все это
+реализовать, придется использовать
+позиционирование объектов на
+экране. Прежде всего, определим
+позицию блока, в который будет
+включена таблица (“игровое поле”):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;width: 400px; height: 400px; position: absolute;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+top:
+100px;&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вероятно, вы обратили
+внимание на то, что сейчас мы задали
+только пози- цию блока 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ по вертикали (с помощью
+стилевого свойства top). А каким
+должно быть свойство left (позиция по
+горизонтали)? Хотелось бы, чтобы
+наше игровое поле располагалось по
+центру, но ведь мы не знаем ширину
+окна броузера пользователя!
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+К счастью, в Internet Explorer
+есть возможность определить ширину
+окна броузера, прочитав значение
+свойства document.body.clientWidth. После этого
+все уже просто. Сначала разделим
+это значение на 2, чтобы получить
+пози цию в центре экрана. Поскольку
+наша таблица будет иметь ширину 400
+пикселов, для вычисления позиции ее
+левого края вычтем из позиции
+центра экрана половину ширины
+таблицы, то есть 200:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+tstart=document.body.clientWidth/2-200;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В данном примере мы
+присвоили вычисленное значение
+переменной tstart. Поскольку оно будет
+неоднократно использоваться в
+дальнейшем, полезно объявить эту
+переменную как глобальную (то есть
+не внутри какой-либо функции, а в
+самом начале кода JavaScript). Теперь
+осталось дать имя нашему блоку 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ID=&quot;maintab&quot; STYLE=&quot;width: 400px; height: 400px;
+position: absolute; top: 100px;&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и присвоить его свойству
+left вычисленное значение:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE”&quot;JavaScript&quot;
+TYPE=&quot;text/javascript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var tstart;
+function mainpos()
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ tstart
+document.body.clientWidth/2-200;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.maintab.style.left=tstart;
+) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//--&gt;
+&lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Приведенная выше функция
+mainposO должна выполняться сразу
+после загрузки страницы (иначе
+пользователь увидит таблицу
+неизвестно где). Поэтому установим
+в теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ уже знакомый нам обработчик
+событий on Load:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onLoad=&quot;mainpos() &quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот теперь при загрузке
+страницы (а точнее, сразу после нее)
+наш блок 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+содержащий таблицу, будет
+отцентрирован. Но как быть с
+ячейками таблицы? Ведь мы знаем, что
+если даже в тегах 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+указать ширину и высоту, эти
+требования будут восприняты
+броузером лишь как
+рекомендательные, и на экране
+просто не отобразится ни одна
+ячейка. Если же поместить в ячейки
+неразрывные пробелы, то строки
+таблицы получатся мизерной высоты
+(рис. 7.8).
+</font>
+</p>
+<p align="center">
+<img src="7.9.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+puc. 7.8. Указание в
+тегах 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ высоты и ширины, не приводит к
+желаемому результату
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Что же делать? Есть один
+прием, который позволяет сделать
+минималь- ную ширину и высоту
+ячейки таблицы такой, какой нужно
+именно нам, а не такой, какой
+захочет броузер. Дело в том, что при
+наличии рисунка в ячейке таблицы
+броузер обязательно расширит
+границы ячейки так, чтобы рисунок
+был виден целиком. Поэтому создадим
+очень маленький графи ческий файл,
+содержащий целиком прозрачный
+рисунок (в нашем при- мере был
+использован прозрачный рисунок
+размером 4х3 пиксела). Рисунок
+такого маленького размера будет
+загружаться очень быстро, прак-
+тически не влияя на скорость
+загрузки страницы. Однако в
+соответствую- щем ему теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ установим ширину и высоту (с
+помощью атрибутов WIDTH= и HEIGHT=)
+такими, какими мы хотим видеть
+ширину и высоту ячейки таблицы.
+Таким образом, мы получим как бы
+пустую ячейку с заданными
+минимальными размерами!
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот как можно это сделать
+в нашем примере:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;100&quot;
+HEIGHT=&quot;100&quot;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+На всякий случай поместим
+этот рисунок в каждую ячейку
+таблицы. Теперь давайте поместим
+изображения плашек слева от
+игрового поля, расположив их
+вертикальными рядами по пять штук: 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl&quot; SRC=&quot;Images/digitl.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;1&quot; STYLE=&quot;position: absolute; top: 120px;
+left: 10px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p2&quot; SRC=&quot;Images/digit2.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;2&quot; STYLE=&quot;position: absolute; top: 220px;
+left: 10px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p3&quot; SRC=&quot;Images/digit3.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;3&quot; STYLE=&quot;position: absolute; top: 320px;
+left: 10px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p4&quot; SRC=&quot;Images/digit4.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;4&quot; STYLE=&quot;pOsition: absolute; top: 420px;
+left: 10px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p5&quot; SRC°&quot;Images/digit5.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;5&quot; STYLE=&quot;position: absolute; top: 520px;
+left: 10px;&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p6&quot; SRC=&quot;Images/digit6.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;6&quot; STYLE=&quot;position: absolute; top: 120px;
+left: 30px;&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p7&quot; SRC=&quot;Images/digit7.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;7&quot; STYLE=&quot;position: .absolute; top: 220px;
+left: 30px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p8&quot; SRC=&quot;Images/digit8.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; 
+<sup>
+t 
+</sup>
+BORDER=&quot;0&quot;
+ALT=&quot;8&quot; STYLE=&quot;position: absolute; top: 320px;
+left: 30px;&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p9&quot; SRC=&quot;Images/digit9.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;9&quot; STYLE=&quot;position: absolute; top: 420px;
+left: 30px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;plO&quot; SRC=&quot;Images/digitl0.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;10&quot; STYLE=&quot;position: absolute; top: 520px;
+left: 30px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pll&quot; SRC=&quot;Images/digitll.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;11&quot; STYLE=&quot;position: absolute; top: 120px;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl2&quot; SRC=&quot;Images/digitl2.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;12&quot; STYLE=&quot;position: absolute; top: 220px;
+left: 50RX;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl3&quot; SRC=&quot;Images/digitl3.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot;
+BORDER=&quot;0&quot;'\ALT=&quot;13&quot; STYLE=&quot;position:
+absolute; top: 320px; left: 50rix;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;bl4&quot; SRC=&quot;Images/digitl4.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;01-
+ALT=&quot;14&quot; STYLE=&quot;position: absolute; top: 420px;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl5&quot; SRC=&quot;Images/digitl5.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;15&quot; STYLE=&quot;position: absolute; top: 520px;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат
+показан на рис. 7.9. Пока это выглядит
+не очень красиво, поскольку на виду
+у пользователя оказался третий ряд
+плашек (с цифрами от 11 до 15), а
+остальные расположились под ним.
+Лучше было бы, если бы наверху
+оказались плашки с 1 по 5.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Можно,
+конечно, решить эту проблему,
+присвоив каждой плашке свое
+значение стилевого свойства z-index,
+однако проще изменить порядок сле
+дования тегов &lt;IMG&gt;. Если сначала
+написать теги для рисунков плашек с
+11 по 15, затем — с 6 по 10 и в конце — с 1
+по 5, то при наложении рисун ков те,
+которые были объявлены позже,
+окажутся сверху. Кроме того, вполне
+можно разместить рисунки чуть выше
+по вертикали:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pll&quot; SRC=&quot;Images/digitll.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;11&quot; STYLE=&quot;position: absolute; top: 60px;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl2&quot; SRC=&quot;Iniages/digitl2.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;12&quot; STYLE=&quot;position: absolute; top: 160px;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl3&quot; SRC=&quot;Images/digitl3.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;13&quot; STYLE=&quot;position: absolute; top: 260px;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl4&quot; SRC=&quot;Images/digitl,4.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;14&quot; STYLE=&quot;position: absolute; top: 360рх;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl5&quot; SRC=&quot;Images/digitl5.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;15&quot; STYLE=&quot;position: absolute; top: 460px;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p align="center">
+<img src="7.10.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.9. Исходная
+позиция для расстановки плашек
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p6&quot; SRC=&quot;Images/digit6.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;6&quot; STYLE=&quot;position: absolute; top: 60px;
+left: 30px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p7&quot; SRC=&quot;Images/digit7.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;7&quot; STYLE=&quot;position: absolute; top: 160px;
+left: 30px;&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+7.10. Теперь, наконец,
+подготовительная работа закончена,
+и нужно реализовать обработку
+событий, как говорилось выше.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Реакция на
+нажатие кнопки
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сначала добавим в тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ обработчики событий,
+реагирующие на нажатие кнопки мыши
+(не на щелчок, который состоит из
+нажатия и отпускания левой кнопки,
+а именно на нажатие) — onMouseDown, на
+отпускание кнопки — onMouseUp и на
+движение указателя мыши — onMouseMove:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+onLoad=&quot;mainpos()&quot; onMouseDown=&quot;down_it()&quot;
+onMouseUp=&quot;up_it()&quot;
+onMouseMove=&quot;move_it()&quot;&gt;
+</font>
+</p>
+<p align="center">
+<img src="7.11.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.10. Изменение
+порядка следования
+позиционированных элементов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ позволяет изменить их
+расположение в третьем измерении
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь осталось написать
+функции, которые мы так лихо
+назначили обработчикам событий.
+Сначала давайте займемся нажатием
+кнопки мыши (onMouseDown).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Прежде всего, нам надо
+определить, была ли нажата кнопка
+мыши на рисунке одной из плашек.
+Если нет, то ничего делать не нужно.
+Как проверить это условие? В Internet
+Explorer 4+ источник каждого события
+записывается в свойство
+window.event.srcElement. Но что нам это дает?
+Ведь нужных нам рисунков целых 15, и
+у каждого есть свое уникальное имя
+(свойство ID=). Неужели придется
+сравнивать свойство window.event.srcElement id
+с каждым именем?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Мы совсем забыли, что
+каждый рисунок плашки представляет
+собой тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG&gt;.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Поэтому
+мы можем сравнить свойство
+window.event.srcElement.tagName, содержащее
+названия тега-источника события, со
+словом IMG, и в случае удачи перейти к
+дальнейшим действиям:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function down_it()
+{ if(window.event.srcElement.tagName==&quot;IMG&quot;) { //
+какие-то действия } }
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Стоп! Но ведь, кроме рисунков
+плашек, у нас еще есть прозрачный
+рисунок, расположенный в каждой из
+шестнадцати ячеек таблицы! А вот
+его-то нам никуда передвигать
+совсем не нужно. При этом от
+рисунков плашек его отличает
+только свойство SRC=. Придется
+сравнить это свойство со значением
+Images/diafanol.gif, и продолжать дальнейшую
+работу функции лишь в том случае,
+если совпадение не обнаружится.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако если мы напишем:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if ( (window,
+event. srcElement. tagName
+<sup>
+s
+</sup>
+&quot;&quot;IMG&quot;)
+&amp;&amp;
+(window.event.srcElement.src!=&quot;Images/diafanol.gif&quot;)) {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+// какие-то
+действия }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+то в большинстве случаев
+нас постигнет разочарование:
+“какие-то действия” все равно
+будут выполняться, даже если кнопка
+мыши будет нажата на прозрачном
+рисунке! В чем же дело?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Оказывается, свойство
+window.event.srcElement.src в любом случае
+содержит указание на абсолютное
+местоположение файла рисунка. Так,
+например, если эти опыты мы
+проводим на локальном компьютере,
+то значением window.event.srcElement.src будет
+полный путь доступа к файлу,
+включающий имя диска и
+родительские папки. Поскольку при
+разработке страницы, скорее всего,
+еще нельзя точно предсказать этот
+путь доступа, да и проверить работу
+страницы на локальном компьютере
+тоже нелишне, придется поступить по
+другому. Воспользуемся тем, что
+каково бы ни было абсолютное
+расположение файла, значение
+window.event.srcElement.src все равно будет
+заканчиваться его именем — в нашем
+случае diafanol .gif. то есть символы с
+13-го по 5-й от конца строки будут
+заведомо содержать значение diafanol.
+Поскольку длина любой строки
+всегда содержится в ее свойстве
+length, то мы можем выделить из полного
+названия файла нужные нам символы,
+начиная от length-12 и кончая length-4.
+Выделение части строки можно
+произвести методом substring:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if((window.event.srcElement.tagName==&quot;IMG&quot;)&amp;&amp;
+(window.event.srcElement.src.substring
+(window.event.srcElement.src.length-12,
+window.event.srcElement.src.length-4)!=&quot;diafanol&quot;)) {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+// какие-то
+действия }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот теперь все заработает
+правильно. Правда, строка условия
+выглядит очень громоздко. Мы не
+рекомендуем писать такие строки,
+поскольку через какое-то время с
+ними будет трудно разбираться, если
+вдруг понадобится что-то изменить.
+Например, в нашем случае можно
+определить локаль ную переменную 1
+и присвоить ей значение
+window.event.srcElement.src.length. Тогда строка
+условия будет выглядеть хоть
+немного компактней:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if((window.eventssrcElement.tagName=&quot;IMG&quot;)
+&amp;&amp; (window, event .'SrcElement. src.substring (1-12,1-4)
+!= &quot;diafanol&quot;” 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Какие же действия нужно
+осуществить внутри этой функции?
+Если вы еще не забыли, нам нужно
+“привязать” рисунок плашки к
+указателю мыши. Для этого
+достаточно определить глобальную
+переменную (мы назвали ее moving), и
+присваивать ей всегда имя рисунка,
+который необхо димо передвигать.
+Если никакой рисунок передвигать
+не нужно (кнопка мыши отпущена или
+нажата не на рисунке плашки), можно
+присвоить переменной moving значение
+&quot; &quot; (пустая строка). В самом
+начале сценария эту переменную
+можно объявить так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var
+moving&quot;&quot;;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+а в теле функции down_it(),
+которую мы сейчас пишем, будем
+присваивать ей значение,
+содержащее имя того рисунка, на
+котором пользователь щелкнул
+мышью:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+moving=window.event.srcElement.id;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Реакция на
+перемещение мыши
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В принципе, наша функция
+down_it() уже справляется со своими
+обязанностями. Теперь давайте
+займемся функцией moveit( ), которая
+будет вызываться при движении мыши.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Эта функция должна прежде
+всего проверить, нужно ли
+передвигать какой- либо рисунок.
+Как вы помните, его имя содержится в
+переменной moving. Так что нужно
+сначала сравнить значение
+переменной moving с пустой стро кой и в
+случае совпадения не предпринимать
+никаких действий:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function move it()
+{ if (moving!=&quot;&quot;) { // какие-то действия
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте подумаем,
+что должно быть сделано, если
+переменная moving содержит имя
+рисунка, который нужно передвинуть.
+Очевидно, для того чтобы его
+передвинуть, нужно изменить его
+стилевые свойства left и top в
+соответствии с расположением
+указателя мыши. Текущее положение
+указателя мыши можно узнать,
+прочитав значения свойств
+window.event.clientX и window.event.clientY.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+— Стоп! — скажете вы. — А
+как узнать, как должен
+располагаться рису нок
+относительно указателя мыши? Ведь
+пользователь может щелкнуть и в
+центре рисунка, и с краю, и в любом
+другом месте. Значит, в функции
+down_it(), которую мы считали уже
+законченной, нужно еще вычислить
+координаты указателя мыши
+относительно рисунка?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+— Правильно! Это
+обязательно нужно сделать, если
+применять эту технологию для
+перетаскивания крупных объектов.
+Но в нашем примере мы позволим себе
+упростить задачу, воспользовавшись
+тем, что наши плашки имеют
+относительно небольшие размеры.
+При таких размерах будет вполне
+нормально, если при перетягивании
+рисунка указатель мыши будет
+находиться посередине его.
+Поскольку рисунки наши имеют
+размер 100х100, нам остается вычесть 50
+из каждой координаты указателя
+мыши и при своить эти значения
+свойствам left и top рисунка:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style.pixelLeft=window.event.clientX-50;
+document.all[moving].style,pixelTop=window.event.clientY-50;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что для обращения к объекту по его
+имени, содержащемуся в переменной,
+необходимо использовать
+квадратные скобки, то есть писать
+document.all[moving], а не document.all. moving. В
+противном случае броузер не сможет
+найти нужный объект и выдаст
+сообщение об ошибке
+<sup>
+</sup>
+. Кроме
+того, обратите внимание на то, что
+для корректного изменения
+координат в Internet Explorer необходимо
+использовать свойства pixelLeft и pixelTop
+вместо left и top.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Из эстетических
+соображений давайте передвинем
+центр рисунка к указателю мыши уже
+в функции down_it(), добавив туда две
+точно такие же строки. Что касается
+функции moveJt(), то она почти готова.
+Однако необходимо добавить в нее
+еще две строки, чтобы предотвратить
+заранее предопределенную реакцию
+броузера на какие-либо ситуации:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+window.event.cancelBubble
+= true; window.event.returnValue = false;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Первая из этих строк
+отменяет так называемое
+“всплытие” события, то есть
+возникновение его в элементах
+страницы, содержащих элемент-источ
+ник
+<sup>
+</sup>
+. А вторая строка
+запрещает броузеру выполнять
+действия, назначен ные по умолчанию
+для этого события. В данном случае,
+если мы не напишем
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+window.event.returnValue
+= false;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+тo рисунки начнут
+“тормозиться” уже при небольшом
+перемещении, после чего броузер
+может вообще не распознать
+отпускание кнопки мыши. Мы сейчас
+не будем вдаваться в подробности
+того, почему так происходит. Однако
+запомните, что эти две короткие
+строчки при обработке событий мыши
+часто помогают избежать многих
+неприятностей. Если у вас что-то не
+получается, проверьте, а не
+“всплывает” ли какое-нибудь
+нежелательное событие? И не
+пытается ли броузер делать что-то
+“свое” вместо назначенных вами
+операций?
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Реакция на
+отпускание кнопки
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте займемся
+функцией up_it(), выполняющейся при
+отпускании кнопки мыши. Собственно
+говоря, все, что нужно сделать — это
+проверить, передвигался ли
+какой-нибудь объект (то есть,
+содержит ли переменная moving
+какое-либо имя) и, если это так,
+присвоить этой переменной пустую
+строку, что будет означать
+“освобождение” рисунка: function up_it() (
+if (moving!=&quot;&quot;) moving=&quot;&quot;;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако хорошо бы еще
+расположить рисунок не где попало,
+а точно в ячейке таблицы. Поскольку
+в этом случае его координаты
+относительно начала таблицы должны
+быть кратны 100, это довольно легко
+осуществить. Для этoгo достаточно
+округлить его до ближайшей сотни.
+Для округления можно использовать
+встроенный метод Math.round. Понятно,
+что он округляет не до сотен, а до
+целых чисел, поэтому текущие
+координаты рисунка перед
+округлением придется разделить на
+100, а после округления — умно жить
+на 100. Кроме того, не забывайте, что
+кратность 100 мы определяем
+относительно начала таблицы,
+которое равно tstart по горизонтали и
+100 но вертикали. Поэтому перед
+делением на 100 нужно еще вычесть из
+горизонтальной координаты
+значение tstart, а в конце снова его
+прибавить. Вот что у нас получается:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style.pixelLeft=
+Math.round;(window.event.clientX-50-tstart)/100)*100+tstart+l;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style,pixelTop=
+Math.round((window.event.clientY-50)/100)*100+1;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, все довольно
+просто. Здесь мы прибавили к каждой
+коорди нате еще по единице, чтобы
+рисунки не налезали на сетку
+таблицы. Кстати, ширину ячеек
+таблицы (то есть, прозрачного
+рисунка diafanol.gif) в этом случае тоже
+необходимо немного
+скорректировать. Поскольку каждая
+ячейка таблицы имеет со всех сторон
+бордюр шириной в 1 пиксел, придется
+сделать ширину самих ячеек равной
+не 100, а 98:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, неплохо было
+бы, если бы наши рисунки
+располагались точно, но сетке
+таблицы только в ее пределах, а в
+других частях экрана принимали бы
+свободное положение. Для этого
+можно перед округлением досотен
+проверить, расположен ли рисунок
+внутри таблицы (или хотя бы рядом с
+ней): 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+i
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+f
+(window.event.clientX&gt;=tstart-50&amp;&amp;window.event,clientY&gt;=50)
+{
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style.pixelLeft=
+Math.round((window.event.clientX-50-tstart)/100)*100+tstart+l;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style,pixelTop=
+Math.round((window.event.clientY-50)/100)* 100+1;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И, наконец, еще один штрих.
+При перемещении некоторых рисунков
+может возникнуть ситуация, когда
+перемещаемый рисунок будет
+проходить как бы под другим,
+пропадая на время из видимости.
+Чтобы этого не возникало, давайте
+добавим в функцию down_it() еще такую
+строку:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style.zlndex=5;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку у всех
+остальных элементов значение z-index
+не изменялось (и, следовательно,
+равно нулю), мы добиваемся того, что
+перемещаемый рисунок никогда не
+будет перекрыт другими объектами.
+Естественно, при окончании
+перемещения рисунка ему нужно
+возвратить исходное значение z-index.
+Для этого в функцию up_it() добавим
+строку
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.a 11[moving].style.zlndex=0; Итак,
+давайте посмотрим, что же у нас
+получается.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Иrpa
+15&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #979797; color: #FEFEFE; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align:
+center; font-weight: bold; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-size: 30рх;
+font-family: sans-serif; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;
+TYPE=&quot;text/javascript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var tstart; var
+moving=&quot;&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function mainpbs(
+) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+tstart=document.body.clientWidth/2-200;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document. a.is
+.rnaintab. style. left=tstart;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function down_it()
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ var 1==window.
+event. srcElement. src.length;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if((window.event.srcElement.tagName=&quot;IMG&quot;)&amp;&amp;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(window.event.srcElement.src.substring(1-12,1-4)!=
+&quot;diafanol&quot;))
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+moving=window.event.srcElement.id;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style.pixelLeft=window.event.clientX-50;
+document.all[moving].style.pixelTop=window.event.clientY-50; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style.zlndex=5;
+} } function up it() { if (moving!=&quot;&quot;) {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(window.event.clientX&gt;=tstart-50&amp;&amp;
+window.event.clientY&gt;=50) {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style.pixelLeft=
+Math.roundf(window.event.clientX-50-tstart)/100)*100+tstart+1;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all[moving].style,pixelTop=
+Math.round((window.event.clientY-50)/100)*100+1;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+document.all[moving].style.zlndex=0; moving=&quot;&quot;; } 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} function move
+it() { if (moving!=&quot;&quot;) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+document.all[moving].style.pixelLeft=window.event.clientX-50;
+document.all[moving].style.pixelTop==window.event.clientY-50 ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+event.cancelBubble = true; event.returnValue = false; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//—&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+enLoad=&quot;mainpos()&quot; опМouseDown=&quot;down it()&quot;
+onMouseUp=&quot;up_it()&quot;
+onMouseMove=&quot;move_it()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Расставьте
+плашки перетаскиванием с помощью
+мыши
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ID=&quot;maintab&quot; STYLE=&quot;width: 400px; height: 400px;
+position: absolute; top: 100px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+BGCOLOR=&quot;#COCOCO&quot; WIDTH=&quot;100%&quot;
+CELLSPACING=&quot;0&quot; CELLPADDING=&quot;0&quot;
+BORDER=&quot;1&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; &lt;/TR&gt; &lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; &lt;/TR&gt; &lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; &lt;/TR&gt; &lt;TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; HIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt;&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+&lt;/TABLE&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IМG
+ID=&quot;p11&quot; SRC=&quot;Images/digitll.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;11&quot; STYLE=&quot;position: absolute; top: 60px;
+left: 50px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl2 SRC=&quot;Images/digitl2.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+AtlT=&quot;12&quot; STYLE=&quot;position: absolute; top: 160px;
+left: 50px; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p13 SRC-&quot;Images/digitl3.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;13&quot; STYLE=&quot;position: absolute; top: 260px;
+left: 50px;&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl4&quot; SRC=&quot;Images/digitl4.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;14&quot; STYLE=&quot;position: absolute; top: 36Орх;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl5&quot; SRC=&quot;mages/digitl5.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;15&quot; STYLE=&quot;position: absolute; top: 460px;
+left: 50px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p6&quot; SRC=&quot;Images/digit6.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;6&quot; STYLE=&quot;position: absolute; top: 60px;
+left: 30px;&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p7&quot; SRC=&quot;Images/digit7.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;7&quot; STYLE=&quot;position: absolute; top: 160px;
+left: 30px;&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p8&quot; SRC=&quot;Images/digit8.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;8&quot; STYLE=&quot;position: absolute; top: 260px;
+left: 30px;&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p9&quot; SRC=&quot;Images/digit9.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;9&quot; STYLE=&quot;position: absolute; top:
+ЗбОрх; left: 30px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;plO&quot; SRC=&quot;Images/digitl0.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;10&quot; STYLE=&quot;position: absolute; top: 460px;
+left: 30px;&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;pl&quot; SRC=&quot;Images/digitl.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;1&quot; STYLE=&quot;position: absolute; top: 60px;
+left: 10px;&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p2&quot; SRC=&quot;Images/digit2.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;2&quot; STYLE=&quot;position: absolute; top: 160px;
+left: 10px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p3&quot; SRC=&quot;Images/digit3.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;3&quot; STYLE=&quot;position: absolute; top: 260px;
+left: 10px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p4&quot; SRC=&quot;Images/digit4.gif&quot;
+WIDTH=&quot;100&quot; KEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;4&quot; STYLE=&quot;position: absolute; top:
+ЗбОрх; left: 10px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+ID=&quot;p5&quot; SRC=&quot;Images/digit5.gif&quot;
+WIDTH=&quot;100&quot; HEIGHT=&quot;100&quot; BORDER=&quot;0&quot;
+ALT=&quot;5&quot; STYLE=&quot;position: absolute; top: 460px;
+left: 10px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат представлен на
+рис. 7.11. В принципе, в такую игру уже
+можно по-настоящему играть.
+Конечно, этот код можно еще
+упростить. Правильно, зачем
+шестнадцать раз повторять тег
+вставки прозрачного рисунка?
+Давайте заменим его вложенным
+циклом JavaScript:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+for (var k=l;
+k&lt;=4; k++) { document.write(&quot;&lt;TR&gt;&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+for (var m=l;
+m&lt;=4; m++) document.write('&lt;TD&gt; &lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;98&quot;
+HEIGHT=&quot;98&quot;&gt; &lt;/TD&gt;') ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write(&quot;&lt;/TR&gt;&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} 
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="7.12.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.11.
+Реализация технологии drag-and-drop:
+пользователь может перетаскивать
+плашки с помощью мыши
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат будет тот же. А
+если немного подумать, то можно
+сократить даже код первоначального
+расположения рисунков плашек,
+правда, это немного труднее.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того пока что мы
+никак не проверяем, не ставит ли
+пользователь две плaшки в одну и ту
+же ячейку, а уж о самой игре и
+говорить нечего. Но ведь мы пока
+только реализовывали расстановку
+плашек методом перетаскивания.
+Запомните рассмотренные в этом
+разделе приемы, так как они
+позволяют организовать столь
+любимую пользователями
+интерактивность просто на
+небывалом уровне — вспомните, что
+одна из функций реагировала у нас
+буквально на каждое перемещение
+указателя мыши!
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+К сожалению, приведенная
+выше страница будет работать
+только в Internet Explorer. Если необходимо,
+чтобы она работала также и в Netscape 6,
+придется приложить некоторые
+усилия. Дело в том, что помимо
+различий в син таксисе доступа к
+элементам, о котором мы уже
+говорили (в Netscape используется
+конструкция document.getElementByld вместо
+document.all), различия существуют также
+и в обработке событий. В частности,
+вместо глобального объекта event в
+Netscape необходимо использовать
+временную переменную, которой
+будет передаваться значение
+объекта event. Кроме того, вместо
+свойства srcElement используется
+свойство target, а свойство returnValue
+вообще не поддерживается. Выше мы
+приводили примеры того, как
+написать код, работающий в обоих
+популярных броузерах. Вы можете в
+качестве упраж нения попробовать
+это сделать и для данного примера,
+однако из-за обработки событий мыши
+это будет сложнее, чем в предыдущих
+случаях.
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="7.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.3.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

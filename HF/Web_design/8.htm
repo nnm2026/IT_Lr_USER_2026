@@ -1,0 +1,1970 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+8
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="8.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>
+8.
+Размещение элементов на
+веб-странице и навигация по сайту
+</strong>
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В те недавние времена,
+когда технология WWW только
+появилась на свет и стали
+создаваться первые веб-страницы,
+одной из самых больших проблем при
+их создании была невозможность
+произвольного размещение
+элементов на странице. Другими
+словами, все содержимое страницы par
+полагалось последовательно. Но
+веб-дизайнерам все чаще и чаще
+хотелось. расположить материал так,
+чтобы создать подобие композиции и
+облегчить восприятие. Самый
+простой и распространенный пример
+— разместить ссылки на разделы
+сайта в левой части, а сами разделы
+— в правой При этом в нижней части
+страницы можно разместить,
+например, какую либо статическую
+информацию, которая не меняет свое
+местоположеши в зависимости от
+количества материала на странице.
+Но как это осуществить?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для этого в процессе
+развития WWW то и дело появлялись
+различныx решения (некоторые из них
+по ходу дела уже рассматривались в
+этой книг выше). На сегодняшний день
+можно сказать, что наиболее удобных
+решений для произвольного
+расположения элементов на странице
+существую три:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+• использование фреймов; 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+• использование таблиц; 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+• и позиционирование
+независимых слоев.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте же рассмотрим эти
+технологии по порядку, и начнем с
+той из них, которая еще не
+обсуждалась в этой книге — с
+использования фреймов.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+8.1.
+Использование структуры фреймов
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Формирование
+набора фреймов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, начнем. Разделим
+нашу страницу на две части (два
+фрейма) — левую и правую. Вообще
+говоря, каждый фрейм представляет
+собой отдельный чтобы-документ.
+Таким образом, нам надо так
+определить набор фреймов, наши в
+правую часть страницы загружался
+-HTML-документ, (назовем этот файл
+sergtext.html), а в левый фрейм — файл,
+содержащий “автопортрет” Сергея
+Сегеева. Этот файл мы назовем
+sergport.html. Сначала напишем его текст.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLEЕ&gt;Домашняя
+страница Сергея Сергеева.&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE
+TYPE=&quot;text/css&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BODY {
+background-color: #BABAAO; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color:
+rgb(29,29,24);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} --&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/sergport.gif&quot; WIDTH=&quot;257&quot;
+HEIGHT=&quot;305&quot; BORDER=&quot;0&quot;
+ALT=&quot;ABTOПOPTPET&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR&gt;
+АВТОПОРТРЕТ СЕРГЕЯ СЕРГЕЕВА 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здесь пока что нет ничего
+нового — это обычная статическая
+страница, содержащая рисунок,
+горизонтальную черту и
+подрисуночную подпись. Теперь
+настало время определить набор
+фреймов.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Надо сказать, что
+НТМL-файлы, содержащие набор
+фреймов, существенно отличаются от
+обычных HTML-файлов. В частности, они
+не должны содержать тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Их
+основная часть определяется тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+Все, что заключено между ним и его
+закрывающим тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FRAMESET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+является набором фреймов.
+Содержимое каждого фрейма задается
+с помощью тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME&gt;.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Его основным атрибутом
+является SRC=, значением которого
+является имя соответствующего
+.HTML-файла.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, в первой
+строке файла, содержащего набор
+фреймов, необхидимо указывать тип
+Frameset, например, вот так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Frameset//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте напишем текст
+набора фреймов для нашего примера,
+а затем paссмотрим его подробнее.
+Итак, если страница с портретом
+называем ч sergport.html, а страница с
+текстом — sergtext.html, то текст
+основного документа будет
+следующим.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Frameset//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLЕ&gt;Домашняя
+страница Сергея CepreeBa&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET
+COLS=&quot;277,*&quot; FRAMESPACING=&quot;0&quot;
+FRAMEBORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+NAME=&quot;portrait&quot; SRC=&quot;sergport.html&quot;
+SCROLLING=&quot;no&quot; FRAMEBORDER=&quot;0&quot; NORESIZE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+NAME=&quot;text&quot; SRC=&quot;sergtext.html&quot;
+SCROLLING=&quot;auto&quot; FRAMEBORDER=&quot;0&quot; NORESIZE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FRAMESET&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt; 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте внесем некоторые
+пояснения. Чтобы фреймы
+располагались, как столбцы таблицы
+(а не как ряды, Hanpимер, сверху и
+снизу), нужно в теге &lt;FRAMESET&gt;
+указать атрибут COLS= Его значением
+должно быть перечисление ширины
+каждого фрейма (через запятую).
+Например, если написать &lt;FRAMESET
+COLS=&quot;25%,25%,50%&quot;&gt;,то окно броузера
+будет разделено на три фрейма:
+левый шириной в четверть окна
+броузера, средний такой же ширины и
+правый шириной в половину окна
+броузера. В данном случае ширина
+каждого фрейма указана в про-
+центах. Можно также указывать
+ширину фрейма в пикселах. В
+приведенном выше коде мы
+определяем ширину левого фрейма в
+277 пикселов чтобы туда уместился
+рисунок:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET
+COLS=&quot;277,*&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этой записи звездочка
+означает, что для другого фрейма
+отведено все оставшееся место в
+окне броузера. Сколько его будет —
+зависит только отi ширины окна
+броузера на компьютере
+пользователя. (Если у пользователя
+разрешение 1600х1200 и окно броузера
+развернуто на весь экран, то у него
+ширина правого фрейма будет около
+1320 пикселов, а если он сузил окно
+броузера до 300 пикселов, то на
+правый фрейм у него останется менее
+15 пикселов.) В большинстве случаев
+левый фрейм шириной 277 пикселов
+будет все же занимать меньше
+половины окна броузера, а значит, у
+пользователя сложится правильное
+впечатление, что основная
+информация заключена в правом
+фрейме.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Далее, чтобы между
+фреймами на было видимой границы,
+следует установить значения
+атрибутов FRAMESPACING= (расстояние между
+фреймами) и FRAMEBORDER= (наличие рамки
+фреймов) равными нулю. В принципе,
+если установить значение атрибута
+FRAMEBORDER= равным 1 (кстати, для Netscape
+версии 3 было необходимо вместо
+значений 0 и 1 для атрибута RAMEBORDER=
+использовать значения Yes или No), то
+можно проконтролировать толщину
+рамки с помощью атрибута BORDER=, а
+также ее цвет с помощью атрибута
+BORDERCOLOR=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если надо расположить
+фреймы, как строки таблицы, то
+вместо атрибута COLS= следует
+использовать атрибут ROWS=. В
+остальном все остается точно так
+же, как ранее. В принципе, возможно
+использовать в одном теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+оба атрибута: и COLS=, и ROWS=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Но вернемся к
+приведенному выше коду. Между
+тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FRAMESET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ в нем
+находятся определения содержимого
+каждого из фрей-мов. Каждый фрейм
+определяется с помощью тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+NAME=&quot;portrait&quot; SRC=&quot;sergport.html&quot;
+=SCROLLING&quot;nо&quot; ' FRAMEBORDER=&quot;0&quot;
+NORESIZE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+NAME=&quot;text&quot; SRC=&quot;sergtext.html&quot;
+SCROLLING=&quot;auto&quot; FRAMEBORDER=&quot;0&quot; NORESIZE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Атрибут NAME= в этом примере
+не несет никакой нагрузки — это
+прост, название фрейма. Однако его
+присутствие нам потребуется в
+случае организации межфреймовой
+навигации (например, если при
+нажатии на гиперссылку,
+находящуюся в одном из фреймов,
+следует загрузить соответствующи
+документ в другой фрейм — об этом
+речь пойдет в следующем разделе В
+любом случае установка атрибута NAME=
+является хорошей привычкой
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Атрибут SRC=, как уже
+говорилось выше, является самым
+главным атрибутом,
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+поскольку его значение
+указывает, какой, собственно
+говоря, файл следует в этот фрейм
+загрузить. Атрибут SCROLLING= управляет
+наличием полосы прокрутки в каждом
+фрейме. Если его значением является
+auto, то броузер сам определяет,
+отображать ли полосу прокрутки. Как
+правило, это самое удобное значение
+— если все содержимое фрейма
+помещается и видимую область, то
+полоса прокрутки не отображается, а
+если часть содержимого не видна, то
+полоса прокрутки отображается.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И, наконец, атрибут NORESIZE
+означает, что пользователь не может
+изменять ширину (или высоту)
+данного фрейма. Если этот атрибут
+не установлен, то при желании можно
+передвигать границу между фреймами
+помощью мыши.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, все
+достаточно просто. Нужно только не
+забывать определи нужное
+количество тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME&gt;. 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Впрочем,
+если их будет меньше, не указано в
+теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, то на месте
+“отсутствующего” фрейма
+отобразится просто белый
+прямоугольник.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Вложенные
+наборы фреймов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+— Хорошо, — скажете вы, а
+как быть, если мы захотим, к примеру,
+oто- бразить заголовок страницы во
+всю ширину окна броузера, а уж под
+ним расположить левый и правый
+фреймы?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+— Это весьма просто.
+Создадим отдельный НТМL-файл
+заголовка.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLЕ&gt;Домашняя
+страница Сергея Сергеева. &lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE
+TYPE=&quot;text/css&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!-- 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BODY {
+background-color: #BABAAO; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color:
+rgb(29,29,24); . } HI { text-align: center; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt;
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;Домашняя
+страница Сергея Сергеева&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Назовем этот файл,
+например, serghdr. html. Далее удалим
+заголовок из файла sergtext.html. И теперь
+давайте немного подумаем. Чтобы
+расположить наш заголовок в
+верхнем фрейме, придется сначала
+определить набор горизонтальных
+фреймов с помощью атрибута ROWS= в
+теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET
+ROWS=&quot;80,*&quot; FRAMESPACING=&quot;0&quot;
+FRAMEBORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здесь мы определили
+высоту верхнего фрейма в 80 пикселов
+— вполне достаточно для заголовка.
+Теперь определим содержимое
+верхнего фрейма (загрузим туда наш
+только что созданный файл serghdr.html):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+SRC=&quot;serghdr.html&quot; NAME=&quot;header&quot;
+FRAMEBORDER=&quot;0&quot; SCROLLING=&quot;no&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь нужно определить
+содержимое нижнего фрейма. А что
+там должно находиться? А там должен
+находиться тот самый набор фреймов,
+который был определен в прошлом
+примере! К счастью, нам ничто не
+мешает в качестве содержимого
+одного из фреймов указывать тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ — ведь каждый фрейм имеет те
+же “права”, что и отдельное окно
+броузера! Вот что у нас получится в
+целом.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Frameset//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLE&gt;Домашняя
+страница Сергея CepreeBa&lt;/TITLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET
+ROWS=&quot;80,*&quot; FRAMES РАСING=&quot;0&quot;
+FRAMEBORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+SRC=&quot;serghdr.html&quot; NAME=&quot;header&quot;
+SCROLLING=&quot;no&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET
+COLS=&quot;277,*&quot; FRAMESPACING=&quot;0&quot;
+FRAMEBORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+NAME=&quot;portrait&quot; SRC=&quot;sergport.html&quot;
+SCROLLING=&quot;no&quot; NORESIZE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+NAME=&quot;text&quot; SRC=&quot;sergtext2.html&quot;
+SCROLLING=&quot;auto&quot; NORESIZE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FRAMESET&gt;
+&lt;/FRAMESET&gt; &lt;/HTML&gt;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Навигация
+между фреймами
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А теперь давайте
+рассмотрим чуть более сложный
+пример. Попытаемся наконец,
+организовать полную навигацию по
+сайту гипотетической фирмы
+“Лентяй”, отдельные части
+которого мы создали в предыдущих
+главах. Здесь в правой части
+имеются гиперссылкп на различные
+разделы сайта, но при создании
+примера эти гиперссылю i не
+действовали. А ведь по крайней мере
+три из них могут действовать,
+поскольку три раздела: “Услуги”,
+“Цены” и “Книга отзывов” уже
+созданы!
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для реализации полной
+навигации мы в этом разделе будем
+использовать фреймы, хотя это не
+единственное решение. (Более
+изящное решение на основе
+позиционирования будет предложено
+в конце этой главы.)
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Прежде всего, нам
+придется выделить в отдельные
+файлы заголовок и блок гиперссылок.
+Кроме того, чтобы пользоваться
+одинаковыми стилями г нескольких
+HTML-файлах сразу, мы не будем
+дублировать таблицу стилей в
+каждом из файлов, а тоже выделим ее
+в отдельный файл. Назовем и, его
+lent.css. Давайте вначале взглянем на
+его содержимое:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BODY {
+background-color: #D2FFFF;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: #003737;
+background-image: url(&quot;Images\grad2.jpg&quot;);
+background-position: right; background-repeat: repeat-y;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+A:link,A:active,A:visited { color: #006A6A; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+A:hover {
+font-weight: bold; text-decoration: none;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.hdr { position:
+absolute; left: 50px; top: 10px; text-align: center; font-family:
+OdessaScriptFWF, fantasy;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-size: 60px;
+font-weight: 900; width: 90%; height: 100px; letter-spacing:
+0.05em; line-height: 100px; filter: shadow; border: 10px outset
+#003163; color: #3163CE;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .rght {
+font-size: large;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.Ink {
+border-width: thick; border-style: ridged; margin: 10px; padding:
+5px; border-color: #319CFF;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+background-image:
+url(&quot;Images\backlnkl.jpg&quot;); 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: red;
+text-align: center; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.Ink A:link, .Ink
+A:visited {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-decoration:
+none; color: white; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .Ink A:active (
+text-decoration: none;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: red; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.1ft { font-size:
+meduim; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.bigger {
+font-size: larger;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-family:
+sans-serif; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.logo
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ position:
+absolute;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+left: 70; top:
+120; z-index: -5;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, эта таблица
+стилей очень похожа на ту, однако в
+нее пришлось внести некоторые
+изменения. Поскольку все разделы
+будут теперь располагаться в
+отдельных фреймах, отпадает
+необходимость в позиционировании,
+поэтому для классов Ift и rght свойства
+position, left, top, width и height мы вообще не
+опре делили. Кроме того, изменена
+позиция (свойства left и top) логотипа,
+то есть класса logo. Для выделения
+красным цветом ссылки на текущий
+раз дел (то есть тот, который в
+данный момент просматривает
+пользователь) пришлось добавить
+псевдокласс .Ink Aactive.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте напишем
+главный документ, определяющий
+набор фреймов. После изучения
+предыдущего раздела это не
+составит никакого труда — он будет
+в точности таким же, как в
+предыдущем примере, только имена
+файлов и названия фреймов
+изменятся. Кроме того, для верхнего
+фрейма придется выделить чуть
+больше места (150 пикселов), а для
+правого ниж- него фрейма (блока
+ссылок) определить фиксированную
+ширину 200 пикселов
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Frameset//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;Фирма
+&quot;Лентяй&quot;&lt;/ТIТLЕ&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET
+ROWS=&quot;150,&quot; FRAMES РАСING=&quot;0&quot;
+FRAMEBORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+SRC=&quot;lenthdr.html&quot; NAME=&quot;header&quot;
+FRAMEBORDER=&quot;0&quot; SCROLLING=&quot;no&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAMESET
+COLS=&quot;*,200&quot; FRAMESPACING=&quot;0&quot;
+FRAMEBORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+NAME=&quot;main&quot; SRC=°&quot;main.html&quot;
+FRAMEBORDER=&quot;0&quot; NORESIZE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FRAME
+NAME=&quot;link&quot; SRC=&quot;lentlink.html&quot;
+FRAMEBORDER=&quot;0&quot; NORESIZE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FRAMESET&gt;
+&lt;/FRAMESET&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь
+создадим файл заголовка lenthdr.html.
+Собственно говоря, он будет очень
+коротким, поскольку в нем не должно
+быть ничего, кроме заголовка,
+написанного классом hdr, уже
+определенным в файле lent.css. Надо
+только не забыть подключить файл
+таблицы стилей с помощью тега
+&lt;LINK&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LINK
+REL=&quot;stylesheet&quot; HREF=&quot;lent.css&quot;&gt;
+Взглянем на текст этого файла
+целиком.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Фиpмa
+&quot;ЛEHTЯЙ&quot;&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LINK
+REL=&quot;stylesheet&quot; HREF=&quot;lent.css&quot;&gt;
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+&lt;DIV
+CLASS=&quot;hdr&quot;&gt;Фиpмa&amp;nbsp;&amp;laquo;ЛEHTЯЙ&amp;raquo;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, посмотрим целиком
+на текст файла lentlink.html.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;title&gt;Фирма
+&quot;ЛEHTЯЙ&quot;&lt;/title&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LINK
+REL=&quot;stylesheet&quot; HREF=&quot;lent.css&quot;&gt;
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;rght&quot;&gt; &lt;DIV CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;main.html&quot;
+target=&quot;niain&quot;&gt;ycnyги&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;prices .html&quot;
+target=&quot;main&quot;&gt;цены&lt;/A&gt;&lt;/DI
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;forml.html&quot;
+tаrgеt=&quot;main&quot;&gt;ФОРМА
+3AKA3A&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;history.html&quot;
+target=&quot;main&quot;&gt;История 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;letter-spacing: -3px;
+&quot;&gt;KOMПAHИЯ&lt;/SPAN&gt;&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A HREF=&quot;guestbook.html&quot;
+target=&quot;main&quot;&gt;KHИГA OT3ЫBOB&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Собственно
+говоря, на этом этапе можно уже
+открыть основной файл и броузере.
+Правда, чтобы гиперссылки работали,
+давайте напишем еще файлы prices.html и
+guestbook.html.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Фиpмa
+&quot;ЛEHTЯЙ&quot;&lt;/TITLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LINK
+REL=&quot;stylesheet&quot; HREF=&quot;lent.css&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-image: none } &lt;/STYLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;
+TYPE=&quot;text/javascript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var foodlist = new
+Array(25, 60, 10, 14, 100, 24, 7, 144); var foodingr = new
+Array&lt;50, 26, 5, 28, 32, 11, 3, 96); function calclamp() {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.forms[0].lamptotal.value=
+parseint(document.forms[0].lamp.value)*7;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+calcall();
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} function
+calcchist() {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.forms[0].chisttotal.value=
+parseint(document.forms[0].chist.selectedlndex)*35;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+calcall() ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+calcfood() { document.forms[0].foodtotal.value=0; for (var i=0;
+i&lt;8; i++) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+( if
+(document.forms[0].food[i].selected) {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.forms[0].foodtotal.value=
+parseint(document.forms[0].foodtotal.value)+parselnt(foodlist[i]);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(document.forms[0].ingred.checked)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.forms[0].foodtotal.value=
+parseint(document.forms[0].foodtotal.value)+parselnt(foodingr[i]);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} } calcall();
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} f unction
+calccomp() {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.forms[0].comptotal.value=
+parseint(document.forms[0].comp.selectedlndex)*101;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+calcall() ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function calcall()
+{
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.forms[0].total.value=
+parseint(document.forms[0].lamptotal.value)+
+parseint(document.forms[0].chisttotal.value)+
+parseint(document.forms[0].foodtotal.value)+
+parseint(document.forms[0].comptotal.value) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lft&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;bigger&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здecь вы
+можете не только увидеть наши цены,
+но и рассчитать стоимость будущего
+заказа !&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FORM&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;99%&quot; CELLSPACING=&quot;0&quot;&gt; &lt;TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TH
+WIDTH=&quot;70%&quot;&gt;Услуги&lt;/TH&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TH
+WIDTH=&quot;15%&quot; ALIGN=&quot;left&quot;&gt;ЦЕHA&lt;/TH&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TH
+WIDTH=&quot;15%&quot;&gt;CTOИMOCTb&lt;/TH&gt; &lt;/TR&gt;
+&lt;TR&gt; &lt;TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Количество
+вкручиваемых лампочек:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;lamp&quot; VALUE=&quot;0&quot;
+SIZE=&quot;2&quot; MAXLENGTH=&quot;2&quot;
+onChange=&quot;calclamp () &quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;lampprice&quot;
+VALUE=&quot;7&quot; SIZE=&quot;3&quot; READONLY&gt; p.&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;right&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;lamptotal&quot;
+VALUE=&quot;0&quot; SIZE=&quot;3&quot; READONLY&gt; p.&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;
+Количество услуг по наведению
+чистоты:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT
+NAME=&quot;chist&quot; onChange=&quot;calcchist()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;0&quot;&gt;0
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;1&quot;&gt;1
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;2&quot;&gt;2
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;3&quot;&gt;3 &lt;/SELECT&gt; &lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;chistprice&quot;
+VALUE=&quot;35&quot; SIZE=&quot;3&quot; READONLY&gt;
+p.&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;right&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;chisttotal&quot;
+VALUE=&quot;0&quot; SIZE=&quot;3&quot; READONLY&gt; p.&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+&lt;ТR&gt;&lt;ТD&gt;Приготовление
+пищи:&lt;ВR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT
+NAME=&quot;food&quot; SIZE=&quot;4&quot; MULTIPLE
+onChange=&quot;calcfood() &quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;25&quot;&gt;Cyп &lt;OPTION
+VALUE=&quot;60&quot;&gt;Kypинные котлеты 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;10&quot;&gt;Maкapoны
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;14&quot;&gt;Koмпoт
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;100&quot;&gt;ПЛOB
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;24&quot;&gt;КАША 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION VALUE
+=&quot;7&quot;&gt;Кофе 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;144&quot;&gt;Caлaт &lt;/SELECT&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;ingred&quot;
+VALUE=&quot;ours&quot;
+onClick=&quot;calcfood()&quot;&gt;Привезти
+ингредиенты с собой
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;foodprice&quot; VALUE=&quot;OT
+10&quot; SIZE=&quot;4&quot; READONLY&gt; p.&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;right&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;foodtotal&quot;
+VALUE=&quot;0&quot; SIZE=&quot;3&quot; READONLY&gt; p.&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+&lt;TR&gt;&lt;TD STYLE=&quot;padding-bottom: 15px;&quot;&gt;
+Количество компьютерных услуг:
+&lt;SELECT NAME=&quot;comp&quot; onChange=&quot;calccomp ()
+&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;0&quot;&gt;0 &lt;OPTION VALUE=&quot;1&quot;&gt;1
+&lt;OPTION VALUE=&quot;2&quot;&gt;2 &lt;/SELECT&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot; STYLE=&quot;padding-bottom:
+15px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt; INPUT
+TYPE=&quot;text&quot; NAME=&quot;compprice&quot;
+VALUE=&quot;101&quot; SIZE=&quot;3&quot; READONLY&gt;
+p.&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+STYLE=&quot;padding-bottom: 15px;&quot;
+ALIGN=&quot;right&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;lNPUT
+TYPE=&quot;text&quot; NAME=&quot;comptotal&quot;
+VALUE=&quot;0&quot; SIZE=&quot;3&quot; READONLY&gt; p.&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+COLSPAN”&quot;2&quot; ALIGN=&quot;right&quot;
+STYLE=&quot;padding-top: 15px; border-top: double black;
+&quot;&gt;&lt;В&gt;ИТОГО:&lt;/В&gt;&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;right&quot; STYLE=&quot;padding-top: 15px;
+border-top: double black; &quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;total&quot; VALUE=&quot;0&quot;
+SI'ZE=&quot;3&quot; READONLY&gt; p.&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FORM&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+CLASS=&quot;logo&quot; SRC=&quot;Images/logo6.gif&quot;
+WIDTH=&quot;500&quot; HEIGHT=&quot;346&quot;
+BORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Baш
+отзыв&lt;/ТITLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LINK
+REL=&quot;stylesheet&quot; HREF=&quot;lent.css&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-image: none } &lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lft&quot;&gt; &lt;Н1&gt;Ваш отзыв о
+наших услугах&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FORM
+ACTION=&quot;http://cgi.lentyay.corn/guest.cgi&quot;
+METHOD=&quot;post&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Name&quot;&gt;Baшe имя:&lt;/LABEL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;Name&quot;
+VALUE=&quot;AHOHИM&quot; SIZE=&quot;30&quot;&gt;&lt;BR&gt;
+&lt;LABEL FOR=&quot;Opinion&quot;&gt;Bame
+мнение:&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TEXTAREA
+COLS=&quot;30&quot; ROWS=&quot;4&quot; NAME=&quot;Opinion &quot;
+STYLE=&quot;vertical-align: middle;&quot;&gt;&lt;/TEXTAREA&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;submit&quot; VALUE=&quot;Отправить&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;reset&quot; VALUE=&quot;Очистить
+форму&quot;&gt; &lt;/FORM&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p align="center">
+<font  face="Verdana, Arial, Helvetica, sans-serif">&nbsp;
+</font></p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако в последнее время
+использование фреймов становится
+все менее популярным решением. В
+следующих разделах мы рассмотрим,
+как можно произвольно расположить
+элементы на странице и
+организовать навигацию по сайту
+без использования фреймов.
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="8.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

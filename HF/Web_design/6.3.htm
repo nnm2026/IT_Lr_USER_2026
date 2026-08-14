@@ -1,0 +1,1142 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+6.3
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="6.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="6.4.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+6.3.
+Динамическое изменение внешнего
+вида страницы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы динамически
+изменять вид нашей веб-страницы,
+необходимо решить один вопрос:
+каким образом наш сценарий сможет
+обращаться к отдельным ее
+элементам? Существует два способа
+такого доступа: классический и по
+имени элемента. Чтобы быть
+последовательными, давайте сначала
+рассмотрим первый из них.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Доступ к
+элементам HTML по номеру
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Возьмем такой пример.
+Предположим, что мы поместили на
+веб-страницу графический элемент
+(картинку), но хотим, чтобы она не
+сразу возникла в своем реальном
+размере, а постепенно выросло “из
+ничего”. Для примера можно взять
+изображение компьютера ATARI-800,
+которое уже исполь- зовалось нами в
+главе 3. Карту графических ссылок мы
+в этом примере на него ставить не
+будем, хотя это легко сделать,
+просто перенеся код из последнего
+примера раздела 3.1'. Сначала просто
+поставим картинку на сграницу:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/computer.gif&quot; WIDTH=&quot;151&quot;
+HEIGHT=&quot;10&quot; BORDER=&quot;0&quot;
+АLТ=&quot;Компьютер&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Физический размер этой
+картинки — 451х310, но мы, как видите,
+специально уменьшили ее ширину и
+высоту на 300 пикселов. Теперь
+давайте попытаемся обратиться к
+ней из сценария JavaScript.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Оказывается, доступ ко
+всем картинкам на странице можно
+получить, просто написав метод
+document.images и указав в квадратных
+скобках номер картинки на странице.
+Вообще говоря, такой синтаксис в
+JavaScript употребляется по отношению к
+массивам элементов. То есть, если у
+нас есть массив из пяти элементов
+под названием MoyMassiv, то к его
+элементам следует обращаться так:
+MoyMassiv[0], MoyMassiv[1],..., MoyMassiv[4]-. Мас сив
+document.images называется коллекцией.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Нумерация картинок
+начинается с нуля. Наша картинка,
+как первая на странице, будет иметь
+номер 0. Следовательно, для
+обращения к ней из сценария следует
+использовать метод document.images[0]. Если
+бы мы поместили на страницу еще
+одну картинку, после первой, то к
+этой второй кар тинке мы могли бы
+обратиться так: document.images[1].
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь мы можем написать
+функцию, которая будет проверять,
+не достигла ли еще наша картинка
+нужного размера, и если нет, то
+увеличивать ее ширину и высоту.
+Проверить размеры можно следующим
+образом:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(document.images[0].width&lt;451)
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+То есть, если после номера
+картинки мы поставим точку и
+напишем любой имеющийся ее
+HTML-атрибут, то сможем из сценария
+узнать его значе ние и, при
+необходимости, изменить его:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.images[0].width+=2;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В данном случае мы
+увеличили ширину картинки на 2
+пиксела. Точно так же можно
+поступить и с ее высотой:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.images[0].height+=2
+;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь, чтобы
+“зациклить” нашу функцию, можно
+просто в конце выз вать ее же после
+некоторой задержки. Например, если
+наша функция будет называться sizer(),
+то последней ее строкой может быть:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout(&quot;sizer()&quot;,
+20);
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Такой вызов функции из
+самой себя называется рекурсивным
+вызовом и довольно часто
+употребляется в JavaScript. (Учтите, что
+так можно поступать далеко не во
+всех языках программирования — в
+некоторых языках из-за рекурсивных
+вызовов может случиться, например,
+ошибка переполнения стека, или еще
+какая-нибудь гадость... Но пока мы
+пишем код на JavaScript, об этом можно не
+беспокоиться.) Теперь достаточно
+один раз вызвать эту функцию, и
+далее она будет все время вызывать
+себя сама. Конечно, можно было
+сделать и как-нибудь по-другому,
+например оста вить в “теле”
+функции только само увеличение
+размера, а проверку и повторный
+вызов вынести в “тело” документа,
+написав там что-нибудь вроде:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+while
+(document.images[0].width&lt;451) setTimeout(&quot;sizer()&quot;,
+20);
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако для иллюстрации
+возможностей давайте все же
+применим рекурсивный вызов. Итак,
+посмотрим, что у нас получается.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Картинка
+с изменяющимся размером&lt;/ТIТLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE&quot;&quot;JavaScript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function sizer ()
+{ if (document.images[0].width&lt;451) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+document.images[0].width+=2; document.images[0].height+=2;
+setTimeout(&quot;sizer()&quot;, 20); } } //--&gt; &lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/computer.gif&quot; WIDTH=&quot;151&quot;
+HEIGHT”&quot;10&quot; BORDER=&quot;0&quot;
+АLТ=&quot;Компьютер&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+sizer(); //--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В результате мы получим
+картинку, постепенно
+увеличивающуюся в размерах. Кстати,
+некоторые компьютеры могут “не
+успевать” так часто
+перерисовывать изображение,
+особенно если на странице есть еще
+какая-нибудь информация, поэтому
+можно в расчете на них увеличить
+время задержки перед следующим
+вызовом функции. При этом лучше во
+столько же раз увеличить и
+приращение размеров картинки,
+иначе она будет расти чересчур
+медленно, и надоест пользователю
+еще до того, как приобретет свои
+истинные размеры. Например, это
+можно сделать так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.images[0]
+width+=10;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.images[0].height+=10;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout(&quot;sizer()&quot;,
+100);
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При этом, разумеется,
+увеличение будет происходить не
+так плавно, зато мы можем быть
+уверены, что на большинстве
+компьютеров такая “анимация”
+будет воспроизведена корректно.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, нашу функцию sizer()
+легко переделать так, чтобы
+картинка, достигнув нормальных
+размеров, снова начала уменьшаться,
+затем опять увеличилась и так
+далее. Для этого надо прибавлять к
+размерам не просто число, а
+переменную:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.images[0].width+=a;
+document.images[0],height+=a;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Тогда мы сможем
+присваивать этой переменной то
+положительное, то отрицательное
+значение, например, +2 и -2. Пусть
+изначально значение будет
+положительным:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var а=2 ;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+причем это определение
+переменной не должно происходить
+внутри “тела” функции. Теперь,
+если картинка достигла нормальных
+размеров, изменим значение а на -2:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(document.images[0].width&gt;=451) a=-2;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Картинка начнет
+уменьшаться. Осталось при слишком
+маленьком ее раз-мере снова
+изменить значение а:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(document.images[0].width&lt;=151) a=2;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Посмотрим, как теперь
+будет выглядеть функция целиком
+(все остальное на этой странице
+остается таким же, как в предыдущем
+примере, поэтому мы не будем
+повторять текст всей страницы):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!-- var a=2;
+function sizer() 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+( if
+(document.images[0].width&gt;=451) a=-2; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(document.images[0],width&lt;=151) a=2; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.images[0].width+=a;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.images[0].height+=a;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout(&quot;sizer0&quot;,
+20); }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//--&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, мы рассмотрели,
+каким образом можно получить
+доступ из сценария к любой картинке
+на веб-странице. Таким же способом
+можно управлять еще некоторыми
+элементами: ссылками и элементами
+тега &lt;AREA&gt; через метод document.links,
+формами через метод document.forms и
+document.forms[номep_формы].elements, якорями
+через метод document.anchors и т.д.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Доступ к
+элементам HTML по имени
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако, во-первых, не
+очень удобно высчитывать номер
+элемента на стра- нице, а во-вторых,
+описанным выше способом мы можем
+получить дос- туп не ко всем
+элементам. Рассмотрим такой пример.
+Предположим, мы создаем
+веб-страницу для сайта фирмы,
+производящей мигалки, и поэтому нам
+обязательно хочется, чтобы в
+заголовке соответствующее слово
+мигало. Мы даже уже написали
+заготовку:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLЕ&gt;Мигающий
+зaгoлoвок&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #F9FFF9; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: #OD160E; }
+H2 {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align:
+center; } P { text-indent: 3em; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} &lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;Производство
+&lt;ВR&gt;МИГАЛОК&lt;ВR&gt; и
+цветомузыкальных установок &lt;/Н2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;Наша
+фирма является уникальным явлением
+на всем земном шаре. Вы спросите,
+почему? Подождите немного, скоро вы
+это сами поймете, если вам удастся
+дочитать этот текст до конца. Если
+же вам не удастся это сделать, то
+когда-нибудь вы очень сильно
+пожалеете об этом, говоря себе: а
+вот было оно совсем рядом, а я
+упустил его... Это мы про что, как вы
+думаете?&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;Итак,
+решено: вы, во что бы то ни стало,
+дочитываете этот текст до конца.
+(ДАЛЕЕ ИДЕТ КАКОЙ-НИБУДЬ ДЛИННЫЙ И
+СКУЧНЫЙ ТЕКСТ...)&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат работы этой
+заготовки показан на рис. 6.6. Итак,
+проблема в том, чтобы заставить
+мигать слово “МИГАЛОК”. Ну,
+разумеется, можно применить
+стилевое свойство text-decoration: blink; или
+просто тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BLINK&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, но ни то, ни другое не
+поддерживается броузером Internet
+Explorer. Как же быть?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Прежде всего, надо
+выделить слово МИГАЛОК в отдельный
+элемент. Поскольку оно находится на
+отдельной строке, можно
+использовать тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;Производство
+&lt;DIV&gt;МИГАЛOK&lt;/DIV&gt; и
+цветомузыкальных установок.&lt;/Н2&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы иметь возможность
+управлять этим элементом, нужно
+дать ему уникальное имя, установив
+атрибут ID=:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;Производство
+&lt;DIV ID=&quot;mig&quot;&gt;МИГАЛOK&lt;/DIV&gt; и
+цветомузыкальных установок.&lt;/Н2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь,
+если у пользователя броузер Netscape,
+можно сразу установит! мигающий
+стиль:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;Производство
+&lt;DIV ID=&quot;mig&quot; STYLE=&quot;text-decoration:
+blink;&gt;МИГАЛOK&lt;/DIV&gt; и
+цветомузыкальных установок.&lt;/Н2&gt;
+</font>
+</p>
+<p align="center">
+<img src="6.9.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 6.6.
+Предварительная заготовка для
+веб-страницы с мигающим заголовком
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Изменение
+свойств элементов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку Internet Explorer при
+этом не отобразит мигание, мы можем
+напи сать функцию, которая будет
+делать этот элемент то видимым, то
+невиди мым. Для этого нам
+пригодится стилевое свойство
+visibility. Сначала установим его так,
+чтобы элемент был виден:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;Производство
+&lt;DIV ID=&quot;mig&quot; STYLE=&quot;text-decoration: blink;
+visibility: visible;&quot;&gt;МИГАЛОК&lt;/DIV&gt; и
+цветомузыкальных установок.&lt;/Н2&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+После этого остается
+проверить тип броузера, и если это
+не Netscape, вызвать функцию
+искусственного мигания (которую мы
+еще не написали):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(navigator.appName!&quot;&quot;Netscape&quot;) blink it();
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что символ != означает неравно. Итак,
+эта функция должна то прятать наш
+элемент, то наоборот, показывать.
+Чтобы сдедать элемент невидимым,
+нужно присвоить его свойству visibility
+значение hidden. Поскольку мы дали
+элементу уникальное имя (с помощью
+атрибута ID=), теперь у нас есть
+возможность получить доступ к нему
+через коллекцию document.all:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.mig.style.visibility=&quot;hidden&quot;;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, написав метод
+document.all, можно после точки просто
+указать имя элемента и далее любой
+атрибут, в данном случае STYLE=. После
+style можно снова поставить точку и
+указать любое стилевое свойство.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы сделать наше слово
+опять видимым, нужно присвоить
+свойству visibility значение visible:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.mig.style.visibility=&quot;visible&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь
+осталось только написать условие.
+Можно было бы просто написать:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(document.all.mig.style.visibility=&quot;hidden&quot;)
+document.all.mig.style.visibility=&quot;visible&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else
+document.all.mig.style.visibility=&quot;hidden&quot;;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако давайте для
+большей гибкости и наглядности
+используем переменную флаг. Пусть
+она будет равна 1, если элемент
+видимый, и 0, если нет. Тогда мы можем
+в условии проверять именно этот
+флаг. Вся функция приобретет такой
+вид:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!-- var vis=0;
+function blink it() { if (vis=l)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+document.all.mig.style.visibility=&quot;hidden&quot;; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+vis=0; } else {
+document.all.mig.style.visibility=&quot;visible&quot;; vis=1;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} setTimeout
+(&quot;blink_it()&quot;, 400); } 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//--&gt;
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, изначально мы
+присвоили переменной-флагу vis
+значение 0, чтобы в первый же момент
+надпись МИГАЛОК не исчезала (при
+первом запуске функции теперь
+элемент будет видим). В конце
+функции мы используем задержку в 400
+миллисекунд и рекурсивный вызов
+той же функции.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте посмотрим, как
+будет выглядеть вся страница.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;Производство
+&lt;DIV ID=&quot;mig&quot; STYLE=&quot;text-decoration: blink; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+visibility:
+visible;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&quot;&gt;МИГАЛОК&lt;/DIV&gt;
+и цветомузыкальных
+установок.&lt;/Н2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;Наша
+фирма является уникальным явлением
+на всем земном шаре. Вы спросите,
+почему? Подождите немного,скоро вы
+это сами поймете, если вам удастся
+дочитать этот текст
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+до конца.
+Если же вам не удастся это сделать,
+то когда-нибудь вы очень сильно
+пожалеете об этом, говоря себе: а
+вот было оно совсем рядом, а я
+упустил его... Это мы про что, как вы
+думаете?&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;Итак,
+решено: вы, во что бы то ни стало,
+дочитываете этот текст до конца.
+(ДАЛЕЕ ИДЕТ КАКОЙ-НИБУДЬ ДЛИННЫЙ И
+СКУЧНЫЙ ТЕКСТ...)&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;JavaScript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(navigator.appName! &quot;&quot;Netscape&quot;) blink it();
+//--&gt; &lt;/SCRIPT&gt; &lt;/BODY&gt; &lt;/HTML&gt;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Выбор
+изменяемых свойств
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, использование
+переменной-флага дает нам
+возможность легко переделать это
+мигание во что-нибудь другое.
+Например, вместо временного
+исчезновения надписи можно на это
+время включать выворотку, то есть
+взаимно поменять цвет текста и цвет
+фона. Как мы уже говорили, получив
+доступ к элементу (например, через
+метод document.all), мы можем легко
+изменить любое его свойство. Вот,
+например, как можно организовать
+мигание с вывороткой:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function blink
+it() { if (vis&quot;1) {
+document.all.mig.style.backgroundColor=&quot;#OD160E
+document.all.mig.style.color=&quot;#F9FFF9&quot;; vis=0; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} else {
+document.all.mig.style.backgroundColor=&quot;#F9FFF9&quot; ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.mig.style.color=&quot;#OD160E&quot;;
+vis=l; } setTimeout (&quot;blink_it()&quot;, 400); }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат
+(в момент включения выворотки)
+показан на рис. 6.7. Обратите
+внимание на то, что стилевые
+свойства, которые пишутся через
+дефис в нашем примере это background-color),
+при доступе из сценария необходимо
+писать без дефиса, но заменив букву,
+идущую после дефиса, на прописную.
+Так, background-color превращается в
+backgroundColor, font-size в fontSize, border-style в
+borderStyle и т. д. Кстати говоря, чтобы
+получить тот результат, который
+показан на рис. 6.10, нам пришлось
+добавить еще одно свойство нашему
+мигающему элементу:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;Производство
+&lt;DIV ID=&quot;mig&quot; STYLE=&quot;text-decoration: blink;
+width: 7em; visibility:
+visible;&quot;&gt;МИГАЛОК&lt;/DIV&gt; и
+цветомузыкальных установок.&lt;/Н2&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+а именно: мы установили
+ширину элемента. Если этого не
+сделать, цвет фона будет меняться
+на этой строке по всей ширине
+экрана.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="6.10.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 6.7. Мигание
+заголовка может осуществляться
+разными способами, в том числе и
+вывороткой
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Доступ к элементам
+страницы через метод document.all — вещь
+очень удобная. К сожалению, такая
+возможность на 100% поддерживается
+только в броузере Internet Explorer. Что
+касается броузеров Netscape, то доступ
+к любому элементу там появился
+только в шестой версии, но
+синтаксис его отличается от
+рассмотренного выше. Вместо
+documental).имя_элемента для Netscape 6 нужно
+писать
+document.getElementByld(&quot;имя_элементa&quot;). А
+в более ранних версиях Netscape доступ
+обеспечивается только к некоторым
+элементам страницы: рисункам
+(document.images), ссылкам (document.links), якорям
+(document.anchors), элементам управления и
+внедренным объектам (document.applets),
+формам (document.forms), объектам,
+внедренным с помощью тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;EMBED&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (document.embeds), а также слоям,
+которые в Netscape организовывались с
+помощью тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LAYER&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (через
+document, layers). При этом, правда, все
+равно можно присваивать этим
+элементам уникальные имена и затем
+использовать их для обращений,
+например, так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+NAME=&quot;colored&quot;&gt;Какой-то текст&lt;А&gt;
+&lt;SCRIPT&gt;
+document.anchors.colored.style.color=&quot;red&quot;;
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При этом некоторые версии
+Netscape позволяют опустить слово style, а
+при доступе к слоям — и слово layers.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Эти отличия несколько
+затрудняют создание страниц,
+которые бы хорошо смотрелись и в
+Internet Explorer, и в Netscape. Однако всегда
+можно проверить из сценария тип и
+версию броузера, после чего
+написать различные блоки кода для
+разных броузеров. В некоторых особо
+сложных случаях можно даже
+написать отдельные страницы для
+разных типов броузеров, и
+организовать перенаправление на
+них (пример такого перенаправления
+был приведен в разделе 6.1). В любом
+случае не забывайте проверять, как
+веб-страница смотрится в броузерах
+других типов. Сложно, конечно,
+поддерживать совместимость со
+всеми броузерами, но даже если
+ориентироваться на какой-нибудь
+один из них, все равно иногда стоит
+немного подкорректировать код так,
+чтобы пользователи других
+броузеров увидели хоть что-то более
+или менее похожее. Кстати, в этой
+книге большинство примеров
+ориентированы на броузер Internet Explorer
+версии 4 и выше.
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="6.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="6.4.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

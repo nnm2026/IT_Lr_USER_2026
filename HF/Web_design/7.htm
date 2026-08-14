@@ -1,0 +1,2113 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+7
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>
+7.
+Веб-страницы, реагирующие на
+действия пользователя
+</strong>
+</font>
+<strong>
+</strong>
+</font></p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+7.1. Ввод
+данных пользователем в формы HTML
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Одно из основных отличий
+новой версии HTML (4.0) от предыдущих
+состоит в том, что теперь
+веб-страница может отслеживать
+действия пользователя и
+реагировать на них, изменяя свой
+вид. В этой главе мы рассмотрим
+несколько примеров такой реакции.
+Однако сначала давайте рассмотрим
+классический способ
+взаимодействия с пользователем,
+появившийся еще в предыдущих
+версиях языка.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Этот способ заключается в
+построении так называемых форм. Он
+состоит в том, что на веб-страницу
+выводится, к примеру, несколько
+текстовых полей, куда пользователь
+может ввести какой-либо текст, а
+потом с помощью специальной кнопки
+отправить его серверу. Вместо ввода
+текста пользователю может быть
+предложено выбрать несколько
+пунктов из заготовленного списка
+или отметить флажками нужные
+пункты и т. п. Такое взаимодействие
+с пользователем весьма условно —
+ведь информация, кото рую он ввел и
+отправил, все равно обрабатывается
+на стороне сервера.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Получение
+информации от пользователя
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В качестве примера
+давайте рассмотрим страницу для
+отзывов клиентов об услугах
+гипотетической фирмы “Лентяй”.
+Это, конечно, будет не совсем то, что
+обычно подразумевается под книгой
+отзывов на сайте. Просто мы
+предоставим пользователю
+возможность ввести информацию и
+отправить ее на сервер (как уж она
+будет там обрабатываться, мы сейчас
+рассматривать не будем).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, возьмем заголовок и
+правую часть веб-страницы. Только
+добавим ссылку на страницу
+“Услуги” и снимем ее с “Книги
+отзывов”:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;rght&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF=&quot;main.html&quot;&gt;УСЛУГИ
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+&lt;DIV CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;prices .html&quot;&gt;ЦЕНЫ
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;forml.html&quot;&gt;Форма 3AKA3A
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;history.html&quot;&gt;История 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;letter-spacing: -3px; &quot;&gt;KOMПAHИИ
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;Книга OT3ЫBOB&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А в левую часть страницы
+давайте поместим форму. Для этого
+сначала добавим специальный тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FORM&gt;, 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+без которого невозможно будет
+отправить данные на сервер
+обычными средствами. Здесь нам
+потребуется указать атрибут METHOD=, с
+помощью которого броузер
+определяет способ отправки данных:
+в виде “добавки” к строке URL (метод
+get) или в виде блока данных (метод
+post). В качестве значения атрибут
+ACTION= необходимо указать URL-адрес
+сервера, куда отправятся данные.
+Здесь можно также указать адрес
+электронной почты (с префиксом mailto:)
+— в этом случае данные формы
+отправятся по указанному адресу. В
+нашем случае давайте укажем
+гипотетический URL-адрес сервера
+cgi.lentyay.com, где обработка данных
+формы будет происходить с помощью
+какого-нибудь CGJ-сценария:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FORM
+ACTION=&quot;http://cgi.lentyay.corn/guest.cgi&quot;
+METHOD=&quot;post&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В конце
+формы должен стоять закрывающий
+тег &lt;/FORM&gt;. Все, что находится
+внутри, можно будет сообщить
+серверу. Для отправки данных формы
+традиционно используется кнопка с
+названием Submit (Отправить). Для ее
+создания можно использовать тег
+&lt;INPUT&gt; с атрибутом TYPE=&quot;submit&quot;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;submit&quot; VALUE=&quot;Отправить&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Атрибут VALUE= при этом
+определяет надпись на кнопке. Если
+его не задать, то на кнопке будет
+написано Submit. Какие же данные будут
+отправлены? Для начала давайте
+спросим у пользователя его имя,
+выделив для этого небольшое
+однострочное текстовое поле, и
+мнение об услугах фирмы, для чего
+выделим многострочное текстовое
+поле.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Поля для
+ввода текста
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы создать
+однострочное текстовое поле, нужно
+также воспользоваться тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, но уже с атрибутом
+TYPE=&quot;text&quot;. При этом его ширина
+задается с помощью атрибута SIZE=.
+Чтобы программе обработки данных
+(или человеку, который будет в этих
+данных разбираться) было понятно,
+какие данные к какому полю
+относятся, желательно для каждого
+поля указать атрибут NAME=. В данном
+случае мы запрашиваем у
+пользователя его имя, поэтому пусть
+значением этого атрибута будет
+слово Имя (по-английски тоже Name):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;Name&quot;
+VALUE=&quot;Аноним&quot; SIZE=&quot;30&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При этом атрибут VALUE=
+определяет, что будет изначально
+написано в текстовом поле. Обратите
+внимание на то, что атрибут SIZE=
+определяет только видимую ширину
+текстового поля, но вовсе не
+ограничивает количество вводимых
+пользователем символов. Если же
+надо ввести такое ограничение, то
+следует пользоваться атрибутом
+MAXLENGTH=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+— Хорошо, — скажете вы, —
+но как пользователь узнает, что от
+него требуется ввести в это поле?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы дать ему
+“подсказку”, можно просто
+написать ее текст перед текстовым
+полем:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Ваше имя:
+&lt;INPUT TYPE=&quot;text&quot; NAME=&quot;Name&quot;
+УАШЕ=&quot;Аноним&quot; SIZE=&quot;30&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако лучше
+воспользоваться тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, который был введен в Internet
+Explorer версии 4. Он гарантирует
+привязку метки к полю ввода. В нем
+нужно указать единственный атрибут
+FOR=, значение которого должно
+содержать имя поля ввода:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Name&quot;&gt;Baшe имя:&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;Name&quot;
+VALUE=&quot;AHOHИM&quot; SIZE=&quot;30&quot;&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте создадим
+многострочное текстовое поле для
+ввода мнения клиента об услугах
+фирмы. Для этого необходимо
+использовать тег &lt;TEXTAREA&gt;. В нем
+можно с помощью атрибутов COLS= и ROWS=
+определить количество символов в
+строке и число строк текстового
+поля:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TEXTAREA
+COLS=&quot;30&quot; ROWS=&quot;4&quot; NAME”&quot;Opinion&quot;
+STYLE=&quot;vertical-align: middle;&quot;&gt;&lt;/TEXTAREA&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, здесь мы также
+определили атрибут NAME=. А поскольку
+это текстовое поле является
+многострочным, мы применили еще и
+стилевое свойство vertical-align, чтобы
+“подсказка” пользователю
+расположилась по центру (по
+умолчанию она располагается внизу).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, не забудьте
+поставить закрывающий тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TEXTAREA&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, поскольку все, что находится
+между открывающим и закрывающим
+тегами, будет трактоваться как
+содержимое текстового поля. Если не
+поставить закрывающий тег, все
+последующее содержимое
+веб-страницы окажется в текстовом
+поле, причем в виде исходного
+текста!
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте добавим
+еще одну “традиционную” кнопку,
+при нажатии на которую все поля
+формы очищаются (или приобретают
+исходные значения, определенные
+атрибутом VALUE= — в данном случае при
+ее нажатии в поле Ваше имя появится
+запись Аноним). Такую кнопку можно
+создать с помощью тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT&gt; с
+атрибутом &lt;TYPE=&quot;reset&quot;&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;reset&quot; VALUE =&quot;Очистить
+форму&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как и в случае с кнопкой
+Submit, значение VALUE= здесь определяет
+надпись на кнопке. Если этот
+атрибут не установлен, на кнопке
+будет написано: Reset. Давайте
+посмотрим, что v нас получается в
+целом.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Baш
+отзыв&lt;/ТIТLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #D2FFFF; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: #003737;
+background-image: url(&quot;Images\grad2.jpg&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+background-position:
+right;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+background-repeat:
+repeat-y; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} HI { text-align:
+center } A:link,A:active,A:visited {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: #006A6A; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} A:hover {
+font-weight: bold; text-decoration: none; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .hdr { position:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+absolute;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+left: 50px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+top:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+10px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align: 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+center;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-family:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+OdessaScriptFWF,
+fantasy; font-size: 60px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-weight: 900;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+width: 90%;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+height: 100px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+letter-spacing:
+0.05em; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+line-height:
+100px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+filter: shadows-
+border:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+10px outset
+#003163;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: #3163CE; } 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.1ft {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+position:
+absolute;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-size: meduim;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+left: 10px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+top: 160px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+width: 160px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+height: 400px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+overflow-x:
+visible;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .Ink {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border-width:
+thick;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border-style:
+ridge;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+margin: 10рх;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+padding: 5px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border-color:
+#319CFF; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+background-image:
+url(&quot;Images\backlnkl.jpg&quot;) ; color: red;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align:
+center; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.Ink A {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-decoration:
+none; color: white;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .logo {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+position:
+absolute; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+left: 150; top:
+220;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+z-index: -5;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} &lt;/STYLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;hdr&quot;&gt;Фиpмa&amp;nbsp;&amp;laquo;ЛEHTЯЙ&amp;raquo;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;rght&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;main.html&quot;&gt;УСЛУГИ&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+&lt;DIV CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;prices .html&quot;&gt;ЦЕНЫ&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;forml .html&quot;&gt;ФOPMA 3AKA3A&lt;/A&gt;
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;history.html&quot;&gt;ИСТОРИЯ &lt;SPAN
+STYLE=&quot;letter-spacing: -3рх;
+&quot;&gt;КОМПАНИИ&lt;/SРАN&gt;&lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;KHHГA OT3ЫBOB&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+&lt;DIV CLASS=&quot;lft&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;Ваш
+отзыв с наших услугах&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FORM
+ACTION=&quot;http://cgi.lentyay.corn/guest.cgi&quot;
+METHOD=&quot;post&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Name&quot;&gt;Bame имя:&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;Name&quot;
+VALUE=&quot;Аноним&quot; SIZE=&quot;30&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Opinion&quot;&gt;Baшe мнение:&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TEXTAREA
+COLS=&quot;30&quot; ROWS=&quot;4&quot; NAME=&quot;Opinion&quot;
+STYLE=&quot;vertical-align: middle; &quot;&gt;&lt;/TEXTAREA&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+&lt;INPUT TYPE=&quot;submit&quot;
+VALUE=&quot;Отправить&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;reset&quot; VALUE=&quot;Очистить
+форму&quot;&gt; &lt;/FORM&gt; &lt;/DIV&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+CLASS=&quot;logo&quot; SRC=&quot;Imqes/logo6.gif&quot;
+WIDTH=&quot;500&quot; HEIGHT=&quot;346&quot;
+BORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат работы этого
+кода показан на рис. 7.1. Как видите,
+пользователь имеет возможность
+ввести свое имя и выразить свое
+мнение в текстовых полей, а нажав
+кнопку Отправить, может послать эти
+данные серверу.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Списки
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В принципе, на этом
+рассмотрение классической HTML-формы
+можно бы и завершить, но дело в том,
+что кроме текстовых полей форма
+может содержать еще некоторые
+элементы, которые мы пока не
+рассмотрели. Поэтому давайте для
+примера дополним нашу форму еще
+несколькими вопросами о
+пользователе — пусть он укажет
+свой возраст, пол и интересы.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Выбор возрастной
+категории можно организовать в
+виде раскрывающегося списка. Для
+создания такого списка
+используется тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+Между ним и его закрывающим тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SELECT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ можно поместить несколько
+пунктов будущего списка. Каждый из
+них должен начинаться с тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. В данном случае мы можем
+написать так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT
+NAME=&quot;Age&quot; SIZE=&quot;1&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;10&quot;&gt;менее 20
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;20&quot;&gt;20&amp;ndash;30 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;30&quot;&gt;30&amp;ndash;40 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;40&quot;&gt;40&amp;ndash;50 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;50&quot;&gt;50&amp;ndash;60
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;60&quot;&gt;6onee 60 &lt;/SELECT&gt;
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="7.1.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.1.
+Простейшая форма HTML
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При этом на экране будет
+отображен раскрывающийся список,
+из которого пользователь может
+выбрать любой из пунктов. Значение
+атрибута VALUE= выбранного пункта
+будет передано на сервер при
+отправке данных формы.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вы, вероятно, обратили
+внимание еще на один атрибут тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ — атрибут SIZE=. Здесь его
+значение равно 1 (кстати, это
+значение определено по умолчанию,
+так что можно было этот атрибут и не
+указывать). Если указать значение,
+большее 1, то в окне броузера вместо
+раскрывающегося списка
+отобразится так называемый
+прокручиваемый список. На рис. 7.2
+приведен пример прокручиваемого
+списка при атрибуте SIZE=&quot;3&quot;. Как
+видно, в данном случае в списке
+одновременно отображаются три
+строки (число одновременно
+отображаемых строк
+прокручиваемого списка и
+определяется с помощью атрибута
+S1ZE=). Если же надо дать пользователю
+возможность выбора сразу
+нескольких пунктов из списка, то в
+теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ надо установить атрибут MULTIPLE=.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="7.2.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.2.
+Прокручиваемый список
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Переключатели
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+помощью такого списка
+можно было бы организовать и выбор
+пола, однако давайте применим для
+этого другой элемент формы —
+переключатели. Они употребляются
+группами, в которых только один
+переключатель может быть включен
+одновременно. Каждый из
+переключателей создается с помощью
+тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ с атрибутом TYPE=&quot;radio&quot;. В
+группу будут объединены те
+переключатели, теги которых имеют
+одинаковые значения атрибута NAME=.
+Например, в данном случае мы можем
+написать так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Sex&quot;&gt;Baш пол:&lt;/LABEL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;radio&quot; NAME=&quot;Sex&quot;
+VALUE=&quot;М&quot;&gt;Мужской &lt;INPUT
+TYPE=&quot;radio&quot; NAME=&quot;Sex&quot;
+LABEL=&quot;F&quot;&gt;Женский
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, значение
+атрибута NAME= одинаково у обоих
+тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, поэтому пользователь не
+сможет выбрать оба пункта
+одновременно (при выборе одного из
+пунктов выбор предыдущего
+отменяется). Кстати, в этом примере
+изначально не выбран ни один из
+пунктов. Если же надо, чтобы
+какой-либо пункт был выбран
+заранее, то необходимо в
+соответствующем теге &lt;INPUT&gt;
+установить атрибут CHECKED, например,
+вот так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;radio&quot; NAME°&quot;Sex&quot; VALUE=&quot;F&quot;
+СНЕСКЕD&gt;Женский
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Установка этого атрибута
+сразу у нескольких переключателей
+одной группы смысла не имеет,
+поскольку при выводе на экран при
+этом будет отмечен только
+последний из них.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Флажки
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте спросим
+пользователя о его интересах. Для
+этого органи зуем список из
+нескольких пунктов, которые он
+сможет отметить флаж ками. Каждый
+из пунктов такого списка создается
+с помощью все того же тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, однако теперь у него должен
+быть атрибут TYPE=&quot;checkbox&quot;.
+Впрочем, этот вариант практически
+ничем не отличается от предыдущего,
+кроме того, что пользователь может
+выбрать сразу несколько пунктов
+или даже все. Например:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Interestsl&quot;&gt;Baiim интересы
+:&lt;BR&gt;&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interestsl&quot;
+VALUE=&quot;Computers&quot;&gt;КОМПЬЮТЕРЫ
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interests2&quot;
+VALUE=&quot;Sports&quot;&gt;Cnopт 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interests3&quot;
+VALUE=&quot;Art&quot;&gt;Иcкyccтво 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interests4&quot;
+VALUE=&quot;Science&quot;&gt;Hayкa
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В данном случае мы
+установили для каждого пункта
+разные значения атрибута NAME=, но они
+могли бы быть и одинаковыми. Как и в
+предыду щем случае, здесь можно
+установить атрибут CHECKED, чтобы
+соответствующий пункт появился на
+экране заранее отмеченным по
+умолчанию.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте посмотрим, что у
+нас получается (для экономии места
+приведем текст не всей страницы, а
+только ее левой части):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lft&quot;&gt; &lt;Н1&gt;Ваш отзыв о
+наших услугах&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt; &lt;FORM
+ACTION=&quot;http://cgi.lentyay.corn/guest.cgi&quot;
+METHOD=&quot;post&quot;&gt; &lt;LABEL
+FOR=&quot;Name&quot;&gt;Baшe имя:&lt;/LABEL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;Name&quot;
+VALUE=&quot;Аноним&quot;
+SIZE=&quot;30&quot;&gt;&lt;BR&gt;&lt;BR&gt; &lt;LABEL
+FOR=&quot;Age&quot;&gt;Baш возраст:&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT
+NAME=&quot;Age&quot; SIZE=&quot;1&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE&quot;&quot;10&quot;&gt;менее 20 &lt;OPTION
+VALUE=&quot;20&quot;&gt;20&amp;ndash;30 &lt;OPTION
+VALUE=&quot;30&quot;&gt;30&amp;ndash;40 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;40&quot;&gt;40&amp;ndash;50 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;50&quot;&gt;50&amp;ndash;60 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;60&quot;&gt;6onee 60 &lt;/SELECT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Sex&quot;&gt;Baш noл:&lt;/LABEL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;radio&quot; NAME=&quot;Sex&quot;
+VALUE=&quot;М&quot;&gt;Мужской 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;radio&quot; NAME=&quot;Sex&quot;
+VALUE=&quot;F&quot;&gt;Женский 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+&lt;LABEL FOR=&quot;Interestsl&quot;&gt;Baши
+интересы:&lt;BR&gt;&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interestsl&quot;
+VALUE=&quot;Computers&quot;&gt;Компьютеры
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interests2&quot;
+VALUE=&quot;Sports&quot;&gt;Cnopт 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interests3&quot;
+VALUE=&quot;Art&quot;&gt;Иcкyccтво 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interests4&quot;
+VALUE=&quot;Science&quot;&gt;Hayкa 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+&lt;LABEL FOR=&quot;Opinion&quot;&gt;Baшe
+мнение:&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TEXTAREA
+COLS=&quot;30&quot; ROWS=&quot;4&quot; NAME=&quot;Opinion&quot;
+STYLE=&quot;vertical-align: middle; &quot;&gt;&lt;/TEXTAREA&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;submit&quot;
+VALUE=&quot;Отправить&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;reset&quot; VALUE=&quot;Очистить
+форму&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FORM&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат работы кода
+показан на рис. 7.3. Как видите, эта
+форма полу чилась более
+разнообразной благодаря
+использованию разных типов эле
+ментов управления для ввода данных.
+Поэтому она и смотрится более
+привлекательно.
+</font>
+</p>
+<p align="center">
+<img src="7.3.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.3. Форма с
+элементами управления
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Группы
+элементов формы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Неплохо бы было еще
+логически объединить то, что
+связано со сведениями о
+пользователе, и то, что связано с
+его мнением. Для такого группирова
+ния элементов форм в HTML 4.0 был
+введет тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FIELDSET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Все,
+что нахо дится между ним и его
+закрывающим тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FIELDSET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+будет обведено в рамку и
+озаглавлено так, как указано в теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LEGEND&gt;. 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теги
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;FIELDSET&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;LEGEND&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+поддерживаются пока только в Internet
+Explorer версии 4 и выше, а броузер Netscape
+начал поддерживать их только в
+шестой версии. Кроме того, элементы 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FIELDSET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ пока не очень хорошо
+позиционируются на веб- страницах.
+Как вы увидите в следующем примере,
+для корректного цент рирования их
+на странице (в Internet Explorer 5) нам
+пришлось поместить всю форму в
+центрированную таблицу и, кроме
+того, отдельно центриро вать то, что
+расположено между каждой парой
+тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FIELDSET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;/FIELDSET&gt;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FIELDSET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ можно
+употребить следующим образом:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FIELDSET
+Т1ТЬЕ=&quot;Сведения о клиенте&quot;&gt;
+&lt;LEGEND ALIGN=&quot;left&quot;&gt;Paccкaжитe о
+ce6e&lt;/LEGEND&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+После этого можно
+поместить несколько элементов
+формы и поставить закрывающий тег
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;/FIELDSET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. В броузере Internet Explorer значение
+атрибута TITLE= выводится в качестве
+всплывающей подсказки при
+наведении мыши на содержимое
+элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FIELDSET&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+Кстати, это относится также и к
+другим тегам, которые могут иметь
+атрибут TITLE=. Можно, например,
+установить его даже у элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. А то, что находится между
+тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LEGEND&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;/LEGEND&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+будет вынесено в заголовок рамки.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Аналогично, давайте
+создадим рамку для той части формы,
+в которую пользователь вводит свое
+мнение:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FIELDSET
+TITLE=&quot;Baшe мнение&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LEGEND
+ALIGN=left&gt;Baшe Mнeниe&lt;/LEGEND&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте
+предоставим пользователю
+возможность выбора между вводом
+мнения в текстовое поле и указанием
+имени файла, в котором он это мнение
+описывает. Для указания имени
+файла, в принципе, подошло бы и
+обычное однострочное текстовое
+поле. Однако оно имело бы один
+недостаток: вводить имя файла
+пользователю приходилось бы только
+вручную.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Этот недостаток можно
+устранить, используя специальный
+тип тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Если в
+этом теге установить атрибут
+TYPE=&quot;file&quot;, то пользователь увидит
+на экране текстовое поле для ввода
+имени файла, а рядом с ним будет
+расположена кнопка, при нажатии на
+которую откроется стандартное окно
+выбора файла. Имя выбранного файла
+будет автоматически введено в
+текстовое поле. Можно написать,
+например, так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Opinion-File&quot;&gt;BBennTe имя файла с
+описанием вашего мнения:
+&lt;/LABEL&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;file&quot; NAME=&quot;Opinion-File&quot;
+SIZE=&quot;30&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, с помощью
+атрибута SIZE= здесь также можете
+задать ширину текстового поля.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте посмотрим, что у
+нас получается в целом (как и в
+прошлый раз, мы приводим текст
+только для левой части страницы,
+все остальное остается прежним).
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lft&quot;&gt; &lt;Н1&gt;Ваш отзыв о
+наших услугах&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt; &lt;TABLE
+WIDTH=&quot;75%&quot;&gt;&lt;TR&gt;&lt;TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FORM
+ACTION=&quot;http://cgi.lentyay.corn/guest.cgi&quot;
+METHOD=&quot;post&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FIELDSET
+Т1ТLЕ=&quot;Сведения о клиенге&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LEGEND
+ALIGN=&quot;left&quot;&gt;Paccжите о ce6e&lt;/LEGEND&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Name&quot;&gt;Baшe имя:&lt;/LАВЕL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;Name&quot;
+VALUE=&quot;AHOHИM&quot; SIZE=&quot;30&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Age&quot;&gt;Baш возраст :&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT
+NAME=&quot;Age&quot; SIZE=&quot;1&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;10&quot;&gt;Meнee 20 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;20&quot;&gt;20&amp;ndash;30 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;30&quot;&gt;30&amp;ndash;40 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;40&quot;&gt;40&amp;ndash;50 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;50&quot;&gt;50&amp;ndash;60 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;60&quot;&gt;6onee 60 &lt;/SELECT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Sex&quot;&gt;Baш пол:&lt;/LABEL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;radio&quot; NAME=&quot;Sex&quot;
+VALUE=&quot;М&quot;&gt;Мужской 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;radio&quot; NAME=&quot;Sex&quot;
+VALUE=&quot;F&quot;&gt;Женский
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Interestsl&quot;&gt;Baши
+интересы:&lt;BR&gt;&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interestsl&quot;
+VALUE=&quot; Computers &quot;&gt;Kомпьютеры
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interests2&quot;
+VALUE=&quot;Sports&quot;&gt;Cnopт
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interests3&quot;
+VALUE=&quot;Art&quot;&gt;Иcкyccтво
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;checkbox&quot; NAME=&quot;Interests4&quot;
+VALUE=&quot;Science&quot;&gt;Hayкa
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+&lt;/FIELDSET&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FIELDSET
+ТIТLЕ=&quot;Ваше мнение&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LEGEND
+ALIGN=&quot;left&quot;&gt;Bame мнение&lt;/LEGEND&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FОR=&quot;Орtion-Fi1е&quot;&gt;Введите имя
+файла с описанием вашего мнения
+:&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;file&quot; NAME=&quot;Opinion-File&quot;
+SIZE=&quot;30&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LABEL
+FOR=&quot;Opinion-Text&quot;&gt;Или просто
+выскажите свое мнение прямо здесь:
+&lt;/LABEL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TEXTAREA
+COLS=&quot;30&quot; ROWS=&quot;4&quot;
+NAME=&quot;Opinion-Text&quot; STYLE=&quot;vertical-align: middle;
+&quot;&gt;&lt;/TEXTAREA&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FIELDSET&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;submit&quot; VALUE=&quot;Отправить&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;reset&quot; VALUE=&quot;Очистить
+форму&quot;&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FORM&gt;
+&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt; &lt;/DIV&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+7.4. Надпись на кнопке выбора файла
+зависит от используемого броузера,
+но, как правило, это Обзор или Browse.
+</font>
+</p>
+<p align="center">
+<img src="7.4.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.4.
+Логическое объединение элементов
+формы.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Другие
+элементы формы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, запомним, что тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ может использоваться в формах
+для создания самых разных
+элементов управления. Вид элемента
+зависит от значения атрибута TYPE=
+этого тега. Некоторые из этих
+значений мы уже рассмотрели. Теперь
+давайте просто перечислим
+оставшиеся:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;password&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Такая запись создает
+текстовое поле, в котором введенный
+текст отображается звездочками.
+Обычно такие поля используются для
+ввода паролей.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А такая запись создает
+кнопку произвольного назначения. В
+отличие от кнопок типа Submit
+(Отправить) или Reset (Сброс), при
+нажатии на эту кнопку ничего не
+произойдет, если не написан
+соответствующий обработчик
+события (с обработчиками событий мы
+познакомимся в следующем разделе).
+Тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;lNPUTTYPE=&quot;button&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ во многом аналогичен
+рассмотренному в главе 3 тегу 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BUTTON&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Однако, в отличие от
+последнего, он не позволяет
+отображать на кнопках графику и
+другие нестандартные объекты. С
+другой стороны, будучи элементом
+формы, он доступен для обработки в
+броузере Netscape 4.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;hidden&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А этого поля на экране
+вообще не будет видно. Обычно его
+используют для передачи на сервер
+какой-либо пояснительной
+информации (значение этого поля,
+несмотря на его невидимость, все
+равно передается на сервер).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, закончим на этом
+“формальную” часть этой главы и
+перейдем к примерам того, как
+элементы веб-страниц могут
+реагировать на действия
+пользователя.
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="7.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

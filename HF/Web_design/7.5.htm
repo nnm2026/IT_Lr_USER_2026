@@ -1,0 +1,841 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+7.5
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="7.4.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+7.5.
+Динамическое изменение
+графических элементов веб-страницы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, в предыдущем
+разделе мы узнали, каким образом
+можно произвольно изменять любые
+текстовые элементы на веб-странице.
+А как быть, если надо динамически
+изменить не текст, а графику?
+Допустим, мы создали несколько
+красивых графических кнопок для
+гиперссылок и хотим, чтобы при
+наведении мыши соответствующая
+кнопка изменяла свой вид (напри мер,
+одсвечивалась), по аналогии с
+текстовыми гиперссылками при
+наличии определенного
+псевдокласса A:hover.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Подготовка
+графических кнопок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для примера модифицируем
+страницу со ссылками на поисковые
+машины, которую мы создали в главе 2.
+Сначала проведем некоторую
+подготовительную работу, а именно:
+нарисуем графические кнопки для
+гиперссылок, а также фоновый
+рисунок для всей страницы. Затем
+определим стиль для элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;: BODY {
+text-align: center; background: url(&quot;Zmages/back7.jpg&quot;)
+; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку все содержимое
+нашей страницы будет размещено по
+ее центру, мы определили стилевое
+свойство text-align: center прямо для
+основного эле мента страницы &lt;
+BODY&gt;. Теперь, чтобы заголовок и
+пояснительный текс'1 не “терялись”
+на достаточно пестром фоне,
+определим для них “бордюры ” и
+фоновый цвет: 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+H1 { border-color: #0063CE;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border-style:
+groover- border-width: thick; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+padding: 5px;
+background-color: #ACEDFF; width: 16em; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} SPAN {
+border-color: #FF63CE; border-style: ridge; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border-width:
+medium; padding: 5px; background-color: #FCEDFF; width: 60%;
+font-size: 20px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Имеется в виду, что мы
+заключим пояснительный текст в тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Tenepь напишем основной текст
+страницы:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;ПОИСКОВЫЕ
+МАШИНЫ&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN&gt;Если
+вы ищете в Интернате какую-либо
+информацию, вам помогут следующие
+сайты:&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;http://www.altavista.corn&quot;
+TARGET=&quot;_blank&quot;&gt; &lt;IMG
+SRC=&quot;Images/altavista.Jpg&quot; WIDTH=&quot;192&quot;
+HEIGHT=&quot;40&quot; BORDER=&quot;0&quot;
+ALT=&quot;Altavista&quot;&gt;&lt;/A&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;http://www. yahoo, corn&quot;
+TARGET=&quot;_blank&quot;&gt; &lt;IMG
+SRC=&quot;Images/yahoo.jpg&quot; WIDTH=&quot;147&quot;
+HEIGHT=&quot;40&quot; BORDER=&quot;0&quot;
+ALT=&quot;Yahoo!&quot;&gt;&lt;/A&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;http://www.aport.ru&quot;
+TARGET=&quot;_blank&quot;&gt; &lt;IMG
+SRC=&quot;Images/aport.jpg&quot; WIDTH=&quot;135&quot;
+HEIGHT=&quot;40&quot; BORDER=&quot;0&quot;
+ALT=&quot;AnopT&quot;&gt;&lt;/A&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;http://www.yandex.ru&quot;
+TARGET=&quot;_blank&quot;&gt; &lt;IMG
+SRC=&quot;Images/yandex.jpg&quot; WIDTH=&quot;129&quot;
+HEIGHT=&quot;40&quot; BORDER=&quot;0&quot;
+ALT=&quot;Яndex&quot;&gt;&lt;/A&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+видите, пока что ничего
+нового. Результат показан на рис.
+7.13. Согласясь, что это выглядит
+немного лучше, чем предыдущий
+вариант. Однако теперь нужно
+сделать то, ради чего мы все это
+начали — подсветить кнопки
+гиперссылок при наведении на них
+мыши.
+</font>
+</p>
+<p align="center">
+<img src="7.17.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.13. Страница
+графически оформленных
+гиперссылок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+во-первых, придется
+сделать еще четыре рисунка — по
+одному для каж-дой подсвеченной
+кнопки. Ведь на самом деле, чтобы
+кнопка изменила свой цвет, нужно
+просто-напросто подставить на то же
+место рисунок с кнопкой другого
+цвета. Так что для начала придется
+открыть графичес-кий редактор и
+изменить вид кнопок.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Управление
+“подсветкой” кнопок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь назначим
+обработчику событий onMouseOver смену
+изображения. Собственно говоря, для
+этого нужно всего лишь изменить
+атрибут SRC= тегa 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;'Images/altavista.jpg&quot; WIDTH=&quot;192&quot;
+HEIGHT=&quot;40&quot; BORDER=&quot;0&quot;
+ALT=&quot;Altavista&quot;
+onMouseOver=&quot;this.src='Images/altavista2.jpg'&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь при наведении
+указателя мыши на кнопку Altavista вид
+кнопки изме нится, так как будет
+загружен другой рисунок. Точно
+таким же способом Iнужно сменить
+изображение обратно при выведении
+указателя мыши за пределы кнопки:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/altavista.jpg&quot; WIDTH=&quot;192&quot;
+HEIGHT=&quot;40&quot; BORDER=0&quot; ALT=&quot;Altavista&quot;
+onMouseOver=&quot;this.src='Images/altavista2.jpg'&quot;
+onMouseOut=&quot;this.src='Images/altavista.jpg'&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот теперь, наконец, мы
+добились, чего хотели, но только для
+одной кнопки: при наведении на нее
+указателя мыши она изменяет свой
+вид (рис. 7.14), а при выведении
+указателя восстанавливает прежний
+вид
+</font>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+</p>
+<p align="center">
+<img src="7.18.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 7.14. На этой
+странице графические гиперссылки
+подсвечиваются при наведении на
+них указателя мыши
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Можно, конечно, написать
+такую же конструкцию и для
+остальных трех кнопок. Однако,
+давайте реализуем более изящное
+решение: напишем одну функцию,
+которая будет менять файл рисунка
+для всех тегов &lt;IMG&gt;, имеющихся на
+странице. Точнее, функций будет две:
+одна для событии onMouseOver, а другая —
+для onMouseOut. Воспользуемся тем, что
+файлы рисунков “подсвеченных”
+кнопок имеют те же имена, что и
+файлы рисунков обычных кнопок, плюс
+цифра 2 (например: altavista.jpg —
+altavista2.jpg). Пусть первая функция,
+реагирующая на наведение мыши,
+просто встав ляет двойку в нужное
+место:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function changel()
+{ if (window.event.srcElement.tagName=&quot;IMG&quot;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+window.event.srcElement.src=
+window.event.srcElement.src.substring(0,
+window.event.srcElement.src.length4)+&quot;2&quot;+
+window.event.srcElement.src.substring
+(window.event.srcElement.src.length-4,
+window.event.srcElement.src.length) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, эта функция
+сначала проверяет, на какой объект,
+собственно, наведен указатель мыши,
+и если это элемент 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, то в нужное
+место значения его атрибута SRC=
+вставляется цифра 2, а если это
+какой-нибудь другой элемент, то
+функция просто ничего не делает.
+Вроде все правильно, однако слишком
+громоздко — так сразу и не
+разберешься, что эта функция
+делает, да и при вводе таких строк
+легко ошибиться и потом долго и
+мучительно искать, почему выдаются
+сообщения об ошибках. Сократим этот
+год, присвоив значение window.event.srcElement
+временной переменной:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function changel() { var
+a=window.event.srcElement; if (a.tagName==&quot;IMG&quot;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+a.src=a.src.substring(0,
+a.src.length-4)+&quot;2&quot;+ a.src.substring(a.src.length-4,
+a.src.length);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот это совсем другое
+дело — смотрится гораздо
+прозрачнее, а функционирует точно
+так же.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь напишем
+аналогичную функцию, удаляющую
+двойку из значения атрибута 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+SRC=function
+change2() { var a=window.event.srcElement; if
+(a.tagName=&quot;IMG&quot;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+a.src=a.src.substring(0,
+a.src.length-5)+ a.src.substring(a.src.length-4, a.src.length);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вам осталось только
+назначить обработчики событий.
+Поскольку мы не нем, для каких
+конкретно элементов их назначать и
+сколько, назначим объекту document
+(обратите внимание, что внутри
+функций не зря про наводится
+проверка на имя тега):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.onmouseover=changel
+; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.onmouseout=change2;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+последние две строки
+также должны находиться в блоке 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Обратите внимание на
+отсутствие круглых скобок после
+имен функций! (Если скобки
+поставить, то это приведет к
+немедленному вызову функций, а нам
+можно только связать их имена с
+соответствующими событиями.)
+Теперь можно добавлять сколько
+угодно кнопок гиперссылок на эту
+страницу, загромождая ее большим
+количеством повторяющегося кода.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Предварительная
+загрузка графических объектов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако это еще не все.
+Представьте себе, что пользователь
+навел мышь на кнопку-гиперссылку.
+Что должно произойти? Естественно,
+замена рисунка. Но откуда броузер
+возьмет новый рисунок? Начнет
+загружать через Интернет,
+поскольку до этого новый рисунок не
+был загружен в память. В результате
+на некоторое время отобразится
+пустой прямоугольник, и весь эффект
+пропадет!
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы этого избежать,
+придется написать код для
+предварительной загрузки в память
+всех картинок. Это можно сделать
+при помощи объявления объектов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+типа Image:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var imgl=new
+Image(); imgl.src='Images/altavista.jpg'; var img2=new Image();
+img2.src='Images/altavista2. jpg';
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и так далее. Теперь все
+графические объекты будут
+загружены в память заранее, и при
+наведении мыши на
+кнопку-гиперссылку смена рисунка
+произойдет практически мгновенно,
+что и даст требуемый эффект.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Посмотрим, что у нас
+получилось в целом.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Страницца
+гиперссылок&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE
+TYPE=&quot;text/css&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BODY { text-align:
+center- background: url(&quot;Images/back?.jpg&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} H1 {
+border-color: #0063CE; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border-style:
+groove; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border-width:
+thick;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+padding: 5px;
+background-color:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+#ACEDFF; width:
+16em; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} SPAN {
+border-color:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+#FF63CE; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border-style:
+ridge;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border-width:
+medium; padding: 5px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+padding: 5px; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+background-color:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+#FCEDFF; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+width: 60%; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-size: 20px; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} IMG { margin:
+7px; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE&quot;&quot;JavaScript&quot;
+TYPE=&quot;text/javascript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var imgl=new
+Image() imgl.src='Images/altavista.jpg';
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var img2=new
+Image() img2.src='Images/altavista2.jpg'; var img3=new Image()
+img3.src='Images/yahoo.jpg'; var img4=new Image()
+img4.src='Images/yahoo2.jpg'; var img5=new Image()
+img5.src='Images/yandex.jpg'; var img6=new Image()
+img6.src='Images/yandex2.jpg'; var img7=new Image()
+img7.src='Images/aport.jpg'; var img8=new Image()
+img8.src='Images/aport2.jpg';
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function changel()
+{ var a=window.event.srcElement; if (a.tagName==&quot;IMG&quot;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+a.src=a.src.substring(0,a.sre.length-4)+&quot;2&quot;+
+a.src.substring(a.sre.length-4, a.src.length);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} function
+change2() { var a=window.event.srcElement; if
+(a.tagName==&quot;IMG&quot;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+a.src=a.src.substring(0,a.src.length-5)
++ a.src.substring(a.src.length-4, a.src.length) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+document.onmouseover=changel; document.onmouseout=change2 ;
+//--&gt; &lt;/SCRIPT&gt; &lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ВОDY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;ПОИСКОВЫЕ
+МАШИНЫ&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN&gt;Если
+вы ищете в Интернете какую-либо
+информацию, вам помогут следующие
+сайты::&lt;SPAN&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;http://www.altavista.corn&quot;
+TARGET=&quot;_blank&quot;&gt; &lt;IMG
+SRC=&quot;Images/altavista.jpg&quot; WIDTH=&quot;192&quot;
+HEIGHT=&quot;40&quot; BORDER=&quot;0&quot;
+ALT=&quot;Altavista&quot;&gt;&lt;/A&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;http://www.yahoo.corn&quot;
+TARGET=&quot;_blank&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/yahoo.jpg&quot; WIDTH=&quot;147&quot;
+HEIGHT=&quot;40&quot; BORDER=&quot;0&quot; ALT=&quot;Yahoo!
+&quot;&gt;&lt;/A&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;http://www.aport.ru&quot;
+TARGET=&quot;_blank&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/aport.jpg&quot; WIDTH=&quot;135&quot;
+HEIGHT=&quot;40&quot; BORDER=&quot;0&quot;
+ALT=&quot;AnopT&quot;&gt;&lt;/A&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;http://www.yandex.ru&quot;
+TARGET=&quot;_blank&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/yandex.jpg&quot; WIDTH=&quot;129&quot;
+HEIGHT=&quot;40&quot; BORDER=&quot;0&quot;
+ALT=&quot;Яndex&quot;&gt;&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Можно, разумеется,
+придумать и другие средства
+взаимодействия с графическими
+элементами. В главе 6, например, мы
+создали картинку с дина-мически
+изменяющимся размером. В разделе 7.2
+мы передвигали картинки с помощью
+мыши. Вы можете также попробовать
+передвигать картинки без участия
+пользователя (что создаст эффект
+анимации) или изменят). их стилевое
+свойство filter.
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="7.4.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

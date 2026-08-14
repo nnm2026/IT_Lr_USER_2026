@@ -1,0 +1,1455 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+9
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="9.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>
+9.
+Дополнительные возможности
+формирования веб-страниц
+</strong>
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В предыдущих главах мы
+рассмотрели основные приемы
+создания динамических веб-страниц,
+основанные на применении языка
+разметки HTML, таблиц стилей CSS и
+языка сценариев JavaScript. Собственно
+говоря на этом можно было бы и
+завершить эту книгу. Девятая глава,
+которую вы сейчас читаете, является
+лишь небольшим дополнением к
+основное тексту. В ней мы коротко
+проиллюстрируем некоторые
+дополнительны. возможности,
+которые имеются при создании
+веб-страниц. Такими возможностями
+являются, в частности,
+использование элементов
+управления Internet Explorer и применение
+простейших сценариев,
+исполняющихся на сервере.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Конечно, мы не будем
+описывать подробно ни то, ни другое
+— эта книга написана не про
+элементы управления и не про
+серверные сценарии. Однако краткая
+иллюстрация простейших
+возможностей нам представляет-
+ляется здесь вполне уместной, ибо
+может дать представлению читателю
+о некоторых других существующих
+web-технологиях.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+9.1. Пример
+использования элемента управления
+Tabular Data
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Использование элементов
+управления Internet Explorer имеет свои
+преимущества и недостатки.
+Преимущества заключаются в
+существенном расширении
+возможностей веб-страницы, а
+недостатки — в возможности
+просмотра только в Internet Explorer. Но
+поскольку этим броузером
+пользуется очень большое число
+посетителей WWW, применение
+элементов управления заслуживает
+внимания.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+С помощью элементов
+управления можно, в частности,
+поместить на странице графику и
+анимированные фрагменты,
+записанные в виде простой
+последовательности команд.
+Пользователи Интернета, привыкшие,
+что для загрузки графики требуется
+заметное время, а для загрузки
+анимации — непомерное количество
+времени, будут приятно удивлены,
+увидев анимацию без утомительной
+загрузки. 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако мы сейчас
+проиллюстрируем другую
+возможность — загрузку данных из
+базы. Возьмем, для примера, ту самую
+гипотетическую электронную
+библиотеку. Предположим, что у нас
+есть архивные файлы с текстами
+книг, и нам нужно создать страницу
+выбора художественной литературы.
+Пусть нам нужно создать общий
+список книг и дать пользователю
+возможность выбора книг
+какого-либо автора по его имени.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Текстовая
+база данных
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для этого давайте
+создадим файл базы данных, в
+которой хранятся все сведения об
+имеющихся в библиотеке книгах. Для
+примера предположим, что у нас
+всего восемь книг. Файл базы данных
+будет представлять собой обычный
+текстовый файл (с расширением txt), в
+котором каждая строка является
+записью — данными об одной книге.
+Каждая запись состоит из
+нескольких полей: автор, название
+книги, размер файла и имя файла для
+загрузки. Чтобы не усложнять код,
+будем в этом месте просто ставить
+гиперссылку. Поля будем отделять
+друг от друга запятыми, например,
+так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Толстой,Анна
+Каренина,305,&lt;А
+HREF=&quot;anna.ziр&quot;&gt;загрузить&lt;/А&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, заполнение
+базы данных вполне можно поручить
+любому человеку, умеющему
+использовать компьютер как пишущую
+машинку. (В принципе, можно избавить
+его и от необходимости писать
+страшную конструкцию 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А HREF&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.)
+В начале файла базы данных напишем
+заголовок каждого поля. Вот что у
+нас получится:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Author,Name,Size:INT,
+File Дюма,Три мушкетера,250
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;trim.zip&quot;&gt;3arpyзить&lt;/A&gt;
+Дюма,Десять лет спустя,198,&lt;А
+HREF=&quot;deslet.zip&quot;&gt; загрузить &lt;/А&gt;
+Дюма,Двадцать лет спустя,170,
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;dvlet.zip&quot;&gt; загрузить &lt;/А&gt;
+Толстой/Война и мир,1045,
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;vojna.rar&quot;&gt; загрузить &lt;/А&gt;
+Толстой,Анна Каренина,305,&lt;А
+HREF=&quot;anna.zip&quot;&gt; загрузить &lt;/А&gt;
+Достоевский,Идиот,560,
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;idiot.zip&quot;&gt; загрузить &lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Достоевский,Преступление
+и наказание,710,
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;prest.rar&quot;&gt; загрузить &lt;/А&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Достоевский,Двойник,432,
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;doppel.zip&quot;&gt; загрузить &lt;/А&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что в первой строке мы написали
+просто заго- ловки полей. При этом
+можно было использовать любые
+слова — мы про- сто обозначили их
+так, чтобы было понятно, о чем речь.
+Поскольку в третьем поле каждой
+записи у нас будут храниться только
+числа (размер архивного файла книги
+в килобайтах), для экономии памяти
+мы можем указать, что это поле —
+числовое. Это делается с помощью
+ключевого слова
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+INT
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте создадим
+саму веб-страницу. Сначала, как
+обычно, напи-шем заголовок и
+определим стиль вывода на экран:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;Электронная
+библиотека&lt;/ТIТLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #F4FFEF;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: #182F1A; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-family:
+sans-serif; font-size: 120%; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} &lt;/STYLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;Художественная
+литература&lt;/Н1&gt;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Элемент
+управления для работы с базой
+данных
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь, чтобы иметь
+возможность обращаться к базе
+данных, поместим на страницу
+элемент управления — он называется
+Tabular Data):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OBJECT
+ID=&quot;hudlit&quot;
+CLASSID=&quot;clsid:333C7BC4-460F-llDO-BC04-0080C7055A83&quot;
+BORDER=&quot;0&quot; WIDTH=&quot;CT HEIGHT=&quot;0&quot;&gt;
+&lt;PARAM NAME=&quot;DataURL&quot;
+VALUE=&quot;books.txt&quot;&gt; &lt;PARAM
+NAME=&quot;UseHeader&quot; VALUE=&quot;True&quot;&gt;
+&lt;/OBJECT&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Может показаться, что это
+выглядит “страшно”, но не
+пугайтесь, на самом деле все очень
+просто. Давайте разберемся. Элемент
+управления помещается на страницу
+с помощью тега &lt;OBJECT&gt;. При этом
+атрибут 1D= — это, как обычно,
+уникальное имя объекта. Столь
+необъятно выглядящий атрибут CLASSID=
+является всего лишь
+идентификатором (проще говоря,
+номером ) соответствующей
+системной подпрограммы. Всякий раз,
+когда необходимо вставить элемент
+управления Tabular Data, приходится
+вводить этот идентификационный
+номер — clsid:333C7BC4-460F-11DO-BC04-0080C7055A83. У
+других элементов управления другие
+номера, такие же длинные.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В первом из тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PARAM&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ мы связываем элемент
+управления с файлом базы данных.
+Здесь предполагается, что этот файл
+называется books.txt.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Второй тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PARAM&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ указывает, что в базе данных
+первая строка используется как
+заголовочная. Это необходимо,
+поскольку далее мы будем o6pа-щаться
+к полям через их заголовки.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Динамическое
+формирование таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Далее напишем таблицу, в
+каждой строке которой выводятся
+сведения сбодной книге. Хитрость
+состоит в том, что в коде страницы
+мы укажем только одну строку
+таблицы. На самом же деле их будет
+создано столько, сколько записей
+будет выводиться на экран.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы связать таблицу с
+элементом управления, используем
+атрибут 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+DATASRС=:&lt;TABLE
+DATASRC=&quot;#hudlit&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что мы указываем здесь не файл базы
+данных, а имя элемента управления,
+связанного с этим файлом. Теперь мы
+можем определить строку таблицы. В
+тех местах, куда нужно вставить
+значение кого-либо поля из базы
+данных, необходимо использовать
+атрибут DATAFLD=. Его удобно
+устанавливать в тегах 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;SPAN&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;SPAN
+DATAFLD=&quot;Author&quot;&gt;&lt;/SPAN&gt;, &amp;laquo;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+DATAFLD=&quot;Name&quot;&gt;&lt;/SPAN&gt;&amp;raquo;, 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+DATAFLD=&quot;Size&quot;&gt;&lt;/SPAN&gt;&amp;nbsp; кбайт. 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+DATAFLD=&quot;File&quot; DATAFORMATAS=&quot;html&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SPAN&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Посмотрите внимательно
+на этот код. Здесь определена одна
+строка таблицы, состоящая из одной
+ячейки (можно было сделать и
+по-другому, напримеp, значение
+каждого поля поместить в свою
+ячейку). В этой ячейке
+последовательно отображаются:
+значения первого поля (автор книги),
+за- пятая, открывающая кавычка,
+значение второго поля (название
+книги), закрывающая кавычка,
+запятая, значение третьего поля
+(размер файла), пробел, слово
+“кбайт”, точка и значение
+четвертого поля (гиперссылка для
+загрузки текста книги). Обратите
+внимание на то, что в последнем
+случае нам пришлось использовать
+атрибут DATAFORMATAS='html', чтобы указать,
+что в базе данных содержатся
+НТМL-тетта. Если бы мы забыли
+применить этот атрибут, то в окне
+броузера ссылка отобразилась бы в
+виде исходного кода.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Собственно говоря, нам
+осталось только поставить
+закрывающие теги:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Всe остальное сделает
+элемент управления Tabular Data. Он
+“пройдется” по всем записям файла
+базы данных, и для каждой из них
+автоматически создаст новую строку
+таблицы.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Фильтрация
+таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь можно добавить
+возможность выбора автора из
+списка и затем ото- бражать на
+экране книги только выбранного
+автора. Если в библиотеке очень
+много книг, такая возможность будет
+совсем не лишней! Сначала создадим
+список выбора с помощью тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT&gt;.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Выберите
+автора: &lt;SELECT NAME=&quot;auth&quot;
+onChange=&quot;auth ()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;&quot;&gt;Bce
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;Дюма&quot;&gt;Дюма
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;Достоевский&quot;&gt;Достоевский
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;Толстой&quot;&gt;Толстой
+&lt;/SELECT&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку при выборе
+какого-либо из пунктов списка
+содержимое акии броузера должно
+изменяться, применим обработчик
+событий onChange (напомним, что он
+реагирует на изменения значения).
+Пусть он вызывает еще не написанную
+функцию auth(), которая будет выводить
+на экран книги только выбранного
+автора. Для облегчения написания
+этой функпии мы продублировали
+названия пунктов списка в атрибуте
+VALUE= каждого из тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION&gt;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь напишем эту
+функцию. Это проще, чем может
+показаться. Дело в том, что у нашего
+элемента управления есть свойство
+Filter, значением кото-рого может
+являться строка типа название
+поля=строка, то есть сравнение
+одного из полей с заданной строкой.
+В данном случае это может быть,
+например: Auther=Дюма.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку имя автора у
+нас уже хранится как значение
+атрибута VALUE= , мы можем написать
+так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.Filter=&quot;Author=&quot;+document.all.auth.value;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, в качестве
+значения атрибута VALUE= первого
+элемента списка (“Все”) мы не зря
+использовали пустую строку.
+Сравнение с ней в любом случае даст
+положительный результат, поэтому
+она как бы отменяет фильтр. Теперь
+остается только перерисовать
+изображения с помощью метода Reset:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.Reset () ; Вот и все1
+Давайте теперь посмотрим, что у нас
+получилось.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Электронная
+библиотека&lt;/ТITLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #F4FFEF; color: #182F1A;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-family:
+sans-serif;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-size: 120%; }
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+function auth() {
+hudlit.Filter=&quot;Author=&quot;+document.all.auth.value ;
+hudlit.Reset () ; } &lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;Художественная
+литература&lt;/Н1&gt; Выберите автора:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT
+NAME=&quot;auth&quot; onChange=&quot;auth()&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;&quot;&gt;Bce &lt;OPTION
+VALUE=&quot;Дюма&quot;&gt;Дюма
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;Достоевский&quot;&gt;Достоевский
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;Толстой&quot;&gt;Толстой
+&lt;/SELECT&gt; &lt;BR&gt;&lt;BR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OBJECT ID =
+&quot;hudlit&quot; CLASSID =
+&quot;clsid:333C7BC4-460F-llDO-BC04-0080C7055A83&quot;
+BORDER=&quot;0&quot; WIDTH=&quot;0&quot; HEIGHT=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PARAM NAME =
+&quot;DataURL&quot; VALUE = &quot;books.txt&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PARAM NAME =
+&quot;UseHeader&quot; VALUE = &quot;True&quot;&gt;
+&lt;/OBJECT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE DATASRC
+= &quot;#hudlit&quot;&gt; &lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;SPAN
+DATAFLD=&quot;Author&quot;&gt;&lt;/SPAN&gt;, &amp;laquo;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+DATAFLD=&quot;Name&quot;&gt; &lt;/SPAN&gt;&amp;raquo;, 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+DATAFLD=&quot;Size&quot;&gt;&lt;/SPAN&gt;&amp;nbsp;кбайт.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+DATAFLD=&quot;File&quot;
+DATAFORMATAS=&quot;html&quot;&gt;&lt;/SPAN&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+9.1. На этом рисунке вы можете видеть
+все назва ния книг, но если
+пользователь выберет из списка
+одного из авторов, то в окне
+броузера отобразятся только книги
+выбранного автора.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь можно несколько
+усложнить задачу. Пусть
+пользователь имеет возможность не
+только выбирать автора, но и
+вводить название книги
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="9.1.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 9.1. Страница,
+на которой используются данные из
+базы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(мало ли, может быть, он и
+не помнит имя автора). Кроме того,
+пусть него будет возможность
+отсортировать список книг по имени
+автора и. по названию книги.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку мы используем
+элемент управления Tabular Data, обе эти
+зада решаются очень просто. Чтобы
+пользователь мог сам ввести
+название ну ной книги, создадим для
+этого текстовое поле и кнопку Поиск
+рядом с ним
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;book&quot; SIZE=&quot;15&quot;
+MAXLENGTH=&quot;25&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; NAME=&quot;search&quot;
+VALUE=&quot;Поиск&quot; onClick=&quot;bookname()&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, кнопке Поиск
+мы назначили обработчик событий
+onClick. Тепе; при нажатии этой кнопки
+будет выполняться еще не
+написанная функция booknameO, которая
+должна выбрать из “базы данных”
+только те записи, в которых
+присутствует введенное
+пользователем название книги.
+Скорее всего, это будет одна запись,
+если, конечно, в базе нет книг с
+одинаковыи названиями, как,
+например, “ Записки сумасшедшего”
+Гоголя и “Записки сумасшедшего”
+Толстого. 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Собственно говоря, эта
+функция очень похожа на предыдущую
+— нам ведь всего лишь нужно
+применить свойство Filter, в условии
+которого сравнить значения поля Name
+(название книги) со строкой,
+введенной пользователем:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.
+Filter=&quot;Name=&quot;+document. all. book. value;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.Reset() ; 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Правда, для наглядности
+хорошо бы при поиске введенной
+пользовате-лем книги вернуть
+список выбора автора в исходное
+состояние, иначе может возникнуть
+следующая ситуация. Допустим,
+пользователь сначала выбрал из
+списка одного автора (например,
+пункт Толстой) и увидел на экранe
+список имеющихся книг Толстого.
+Затем он решил поискать книгу под
+названием “Тихий Дон” (которой в
+нашей базе данных пока нет). Он
+вводит в строку поиска название
+книги и, естественно, не получает
+ничего в ответ .В этот момент он
+смотрит на экран и видит, что у него
+в списке авторов выбран Толстой.
+Тогда он начинает думать, что,
+наверное, компью- тер искал “Тихий
+Дон” Толстого, хотя на самом деле
+фильтр применялся ко всей базе.
+Пользователь начинает
+раздражаться и нервничать.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы не возникало
+подобных недоумении, давайте
+просто при поиске введенного
+пользователем названия книги
+автоматически выбирать из списки
+авторов пункт Все. Для этого
+достаточно изменить свойство
+selectedlndex
+</font>
+</p>
+<p align="left">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+списка выбора:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document. all.
+auth. selectedlndex=0 ;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Эту строку
+мы добавим в функцию booknameO.
+Аналогично можно посту-пить и при
+поиске книг одного автора - на
+всякий случай очищать поле ввода
+названия книги. Для этого добавим в
+функцию auth() следующую строку:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.book.value=&quot;&quot;;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Сортировка
+таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте
+осуществим сортировку списка книг.
+Добавим для начала две кнопки — для
+сортировки по алфавиту,
+соответственно, авторов и названий
+книг:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot;VALUE=&quot;Сортировать по
+автору&quot; onClick=&quot;sort_auth()&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot;VALUE=&quot;Сортировать по
+названию&quot; onClick=&quot;sort_name()&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Теперь напишем сами функции
+сортировки. Для этого нам подойдет
+чудес-ное свойство
+элементоуправления Tabular Data, которое
+называется SortColumn. В качестве его
+значения нужно указать поле,
+значения которого нужно
+сортировать. Для сортировки по
+фамилиям авторов в данном случае
+сле-дует указать поле Author, а для
+сортировки по названиям книг —
+поле Name. После этого нужно не забыть
+применить метод Reset(), чтобы заново
+“перерисовать” весь список:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+sort_auth() { hudlit.SortColumn=&quot;Author&quot;;
+hudlit.Reset() ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} . function
+sort_name() { hudlit.SortColumn=&quot;Name&quot; ;
+hudlit.Reset();
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, применение метода
+сортировки может избавить от
+необходимости заботиться о
+расположении записей в файле базы
+данных Например, в данном случае
+при поступлении нового архива с
+текстом книги можно просто
+добавлять запись о нем в конец
+файла. При загрузке файла можно
+сразу применить сортировку. Кстати,
+это можно сделать и с помощью тега
+&lt;PARAM&gt;, который должен быть внутри
+тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OBJECT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+элемента управле-ния
+Tabular Data:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PARAM
+NAME=&quot;SortColumn&quot; VALUE=&quot;Author&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этом случае сразу после
+загрузки страницы записи будут
+отсортированы по фамилиям авторов,
+независимо от того, в каком порядке
+они распола-гались в файле базы
+данных.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте посмотрим на
+текст получившейся страницы.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Электронная
+библиотека&lt;/TITLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #F4FFEF;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: #182F1A;
+font-family: sans-serif; font-size: 120%;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} &lt;/STYLE&gt;
+&lt;SCRIPT LANGUAGE&quot;&quot;JavaScript&quot;
+TYPE=&quot;text/javascript&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function auth() {
+document.all.book.value=&quot;&quot;; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.Filter=&quot;Author=&quot;+document.all.auth.value;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.Reset () ; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} function
+bookname() {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.all.auth.selectedlndex=0;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.Filter=&quot;Name=&quot;+document.all.book.value;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.Reset (); }
+function sort auth()
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+hudlit.SortColumn=&quot;Author&quot;;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.Reset () ; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function
+sort_name() 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+hudlit.SortColumn=&quot;Name&quot;; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+hudlit.Reset() ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//--&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;Художественная
+литература&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; VALUE=&quot;Сортировать по
+автору&quot; onClick=&quot;sort_auth()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; VALUE=&quot;Сортировать по
+названию&quot; onClick=&quot;sort_name()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Выберите
+автора:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SELECT
+NAME=&quot;auth&quot; onChange=&quot;auth ()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;&quot;&gt;Bce 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;Дюма&quot;&gt;Дюма 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION
+VALUE=&quot;Достоевский&quot;&gt;Тостоевский
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OPTION VALUE
+=&quot;Толстой&quot;&gt;Толстой ;&lt;/SELECT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+Или введите название книги: 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;text&quot; NAME=&quot;book&quot; SIZE=&quot;15&quot;
+MAXLENGTH=&quot;25&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;INPUT
+TYPE=&quot;button&quot; NAME=&quot;search&quot;
+VALUE=&quot;Поиск&quot; onClick=&quot;bookname()&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OBJECT
+ID=&quot;hudlit&quot;
+CLASSID=&quot;clsid:333C7BC4-460F-11DO-BC04-0080C7055A83&quot;
+B0RDER=&quot;0&quot; ,WIDTH=&quot;0&quot;
+HEIGHT=&quot;0&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PARAM
+NAME=&quot;DataURL&quot; VALUE=&quot;books.txt&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PARAM
+NAME=&quot;UseHeader&quot; VALUE=&quot;True&quot;&gt;
+&lt;/OBJECT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+DATASRC=&quot;#hudlit&quot;&gt; &lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;SPAN
+DATAFLD=&quot;Author&quot;&gt;&lt;/SPAN&gt;, &amp;laquo;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+DATAFLD=&quot;Name&quot;&gt;&lt;/SPAN&gt;&amp;raquo;, 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+DATAFLD=&quot;Size&quot;&gt; &lt;/SPAN&gt;Snbsp;кбайт.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+DATAFLD=&quot;File&quot; DATAFORMATAS=&quot;html&quot;&gt;
+&lt;/SPAN&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+&lt;/TABLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+9.2. Конечно, это очень простой
+пример, который хочется еще
+улучшить. Например, перед поиском
+введенного пользователем названии
+книги хорошо бы сначала удалить
+лишние пробелы и кавычки, а если
+введенное название не найдено, то
+вывести сообщение oб этом. Можно
+использовать файл базы данных для
+построения нескольких различных
+страниц и т. д. Однако приведенный
+пример уже дает некоторое
+представление о возможностях
+элемента Tabular Data. Читателям,
+заинтересовавшимся использованием
+элементов управления в Internet Explorer,
+можно рекомендовать обратиться к
+специальной литературе по этой
+теме.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="9.2.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 9.2.
+Соративовка данных
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="9.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

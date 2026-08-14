@@ -1,0 +1,501 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+8.2
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="8.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+8.2.
+Управление расположением
+элементов веб-страницы с помощью
+таблиц
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В World Wide Web довольно часто
+встречаются страницы, на которых
+произвольное расположение
+элементов достигается с помощью
+таблиц. В частности, такой подход
+часто применяют, если необходимо
+оставить на странице относительно
+большие “пустоты”.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как можно этого достичь?
+Наверное, наиболее изящным и
+эффективны? решением было бы
+применение абсолютного
+позиционирования элемен тов,
+однако многие привыкли решать
+подобного рода задачи с помощью
+обычных таблиц. Поскольку границы
+между ячейками таблицы могут не
+отображаться, а ячейки могут быть
+как бы пустыми, такой способ некого
+рое время (до появления CSS)
+представлялся лучшим решением
+подоб ных задач. Давайте
+рассмотрим, как это делается.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сначала определим стили
+будущей страницы — цвет фона и
+центрирование текста:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #FOE7F1;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} H2 { text-align:
+center; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} TD {
+font-family: MS Comic Sans, sans-serif;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align:
+center; } &lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь можно задать
+параметры самой таблицы. При этом
+отступ от внутраннего края ячейки
+(CELLPADDING=) и расстояние между
+ячейками (CELLSPACING=) лучше задать
+равными нулю, чтобы ничто не
+отвлекало нас от задания
+минимальных размеров ячеек:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;99%&quot; CELLSPACING=&quot;0&quot;
+CELLPADDING=&quot;0&quot;&gt;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Создание
+ячеек таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь нужно определить
+сами ячейки. Если посмотреть на рис.
+8.4, то может показаться, что их
+меньше, чем на самом деле. В
+процессе опреде-ления ячеек бывает
+удобно временно установить в теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ атрибут BORDER=. В этом случае все
+границы между ячейками будут
+видимы. 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кик видно из рисунка,
+четвертая строка этой таблицы —
+единственная, где определены все
+пять столбцов, но этого уже
+достаточно. Тем не менее, для
+верности лучше поместить
+прозрачный рисунок во всех
+“пустых” ячейках таблицы. В
+третьей и пятой строках таблицы
+объединены в столбцов. Эти строки
+используются в качестве
+вертикального отступи между
+графическими гиперссылками. Здесь
+помещен прозрачный рису нок,
+“растянутый” в высоту:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;&lt;TD
+COLSPAN=&quot;5&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/diafanol. gif&quot; WIDTH=&quot;4&quot;
+HEIGHT=&quot;20&quot; BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt;&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, высота этой
+строки равна 20 пикселам. Пустые
+ячейки в осталь ных строках
+используются для задания ширины
+столбцов, например, так.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;20&quot;
+HEIGHT=&quot;3&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt; 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здесь помещен прозрачный
+рисунок, “растянутый” по
+горизонтали. Остальные “пустые”
+ячейки также заполнены прозрачными
+рисунками. размеры которых
+проставлены, исходя из того, что
+ширина каждого рисунка гиперссылки
+равна 120 пикселам, а ширина всех
+отступов — 20 пикселе и
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте окинем взглядом
+весь текст этой страницы.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.О Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLЕ&gt;Электронная
+библиотека&lt;/ТIТLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #FOE7F1; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} H2 { text-align:
+center;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} TD {
+font-family: MS Comic Sans, sans-serif; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align:
+center; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+WIDTH=&quot;99%&quot; BORDER=&quot;0&quot;
+CELLSPACING=&quot;0&quot; CELLPADDING=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;&lt;TD
+СOLSPAN=&quot;5&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;Электронная
+библиотека&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/ТR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;&lt;IMG
+SRC=&quot;Images/hudlit.gif&quot; WIDTH=&quot;120&quot;
+HEIGHT=&quot;120&quot; BORDER=&quot;0&quot;
+ALT=&quot;Xyдoжecтвeннaя&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;Xyдoжecтвeннaя
+литература &lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+COLSPAN=&quot;4&quot;&gt;&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;280&quot;
+HEIGHT=&quot;3&quot; BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;&lt;TD
+COLSPAN=&quot;5&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;4&quot;
+HEIGHT=&quot;20&quot; BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt;&lt;/TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;&lt;TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;120&quot;
+HEIGHT=&quot;3&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt;&lt;TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;20&quot;
+HEIGHT=&quot;3&quot; BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt;&lt;TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/naulit.gif&quot; WIDTH=&quot;120&quot;
+HEIGHT=&quot;120&quot; BORDER=&quot;0&quot;
+ALT=&quot;Hayчнaя&quot;&gt;&lt;BR&gt;Hayчнaя
+литература&lt;/ТD&gt;&lt;ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IМG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;20&quot;
+HEIGHT=&quot;3&quot;BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt;&lt;TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;120&quot;
+HEIGHT=&quot;3&quot; BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt;&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;&lt;TD
+COLSPAN=&quot;5&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;4&quot;
+HEIGHT=&quot;20&quot; BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt;&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;&lt;TD
+COLSPAN=&quot;4&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/diafanol.gif&quot; WIDTH=&quot;280&quot;
+HEIGHT=&quot;3&quot; BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;/TD&gt;&lt;TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/detlit.gif&quot; WIDTH=&quot;120&quot;
+HEIGHT=&quot;120&quot; BORDER=&quot;0&quot;
+ALT=&quot;&quot;&gt;&lt;BR&gt;Детская
+литература&lt;/ТD&gt;&lt;/ТR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этом примере не
+поставлены сами гиперссылки, т. е.
+теги &lt;А&gt;, поскольку ни самой
+библиотеки, ни ее разделов пока что
+не существует. Добавить их не
+составит труда.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если вы будете применять
+такую технологию при создании
+страничек, то перед написанием кода
+таблицы набросайте ее схему (с
+границами) хотя бы просто
+карандашом на бумаге. После этого
+написать код становится очень
+просто, поскольку в голове
+возникает ясная и наглядная
+картина будущей таблицы.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако, на наш взгляд, для
+решения подобных задач удобнее
+использовать абсолютное (и
+относительное) позиционирование
+элементов. При таком подходе,
+кстати, легче организовать и
+внутристраничную навигацию. Об
+этом пойдет речь в следующем
+разделе.
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="8.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1624 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+6
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="6.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>
+6.
+Динамические веб-страницы на
+основе JavaScript
+</strong>
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+6.1.
+Простейшие примеры
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+До сих пор мы
+рассматривали оформление
+статических веб-страниц, то есть
+таких, которые, будучи загружены,
+уже внешне не изменяются. Однако в
+последнее время все большее
+распространение получают так
+называемые динамические
+веб-страницы. Они могут изменять
+свой внеш- ший вид в зависимости от
+действий пользователя или даже
+сами по себе. Кроме того, на них
+могут присутствовать динамические
+элементы.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Какими же способами
+пишутся такие веб-страницы? Ясно,
+что с помощью обычных тегов особой
+динамики достичь нельзя.
+Существуют, конечно, теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;MARQUEE&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(“бегущая строка”,
+поддерживается только в Internet (Explorer)
+и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BLINK&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (мигающий текст,
+поддерживается только в Netscape).
+Существует определенное в
+стандарте CSS2 стилевое свойство
+text-decoration: blink; (мигающий текст) и
+псевдокласс A:hover (изменение вида
+якоря/гипер- ссылки при наведении
+на них указателя мыши). Но это,
+конечно, еще не динамика.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Запись
+информации в веб-документ
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для написания
+динамических веб-страниц
+используются фрагменты кода,
+написанные на языке JavaScript (или
+другом языке сценариев, о чем речь
+пойдет ниже), который имеет
+синтаксис, отличный от HTML. Для отде
+ления этих фрагментов от остальной
+части HTML-документа они
+распоагаются между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Например, так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;SCRIPT!&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write(&quot;Эта
+страница написана на JavaScript!&quot;); 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат работы этого
+кода показан на рис. 6.1. Как видите,
+пока ничего необычного. Эту же
+надпись можно было написать и
+просто так, не используя JavaScript —
+результат был бы тот же. Зато теперь
+мы знаем, что если написать метод
+document.write, то на страницу будет
+вставлено то, что далее стоит в
+скобках. Если это текстовая строка,
+то нужно ее заключить еще и в
+кавычки.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="6.1.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 6.1.
+Простейшее использование JavaScript
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Ладно, давайте немного
+изменим текст кода (для экономии
+места мы приводим только текст
+сценария, предполагая, что все
+остальные теги остаются такими же,
+как в предыдущем примере):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+window.status = &quot;Эта страница написана
+на JavaScript!&quot;; &lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат можно увидеть
+на рис. 6.2. Теперь окно броузера
+абсолютно пустое! Но это и
+правильно, ведь мы же не вводили
+никакого текста. Зато если вы
+посмотрите на строку состояния, то
+увидите там нашу надпись. В этой
+строке всегда появляется значение,
+присвоенное объекту window.status. Знак
+равенства в JavaScript означает
+“присвоить значение”.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="6.2.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 6.2. Изменение
+строки состояния
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Хорошо, скажете вы, вот мы
+уже управляем строкой состояния, но
+где же обещанная динамика? Ну, если
+не терпится, то можно еще немного
+изменить код предыдущего примера:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+window.status = &quot;Эта страница написана
+на JavaScript!&quot;; setTimeout(&quot;window.status = 'А вы
+как думали?'&quot;,2000); &lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь в момент загрузки
+наша страница будет выглядеть так
+же, как и в предыдущем примере,
+однако через две секунды
+содержимое строки состояния
+изменится на фразу “А вы как
+думали?”. Дело в том, что функция
+setTimeoutO, которую мы здесь
+использовали, совершает действие,
+определенное внутри нее, с
+некоторой задержкой. Эта задержка
+исчисляется в миллисекундах
+(тысячных долях секунды).
+Соответственно, значение 2000
+соответствует задержке в 2 секунды.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Само действие
+определяется в виде строки, то есть
+должно быть заключено в кавычки.
+Поэтому фразу “А вы как думали?”
+пришлось заключить в другой тип
+кавычек — так называемые
+одинарные, чтобы броузер не
+“запутался”. В JavaScript (как и в HTML)
+допускается использование и тех, и
+других кавычек, нужно только
+внимательно следить, чтобы все
+кавычки в нужном месте закрывались.
+Нельзя было написать так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+setTimeout(&quot;window.status = &quot;А вы как
+думали?&quot;&quot;, 2000);
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+поскольку тогда броузер
+“решил бы”, что строка закончилась
+после знака равенства, а далее, не
+встретив запятой, пожаловался бы на
+ошибку. Кстати, необходимо
+внимательно следить, чтобы в
+JavaScript-фрагментах не было ошибок. Вы
+помните, что если броузер встречает
+ошибку синтаксиса HTML (например,
+непонятный ему тег), то он его
+просто игнорирует. Но если броузер
+встретит ошибку в коде JavaScript, то
+будет выдано сообщение об ошибке,
+причем весь сценарий не будет
+исполнен.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Еще одна деталь: в JavaScript
+необходимо соблюдать регистр
+символов, так как в этом языке
+различаются прописные и строчные
+буквы. Напри мер, если вместо setTimeoutO
+написать SetTimeoutO или settimeoutQ, то будет
+выдано сообщение об ошибке.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Интерпретация
+языка JavaScript
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Прежде чем рассмотреть
+какой-нибудь осмысленный пример,
+необходимо отметить еще несколько
+моментов. Во-первых, броузеры могут
+интерпре- тировать фрагменты JavaScript
+по-разному, но об этом речь пойдет
+ниже. Во-вторых, надо предусмотреть
+вариант, когда броузер вообще “не
+пони- мает” сценариев (сценариями
+называют фрагменты, написанные на
+языке JavaScript и других подобных
+интерпретируемых языках). В этом
+случае он, скорее всего, пропустит
+текст, заключенный между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Но тогда пользователь этого
+броузера ничего не увидит на
+экране. Чтобы таких неприятностей
+не происходило, придумайте
+альтернативный HTML-текст, который бы
+отображался в броузерах, не
+поддерживающих сценарии. Его нужно
+заключить между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;NOSCRIPT&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;/NOSCRIPT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Если
+же придумать такой текст
+совершенно невозможно, напишите
+между этими тегами хотя бы то, что
+для просмотра этой страницы
+необходим броузер, поддерживающий
+JavaScript, и поставьте на него
+гиперссылку.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Но это еще не все.
+Представьте себе, что броузер
+пользователя уж очень старый и
+вообще не понимает тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Что будет тогда? Как и поло
+жено, он этот тег проигнорирует, и
+тогда весь код сценария
+отобразится на экране, а это совсем
+некрасиво. Чтобы этого избежать,
+принято заключать код сценария в
+теги комментариев &lt;!-- и --&gt;. Однако
+некоторые интерпретаторы JavaScript,
+встроенные в броузеры, при этом
+пытаются обработать второй из этих
+тегов. Поэтому перед ним обычно
+ставят сим вол JavaScript-комментария //.
+Таким образом, получается
+приблизительно следующее:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+window.status =
+&quot;Эта страница написана на
+Javascript!&quot;; setTimeout(&quot;window.status &quot; 'А вы
+как думали?'&quot;, 2000); //--&gt; &lt;/SCRIPT&gt;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Учет
+версии броузера
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте
+рассмотрим простой пример.
+Предположим, что у нас уже имеются
+страницы, созданные специально для
+броузера Internet Explorer 4, Netscape 4 или Netscape
+6. Мы хотим написать код, который бы
+определял тип броузера
+пользователя и, в зависимости от
+этого, загружала бы одну из наших
+страниц. Кроме того, он должен
+выдавать предупреждение, если
+обнаружит устаревший броузер
+(версии 3 и ниже).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сначала давайте напишем
+такое предупреждение. Чтобы
+пользователь наверняка обратил на
+него внимание, можно использовать
+метод alert. Применяется он точно так
+же, как уже знакомый нам метод
+document.write, но при этом выводит текст
+не прямо на страницу, а в диалоговое
+окно. Пока пользователь не нажмет
+кнопку ОК, работа сценария не будет
+продолжена.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как определить номер
+версии броузера? Для этого
+существует свойство navigator.appVersion.
+Однако его значением является не
+число (собственно номер версии), а
+целая строка. Например, если
+написать:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write(navigator.appVersion) ; то в
+броузере Internet Explorer 5 будет выдано
+такое сообщение:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+4.0 (compatible; MSIE 5.0; Windows 98; DigExt)
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Netscape и другие броузеры
+также выдают подобную длинную
+строку. Как же выделить из нее номер
+версии?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+К счастью, первая цифра
+этой строки во всех броузерах
+указывает именно на номер версии (в
+Internet Explorer 5 на этом месте оставили
+цифру 4, чтобы подчеркнуть сходство
+этих версий.) Поскольку после этого
+номера стоит точка, то есть не
+цифра, его легко выделить из всей
+строки с помощью функции parselnt(). Она
+всегда выделяет целое число из
+строки, останавливаясь на первой не
+цифре.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В данном случае нам надо,
+если номер версии меньше 4, выдать
+предупреждающее диалоговое окно.
+Для проверки условия в JavaScript
+существует оператор if, после
+которого в скобках следует
+поставить условие. Поэтому мы можем
+написать так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(parseint(navigator.appVersion)&lt;4)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+alert(&quot;Вы
+используете старую версию
+броузера.\nВ ней страница может
+отображаться неправильно&quot;) ;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При этом метод alert будет
+выполнен только тогда, когда
+условие номер версии меньше 4
+выполняется, а иначе он будет
+просто пропущен.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вы, наверное, обратили
+внимание на странное сочетание \n.
+Оно используется в JavaScript в качестве
+специального символа, перевода
+строки. Вообще, в строках JavaScript
+символ обратной косой черты вместе
+со следующим за ним символом всегда
+означает специальный символ. В
+данном случае второе предложение в
+нашем диалоговом окне начнется с
+новой строки.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Хорошо, предупреждение мы
+написали, теперь нужно определить
+тип броузера. Для этого существует
+свойство navigator.appName. В Internet Explorer его
+значением является “Microsoft Internet
+Explorer”, а в броузерах компании Netscape
+— просто “Netscape”. Поскольку для
+каждого случая нам надо
+предусмотреть ряд действий, удобно
+использовать оператор switch (пере
+ключатель). Схематично его
+использование можно изобразить
+так:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+switch (условие) { case
+&quot;первый случай&quot;:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+какие-то действия case
+&quot;второй случай&quot;: какие-то
+действия
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и т. д. default: действия во
+всех остальных случаях
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В нашем примере условием
+является значение navigator.appName, а
+случаи могут быть такими: &quot;Microsoft
+Internet Explorer&quot; и &quot;Netscape&quot;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+switch (navigator.appName) { case
+&quot;Microsoft Internet Explorer&quot;: какие-то
+действия
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+case &quot;Netscape&quot;: какие-то
+действия
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+действия во всех
+остальных случаях
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что весь блок кода, идущий после
+условия, дол-жен быть заключен в
+фигурные скобки. Кстати, эти
+фигурные скобки играют большую
+роль в JavaScript. Например, в них всегда
+можно заключить некоторую
+последовательность действий, чтобы
+она интерпретировалась как одно
+целое (об этом мы еще поговорим
+ниже).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы загрузить другую
+веб-страницу вместо данной, нужно
+присвоить новое значение свойству
+window.location.href. Например, если
+написать:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+window.location.href
+= &quot;msie4.html&quot;;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+то текущая страница будет
+заменена в окне броузера на
+страницу msie4.html. Давайте перед
+загрузкой новой страницы создадим
+соответствующее сообщение:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document-write
+(&quot;Сейчас будет загружена
+страница для Internet Explorer 4&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout(&quot;window.local
+ion.href = 'msie4.html'&quot;, 3000);
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При этом нам пришлось
+использовать функцию setTimeout, чтобы
+пользователь успел увидеть нашу
+надпись.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку на этом
+действия, предусмотренные для
+данного случая, закан- чиваются,
+нужно выйти из блока switch с помощью
+оператора break. После этого можно
+приступать к обработке других
+случаев.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если тип броузера
+определился как Netscape, нам нужно
+опять смотреть его версию. Мы можем
+использовать для этого оператор
+if...else:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+(parseint(navigator.appversion)&lt;=4)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ document.write
+(&quot;Сейчас будет загружена
+страница для Netscape 4&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout(&quot;window,
+location.href = 'nn4.html'&quot;, 3000); } else
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ document.write
+(&quot;Сейчас будет загружена
+страница для Netscape 6&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout(&quot;window.location.href
+= 'nn6.html'&quot;, 3000); } Если условие
+parselnt(navigator.appversion)&lt;=4 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+верно,
+то выполняется блок операторов,
+следующий сразу после условия, а
+если неверно, то выполняется блок,
+следующий после ключевого слова else.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, нужно
+предусмотреть действия для всех
+остальных случаев. Правда, таких
+случаев будет немного, поскольку
+многие броузеры (например Opera) любят
+представляться как Netscape. Однако
+предусмотреть такие действия все
+равно надо. Можно, например,
+предложить пользователю вручную
+выбрать нужную страницу:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+alert (&quot;Вы
+используете неизвестный нам тип
+броузера. \пСейчас вам будет
+предложено выбрать версию
+страницы, которую следует
+загрузить&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write
+(&quot;&lt;A HREF='msie4.html'&gt;Страница для
+Internet Explorer 4&lt;/A&gt;&lt;BR&gt;&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write
+(&quot;&lt;A HREF='nn4.html'&gt;Страница для Netscape
+4 &lt;/A&gt;&lt;BR&gt;&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write
+(&quot;&lt;A HREF='nn6.html'&gt;Страница для Netscape
+6 &lt;/A&gt;&quot;);
+</font>
+</p>
+<p>
+<font  face="Verdana, Arial, Helvetica, sans-serif">&nbsp;
+</font></p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак,
+теперь посмотрим, что же у нас
+получается в целом:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+&lt;ТIТLЕ&gt;Автоматический выбор
+нужной версии cтpaницы&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+&lt;SCRIPT&gt; &lt; ! -- if (parseint(navigator.appVersion)&lt;4)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+alert(&quot;Вы
+используете старую версию
+броузера.\nВ ней страница может
+отображаться неправильно&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+switch
+(navigator.appName)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+case
+&quot;Microsoft Internet Explorer&quot;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write
+(&quot;Сейчас будет загружена
+страница для Internet Explorer 4&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout
+(&quot;window.location.href = 'msie4.html'&quot;, 3000); break;
+case &quot;Netscape&quot;: if
+(parseint(navigator.appversion)&lt;=4)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ document.write
+(&quot;Сейчас будет загружена
+страница для Netscape 4&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout(&quot;window.location.href
+= 'nn4.html'&quot;, 3000);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} else
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ document.write
+(&quot;Сейчас будет загружена
+страница для Netscape 6&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+setTimeout(&quot;window.location.href
+= 'nn6.html'&quot;, 3000);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} break;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+default:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+alert (&quot;Вы
+используете неизвестный нам тип
+броузера.&gt;&lt;nСейчас вам будет
+предложено выбрать версию
+страницы, которую следует
+загрузить&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write
+(&quot;&lt;A HREF='msie4.html'&gt;Страница для
+Internet Explorer 4&lt;/A&gt;&lt;BR&gt;&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write
+(&quot;&lt;A HREF='nn4.html'&gt;Страница для Netscape
+4&lt;/A&gt;&lt;BR&gt;&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write
+(&quot;&lt;A HREF='nn6.html&gt;Страница для Netscape
+6&lt;/A&gt;&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} //—&gt;
+&lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат просмотра этой
+страницы зависит от броузера. На
+рис. 6.3 изображено предупреждение,
+которое получит пользователь при
+просмотре этой страницы в броузере
+Internet Explorer.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="6.3.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 6.3.
+Использование условной
+переадресации и временной задержки
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Таблица умножения
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Приведенный пример
+достаточно прост, но он
+демонстрирует способы
+использования некоторых основных
+операторов JavaScript. Теперь
+рассмотрим еще один очень простой
+пример, который демонстрирует, как
+можно иногда сократить себе труд с
+помощью языка JavaScript, а заодно
+рассмотрим оператор цикла for.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Допустим, нам
+потребовалось представить таблицу
+умножения. Конечно, можно вручную
+написать каждую ее строку:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;2&amp;times;2=4&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;3&amp;times;2=6&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;4&amp;times;2=8&lt;/TD&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И Т.Д.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(Кстати, специальный
+символ &amp;times; означает знак
+умножения.) Это способ достаточно
+долгий и нудный, кроме того, легко
+можно допустить случайную ошибку и
+не заметить ее. Давайте попробуем
+сгенерировать таблицу прямо “на
+ходу”, используя средства JavaScript. Teг
+&lt;TABLE&gt; можно вынести за пределы
+сценария. Далее, нужно сформировать
+некоторое количество строк
+(традиционно равное количеству
+вариантов второго множителя,
+который обычно принимает значения
+от 2 до 10). Можно этот множитель
+занести в переменную (назовем ее
+“I”) и написать:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+for (i=2;
+i&lt;=10; i++)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ document.write
+(&quot;&lt;TR&gt;&quot;); document.write
+(&quot;&lt;/TR&gt;&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Выражение в скобках после
+оператора цикла for означает
+следующее: • начальное значение
+переменной — 2;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+условие выполнения цикла
+— переменная должна быть меньше
+или равна 10;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+на каждом шаге переменная
+увеличивается на 1 (обозначение
+“++” означает увеличение на
+единицу, а “- -” уменьшение на
+единицу.)
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если сейчас запустить
+этот цикл, то в окне броузера ничего
+не отобразится, поскольку пока нет
+тегов ячеек таблицы (
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+). Поскольку в каждой строке
+должно быть столько ячеек, сколько
+значений принимает первый
+множитель (занесем его в переменную
+“j”), организуем между записью
+тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ еще один цикл:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+for (j=2; j&lt;10;
+j++)
+document.write(&quot;&lt;TD&gt;&quot;+j+&quot;&amp;times;&quot;+i+&quot;=&quot;+(i*j)+&quot;&lt;/TD&gt;&quot;)
+;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здесь условием выхода из
+цикла является j&lt;10, а не j&lt;=10,
+поскольку традиционно первый
+множитель в таблице умножения не
+превышает 9.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на
+строку метода document.write. Здесь в
+кавычках указано то, что нужно
+непосредственно поместить на
+страницу. Переменные же указаны вне
+кавычек, чтобы в документ
+записывались их значения. Вся
+строка соединяется знаками “+”.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы получить результат
+умножения переменной i на
+переменную j, использована запись
+“i*j”. Знак * означает в JavaScript
+умножение, а знак / (косая черта) —
+деление. Есть еще операция
+“остаток от деления”,
+обозначаемая знаком %. Значение
+произведения i*j в нашем примере
+заключено в скобки, чтобы исключить
+возможность неправильной
+интерпретации броузером, хотя это
+не обязательно.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В принципе, наша таблица
+уже готова! Осталось только
+объявить переменные i и j в начале
+сценария (вообще-то, как правило,
+этого можно даже и не делать, но во
+избежание случайных ошибок лучше
+перестраховаться, да и вообще
+объявление переменных является
+хорошим тоном и облегчает
+восприятие кода). Для этого надо
+использовать ключевое слово var:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var i,j;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, для улучшения
+восприятия, можно “разлиновать”
+таблицу, отделив столбцы друг от
+друга. Для этого, как вы помните,
+нужно исполь зовать атрибут RULES=
+тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+BORDER=&quot;1&quot; CELLSPACING=&quot;0&quot;
+CELLPADDING=&quot;2&quot; RULES=&quot;cols&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Последним штрихом к
+форматированию нашей таблицы будет
+выравнивание текста в ячейках по
+правому краю. Для этого можно
+просто добавить после тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ тег
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;COLGROUP
+SPAN=10 ALIGN-&quot;right&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+или же просто определить
+в стилевом блоке свойство для тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+TD { text-align:
+right; )
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В нашем случае этот
+вариант, пожалуй, предпочтительнее,
+поскольку некоторые броузеры могут
+не распознать атрибут ALIGN= тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;COLGROUP&gt;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте посмотрим,
+что у нас получается в целом.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Ta6лица
+умножения&lt;/TITLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Teг
+&lt;COLGROUP&gt; задает группировку
+столбцов таблицы, а тег &lt;COL&gt; — вид
+каждого столбца, принятый по
+умолчанию. К сожалению, не все
+броузеры интерпретируют эти теги
+достаточно корректно.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ text-align: center; background-color: #FCF7EC;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} TD { text-align:
+right; } &lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;ТАБЛИЦА
+УМНОЖЕНИЯ&lt;/Н2&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+BORDER&quot;&quot;!&quot; CELLSPACING=&quot;0&quot;
+CELLPADDING=&quot;2&quot; RULES=&quot;cols&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+&lt;!-- var i, j ; for (i=2; i&lt;=10; i++) { document.write
+(&quot;&lt;TR&gt;&quot;); for (j=2; j&lt;10; j++)
+document.write(&quot;&lt;TD&gt;&quot;+j+&quot;&amp;times;&quot;+i+&quot;=&quot;+(i*j)+&quot;&lt;/TD&gt;&quot;)
+; document.write (&quot;&lt;/TR&gt;&quot;) ; } 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+//--&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат работы этого
+кода показан на рис. 6.4. Кстати, вы
+можете заметить, что выравнивание
+по правому краю в каждой ячейке
+таблицы все же не совсем эстетично.
+Лучше было бы, если бы все знаки
+равенства в одном столбце
+находились один под другим. Вообще
+говоря, для этого в HTML 4.0 есть
+способ, называемый выравниванием
+по символу.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;COLGROUP
+SPAN=10 ALIGN=&quot;char&quot; CHAR=&quot;=&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+По идее, такая запись
+должна дать как раз требуемый
+результат — выровнять все знаки
+равенства в каждом столбце. Однако
+на момент написания этих строк
+такая возможность еще не
+реализована ни в одном броузере!
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Запрос
+сведений у читателя
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, нам не
+пришлось вручную заполнять все
+ячейки таблицы, мы ограничились
+вместо этого шестью изящными
+строками кода. Кроме того, если вам
+вдруг понадобится расширить
+таблицу, например организовать
+вывод значений вплоть до 20х20, это
+можно сделать, просто заменив два
+числа в коде (10 на 20). Более того, мы
+теперь можем дать пользователю
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="6.4.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 6.4. Генерация
+таблицы “на лету”
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+возможность самому
+определить границы значений
+множителей таблицы. Например, это
+можно сделать следующим образом.
+При загрузке страницы с помощью
+метода prompt попросить его ввести
+минимальное и максимальное
+значения каждого множителя,
+например:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+mini = prompt
+(&quot;Введите минимальное значение
+первого множителя&quot;, &quot;2&quot;);
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здесь есть пояснение и
+поле для ввода, где уже
+приготовлено значение, принятое по
+умолчанию. И пояснение, и значение,
+принятое по умолчанию, необходимо
+указать при вызове метода prompt, как
+показано выше. Значение, введенное
+пользователем, будет присвоено
+переменной mini. Если пользователь
+нажмет кнопку Отмена, то этим
+значением будет null (так в JavaScript
+обозначается ничто, то есть
+отсутствие какого-либо значения).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, с помощью метода prompt
+мы просим ввести значения (придется
+использовать этот метод 4 раза),
+присваиваем их переменным и
+подставляем эти переменные в
+условия цикла, например, так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+for (j=minl;
+j&lt;=maxl; j++)
+document.write(&quot;&lt;TD&gt;&quot;+j+&quot;&amp;times;&quot;+i+&quot;=&quot;+(i*j)+&quot;&lt;/TD&gt;&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ text-align: center; background-color: #FCF7EC; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+TD { text-align:
+right; } &lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;ТАБЛИЦА
+ВОЗВЕДЕНИЯ В СТЕПЕНЬ&lt;/Н2&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+BORDER=&quot;1&quot; CELLSPACING=&quot;0&quot;
+CELLPADDING=&quot;2&quot; RULES=&quot;cols&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+&lt;! -- var i,j; for (i=2; i&lt;=10; i++) {
+document.write(&quot;&lt;TR&gt;&quot;) ; for (j=2; j&lt;10; j++)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write(&quot;&lt;TD&gt;&quot;+j+&quot;&lt;SOP&gt;&quot;+i+&quot;&lt;/SUP&gt;=&quot;+
+Math.pow(j,i)+&quot;&lt;/TD&gt;&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write(&quot;&lt;/TR&gt;&quot;)
+;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} //--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если посмотреть
+внимательно, то можно заметить, что
+все отличие состоит в заголовках и
+строке записи ячейки. В ней мы
+использовали тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SUP&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ для
+записи показателя степени. А для
+вычисления результата здесь
+исполь- зуется метод Math.pow, который,
+кстати, очень прост в
+использовании. Например, чтобы
+вычислить 5
+<sup>
+7
+</sup>
+, достаточно
+написать Math.pow(5,7).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, в этом разделе были
+показаны примеры использования
+сценариев JavaScript. Ниже мы
+рассмотрим, как можно сократить
+количество кода, используя так
+называемые функции.
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="6.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>
