@@ -1,0 +1,1212 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+4
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="4.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>
+4.
+Оформление веб-страницы с
+использованием стилей
+</strong>
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+4.1.
+Оформление с помощью атрибута STYLE
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В предыдущих главах мы
+рассмотрели некоторые способы
+создания веб- страниц, однако до сих
+пор почти ничего не говорили о том,
+как оформляют текст. И это не
+случайно. Дело в том, что в
+спецификации HTML 4.0 было
+рекомендовано использовать для
+оформления страниц новое мощное
+сред ство — каскадные таблицы
+стилей (CSS), которые мы сейчас и
+рассмот рим. При этом многие теги и
+атрибуты (собственно говоря, почти
+все, относящиеся к оформлению) были
+отменены, в том числе и некого рые
+из тех, что были рассмотрены нами
+ранее.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+— Стоп! — скажете вы. — А
+для чего же мы их тогда
+рассматривали?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Не волнуйтесь, во-первых,
+мы почти не рассматривали
+отмененные теги, за исключением
+наиболее часто встречающихся, а
+во-вторых, отмена тегов в HTML 4.0 вовсе
+не означает, что всем нужно
+немедленно прекратить их
+использование. В некоторых случаях
+все равно бывает удобнее восполь
+зоваться одним из этих тегов, и
+этого не нужно бояться. Отмененные
+теги все еще поддерживаются
+текущими версиями броузеров, по
+крайней мере для совместимости со
+старыми веб-страницами. Скорее
+всего, они будут поддерживаться еще
+очень долго (как, например, до сих
+пор поддержива ются теги &lt;ХМР&gt; и
+&lt;BL&gt;, хотя первый из них не
+используется со времен HTML+, а второй
+вовсе никогда не входил в его
+спецификацию). Да и вообще, было бы
+странно, если бы новая версия
+какого-либо броузера вдруг
+“отказалась” от некоторых тегов —
+это явно не прибавило бы ей популяр
+ности. Так вот, отмена тегов
+означает, что WWW-консорциум не реко
+мендует более ими пользоваться,
+поскольку CSS действительно намного
+удобнее, и возможности автора при
+этом гораздо шире.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Атрибут STYLE
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, давайте начнем
+изучение оформления веб-страниц с
+использованием каскадных таблиц
+стилей CSS. И для начала рассмотрим
+такое понятие, как атрибут STYLE=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Самый примитивный способ
+использования CSS — это ввести в код
+HTML атрибут STYLE= с соответствующим
+значением. Его можно добавить
+практически ко всем тегам (кроме
+таких, как, например, 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;HTML&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+). Таким
+образом, вместо отмененных
+атрибутов в HTML 4.0 всегда следует
+применять атрибут STYLE=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте рассмотрим
+пример. Возьмем для начала
+веб-страничку из вто рой главы
+(“Домашняя страница Сергея
+Сергеева”, см. рис.2.8), в кото рой
+немного использовались отмененные
+теги и атрибуты, и попробуем
+“переписать” ее по всем правилам
+HTML 4.0, сохранив пока что старое
+оформление.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Во-первых, вместо
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+BGCOLOR=&quot;#BABAAO&quot; TEXT=&quot;#1D1D18&quot;
+LINK=&quot;#634438&quot; VLINK=&quot;#634438&quot;
+ALINK=&quot;Black&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+рдует написать так:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, возможен и более
+простой вариант:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1
+ALIGN=&quot;centerг&quot;&gt;Домашняя страница
+Сергея Сергеева&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вместо этого применим
+атрибут STYLE= взамен отмененного
+атрибута ALIGN= и напишем:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1
+STYLE=&quot;text-align: center;&quot;&gt;Домашняя
+страница Сергея Сергеева&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Этому атрибуту
+соответствует свойство text-align,
+принимающее те же зна чения, что и
+атрибут ALIGN=. Точно так же выровняем
+следующий тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Замена
+тегов на стилевое описание
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В следующем блоке
+использован отмененный тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT
+SIZE=&quot;+1&quot;&gt;&lt;В&gt;Сергей
+Сергеев&lt;/В&gt; -
+писатель-авангардист, автор 20
+рассказов.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр.&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Некоторые
+его рассказы вы можете прочитать
+прямо здесь.&lt;BR&gt;&amp;nbsp;&lt;/FONT&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вы можете спросить, что
+если атрибут STYLE= легко заменил
+отмененные атрибуты, то что делать
+с отмененными тегами? К чему
+“прикрепить” атри бут STYLE=? В
+большинстве случаев его можно
+“прикрепить” к тегу &lt;DIV&gt;. В
+данном случае мы так и поступим:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;font-size: larger;&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, значения
+свойства font-size отличаются от
+значений атрибута SIZE= тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt; FONT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Для относительного
+увеличения размера шрифта исполь
+зуется значение larger, для
+относительного уменьшения— smaller.
+Кроме того, можно, во первых,
+указывать процентное изменение
+величины шрифта, например font-size: 120%;,
+либо его абсолютную величину. Для
+этого можно использовать либо
+значения xx-small, x-small, small, medium, large, x-large
+и xx-large, либо просто указать
+величину шрифта в пикселах — font-size:
+18px; или в других единицах.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, в нашем блоке
+присутствует тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;В&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+также относящийся к оформлению,
+хотя почему-то и не отмененный в HTML
+4.0. В CSS ему соответствует свойство
+font-weight: bold;. Однако мы не можем
+написать вместо
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;В&gt;Сергей
+Сергеев&lt;/В&gt; следующее:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;font-weight: bold;&quot;&gt;Сергей
+CepreeB&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+поскольку в этом случае
+следующий текст будет перенесен на
+новую строку. Поэтому вместо тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+здесь следует использовать
+тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-weight: bold;&quot;&gt;Сергей
+Сергеев&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Этот тег, кстати,
+бессмысленно применять без
+атрибутов, поскольку тогда вообще
+не будет никакого эффекта. Как
+правило, он применяется именно с
+атрибутом STYLE= (либо с атрибутами
+CLASS=, ID=, LANG= или обработчиками
+событий, о которых речь пойдет
+ниже).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Свойство font-weight
+(“жирность” шрифта), кстати, может
+принимать не только значения bold
+(полужирный) и normal (обычный), но и
+любое числовое значение от 100 до 900
+(правда, имеют смысл только
+значения, кратные 100) — то есть, от
+самого тонкого до самого жирного
+шрифта. При этом значение 400 — это
+то же самое, что normal, a 700 — то же, что
+bold. Можно также употреблять
+относительные значения bolder и lighter.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Пойдем далее. После этого
+текстового блока у нас на
+веб-странице была горизонтальная
+линия 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ с
+отмененным атрибутом W1DTH=, вместо
+которого следует использовать
+стилевое свойство width:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+STYLE=&quot;width: 75%;&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, если помните,
+для организации вертикального
+отступа между текстом и
+горизонтальной чертой мы
+использовали не очень красивую
+конструкцию 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&amp;nbsp;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. В CSS
+имеется свойство margin, с помощью
+кото рого можно регулировать
+отступы (“поля”) со всех сторон
+элемента; а для индивидуальной
+регулировки отступов с каждой
+стороны можно исполь зовать
+свойства margin-top (отступ сверху),
+margin-bottom (отступ снизу), margin- left
+(отступ слева) и margin-right (отступ
+справа). Поскольку мы намеревались
+удалить горизонтальную черту от
+текста на расстояние, примерно
+равное одной строке, давайте
+напишем так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+STYLE=&quot;margin-top: 24px; width: 75%;&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Интервал, определенный
+свойством margin-top, составляет 24
+пиксела.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Далее центрируем
+заголовки рассказов с помощью уже
+знакомого нам свойства text-align. Но у
+нас есть еще подзаголовки,
+выделенные курсивом:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;I&gt;сказка&lt;/I&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;I&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ тоже относится к оформлению
+(хоть и не отменен), заме ним его
+стилевым свойством font-style: italic;,
+применив уже знакомый тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style:
+italic;&quot;&gt;сказка&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме значений normal
+(обычный) и italic (курсив) это свойство
+может при нимать значение oblique
+(наклонный шрифт). Различие между
+наклонным шрифтом и курсивом
+состоит в том, что буквы курсива
+имеют иное начер тание. Правда, при
+использовании определенных
+шрифтов большинство броузеров пока
+что “халтурят” — используют
+курсив, если нет готового варианта
+наклонного шрифта.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Стилевое
+позиционирование
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь исправим
+конструкцию для эпиграфа:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р
+ALIGN=&quot;right&quot;XFONT SIZE=&quot;-l&quot;&gt;Hy,
+погоди!.. &lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;I&gt;(Из
+мультфильма )&lt;/I&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/FONT&gt;&lt;/P&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вместо атрибута ALIGN=, а
+также тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;I&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ применим уже знакомые
+конструкции:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р
+STYLE=&quot;text-align: right; font-size: smaller; &quot;&gt;Hy,
+погоди!.. &lt;BR&gt;&lt;SPAN STYLE=&quot;font-style:
+italic; &quot;&gt; (Из мультфильма)
+&lt;/SPAN&gt;&lt;/P&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати говоря, на самом
+деле и эта конструкция, и та, что
+была в старом варианте, не совсем
+подходит для эпиграфа. Удачно, что
+эпиграф у нас короткий. А что бы
+было, если он был бы немного
+длиннее, например таким:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р
+STYLE=&quot;text-align: right; font-size:
+smaller;&quot;&gt;&amp;laquo;Ну, погоди!..&amp;raquo;
+&amp;mdash; что есть мочи закричал Волк,
+стремительно падая вниз с обрывком
+веревки в лапе прямо на милицейский
+мотоцикл, который как раз в этот
+момент проезжал по дороге. Через
+мгновение мотоцикл уже увозил его
+куда-то вдаль.&lt;BR&gt;&lt;SPAN
+STYLE=&quot;font-style: italic;&quot;&gt;(Из описания
+мультфильма) &lt;/SPAN&gt;&lt;/P&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+4.1. Согласитесь, что это больше
+похоже не на эпиграф, а на какой-то
+вводный текст, потому что эпиграф
+должен оста ваться в правой части
+экрана. В старом варианте
+веб-страницы с этой про блемой было
+бы трудно справиться (пришлось бы
+либо рисовать невидимую таблицу,
+либо вручную разбивать текст
+эпиграфа тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, что
+привело бы к различным результатам
+при просмотре в окнах разного
+размера). А при использовании CSS
+можно просто использовать такие
+свойства блока, как width и height (ширина
+и высота). Второе из них нам сейчас
+не нужно, а вот свойство width как раз
+пригодится:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right;&quot;&gt; &lt;P
+STYLE=&quot;text-align: justify; font-size: smaller; width:
+35%;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&amp;laquo;Hy,
+погоди!..&amp;raquo; &amp;mdash; что есть мочи
+закричал Волк, стремительно падая
+вниз с обрывком веревки в лапе
+прямо на милицейский мотоцикл,
+который как раз в этот момент
+проезжал по дороге. Через мгновение
+мотоцикл уже увозил его куда-то
+вдаль.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style: italic;&quot;&gt;(Из описания
+мультфильма)&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+4.2. Давайте с ним разберемся. Как
+видно из вышеприведенного кода,
+просто добавить свойство width: 35%;
+недоста точно. Действительно, тогда
+текст блока был бы выровнен по
+правому краю, но это выравнивание
+происходило бы внутри блока, а сам
+блок шириной 35% от полной ширины
+окна располагался бы слева. Поэтому
+весь блок, описанный тегом
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;Р&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, пришлось заключить во
+внешний блок 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, а уже в
+нем установить выравнивание по
+правому краю (text-align:right;). Ну, а раз уж
+выравнивание по правому краю взял
+на себя внешний блок, внутри
+текстового блока для лучшего
+восприятия мы выровняли текст но
+обоим краям (text-align: justify;).
+</font>
+</p>
+<p align="center">
+<img src="4.1.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 4.1. Длинный
+эпиграф при таком, оформлении
+становится не похожим, на эпиграф
+</font>
+</p>
+<p align="center">
+<img src="4.2.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 4.2.
+Выравнивание эпиграфа с помощью
+вложенных блоков
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Все бы хорошо, однако
+подпись под эпиграфом хорошо бы
+выровнять по правому краю (хотя,
+поскольку она занимает почти всю
+строку, это не очень заметно), как на
+рис. 4.3. Но поскольку тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ “не понимает” отдельного
+выравнивания, придется эту подпись
+также заключить в блок 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ или &lt;Р&gt;.
+</font>
+</p>
+<p align="center">
+<img src="4.3.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 4.3.
+Выравнивание подписи под эпиграфом
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+милицейский мотоцикл,
+который как раз в этот момент
+проезжал по дороге. Через мгновение
+мотоцикл уже увозил его куда-то
+вдаль.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р
+STYLE=&quot;text-align: right; font-size: smaller; width: 35%;
+font-style: italic; position: relative; top:-18px;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(Из
+описания мультфильма) &lt;/Р&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Конечно, последняя
+конструкция выглядит несколько
+искусственной — собственно говоря,
+использованный здесь метод в
+данном случае напоминает известное
+выражение “Из пушки по воробьям”.
+Зато мы на этом примере сможем
+познакомиться с позиционированием
+объектов.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на
+свойство position. Оно задает тип
+позиционирования — относительный
+или абсолютный. В данном случае
+определено относительное
+позиционирование (relative), то есть
+отсчет ведется от той позиции,
+которую должен был бы занимать этот
+элемент, если бы позиционирование
+не было задано. А абсолютное (absolute)
+позиционирование означает, что
+отсчет ведется от верхнего левого
+угла окна броузера (точнее, его
+рабочей области). Еще у этого
+свойства может быть значение static,
+означающее, что элемент не
+позиционируется индивидуально, и
+значение fixed (фиксированная позиция
+— элемент позиционируется
+абсолютно и не прокручивается
+вместе с остальным содержимым
+страницы), которое, однако,
+поддерживается пока только шестой
+версией Netscape.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Со свойством position тесно
+связаны еще два свойства — top и left,
+которые задают позицию верхнего
+левого угла элемента
+соответственно по верти кали и
+горизонтали. Чем больше значение top,
+тем ниже расположен эле мент, и,
+соответственно, чем больше
+значение left, тем элемент правее. В
+данном случае, для того чтобы
+приподнять текст примерно на
+высоту одной строки, нам пришлось
+написать: top: -18px;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Ну, ладно, мы ведь
+договаривались пока что не менять
+ничего на страничке, поэтому
+вернемся к нашему короткому тексту,
+однако все равно приме ним к нему
+вышеуказанную конструкцию (со
+вложенными блоками &lt;DlV&gt;). Между
+прочим, даже с коротким текстом это
+все равно получается краси вее, чем
+раньше. Только заменим значение width
+на 130 точек (вместо процентного
+обозначения), а то при очень большом
+разрешении экрана короткий текст
+слишком сильно оторвется от
+подписи.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Абзацный
+отступ
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Далее, в основном тексте
+рассказов у нас были абзацные
+отступы, сделанные с помощью серии
+неразрывных пробелов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(&amp;nbsp;)
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ — способ не самый изящный. С
+помощью стилевого свойства text-indent
+можно определить абзацный отступ в
+любых единицах. Правда, придется
+отказаться от деления на абзацы с
+помощью тега &lt;BR&gt;, поскольку он
+“не поймет” указаний сделать
+отступ. Можно делить текст на
+абзацы “официальным” способом — 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, однако, чтобы избежать
+пропуска строки, мы воспользуемся
+тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: justify; text-indent: 2em;&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здесь мы определили
+абзацный отступ, равный двум
+символам максимальной ширины в
+данном шрифте.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+После текста рассказа все
+повторяется — та же горизонтальная
+линия, для которой мы укажем отступ
+сверху, опять заголовок, эпиграф и
+текст. Посмотрим, что получается в
+целом:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;Домашняя
+страница Сергея Сергеева.&lt;/TITLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+STYLE=&quot;background-color: #BABAAO; color:
+rgb(29,29,24);&quot; LINK=&quot;#634438&quot;
+VLINK=&quot;#634438&quot; ALINK=&quot;Black&quot; &gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1
+STYLE=&quot;text-align: center;&quot;&gt;Домашняя
+страница Сергея Сергеева&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: center;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;#skazka&quot;&gt;CKА3KА
+&amp;laquo;Иван-царевич и серый
+зaяц&amp;raquo;&lt;/A&gt;&amp;nbsp;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;#rasskaz&quot;&gt;PАССKА3
+&amp;laquo;МОЛОТОК&amp;raquo;&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;font-size: larger;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-weight: bold;,&gt;Сергей
+Сергеев&lt;/SPAN&gt; &amp;mdash;
+писатель-авангардист, автор 20
+рассказов.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр.&lt;ВR&gt;&lt;ВR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Некоторые
+его рассказы вы можете прочитать
+прямо здесь. &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+STYLE=&quot;margin-top: 24px; width: 75%;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2
+STYLE=&quot;text-align: center;&quot;XA
+NAME=&quot;skazka&quot;&gt;ИBAH-ЦAPEBИЧ И СЕРЫЙ
+ЗАЯЦ&lt;/А&gt;&lt;ВR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style: italic;
+&quot;&gt;CKА3KА&lt;/SPAN&gt;&lt;/H2&gt; &lt;DIV
+STYLE”&quot;text-align: right;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: justify; font-size: smaller; width:
+130;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Ну,
+погоди!..
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;font-style: italic; text-align: right;&quot;&gt;(Из
+мультфильма)&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: justify; text-indent:
+2ет;&quot;&gt;Жил да был Иван-Царевич, и
+все у него было: и злато-серебро, и
+невест полный дворец, и книжек
+много умных, и тренажерный зал
+огромный. Однако тоскливо было у
+него на душе - как встанет утром с
+постели царской, так и начнет
+горевать, и горюет до вечера. &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: justify; text-indent: 2em;&quot;&gt;
+Долго ли, коротко ли, ...&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: justify; text-indent: 2em;&quot;&gt;
+...И они жили долго и счастливо и
+умерли в один день.&lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+STYLE=&quot;margin-top: 24px; width: 75%;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2
+STYLE=&quot;text-align: center;&quot;&gt;&lt;A
+NAME=&quot;rasskaz&quot;&gt;МОЛОТОК&lt;/A&gt; &lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style: italic; &quot;&gt;paccкaз&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/H2&gt;
+&lt;DIV STYLE=&quot;text-align: right;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: justify; font-size: smaller; width:
+130;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Мы
+кузнецы, и дух наш молод.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;font-style: italic; text-align: right;&quot;&gt;(Из
+песни) &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: justify; text-indent:
+2ет;&quot;&gt;Это случилось очень давно,
+уж и не помню в каком году, в каком
+веке и в каком тысячелетии... (Здесь
+располагается текст рассказа)
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+4.4. Вы можете заметить, что он
+практически не отличим от
+веб-страницы, представленной на
+рис. 2.8, если не считать немного
+“исправленных” эпиграфов и
+абзацных отступов.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Таким образом, мы
+переписали страничку в
+соответствии с требованиями HTML 4.0, а
+попутно рассмотрели еще некоторые
+дополнительные воз можности,
+предоставляемые CSS.
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="4.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

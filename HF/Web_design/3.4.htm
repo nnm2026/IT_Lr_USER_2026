@@ -1,0 +1,497 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+3.4
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="3.3.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="3.5.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+3.4.
+Графические маркеры
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, в предыдущем
+разделе мы упомянули о возможности
+создания графических маркеров
+списков. Она настолько привлекла
+создателей веб-страниц, что для их
+удобства были созданы специальные
+средства. Действительно, одно дело,
+когда маркерами списка являются
+стандартные кружочки или
+квадратики, и совсем другое — когда
+каждый сам имеет возможность
+создать маркер! Маркером может быть
+все что у годно — от просто цветных
+и немного выпуклых кружков и
+квадратов до изощренных
+миниатюрных художественных работ.
+Однако обратите внимание на то, что
+именно миниатюрных', маркеры
+списков должны по размеру как-то
+соответствовать высоте текстовой
+строки, и забота об этом ложится на
+автора еще на этапе создания
+изображения. Старайтесь создавать
+подобные изображения сразу в
+“натуральную величину”. Если
+создавать сначала крупные рисунки,
+а потом просто уменьшать их, то при
+уменьшении они могут стать
+неузнаваемыми! Все дело в том, что
+компьютер “не знает”, какие детали
+рисунка важны для нашего
+восприятия. Если при уменьшении
+исчезнут важные детали, результат
+будет ужасным. Если исчезнут
+второстепенные детали, качество
+восприятия ухудшится, но общее
+впечатление останется.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы проиллюстрировать
+возможность вставки в список
+графических маркеров,
+воспользуемся одним из примеров
+предыдущей главы — веб-страницей
+фирмы “Лентяй”. Если помните, там
+мы создали два списка:
+маркированный (список услуг) и
+нумерованный (порядок оформления
+заказа). Теперь, допустим, мы хотим
+заменить кружки в маркированном
+списке на красные треугольники.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сначала надо создать
+такой треугольник в любой
+программе, предназначенной для
+работы с изображениями. В нашем
+примере мы тоже создали такой
+треугольник, даже отбрасывающий
+небольшую тень, и назвали этот файл
+marker1.gif. Теперь вспомним, как мы
+задавали тип маркера списка:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+TYPE=&quot;disc&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы пойти дальше, чуть
+приподнимем завесу над материалом
+главы 4 и заменим атрибут TYPE= на
+атрибут STYLE= (как, кстати, и положено
+делать в соответствии со
+спецификацией HTML 4.0):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+STYLE=&quot;list-style-type: disc;&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь, чтобы заменить
+кружок на графический маркер,
+заменим свойство list-style-type на
+свойство list-style-image и определим
+местоположение нашего
+файла-рисунка:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+STYLE=&quot;list-style-image: url('Images/markerl.gif);&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот и все! Можно
+наслаждаться списком с
+графическими маркерами. Обратите
+внимание на то, что при указании
+имени файла мы заключили его не в
+обычные двойные кавычки, а в
+одинарные. Это сделано потому, что
+все значение атрибута STYLE=
+заключено в двойные кавычки.
+Поэтому если бы мы ошибочно
+написали
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+STYLE=&quot;list-style-image:
+uri(&quot;Images/marker1.gif&quot;);&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+то кавычка перед словом
+Images была бы воспринята как
+закрывающая, то есть атрибуту STYLE=
+было бы присвоено значение
+&quot;list-style-image: url(&quot;, a все, что
+следует за этим, стало бы еще одним,
+нераспознанным атрибутом тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL&gt;.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Оформление
+кнопок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Еще одно частое
+применение графических элементов
+— это оформление кнопок. Вообще
+говоря, кнопка — это элемент
+взаимодействия с пользователем,
+так как предполагается, что когда
+он на ней нажмет, то что-нибудь
+произойдет. В этом разделе мы не
+будем рассматривать методы такого
+взаимодействия — о них речь пойдет
+ниже. Пока же мы только научимся
+создавать кнопки и использовать в
+них элементы графики.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы создать кнопку,
+достаточно поместить некоторый
+текст между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BUTTON&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BUTTON&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+например, вот так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BUTTON&gt;ЭТO
+KHОПKА&lt;/BUTTON&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Правда, повторим, из этого
+совершенно не следует, что при
+нажатии на этой кнопке что-нибудь
+произойдет. Однако кнопка будет
+вполне полноценной и даже будет
+“вдавливаться” при нажатии.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вообще говоря, такие
+кнопки можно было создать и в
+старых версиях языка HTML, хотя там не
+было тега 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt; BUTTON &gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Интереснее тот факт, что
+между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BUTTON&gt;...&lt;/BUTTON&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ можно поместить не только
+текст, а все, что угодно. Если мы
+поместим туда тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, то
+получим кнопку с графическим
+изображением. Можно поместить на
+кнопку и текст, и изображение
+(только не надо забывать о
+форматировании — например, надо
+вставлять теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ для
+переноса строк и т. д.). Наконец, как
+показано в следующем примере, можно
+поместить на кнопку вообще любой
+блок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+НТМL! В нашем примере мы
+поместили туда целую таблицу с
+разноцветными клетками.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, проиллюстрируем
+сказанное таким файлом.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 TRANSITIONAL//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;KHOПKИ&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+TD {color: white;}
+&lt;/STYLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+&lt;BODY&gt; &lt;BUTTON&gt;ПРОСТО
+КНОПКА&lt;/BUTTON&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;button&gt;&lt;img
+SRC=&quot;Images/email_b-l.gif&quot; BORDER=&quot;0&quot;
+WIDTH=&quot;26&quot; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+HEIGHT=&quot;23&quot;
+ALT=&quot;&quot;&gt;&lt;/BUTTON&gt;&lt;BR&gt;&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BUTTON&gt;Internet
+Explorer&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/ie4.jpg&quot; WIDTH=&quot;62&quot;
+HEIGHT=&quot;61&quot; BORDER=&quot;0&quot;&gt;&lt;&gt;BR&gt; 4.0
+&lt;/BUTTON&gt;&lt;BR&gt;&lt;BR&gt; &lt;BUTTON&gt;&lt;H1&gt;
+Это большая кнопка&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TABLE
+ALIGN=&quot;center&quot; BGCOLOR=&quot;#408080&quot;
+WIDTH=&quot;280&quot; CELLSPACING=&quot;2&quot;
+CELLPADDING=&quot;2&quot; BORDER=&quot;3&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot; BGCOLOR-&quot;#400040&quot;&gt;Oнa
+содержит&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;целую таблицу&lt;/ТR&gt;
+&lt;/TR&gt; &lt;TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;&gt;c
+разноцветными&lt;/ТD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TD
+ALIGN=&quot;center&quot;
+BGCOLOR=&quot;#400040&quot;&gt;Клеточки&lt;/TD&gt;
+&lt;/TR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/TABLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;И
+ГОРИЗОНТАЛЬНУЮ ЛИНИЮ &lt;HR
+WIDTH=&quot;400&quot; SIZE=&quot;10&quot;
+COLOR=&quot;Navy&quot;&gt; &lt;/BUTTON&gt; &lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, вторую и третью
+кнопку можно использовать как
+шаблон для дальнейшей работы:
+кнопка с конвертом вполне подойдет
+для отсылки сообщения электронной
+почты, а следующая подходит для
+ссылки на новую версию Internet Explorer
+(возможно, вам потребуется такая
+ссылка, если ваш документ будет
+оптимизирован под этот броузер).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Можете пока не обращать
+внимание на тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+который был ненароком использован
+в этом примере для того, чтобы более
+быстрым способом отобразить белыми
+буквами текст в ячейках таблицы.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, мы познакомились с
+различными приемами использования
+графических элементов на
+веб-странице. Однако в предыдущих
+разделах ничего не было сказано о
+том, как же эти изображения
+создавать. Подготовке изображений
+в графических программах мы и
+посвятим два следующих коротких
+раздела.
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="3.3.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="3.5.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

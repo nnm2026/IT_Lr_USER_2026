@@ -1,0 +1,1106 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+4.2
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="4.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="4.3.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+4.2.
+Определение стилей в специальной
+таблице
+</font>
+</p>
+<p> <font size="3" face="Verdana, Arial, Helvetica, sans-serif"> Читая предыдущий 
+  раздел, некоторые, скорее всего, несколько раз поду мали: “Ну и где же здесь 
+  обещанное удобство? Неужели удобнее написать </font> <font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif"> 
+  &lt;SPAN STYLE=&quot;text-style: italic;&quot;&gt;, чем просто &lt;I&gt;?” </font> 
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Все верно, в некоторых
+случаях Сев-запись действительно
+немного длиннее, но мы и не
+утверждали, что теперь нужно
+использовать только CSS, ~ в
+некоторых случаях можно
+воспользоваться и старыми тегами,
+ничего в этом предосудительного
+нет. Однако с помощью CSS мы имеем,
+во-первых, гораздо более широкие
+возможности, а во-вторых, получаем
+удобство работы над собственно
+стилями. В предыдущем разделе вы
+это удобство почувствовать не
+могли, поскольку в учебных целях мы
+записывали все свойства стилей как
+значения атрибута STYLE=. Этот способ
+широко применяется, но лишь в тех
+случаях, когда нужно применить
+какой-либо стиль к отдельно взятому
+фрагменту. А в большинстве случаев
+используют так называемые таблицы,
+стилей.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вы, наверное, обратили
+внимание на то, что в предыдущем
+примере есть много повторений
+стилевых свойств. Повторяющиеся
+свойства можно определить для
+каждого тега HTML заранее, и они будут
+впоследствии применяться к нему
+автоматически.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Стили
+элементов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Таблица стилей обычно
+располагается в заголовке
+HTML-документа, в разделе 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Она занимает место между
+тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;/STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+Синтаксис таблицы стилей таков. Вы
+пишете имя элемента HTML, для
+которого определяете стиль, а после
+него следует блок определения
+стиля, заключенный в фигурные
+скобки. Например, в нашем примере
+можно написать так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{ background-color: #ВАВААО; color: rgb(29,29,24); }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Пробелы здесь не имеют
+никакого значения, так же, как и
+переводы строк. После этого в самом
+тексте HTML-документа достаточно
+указать тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, и к нему
+автоматически будут применены
+данные цвета фона и текста.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Пока что мы вроде бы не
+получили никакой видимой экономии,
+хотя скоро вы увидите, что имеет
+смысл располагать стилевые
+свойства 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ именно в
+таблице стилей. Чтобы
+продемонстрировать экономию,
+пойдем дальше. В нашем примере мы
+три раза выравнивали заголовки по
+центру (еще хорошо, что три, а не
+пятьдесят шесть). Вместо этого
+можно просто написать в таб лице
+стилей:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Н1,Н2 {
+text-align: center; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и после этого просто
+указывать в документе теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1 &gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+или
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;Н2&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, содержи
+мое которых будет автоматически
+центрироваться. Обратите внимание
+на то, что в таблице стилей, чтобы
+определить стиль сразу для
+нескольких элементов, мы
+перечислили их через запятую.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если вы помните, у нас еще
+оставались в теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ три
+“отмененных” атрибута: LINK=, ALINK= и
+VLINK=. Вместо них рекомендуется
+определить стили для различных
+псевдоклассов элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А&gt;. 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Это делается так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+A:link,A:visited {
+color: #634438; } A:active { color: black; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, для элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ определены три псевдокласса
+(имена кото рых отделяются
+двоеточием): link — для гиперссылок,
+visited — для посе щенных гиперссылок
+и active — для активных. Кроме того, во
+второй версии CSS (CSS Level 2) для тега
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ определены еще псевдоклассы
+hover (гиперссылка, над которой
+находится указатель мыши) и focus
+(выбран
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ная гиперссылка). Однако в
+броузере Internet Explorer версии 5
+поддерживается только первый из
+них. Например, если написать
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+A:hover { color:
+white; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+то при наведении
+указателя мыши на ссылку она будет
+подсвечиваться белым цветом. Это
+уже похоже на динамическое
+взаимодействие с пользователем!'
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Далее, в нашем примере мы
+два раза определяли одинаковый
+стиль для горизонтальной линии.
+Проще, конечно, написать в таблице
+стилей:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+HR { margin-top:
+24px; width: 75%; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и потом в текст документа
+вставлять только тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, и тогда, если не указано иное,
+линия получится такой, какой нужно.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Стили
+классов
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Все это хорошо, конечно,
+но как быть дальше? Ведь в тексте
+нашего примера несколько раз (в
+данном случае два, но могло бы быть
+и гораздо больше!) определяется
+один и тот же стиль для текста
+эпиграфа, другой стиль для
+основного текста и третий для
+подписи к эпиграфу... Хорошо бы тоже
+определить их в таблице стилей,
+однако в нашем HTML--документе все они
+расположены внутри элементов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, поэтому надо определить
+несколько различных стилей для
+одного элемента. Оказывается, это
+тоже можно сделать! Для этого,
+правда, придется использовать
+несколько более длинную запись,
+однако это все равно удобнее и
+короче, чем всякий раз определять
+атрибут STYLE= или задавать другие
+атрибуты.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, у нас должно быть
+три различных стилевых варианта
+для элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. В CSS они
+называются классами. Чтобы
+отличить эти элементы друг от
+друга, у них придется установить
+атрибут CLASS=, приблизительно так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;epig&quot;&gt;...&lt;/DIV&gt; &lt;DIV
+CLASS=&quot;pdps&quot;&gt;...&lt;/DIV&gt; &lt;DIV
+CLASS=&quot;ab&quot;&gt;...&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Имена классов выбираются
+произвольно. В данном случае мы
+образовали их от слов “эпиграф”,
+“подпись” и “абзац”. В таблице
+стилей эти классы можно определить
+так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+DIV.epig {
+text-align: justify; font-size: smaller; width: 130; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+DIV.pdps {
+font-style: italic;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align: right;
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+DIV.ab {
+text-align: justify;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-indent: 2em;
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Между прочим, другие
+элементы (причем практически все)
+также могут иметь атрибут CU\SS=. Если
+надо, чтобы определение класса было
+доступно всем элементам, его можно
+определить так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+pdps { font-style:
+italic;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align: right;
+}
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+То есть, при определении
+не указывается имя конкретного
+элемента 
+<i>
+HTML,
+</i>
+ а указывается
+только имя класса, которое в любом
+случае начинается с точки (но
+только в таблице стилей, а при
+обращении к классу в тексте
+документа точка не ставится). В
+данном примере мы определяли
+классы только для элемента &lt;DIV&gt;.
+Более того, в таком определении
+предполагается (то есть мы как бы
+помним), что элемент класса pdps будет
+вложен в элемент класса epig. Хотя, с
+другой стороны, наше определение pdps
+годится не только для подписи под
+эпиграфом, но и для любой другой,
+если она вдруг потребуется.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, кроме стилевых
+свойств элементов 
+<i>
+HTML
+</i>
+ и классов,
+мы можем определять свойства так
+называемых 
+<i>
+идентификаторов.
+</i>
+Дело в том, что у каждого элемента 
+<i>
+HTML
+</i>
+может быть атрибут ID= — его
+уникальное имя в данном документе
+(этот атрибут играет большую роль
+при динамическом взаимодействии с
+пользователем, так что с ним нам еще
+придется не раз столкнуться). Если
+вы хотите определить в таблице
+стилей свойства для элемента,
+имеющего определенный
+идентификатор ID=, это можно сделать
+так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+#соо1 { color:
+white; background-color: black; )
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Тогда элемент по имени cool
+(например 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV ID=&quot;cool&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+)
+будет наделен указанными
+свойствами (в данном случае белым
+цветом символов на черном фоне).
+Только не забывайте, что в каждом
+HTML-документе каждый идентификатор
+ID= должен быть уникальным, то есть
+не может быть двух и более
+элементов с одинаковым значением
+атрибута ID=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Ладно, это мы немного
+отвлеклись, так что давайте
+посмотрим на новый вариант
+странички Сергея Сергеева целиком.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLE&gt;Домашняя
+страница Сергея Cepreeвa&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!--
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+BODY {
+background-color: #BABAAO;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color:
+rgb(29,29,24);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+H1,H2 {
+text-align: center;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} A:link,A:visited
+{ color: #634438;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} A:active {
+color: black; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} HR { margin-top:
+24px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+width: 75%; )
+DIV.epig { text-align: justify;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-size:
+smaller;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+width: 130; }
+DIV.pdps { font-style: 'italic;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-align: right;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} DIV.ab {
+text-align: justify;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+text-indent: 2em;
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+--&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+&lt;Н1&gt;Домашняя страница Сергея
+Сергеева&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: center;&quot;&gt;&lt;A
+HREF=&quot;#skazka&quot;&gt;CKА3KА
+&amp;1аquо;Иван-царевич и серый
+зaяц&amp;raquo;&lt;/A&gt;&amp;nbsp;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;#rasskaz&quot;&gt;PaccKa3
+&amp;laquo;МОЛОТОK&amp;raquo;&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;font-size: larger;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-weight:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+bold;&quot;&gt;Сергей
+Сергеев&lt;/SPAN&gt; Smdash;
+писатель-авангардист, автор 20
+рассказов.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр.&lt;ВR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ВR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Некоторые
+его рассказы вы можете прочитать
+прямо здесь.&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;&lt;А
+NAME=&quot;skazka&quot;&gt;ИBAH-ЦAPEВИЧ И СЕРЫЙ
+ЗАЯЦ&lt;/А&gt;&lt;ВR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style: italic;
+&quot;&gt;CKА3KА&lt;/SPAN&gt;&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right
+<i>
+;&quot;&gt;
+</i>
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;epig&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Ну,
+погоди!..
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;pdps&quot;&gt;(Из
+мультфильма)&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;аЬ&quot;&gt;Жил да был
+Иван-Царевич, и все у него было: и
+злато-серебро, и невест полный
+дворец, и книжек много умных, и
+тренажерный зал огромный. Однако
+тоскливо было у него на душе - как
+встанет утром с постели царской,
+так и начнет горевать, и горюет до
+вечера.&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;ab&quot;&gt;Дoлгo ли, коротко ли,
+...&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;ab&quot;&gt;...И они жили долго и
+счастливо и умерли в один
+день.&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;&lt;А
+NAME=&quot;rasskaz&quot;&gt;МОЛOTOK&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPAN
+STYLE=&quot;font-style: italic; &quot;&gt;paccкaз&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+STYLE=&quot;text-align: right;&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;epig&quot;&gt; Мы кузнецы, и дух наш
+молод. &lt;DIV CLASS=&quot;pdps&quot;&gt;(Из
+песни)&lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;ab&quot;&gt;Этo случилось очень
+давно, уж и не помню в каком году, в
+каком веке и в каком тысячелетии...
+(Здесь располагается текст
+рассказа) &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При этом результат
+получится таким же, как и в
+предыдущем случае, просто сама
+запись намного компактнее, да и
+удобнее. Кроме того, в ней легче
+ориентироваться. Взглянув на
+исходный текст, мы сразу можем по
+имени класса найти, где абзац, а где
+эпиграф. В предыдущем примере
+выискивать нужные места текста
+среди нагромождения стилевых
+свойств было гораздо труднее.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Наверное, вы обратили
+внимание на странные сочетания 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!-- 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ --&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+которые появились в нашем примере
+около тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Вообще
+говоря, в такие символьные
+сочетания (это, кстати, тоже теги) в
+HTML-докумен-тах заключают
+комментарии. То есть все, что
+находится между этими тегами,
+игнорируется броузером. Но в данном
+случае мы пользуемся тем, что
+внутри STYLE -блока действуют законы
+синтаксиса не HTML, a CSS. Так что те
+броузеры, которые “понимают” тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и, следовательно, CSS, “поймут”
+и то, что в данном случае это не
+символы комментария, и
+проинтерпретируют таблицу стилей,
+как положено. А те броузеры (в
+основном, старые), которые CSS не
+понимают, воспримут содержимое
+таблицы стилей как комментарий.
+(Если не поставить теги
+комментариев, то эти броузеры,
+проигнорировав тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ как
+непонятный им, скорее всего станут
+выводить на экран все содержимое
+таблицы стилей.) Таким же образом мы
+будем “обманывать” старые
+броузеры при использовании тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Внешние
+стилевые таблицы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Еще одно замечательное
+свойство стилевых таблиц
+заключается в том, что с помощью
+одной таблицы, находящейся в
+отдельной файле, можно задавать
+стили для целого набора
+веб-страниц. Это, кстати, очень
+важно при разработке больших
+сайтов, поскольку, во-первых,
+способствует сохра нению единства
+стиля, а во-вторых, предоставляет
+возможность быстро изменить
+что-либо сразу во многих файлах
+проекта. Для этого следует просто
+написать всю таблицу стилей (без
+тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;/STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+) в
+отдельном файле с расширением .css, а
+затем “подключить” ее во всех HTML-
+документах, которые должны ее
+использовать. Например, если файл
+таблицы стилей называется mainstyle.css,
+то в раздел 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ каждого
+из использующих ее HTML-документов,
+нужно вставить такую строку:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LINK
+REL=&quot;Stylesheet&quot; HREF=&quot;mainstyle.css&quot;
+TYPE=&quot;text/css&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Атрибут TYPE= указывать не
+обязательно, но лучше это сделать
+(кстати, это можно делать и в теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+). Во-первых, это признак
+хорошего тона, а потом мало ли что —
+вдруг пользователю, к примеру,
+попадется какой-нибудь сумасшедший
+броузер, использующий для стилевых
+таблиц по умолчанию не CSS, а,
+допустим, JASS.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Есть и другой способ
+“подключения” стилевой таблицы из
+внешнего файла — директива @import.
+Она употребляется следующим
+образом:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE
+TYPE=&quot;text/css&quot;&gt; @import url (mainstyle.css) ;
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, эта директива
+должна находится между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;/STYLE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+поскольку она не является
+элементом языка HTML (как тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LINK&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+).
+Ее использование менее
+предпочтительно, поскольку
+броузеры могут интерпретировать ее
+по-разному.
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="4.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="4.3.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

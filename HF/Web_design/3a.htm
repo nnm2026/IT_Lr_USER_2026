@@ -1,0 +1,679 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+Изображение-
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="3.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="3.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Изображение-карта
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте
+рассмотрим более сложный пример.
+Представим себе, что надо сделать
+сайт, посвященный описанию
+старинного компьютера ATARI-800. Уже
+подготовлены файлы с описанием его
+монитора, самого компьютера и
+дисковода: monitor.html, computer.html и diskovod.html
+(мы для проверки работоспособности
+примера тоже создали такие файлы,
+но в них ничего нет, кроме
+заголовка). Наша задача: создать
+титульную страницу сайта и
+поместить на нее изображение
+компьютера (рис. 3.4).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При этом логично было бы
+сделать так, чтобы щелчок на
+изображении монитора переводил
+читателя на страничку с описанием
+монитора, щел чок на изображении
+дисковода — на страничку с
+описанием дисковода и щелчок на
+изображении самого компьютера — на
+страничку с его описанием. Можно,
+конечно, “разрезать” изображение
+на три и с каждого дать гиперссылку
+на соответствующий файл. Но при
+этом разрушится целостность
+композиции на фотографии
+компьютера. Что же делать?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Оказывается, есть
+возможность установить несколько
+гиперссылок с одного рисунка, не
+“разрезая” его! Такое изображение
+называется кар той графических
+ссылок (imagemap}. Создание карты
+графических ссылок — операция
+довольно кропотливая, но результат
+обычно довольно эффектен. Делается
+это так.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот, например, наш файл
+diskovod.html:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;НЕАD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТIТLЕ&gt;ДИСКОВОД&lt;/ТIТLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/НЕАD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ВODY&gt;ОПИСАНИЕ
+ДИСКОВОДА&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt; 
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="3.4.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 3.4.
+Изображение компьютера, из
+которого мы будем делать
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+графическую
+карту ссылок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+1. Сначала рисунок
+внедряется на веб-страницу обычным
+образом, с помощью тега &lt;IMG&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/computer.gif&quot; WIDTH=&quot;451&quot;
+HEIGHT=&quot;310&quot; BORDER=&quot;0&quot;
+ALT=&quot;ATARI-800&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+2. Затем необходимо
+установить в этом теге атрибут USEMAP=.
+Его значение должно содержать имя
+карты графических ссылок, с
+предвари тельным знаком #, Если
+карта еще не создана, как в нашем
+случае, то ей можно дать любое имя:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/computer.gif&quot; WIDTH=&quot;451&quot;
+HEIGHT=&quot;310&quot; BORDER=&quot;0&quot;
+ALT=&quot;ATARI-800&quot; USEMAP=&quot;#compmap&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+3. Теперь нужно создать
+собственно карту ссылок. Вообще
+говоря, эта карта может
+располагаться где угодно, хоть в
+другом файле — тогда в атрибуте
+USEMAP= нужно будет указать, кроме
+имени карты, имя этого файла,
+например: “mapfile.html#mymap”). В нашем
+случае давайте рас положим ее в
+конце того же файла.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+4. Карта графических
+ссылок начинается с тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt; МАР&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и завершается зак рывающим
+тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/МАР&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. В теге &lt;МАР&gt; следует
+установить (обязательно!)
+единственный возможный атрибут NAME=.
+Его значением должно быть имя
+карты, на которое мы ссылались в
+теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;МАР&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (с помощью атрибута USEMAP=). В
+данном случае это должно быть имя
+&quot;compmap&quot;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;МАР
+NAME=&quot;compmap&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+5. Между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;МАР&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/МАР&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ должна находиться основная
+часть карты. Она состоит из
+нескольких тегов 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+каждый из которых определяет
+активную область рисунка. (При
+щелчке мыши на “актив ных
+областях” может происходить
+перемещение по гиперссылке, а
+остальная часть изображения ничем
+не отличается от обычного рисунка.)
+В данном случае нам нужно
+определить три такие “активные
+области”: изображение монитора,
+компьютера и дисковода.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+6. “Активные области”
+могут быть либо прямоугольной
+формы, либо круглой, либо
+многоугольной. Это определяется
+установкой значения атрибута SHAPE= в
+теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (он употребляется без
+закрывающего тега). Если значение
+этого атрибута — &quot;rect&quot;, область
+будет прямоугольной, если
+&quot;circle&quot; — круглой, а если
+&quot;poly&quot; — многоугольной.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+7. Дальше начинается самое
+неприятное в составлении карты
+графических ссылок: нужно
+определить координаты каждой из
+активных областей и записать их как
+значения атрибута COORDS=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если “активная область”
+прямоугольная, то следует указать
+координаты левого верхнего ее угла
+и правого нижнего. Местоположение
+любой точки на рисунке может быть
+определено с помощью двух чисел —
+ее горизонтальной и вертикальной
+координат. Самая левая верхняя
+точка на рисунке имеет координаты
+“0,0”. Чем больше горизонтальная
+координата, тем правее расположена
+точка, и, соответственно, чем больше
+вертикальная координата, тем точка
+ниже. Например, если рисунок имеет
+размер 400х300 точек и нам нужно
+определить прямо угольнуюактивную
+область, занимающую его левый
+верхний угол и имеющую половину
+ширины и высоты рисунка, мы должны
+будем написать следующее:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA
+SHAPE=&quot;rect&quot; COORDS=&quot;0,0,200,150&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этой записи атрибут COORDS=
+определяет прямоугольник с помощью
+двух точек: одна из них имеет
+координаты “0,0”, то есть левый верх
+ний угол, а другая — “ 200,150”, то
+есть это центральная точка рисунка
+размером 400х300.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если “активная область”
+круглая, то задача немного
+упрощается: нужно определить
+координаты только одной точки —
+центра окружности, а также указать
+ее радиус, например:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA
+SHAPE=&quot;circle&quot; COORDS=&quot;200,150, 40&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Такая запись определяет
+круглую “активную область”,
+расположенную в центре нашего
+гипотетического рисунка размером
+400х300 (координаты центральной
+точки— “200,150”). Окружность имеет
+радиус 40 точек.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И, наконец, самый сложный
+и наиболее часто встречающийся
+случай — многоугольная “активная
+область”. Здесь нужно
+последовательно
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+указать координаты всех
+углов многоугольника. Поскольку
+таких углов может быть очень много,
+то и значение атрибута COORDS= при
+обретает угрожающие размеры...
+Рассмотрим простой пример. Если на
+нашем рисунке размером 400х300 мы
+хотим определить область в форме
+равнобедренного треугольника,
+основание которого проходит ровно
+посередине рисунка, занимая всю его
+ширину, а вершина нахо дится
+посередине верхней границы
+рисунка, то это можно сделать так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA
+SHAPE=&quot;poly&quot; COORDS=&quot;0,150,400,150,200,0&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, шесть
+координат определяют три точки —
+три угла нашего треугольника. В
+данном случае их
+последовательность не очень важна
+(можно было написать, например,
+&quot;400,150,0,150,200,0&quot;), но когда коли
+чество углов больше, становится
+важным порядок соединения точек.
+Например, записи
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA
+SHAPE=&quot;poly&quot;
+COORDS=&quot;0,0,200,0,200,150,100,75,0,150&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA
+SHAPE=&quot;poly&quot;
+COORDS=&quot;0,0,200,0,100,75,200,150,0,150&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+дадут разные результаты.
+В первом с случае это прямоугольник
+с вырезанным треугольником снизу, а
+во втором случае вырезанный
+треугольник находится справа.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Отпугивающим моментом в
+этой технологии является то, что
+приходится каким-то образом
+выяснять координаты каждой нужной
+точки. На реальном рисунке это
+невозможно сделать “на глаз”, и
+приходится, к примеру, выяснять все
+координаты в каком-либо
+графическом редакторе, а уже потом
+переносить их в HTML-документ. К
+счастью, в послед них версиях
+некоторых HTML-редакторов (например,
+Allaire Homesite) имеются встроенные
+средства для установки координат
+на картах графических ссылок.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+8. Однако атрибуты SHAPE= и
+COORDS= — это еще не все. В теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ необходимо установить еще
+самое главное — атрибут HREF=,
+определяющий гиперссылку, то есть
+куда же должен попасть
+пользователь при щелчке мышью на
+этой “активной области”. Здесь
+никаких сложностей нет — атрибут
+HREF= тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ ведет себя так же, как если бы
+он был в обычном теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+9. Кроме того, бывает
+полезно определить также атрибут
+ALT=. Его значе ние может содержать
+поясняющий текст, который будет
+“всплывать” при наведении мыши на
+“активную область”.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, теперь мы можем
+попытаться обвести “активные
+области” нашего изображения
+компьютера (см. рис. 3.4). Естественно,
+что все они должны быть
+многоугольными, так как ни один из
+трех объектов не “укладывается” в
+прямоугольник или круг. Посмотрим,
+что получится в результате.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 TRANSITIONAL//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Описание
+компьютера&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+BGCOLOR=&quot;#FFA940&quot; TEXT=&quot;#1A1A1A&quot;
+LINK=&quot;#OOOOAO&quot; VLINK=&quot;#OOOOAO&quot;
+ALINK=&quot;#OOOOAO&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN-&quot;center&quot;&gt;&lt;H1&gt;ATARI-800&lt;/Hl&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;&lt;BIG&gt;3necь
+представлено описание старинного
+компьютера ATARI-800. Вот как он
+выглядел :&lt;/BIGX/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;&lt;IMG
+SRC=&quot;Images/computer.gif&quot; WIDTH=&quot;451&quot;
+HEIGHT=&quot;310&quot; BORDER=&quot;0&quot;
+ALT=&quot;ATARI-800&quot;
+USEMAP=&quot;#compmap&quot;&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;Для получения
+подробной информации о каждом узле
+щелкните на его изображении.&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+&lt;МАР NAME=&quot;compmap&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA
+ALT=&quot;МОHИTOР&quot; SHAPE=&quot;poly&quot;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+COORDS=&quot;95,41,289,40,289,180,212,180,211,167,86,168,86,54&quot;
+HREF=&quot;monitor.html&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA
+ALT=&quot;Koмпьютep ATARI-800&quot; SHAPE=&quot;poly&quot;
+COORDS=&quot;7,253,57,255,62,265,156,265,158,259,205,259,213,247,210,178,
+208,169,30,168,6,245&quot; HREF=&quot;computer.html&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;AREA
+ALT=&quot;Диcкoвoд&quot; SHAPE=&quot;poly&quot;
+COORDS=&quot;293,197,345,154,438,168,441,196,437,224,400,265,294,
+252,292,226&quot; HREF=&quot;diskovod.html&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/МАР&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат этих трудов
+представлен на рис. 3.5. Как видите,
+на первый взгляд рисунок на
+страничке вполне обычный — наличие
+“активных областей” ничем не
+выдается. Поэтому необходима
+поясняющая подпись под рисунком.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если поводить мышью над
+рисунком, то можно заметить, что над
+“актив ными областями” указатель
+мыши меняет свой вид, а если
+приостановить мышь над “активной
+областью” — появится
+соответствующая всплыва ющая
+надпись. И еще интересный момент: в
+большинстве броузеров можно воочию
+увидеть границы активных областей.
+Для этого надо нажать кнопку мыши
+на “активной области”, и, не
+отпуская ее, увести мышь за пределы
+области, и там отпустить кнопку.
+Тогда граница соответствующей “
+актив ной области” останется
+выделенной.
+</font>
+</p>
+<p align="center">
+<img src="3.5.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 3.5. Страничка
+с графической картой ссылок
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="3.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="3.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

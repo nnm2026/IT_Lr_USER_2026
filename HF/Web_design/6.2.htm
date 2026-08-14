@@ -1,0 +1,788 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+6.2
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="6.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="6.3.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+6.2. Как
+писать собственные функции
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В примере, приведенном в
+предыдущем разделе, вы, вероятно,
+обратили внимание на то, что
+некоторые строки нашего кода
+выглядят очень похоже, почти
+повторяя друг друга. Поскольку при
+создании динамических веб- страниц
+нередко действительно приходится
+проделывать одни и те же дейcтвия с
+разными элементами, то для
+сокращения размера кода можно
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+записать их один раз в
+самом начале, поставив впереди
+ключевое слово function, то есть,
+определив их как функцию.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Описание
+функции
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте рассмотрим такой
+очень простой пример. Предположим,
+что на нашей странице время от
+времени придется вычислять
+факториал числа. Понятно, что одной
+строкой здесь не обойтись. Чтобы не
+писать последовательность строк
+вычисления прямо в тексте
+документа, можно оформить его как
+функцию:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function fct(a) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ if
+(&lt;а==0)||(a==l)) return 1;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else { var i=1;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+for (a; a&gt;1;
+a--) i*=a; return i; } } 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, эта функция не
+делает ничего особенного. Обратите
+внимание на следующие моменты.
+Во-первых, функция должна принимать
+какой-то аргумент (в данном случае
+число, факториал которого следует
+вычислить) и возвращать результат.
+При определении функции аргумент
+нужно указать в скобках после ее
+названия. Например, здесь мы
+написали
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function fct(a)
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Это означает, что функция
+будет называться fct() (можно
+использовать любое
+незарезервированное сочетание
+символов), а ее аргумент мы пока
+условно обозначили “а”.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Далее идет, собственно,
+“тело” функции, которое должно
+быть заключено а в фигурные скобки.
+В первой ее строке 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+((а==0)||(а==1)) return 1; 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+мы проверяем, не равен ли
+аргумент 0 или 1, и если это так, то
+функция возвращает результат — 1.
+Для возвращения результата
+применяется one- ратор return, 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если же аргумент не равен
+0 или 1, выполняется следующий блок
+(идущий после ключевого слова else).
+Здесь мы определяем временную
+переменную i, в которую будем
+сохранять промежуточные
+результаты. Затем организуем цикл,
+причем в качестве счетчика
+используем сам аргумент, чтобы не
+вводить еще одну переменную. Запись
+i*=a — это просто сокращенная форма
+записи i=i*a, то есть мы перемножаем
+значения i и а, присваивая результат
+переменной i. Кстати, такая
+сокращенная форма записи
+существует для всех арифметических
+и логических операций, то есть
+можно записать х+=2 вместо х=х+2; z%=y
+вместо z=z%y и т. д.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь, когда функция
+написана, ее можно вызвать из
+любого места. Например, если мы
+напишем где-нибудь выражение x=fct(5),
+то переменной х будет присвоено
+значение факториала от числа 5, то
+есть 120.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы не возникло ошибки
+вызова еще не определенной функции,
+рекомендуется определять их в
+разделе 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ своего .HTML-файла. Теперь
+давайте попробуем
+проиллюстрировать сказанное.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТITLЕ&gt;Вычисление
+факториала&lt;/ТITLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+function fct(a) {
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if
+((a==0)||(a==l)) return 1;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var i=l; for (a;
+a&gt;1; a--) i*=a; return i;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} }
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+var q; q=prompt
+(&quot;Введите целое число от 0 до
+170&quot;, &quot;5&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+q=parselnt(q) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+if (isNaN(q))
+alert (&quot;Должно быть введено ЧИСЛО в
+пределах от 0 до 170&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else if
+(&lt;q&lt;0)||(q&gt;170)) alert (&quot;Число должно
+быть в пределах от 0 до 170&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else
+document.write(q+&quot;l = &quot;+fct(q)+&quot;&lt;BR&gt;&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+При загрузке этой
+веб-страницы пользователю будет
+предложено ввести число в пределах
+от 0 до 170 поскольку для
+отрицательных чисел факториал не
+определен, а для чисел, больших 170,
+обычным способом вычис лить его не
+удастся — возникнет переполнение,
+и интерпретатор JavaScript выдаст в
+качестве результата ключевое слово
+Infinity, то есть бесконечность). Затем
+с помощью функции parselnt() мы выделяем
+из введенной строки целое число
+(если это не удается — выдается
+предупреждающее сообщение). Затем
+мы проверяем, входит ли это число в
+“разрешенный” диапазон (от 0 до 170).
+И, наконец, если все правильно,
+записываем результат, “попутно”
+вызывая нашу функцию fct().
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Усложненный
+пример
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте несколько
+усложним задачу. Пусть мы хотим
+проделать все это несколько раз
+подряд, чтобы пользователь мог по
+желанию вычислить несколько разных
+значений факториала. Для этого нам
+лучше оформить как функцию все, что
+мы написали до этого. Назовем эту
+функцию callit() и поместим в заголовок
+документа:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function callitO {
+var q; q=prompt (&quot;Введите целое число от
+0 до 170&quot;, &quot;5&quot;) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+q=parselnt(q) ; if
+(isNaN(q)) alert (&quot;Должно быть введено
+ЧИСЛО в пределах от 0 до 170&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else if
+((q&lt;0)|| (q&gt;l70)) alert (&quot;Чиг-ло должно
+быть в пределах от 0 до 170&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else document
+.write&lt;q+&quot;! = &quot;+fct(q)+&quot;&lt;BR&gt;&quot;); 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку,
+в отличие от предыдущей, эта
+функция не принимает никаких
+аргументов, в скобках после ее
+имени ничего нет, но сами скобки все
+равно необходимо поставить. Так как
+результата эта функция тоже не воз
+вращает, то мы прекрасно обходимся
+в ней без оператора return.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь мы
+можем вызывать ее из “тела”
+документа сколько угодно раз,
+написав просто callit(). Например,
+можно организовать цикл для
+10-кратного ее вызова:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+for (var j=1;
+j&lt;11; j++) callit();
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Можно
+также организовать бесконечный
+цикл:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+while (true)
+callit();
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для этого мы использовали
+оператор условной организации
+цикла while. Он проверяет условие,
+которое записано в скобках, и, если
+оно верно, выполняется действие
+(или блок действий), указанное после
+этого оператора.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Так повторяется до тех
+пор, пока условие не станет
+неверным. Здесь мы в качестве
+условия поставили ключевое слово
+true, которое всегда будет воз
+вращать значение “истина”.
+Поэтому цикл получится
+бесконечным.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако хорошо бы сначала
+спросить мнение пользователя,
+желает ли он повторения цикла, а то
+мы так и не позволим ему уйти со
+своей страницы. Для этого можно
+воспользоваться методом confirm. Он
+очень похож на метод alert, однако
+здесь пользователь имеет
+возможность нажать одну из двух
+кнопок (ОК или Отмена). Если нажата
+кнопка ОК, возвращается значение
+“истина” (true), если нажата кнопка
+Отмена, возвращается значение
+“ложь” (false).
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+while (confirm
+(&quot;Повторить?&quot;)) callit();
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Это уже лучше, но теперь
+при загрузке страницы пользователь
+сразу увидит запрос, повторить ли
+ему что-то, чего он еще не делал.
+Перед тем как задавать подобные
+вопросы, неплохо бы хоть один раз
+наше вычисление произвести. Чтобы
+цикл выполнялся до проверки
+условия, можно организовать его
+по-другому, используя ключевое
+слово do:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+do callit(); while
+(confirm (&quot;Повторить?&quot;));
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь после вычисления
+каждого факториала пользователь
+будет иметь возможность выбора:
+повторить расчет или завершить. При
+нажатии кнопки Отмена выполняется
+выход из цикла. После этого можно
+продолжить загрузку документа (для
+иллюстрации мы просто подводим
+горизонталь ную черту под
+результатами вычислений).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот как будет вьглядеть
+текст этой веб-страницы целиком.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Вычисление
+факториала&lt;/ТITLЕ&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+function fct(a) { if ((a=0)| | (a=l)) return 1; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else { var i=l ;
+for (a; a&gt;l; a--) i*=a; return i; } }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+function callit()
+{ var q; q=prompt (&quot;Введите целое число
+от 0 до 170&quot;, &quot;5&quot;) ; q=parselnt(q) ; if
+(isNaN(q)) alert(&quot;Должно быть введено
+ЧИСЛО в пределах от 0 до 170&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else if ( (q&lt;0)
+| | (q&gt;170) ) alert(&quot;Число должно быть в
+пределах от 0 до 170&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+else
+document.write(q+&quot;! = &quot;+fct(q)+&quot;&lt;BR&gt;&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} &lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt; do
+callit() ; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+while (confirm
+(&quot;Повторить?&quot;)) ;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+document.write(&quot;&lt;HR
+WIDTH=100 ALIGN”'left'&gt;&quot;);
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/SCRIPT&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Действие этого кода
+показано на рис. 6.5. Как видите,
+результат каждого вычисления
+помещается в окно броузера. Если
+сейчас нажать кнопку Отмена, под
+результатами будет проведена
+горизонтальная черта.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="6.8.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 6.5. Расчет
+факториалов и запрос к
+пользователю
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Конечно, появление лишних
+диалоговых окон в некоторых
+случаях может отпугнуть
+пользователя, особенно если у него
+на полную громкость вклю чены
+звуковые колонки (вывод окон alert и
+confirm обычно сопровождается
+стандартными звуками Windows). Поэтому
+лучше бы воздерживаться от их
+применения. Вместо этого можно
+использовать динамическое измене
+ния содержимого страницы.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Указание
+языка сценариев
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Прежде чем пойти далее,
+давайте рассмотрим еще вот какой
+вопрос. Дело в том, что тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, так же как и другие теги,
+может иметь свои атри буты. Это
+LANGUAGE= (язык) и TYPE= (тип). В первом
+указывается язык, на котором
+написан сценарий. По умолчанию,
+значением этого атрибута явля ется
+JavaScript, так что если вы пишете
+обычный JavaScript-сценарий, то можете
+спокойно не указывать этот атрибут.
+Однако, если вы используете
+особенности версий 1.1 или 1.2 этого
+языка, то это необходимо указать:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE”&quot;JavaScript1.1&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ИЛИ
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE&quot;&quot;JavaScript1.2&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Правда, распознать это
+смогут только броузеры Netscape
+последних версий. А если вы пишете
+страницу для отображения в
+броузере Internet Explorer, то можете
+использовать вообще другой язык —
+VBScript. Для этого необходимо указать
+соответствующее значение атрибута
+LANGUAGE=:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;VBS&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ИЛИ
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SCRIPT
+LANGUAGE=&quot;VBScript&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+что, вообще говоря, одно и
+то же. В отдельных случаях могут
+применяться другие языки, для чего
+определены такие значения атрибута
+LANGUAGE=, как LiveScript, tal, PHP и другие.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Что касается атрибута TYPE=,
+то в нем можно на всякий случай
+указать тип сценария. В большинстве
+случаев это text/javascript (или text/vbscript
+для сценариев, написанных на VBScript).
+</font>
+</p>
+<table border="0" width="16%" cols="3">
+<tr>
+<td>
+<a href="6.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td width="10%">
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="6.3.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

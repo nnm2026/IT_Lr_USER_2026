@@ -1,0 +1,1387 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+4.3
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="4.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+4.3. Обзор
+других возможностей стилевых
+таблиц
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В примерах предыдущих
+двух разделов мы кратко
+продемонстрировали способы
+применения стилевых таблиц CSS и их
+удобство. Однако, помимо
+упорядочивания стилевой
+информации, таблицы стилей CSS
+открывают для создателя
+веб-страниц и многие новые
+возможности, которые недоступны в
+стандартном языке HTML. Правда, к
+сожалению, употребляя новые
+возможности CSS, нужно четко
+представлять себе, что не все
+броузеры смогут их
+проинтерпретировать правильно. На
+сегодняшний день существует два
+“абстрактных” стандарта CSS — так
+называемый стандарт CSS1 и более
+новый стандарт CSS2. Реальные
+броузеры по-разному поддерживают
+(или не поддерживают) их. Некоторые
+свойства стилей, описанные в CSS1 и,
+особенно, CSS2, до сих пор не получили
+поддержки в ряде броузеров, а
+некоторые не поддерживаются
+вообще. И, наоборот, существуют
+броузерные расширения, не
+описанные в стандартах CSS1/CSS2.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако не надо этого
+пугаться: все равно новые
+возможности использовать стоит,
+просто надо проверять результаты
+своей работы в разных бро-узерах и
+сравнивать их. Впрочем, это
+относится даже не столько к CSS,
+сколько к динамическим страницам,
+создаваемым с использованием JavaScript
+Итак, давайте познакомимся с
+некоторыми новыми возможностями CSS.
+Замечательно, что многие стилевые
+свойства здесь можно применять
+практически ко всем элементам.
+Например, цвет фона (свойство
+background-color), который мы в предыдущих
+примерах определяли для элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, может с таким же успехом
+задаваться и для отдельных
+текстовых блоков и даже слов. Более
+того, все элементы могут иметь свой
+фоновый рисунок (свойство
+background-image).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Практически для всех
+элементов можно теперь также
+определить поля (свойство margin),
+рамки различного вида и толщины
+(свойство border), и отступы (свойство
+padding). Различие между полем и
+отступом заключается в том, что
+отступ находится внутри рамки
+элемента, а поле — вне нее. Свойства
+полей, рамок и отступов могут
+задаваться индивидуально для
+каждой из сторон блока. Более гибко
+можно выбирать свойства шрифта: его
+начертание, размер, степень
+“жирности”, гарнитуру и
+оформление (это, соответственно,
+свойства: font-stlye, font-size, font-weight,
+font-family, text-decoration). Интересное
+свойство text-decoration позволяет,
+например, не только зачеркнуть или
+подчеркнуть текст, но и сделать его
+подчеркнутым (text-decoration: overline) или
+даже мигающим (text-decoration: blink). Правда,
+значение blink поддерживается пока
+только в Netscapel и Opera 4. Можно
+несколько “оживить заголовки с
+помощью свойства font-variant: small-caps.
+Правда, пока что это работает
+только в Netscape 6, a Internet Explorer просто
+преобра зует строчные буквы в
+прописные, а прописные не
+увеличивает.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы было интереснее,
+давайте рассмотрим некоторые
+свойства на кон кретном примере.
+Помните веб-страничку
+гипотетической фирмы “Лентяй” из
+главы 2? Сейчас мы попробуем взять
+ее за основу и улучшить оформление.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Размещение
+блоков текста
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вообще-то “Лентяй”, хоть
+и гипотетическая, но все же фирма,
+поэтому на ее сайте должны
+присутствовать несколько разделов,
+без которых корпоративный сайт уже
+не воспринимается, типа “О
+компании”, “Услуги” (или
+“Продукция”), “Цены”, “Новости”
+и прочие. Поэтому мы тоже снаб дим
+для начала эту страничку блоком
+соответствующих гиперссылок:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;УСЛУГИ&lt;/DIV&gt; &lt;DIV
+CLASS=&quot;lnk&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;prices.html&quot;&gt;ЦЕНЫ&lt;/A&gt;&lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A HREF=&quot;forml
+.html&quot;&gt;ФОРМА 3AKA3A&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF=&quot;history.html&quot;&gt;ИСТОРИЯ
+КОМПАНИИ&lt;/А&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF=&quot;guestbook.html&quot;&gt;KHИГА
+OT3ЫBOB&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Как можно
+организовывать загрузку разделов.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что для списка ссылок мы определили
+класс Ink. Пока что определения
+свойств этого класса у нас нет, но
+ясно, что блок ссылок должен
+выглядеть как-то не так, как все
+остальное. Поскольку мы уже вроде
+бы находимся в разделе “Услуги”
+(см. содержание стра нички),
+гиперссылка на него отсутствует.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+То, что у нас получилось,
+показано на рис. 4.5. Пока это
+выглядит не очень привлекательно.
+Прежде всего, давайте определимся с
+расположением блока ссылок на
+странице. Например, его можно было
+бы расположить
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="4.6.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 4.5. Добавим на
+страничку блок гиперссылок
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.hdr 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+{ position:
+absolute; left: 50px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+top: 10рх; }
+Мы немного отступили от края
+странички, хотя можно было указать,
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+конечно, и
+нулевые значения left и top. Заодно
+можно сразу указать свойство text-align:
+center;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+для
+центрирования нашего заголовка. В
+тексте документа напишем:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;hdr&quot;&gt;ФИРМА&amp;nbsp;ЛЕНТЯЙ&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+На всякий случай мы здесь
+используем неразрывный пробел
+вместо обычного, чтобы избежать
+переноса слова “Лентяй” на
+следующую строку. Затем определим
+класс Ift для левой части странички:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.ift { position:
+absolute; font-size: meduim; left: 10рх; top: 160px; width:
+550px; height: 400px; overflow: auto; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Здесь нужно немного
+пояснить. Во-первых, мы определили
+отступ от верх него края в 160
+пикселов, чтобы оставить место для
+заголовка. Кроме того, свойство width
+определяет ширину этого блока так,
+чтобы оставить немного места
+справа для блока гиперссылок. Мы
+могли не определять свойство height,
+однако с его помощью можно
+“вогнать” всю информацию в преде
+лы экрана, а ту, что не поместится,
+доставать с помощью дополнительной
+полосы прокрутки, определив для
+этого свойство overflow: auto. Тогда назва
+ние фирмы будет всегда оставаться в
+верхней части экрана. Можно также
+было определить свойство overflow: scroll;,
+и тогда дополнительная полоса
+прокрутки (для левого блока) была бы
+видна в любом случае. Значение auto
+заставляет броузер показывать ее
+только тогда, когда это необходимо,
+то есть, когда есть информация, не
+помещающаяся в пределах блока.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В тексте документа,
+соответственно, заключим всю
+основную информацию в блок класса
+Ift:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lft&quot;&gt; Наша фирма
+предоставляет следующие услуги:
+&lt;UL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;li&gt;Бытовые
+услуги
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И,
+наконец, определим класс rght для
+блока гиперссылок, который будет
+располагаться справа:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.rght { position:
+absolute; font-size: large; left: 565px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+top: 160px;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+width: 160px;
+height: 400px; }
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку гиперссылки
+должны быть хорошо заметны на фоне
+всего остального, мы сразу
+определяем для них более крупный
+шрифт (font-size: large;). Значение свойства
+top должно быть таким же, как и у
+класса Ift, чтобы оба блока
+расположились на одинаковой
+высоте. Значение left выбрано таким,
+чтобы слева осталось достаточно
+места для информационного блока.
+Теперь присвоим класс rght нашему
+блоку гиперссылок:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;rght&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;УСЛУГИ&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF=&quot;prices.html&quot;&gt;ЦЕНЫ&lt;/A&gt;&lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF=&quot;forml.html&quot;&gt;ФОPMA
+3AKA3A&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF=&quot;history.html&quot;&gt;ИСТОРИЯ
+КОМПАНИИ&lt;/А&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A HREF=&quot;guestbook
+.html&quot;&gt;KHИГА OT3ЫBOB&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Добавление
+фонового рисунка
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+То, что у нас получилось,
+показано на рис. 4.6. Прежде чем мы
+займемся стилевым оформлением
+каждого блока, давайте вместо
+однотонового фона установим
+градиент. Пусть основная
+информация находится на светлом
+фоне, а в районе блока гиперссылок
+логично было бы начать градиентный
+перелив в более темный оттенок.
+Только вот беда: если мы будем
+создавать фоновый рисунок с
+градиентным переливом справа, то
+совершенно непонятно, какой ширины
+он должен быть. Еще хорошо, что на
+этой страничке абсолютное
+позиционирование — можно, в
+принципе, начать градиент на 565-й
+точке слева. Однако все равно
+непонятно, где его заканчивать —
+ведь ширина экрана зависит от
+разрешения!
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте воспользуемся
+более изящным методом. Создадим
+градиент, имеющий слева тот же цвет,
+что и цвет фона, и расположим его
+справа. Для этого нам надо написать
+в свойствах элемента BODY:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+background-position:
+right;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако посмотрите на
+результат (рис. 4.7). Фоновый рисунок
+действительно выровнен по правому
+краю, но он повторяется во все
+стороны, а нам это не нужно. Чтобы он
+повторялся только по вертикали,
+нужно добавить в свой ства BODY еще
+такую строку:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+background-repeat:
+repeat-y; i
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="4.7.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 4.6.
+Позиционирование блока
+гиперссылок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вот теперь получилось то,
+что нужно. Кстати, можно заставить
+фоновый рисунок повторяться только
+по горизонтали (repeat-x) или вообще не
+повторяться (no-repeat). В этом случае
+можно указать любое значение
+свойства background-position в процентах,
+пикселах или иных единицах.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Оформление
+текста
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте займемся
+информационным блоком. Чтобы
+информация хорошо читалась и
+воспринималась, он не должен особо
+страдать излишествами, однако,
+чтобы выделить заголовки списков,
+их можно написать более крупно и
+шрифтом другого начертания. Для
+этого определим соответствующий
+класс: .bigger { font-size: larger; font-family: sans-serif;
+}а в тексте документа применим его:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;bigger&quot;&gt;Haшa фирма
+предоставляет следующие
+услуги:&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как вы уже, наверное,
+поняли, свойство font-family определяет
+гарнитуру шрифта. Значение sans-serif
+соответствует шрифтам, не имеющим
+засечек. По умолчанию обычно
+определен шрифт serif (с засечками,
+обычно это Times New Roman).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, воспользуемся
+уже знакомым нам стилевым
+свойством list- style-image для
+использования графических
+маркеров списка. Поскольку список у
+нас трехуровневый, то логично
+создать три маркера разных цветов.
+Как применить графические маркеры,
+вы уже знаете:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+STYLE=&quot;list-style-iiriage: url (&quot;Images/markeri .gif )
+; &quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Можно было, конечно,
+создать специальные классы для
+каждого уровня списка, но мы этого
+делать пока не будем, потому что
+списков немного и, соответственно,
+вполне достаточно атрибута STYLE=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Далее будем немного
+изменять вид гиперссылки при
+наведении на нее мыши. Здесь можно
+придумать различные варианты. В
+нашем примере мы решили изменять
+шрифт на полужирный и убирать
+подчеркивание при наведении мыши:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+A:hover {
+font-weight: bold; text-decoration: none; }
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Все эти свойства вам уже знакомы.
+Давайте взглянем, что у нас
+получается (рис. 4.7).
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Декоративное
+оформление текста
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для информационного
+блока оформление уже вполне
+закончено. Теперь займемся блоком
+гиперссылок. Вспомним, что мы для
+этого даже загото вили класс Ink.
+Чтобы наши разделы были хорошо
+заметны, давайте их обведем
+рамками:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.Ink {
+border-width: thick; border-style: ridge; border-color: #319CFF;
+color: red; text-align: center; }
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы рамка вообще отобразилась,
+необходимо определить свойство
+border-style (дело в том, что по умолчанию
+его значение — none, то есть рамки
+нет). Здесь мы можем выбрать вид
+рамки из возможных: solid (обычная),
+double (двойная), groove (вогнутая с обеих
+сторон), ridge (выпуклая с обеих
+сторон), inset (вогнутая), outset
+(выпуклая), dotted (точечная) и dashed
+(пунктир-
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="4.9.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 4.7.
+Применение стилей к основной части
+странички
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ная). Последние два
+значения, правда, пока
+воспроизводятся только в бро-узере
+Netscape 6. Мы выбрали значение ridge.
+Чтобы рамка не терялась на фоне
+больших букв, зададим свойство
+border-width: thick; (толстая рамка; еще
+можно указывать значения thin —
+тонкая и medium — средняя, а также
+задавать толщину в любых единицах).
+С помощью свойства border-color
+установим цвет рамки, по оттенку
+сочетающийся с фоном.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поскольку в одном из
+обозначенных разделов мы всегда
+будем находиться, его название не
+будет являться гиперссылкой. Для
+него мы определили свойство 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: red;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (красный цвет текста). У
+гиперссылок, как вы помните, свой
+цвет.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако при этом придется
+сменить цвет гиперссылок на более
+светлый. Но будьте внимательны!
+Цвет гиперссылок нужно сменить
+только для класса Ink, потому что в
+других местах гиперссылки
+расположены на свет лом фоне, и их
+уже нельзя осветлять, иначе их не
+будет видно. Поэтому не (нужно
+переопределять свойства элемента 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ целиком. Нужно переопре
+делить некоторые его свойства
+только внутри класса Ink:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.Ink A{
+text-decoration: none; color: white;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Такая запись делает как
+раз то, что нам нужно: в классе Ink для
+элемента &lt;А&gt; определяются
+некоторые новые свойства, а
+остальные остаются такими же, как и
+у всех элементов &lt;А&gt;. Заодно мы
+использовали свойство text- decoration:
+none;, чтобы снять подчеркивание с
+гиперссылок в этом блоке — в таком
+“кнопочном” оформлении оно
+неуместно.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь все вроде бы
+нормально, однако одна из кнопок
+“вылезает” за пределы отведенного
+пространства (из-за слова
+“компании”). Можно, конечно, это
+пространство увеличить, но давайте
+лучше попытаемся немного “ужать”
+это слово. Есть такое стилевое
+свойство letter-spacing, которое задает
+дополнительное расстояние между
+буквами. Если это расстояние задать
+отрицательным, буквы расположатся
+теснее обычного:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+НRЕF=&quot;histогу.html&quot;&gt;ИСТОРИЯ &lt;SPAN
+STYLE=&quot;letter-spacing:
+-3рх;&quot;&gt;KOMПAHИИ&lt;/SPAN&gt;&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Оформление
+заголовка
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь можно заняться
+заголовком. Во-первых, нужно задать
+его ширину и высоту, причем первую
+мы зададим в процентах, чтобы она
+могла изменяться вместе с шириной
+окна броузера:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+width: 90%;
+height: 100рх;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Эти значения мы
+определяем для класса hdr. Значение
+height выбираем с таким расчетом,
+чтобы осталось еще немного
+пространства сверху от остальных
+блоков нашей веб-странички. Далее
+для заголовка лучше назначить
+шрифт покрупнее:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-size:
+6Орх;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, будет лучше,
+если шрифт заголовка будет
+контрастен относительно всех
+остальных шрифтов. Выберем
+какую-нибудь необычную гарнитуру:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-family:
+OdessaScriptFWF;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако, указывая в явном
+виде название гарнитуры шрифта,
+следует предусмотреть случай,
+когда на компьютере пользователя
+этого шрифта не окажется. Для этого
+можно определить (через запятую)
+еще несколько вариантов начертания
+шрифта в порядке убывания
+предпочтительности. Последним
+обязательно укажите начертание из
+стандартного набора (serif, sans-serif,
+cursive, fantasy, monospace). В данном случае нам
+нужен необычный шрифт, поэтому
+укажем значение fantasy:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-family:
+OdessaScriptFWF, fantasy;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь расставим буквы
+немного пошире с помощью уже
+знакомого нам свойства letter-spacing, а
+также определим высоту строки,
+равной высоте нашего блока:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+letter-spacing:
+0.05em; line-height: 100рх;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+font-weight: 900;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Как видите, мы определили
+здесь максимально возможную
+жирность шрифта. Теперь определим
+цвет текста, сочетающийся с цветом
+фона:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: #3163CE;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Далее, мы хотели
+нарисовать рамку вокруг заголовка.
+Определим ее свойства, используя
+сокращенную запись:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+border: 10рх
+outset #003163;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этой записи определены
+сразу три свойства: border-width, border-style и
+border-color. В некоторых случаях
+допустимо подобное объединение
+значений нескольких свойств в одну
+строку. Это можно написать быстрее,
+хотя и менее наглядно.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В принципе заголовок
+готов. Давайте только добавим к
+нему еще визуальный эффект с
+помощью свойства filter. Это работает,
+правда, только в броузере Internet Explorer
+и отсутствует в спецификациях CSS,
+однако смотрится очень красиво.
+Можно применить это свойство,
+например, так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+filter: shadow;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В результате наш блок
+будет отбрасывать тень. Существуют
+такие значения свойства filter, как
+dropshadow (другой тип тени), blur
+(размытие), wave (отражение в волне) и
+прочие. 
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Наложение
+элементов веб-страницы
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для полного завершения
+картины неплохо бы еще добавить
+какой-либо фоновый рисунок типа
+“водяного знака”, символизирующий
+профиль деятельности фирмы.
+Поскольку фирма называется
+“Лентяй”, возьмем за основу
+фотографию компании, занятой
+бездельем. Чтобы она стала похожа
+на “ водяной знак ”, вначале
+обработаем ее в графическом
+редакторе, например в Adobe Photoshop.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Исходное изображение
+сначала несколько размоем. В Adobe
+Photoshop это делается фильтром
+фильтр&gt; Размытие &gt; Сильное
+размытие (Filter &gt; Blur &gt; Blur More). Для
+усиления эффекта применим этот
+фильтр несколько раз подряд. Затем
+дайте команду Изображение &gt;
+Настройка &gt; Оттенок и
+насыщенность (Image &gt; Adjust &gt;
+Hue&gt;Saturation). Здесь можно придать
+изображению оттенок, сходный с
+цветом фона. Затем необходимо
+уменьшить контрастность
+изображения, чтобы оно не отвлекало
+на себя слишком много внимания, и
+увеличить его яркость, поскольку у
+нас светлый фон: Изображение &gt;
+Настройка &gt; Яркость/Контраст (Image
+&gt; Adjust &gt; Brightness/Contrast). После этого
+обрежем изображение по контуру
+основного рисунка и сохраним в
+формате GIF с прозрачным фоном.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+— Стоп! — скажете вы, — а
+что же делать дальше? Ведь у нас уже
+есть на веб-странице один фоновый
+рисунок — градиент! Ведь сразу два
+фоновых рисунка назначить нельзя!?
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Ну, во первых, нельзя
+назначить два фоновых рисунка
+одному элементу, так что мы можем
+спокойно назначить его, например,
+левому (информационному) блоку.
+Однако хотелось бы подложить этот
+рисунок не только под
+информационный блок, а сделать его
+как бы нейтральным фоновым
+рисунком всей страницы. Поэтому
+просто-напросто давайте опять
+воспользуемся абсолютным
+позиционированием. Определим класс
+logo, располагающийся в центре нашей
+страницы, ближе к низу:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.logo { position:
+absolute; left: 150; top: 220; } Теперь присвоим
+этот класс нашему рисунку:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+CLASS=&quot;logo&quot; SRC=&quot;Images/logo6.gif&quot;
+WIDTH=&quot;500&quot; HEIGHT=&quot;346&quot;
+BORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Действительно, при
+абсолютном (да и относительном)
+позиционировании блоки могут
+накладываться друг на друга, и
+тогда возникает проблема
+“третьего измерения” — какой из
+них окажется “выше”? Для решения
+этой проблемы придумали стилевое
+свойство z-index. Чем больше его
+значение, тем “выше”
+располагается блок при наложении.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы наш “водяной знак”
+не загораживал все остальное,
+определим для класса logo
+отрицательное значение 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+z-index:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+z-index: -5;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitionai//EN&quot;&gt;
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;ФИРМА
+&quot;ЛЕНТЯЙ&quot;&lt;/ТIТLЕ&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STYLE&gt; BODY
+{
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+background-color:
+#D2FFFF;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+color: #003737;
+background-image: url(&quot;Images\grad2.jpg&quot;);
+background-position: right; background-repeat: repeat-y;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}
+A:link,A:active,A:visited { color: #006A6A; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} A:hover {
+font-weight: bold; text-decoration: none;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+}.hdr { position:
+absolute; left: 50px; top: 10рх; text-align: center;
+font-family: OdessaScriptFWF, fantasy, font-size: 60px;
+font-weight: 900; width: 90%; height: 100px; letter-spacing:
+0.05em; line-height: 100px; filter: shadow; border: 10рх outset
+#003163; color: #3163CE; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .rght {
+position: absolute; font-size: large; left: 565px; top: 160px;
+width: 160px; height: 400px; overflow-x: visible; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.Ink {
+border-width: thick; border-style: ridge; margin: 10рх;
+padding: 5px; border-color: #319CFF; background-image:
+uri(&quot;Images/backlnki.jpg&quot;) ; color: red;
+text-align:center; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+} .Ink A {
+text-decoration: none; color: white; } .1ft { position: absolute;
+font-size: meduim; left: 10рх; top: 160px; width: 550px;
+height: 400px; overflow: auto; } .bigger { font-size: larger;
+font-family: sans-serif; } .logo { position: absolute; left: 150;
+top: 220; z-index: -5; }
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/STYLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+</p>
+<p>
+<font  face="Verdana, Arial, Helvetica, sans-serif">&nbsp;
+</font></p>
+<p>
+<font  face="Verdana, Arial, Helvetica, sans-serif">&nbsp;
+</font></p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;hdr&quot;&gt;ФИРМА&amp;nbsp;&amp;1аquо;ЛЕНТЯЙ&amp;raquо;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;rght&quot;&gt; &lt;DIV
+CLASS=&quot;lnk&quot;&gt;УСЛУГИ&lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF=&quot;prices.html&quot;&gt;ЦЕНЫ&lt;/A&gt;&lt;/DIV&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF=&quot;forml.html&quot;&gt;ФОРMA 3AKA3A&lt;/AX/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF”&quot;history.html&quot;&gt;ИСТОРИЯ &lt;SPAN
+STYLE=&quot;letter-spacing: -3px;
+&quot;&gt;КОМПАНИЯ&lt;/SPAN&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;lnk&quot;&gt;&lt;A
+HREF=&quot;guestbook.html&quot;&gt;КНИГА
+ОТЗЫВОВ&lt;/А&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+&lt;DIV CLASS=&quot;lft&quot;&gt; &lt;DIV
+CLASS=&quot;bigger&quot;&gt;Haшa фирма
+предоставляет услуги:&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;UL
+STYLE=list-style-image: url('Images\markerl.gif);&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Бытовые
+услуги &lt;UL STYLE=&quot;list-style-image:
+url('Images\rriarker2.gif');&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Вкручивание
+электрических лампочек
+&lt;LI&gt;Услуги по наведению чистоты
+&lt;UL STYLE=&quot;list-style-image:
+url('Images\marker3.gif');&quot;&gt;
+&lt;LI&gt;Подметание пола
+&lt;LI&gt;Вынесение мусора из квартиры
+&lt;LI&gt;Мытье посуды &lt;/UL&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/UL&gt;
+&lt;LI&gt;Приготовление пищи &lt;LI
+Компьютерные услуги &lt;UL
+STYLE=&quot;list-style-image:
+url('Images\marker2.gif');&quot;&gt;
+&lt;LI&gt;Дефрагментация жестких
+дисков 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Переустановка
+Windows &lt;/UL&gt; &lt;/UL&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+CLASS=&quot;bigger&quot;&gt;Чтобы
+воспользоваться услугами, следует:
+&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OL&gt;
+&lt;LI&gt; Зарегистрироваться (&lt;А
+НRЕF=&quot;reg.htm1&quot;&gt;здесь&lt;/А&gt;) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Заполнить
+форму заказа (&lt;А
+HREF=&quot;forml.htm1&quot;&gt;здесь&lt;/А&gt;) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Подтвердить
+заказ:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;OL
+TYPE=&quot;I&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Получив
+письмо с паролем, послать пустой
+ответ
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LI&gt;Заполнить
+форму-подтверждение заказа
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(&lt;А
+НRЕF=&quot;form2.htm1&quot;&gt;здесь&lt;/А&gt;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/OL&gt;
+&lt;LI&gt;Приготовить деньги для оплаты
+услуг &lt;/OL&gt; &lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+CLASS=&quot;logo&quot; SRC=&quot;Images/logo6.gif&quot;
+WIDTH=&quot;500&quot; HEIGHT=&quot;346&quot;
+BORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В следующих главах мы еще
+вернемся к этой страничке и
+продемонстрируем некоторые методы
+динамического взаимодействия с
+пользователем. А сейчас давайте
+отложим ее на время.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этой главе мы
+рассмотрели, разумеется, не все
+возможности CSS. Однако мы
+продемонстрировали применение
+большинства стилевых свойств. 
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="4.2.htm">
+<img src="Back.gif" border="0"  >
+</a>
+</td>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

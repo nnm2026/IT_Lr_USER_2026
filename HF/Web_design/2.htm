@@ -1,0 +1,1971 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+2.1
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="2.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>
+2.
+Основные средства языка HTML
+</strong>
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+2.1.
+Простейшее форматирование текста
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В разделе 1.2 мы начали
+знакомиться с тем, как пишется код
+веб-страницы, и увидели, что ничего
+принципиально сложного в этом нет.
+Давайте сейчас продолжим
+знакомство с языком HTML. Для начала
+попробуем отформатировать текст на
+нашей гипотетической страничке
+так, чтобы его было более или менее
+удобно и приятно воспринимать.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В качестве примера
+продолжим форматирование страницы
+нашего несуществующего писателя
+Сергея Сергеева. Предположим, что
+за вступительным текстом, который
+мы начали форматировать в разделе
+1.2, мы должны расположить два его
+рассказа (он же писатель!). Каждый
+рассказ имеет название,
+подзаголовок и небольшой эпиграф.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Известно, что в книгах
+названия рассказов обычно
+располагают по центру страницы, а
+эпиграф — у ее правого края.
+Давайте попробуем осуществить это
+на веб-странице. Для этого вначале
+введем понятие атрибутов тега. Дело
+в том, что почти каждый тег HTML может
+употребляться не только “сам по
+себе”. Внутри негр (то есть между
+угловыми скобками), кроме названия
+тега могут задаваться еще
+несколько его свойств, называемых
+атрибутами. Например, атрибутом
+разных тегов может являться цвет
+текста, размер шрифта и т. д.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Управление
+выравниванием текста
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В данном случае нам
+потребуется такой атрибут, как
+выравнивание (выключка) текста. Он
+может употребляться с разными
+тегами. Поскольку на нашей
+страничке и заголовок, и эпиграф
+должны быть отделены друг от друга
+и от основного текста, имеет смысл
+употребить тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Каждый
+фрагмент текста, заключенный между
+тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/Р&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, будет представлять собой
+отдельный абзац:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;Это
+первый абзац.&lt;/Р&gt; &lt;Р&gt;Это второй
+абзац.&lt;/Р&gt; &lt;Р&gt;Это третий абзац
+и т. д.&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы выровнять
+заголовок по центру страницы, можно
+написать следующее:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р
+ALIGN=&quot;center&quot;&gt;3AГOЛOBOK РАССКАЗА №
+!&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вы, очевидно, уже поняли,
+что атрибут ALIGN= означает
+выравнивание. Ему присвоено
+значение &quot;center&quot; для
+выравнивания текста по центру
+страницы. Между атрибутом и его
+значением всегда должен стоять
+знак равенства. Для того чтобы
+расположить эпиграф по правому
+краю, надо, соответственно,
+атрибуту ALIGN= присвоить значение
+&quot;right&quot;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р
+ALIGN=&quot;right&quot;&gt;ЭПИГРАФ&lt;/P&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте посмотрим,
+как будет выглядеть вся страничка
+целиком.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;META
+HTTP-EQUIV=&quot;Content-Type&quot; CONTENT=&quot;text/html;
+charset=windows-1251&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Домашняя
+страница Сергея Cepreeвa&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT
+FACE=&quot;Times New Roman&quot;&gt;&lt;P&gt;Домашняя
+страница Сергея Сергеева&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Сергей
+Сергеев - писатель-авангардист,
+автор 20 рассказов.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Некоторые
+его рассказы вы можете прочитать
+прямо здесь. &lt;/P&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;P
+ALIGN=&quot;CENTER&quot;&gt;ИBAH-ЦAPEBИЧ И СЕРЫЙ
+ЗАЯЦ&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+сказка&lt;/Р&gt;&lt;/P&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;P
+ALIGN=&quot;RIGHT&quot;&gt;Hy, погоди!.. &lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(Из
+мультфильма)&lt;/P&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;P&gt;Жил
+да был Иван-Царевич, и все у него
+было: и злато-серебро, и невест
+полный дворец, и книжек много умных,
+и тренажерный зал огромный. Однако
+тоскливо было у него на душе - как
+встанет утром с постели царской,
+так и начнет горевать, и горюет до
+вечера.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Долго ли,
+коротко ли, ... (тут располагается
+еще несколько абзацев, разделенных
+тегом BR, хотя это не единственный
+способ разделения абзацев)...&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И они жили
+долго и счастливо и умерли в один
+день. &lt;/P&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;P
+ALIGN=&quot;CENTER&quot;&gt;MOЛOTOK&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+рассказ&lt;/P&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;P
+ALIGN=&quot;RIGHT&quot;&gt;Мы кузнецы, и дух наш
+молод.&lt;BR&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(Из
+песни)&lt;/P&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;P&gt;Это
+случилось очень давно, уж и не помню
+в каком году, в каком веке и в каком
+тысячелетии... (Здесь располагается
+текст рассказа) &lt;/P&gt;&lt;/FONT&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+2.1. Как видите, это весьма похоже на
+то, что было задумано. Однако сразу
+бросаются в глаза несколько
+недостатков. Во-первых, абзацы в
+основном тексте на вид плохо
+отделены друг от друга, хотя и
+разделены тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+</font>
+</p>
+<p align="center">
+<img src="2.1.jpg">
+</p></font>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.1.
+Иллюстрация применения атрибута
+ALIGN
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Оформление
+абзацев
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вообще говоря, для
+разделения абзацев вместо тега
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ можно также использовать тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Он, надо сказать, и был создан
+для этого. Но поскольку придумывали
+его не у нас в России, то он делит
+абзацы в соответствии с
+зарубежными правилами
+книгопечатания — между абзацами
+пропускается строка, а сам абзац
+начинается без отступа слева
+(“красной строки”). Такое
+оформление непривычно для нас, и
+поэтому попробуем отформатировать
+абзацы по-другому — без пропуска
+строки и с отступом слева.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Собственно, используя тег
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ вместо тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, мы
+уже избежали пропуска строки перед
+каждым абзацем. Теперь попробуем
+создать отступ. в НTML изначально не
+было предусмотрено средств для
+этого, поэтому придется схитрить.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если вы еще помните, в
+былые времена в примитивных
+текстовых редакторах некоторые
+использовали для отступа несколько
+пробелов, как на пишущей машинке.
+Здесь можно попробовать применить
+этот допотопный прием. Правда, “в
+лоб” он работать не будет,
+поскольку броузеры игнорируют
+лишние пробелы. Однако мы можем
+поставить специальный символ,
+называемый неразрывным пробелом.
+Он никогда не игнорируется, и
+несколько таких символов вполне
+могут заменить нам отступ первой
+строки. Для того чтобы создать
+неразрывный пробел, следует ввести:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&amp;nbsp;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Поясним, что в языке HTML
+подобная конструкция всегда
+используется для ввода так
+называемых специальных символов.
+Как только броузер встречает в
+тексте знак амперсенд (&amp;), он
+начинает интерпретировать
+сле-дующие за ним буквы как код
+специального символа. Так
+продолжается до тех пор, пока не
+встретится точка с запятой.
+Специальные символы используются,
+в частности, для кодирования букв с
+различными “добав-ками” типа
+селиля, циркумфлекса и пр. (для
+текстов, например, на фран-цузском
+языке), ввода знаков торговой марки
+и авторского права, символов
+денежных единиц, знаков “больше” и
+“меньше” и т. д. 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, если ввести перед
+абзацем несколько неразрывных
+пробелов, то абзац отобразится с
+отступом первой строки.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Оформление
+заголовков
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Посмотрим еще раз на нашу
+страничку. Еще один ее недостаток
+заключается в том, что весь текст
+написан шрифтом одного размера.
+Вообще говоря заголовки выделяют
+более крупным шрифтом (причем
+обычно полужирным). Для того чтобы
+выделять заголовки, в HTML существуют
+так называемые теги заголовков. Это
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;,
+&lt;Н2&gt;, &lt;НЗ&gt;, &lt;Н4&gt;, &lt;Н5&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н6&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (и из закрывающие теги). Для
+самых крупных заголовков можно
+использовав тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, для
+заголовков помельче — 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и так далее. Например, так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;ИВАН-ЦАРЕВИЧ
+И СЕРЫЙ ЗАЯЦ&lt;ВR&gt; сказка&lt;/Н2&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако обратите внимание
+на то, что для выравнивания по
+центру нужно приложить
+дополнительные усилия, например
+поместить соответствующий тег
+внутрь тега заголовка (то есть в
+данном случае между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/Н2&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+):
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;&lt;Р
+ALING=&quot;сеntег&quot;&gt;ИВАН-ЦАРЕВИЧ И
+СЕРЫЙ ЗАЯЦ&lt;ВR&gt;
+сказка&lt;/Р&gt;&lt;/Н2&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если этого не сделать, то заголовок
+будет выровнен по левому краю.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В нашем случае имеет
+смысл использовать для заголовков
+рассказа тем 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, а для
+заголовка всей странички — тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н1&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (общий заголовок дол жен быть
+крупнее). Для выравнивания общего
+заголовка по центру мы можем
+написать так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;DIV
+ALING=&quot;сеntег&quot;&gt;Домашняя страница
+Сергея Сергеева&lt;/DIV&gt;&lt;/Н1&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Обратите внимание на то,
+что вместо тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ для
+выравнивания мы: использовали тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Этот тег означает
+разделитель и определяет фрагмент,
+который можно наделить какими-либо
+стилевыми свойствами, Текст,
+расположенный между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, в большинстве броу зеров
+также отделяется от остального
+текста с помощью символа перевода
+строки (если не заданы еще
+какие-либо параметры). Запомните
+этот тег — впоследствии нам
+придется употреблять его очень
+часто.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Пойдем дальше. Вы,
+наверное, обратили внимание на то,
+что в предыду щем примере основной
+текст рассказов был заключен в тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt; Р
+ALIGN=&quot;left&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Здесь
+значение &quot;left&quot; означает
+выравнивание по левому краю, однако
+это значение атрибута ALIGN=
+определено по умолчанию. То есть,
+для опреде-
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+пия абзаца, выровненного
+по левому краю, достаточно было
+просто &quot;ставить тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Р&gt;.
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ Однако текст рассказа обычно
+смотрится лучше, если него ровные
+оба края, а не только левый — мы к
+этому привыкли по бумажным”
+изданиям. Чтобы выровнять текст по
+обоим краям, можно добавить атрибут
+ALIGN= со значением &quot;justify&quot;. Но
+следует иметь в виду, о такое
+выравнивание не поддерживалось в
+старых версиях броузеров. (юузеры
+Internet Explorer и Netscape Navigator поддерживают
+его только начиная со своих
+четвертых версий.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Горизонтальная
+линейка
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Более, на нашей страничке
+хотелось бы визуально отделить
+рассказы от вступительного текста.
+Это можно сделать с помощью
+горизонтальной черты. В принципе,
+для этого достаточно в нужном месте
+поставить тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (он не
+имеет закрывающего тега). Однако в
+этом случае горизонтальная черта
+займет всю ширину страницы, что
+будет смотреться неопрятно. Для
+определения ширины горизонтальной
+черты можно задать атрибут WIDTH=,
+например, так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+WIDTH=&quot;75%&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В этом случае
+горизонтальная линия займет 75% от
+полной ширины экранной страницы.
+Можно также определять ширину
+линии и в пикселах ( экранных
+точках). Например, запись
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;HR
+WIDTH=&quot;75&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ определит
+ширину линии в 75 пикселов (это
+получится очень короткая линия).
+Если хотите, можете определить
+также толщину линии, установив
+атрибут SIZE=.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Некоторые проблемы могут
+возникнуть, если мы захотим
+оставить немного Свободного
+пространства между вступительным
+текстом и горизонталь ной линией (в
+данном случае это уместно, так как
+между линией и заголовком,
+определенным тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+пространство довольно большое, и
+желательно соблюсти некоторый
+баланс). Дело в том, что если
+поставить перед линией тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, то большинство броузеров его
+проигнорируют. Выход можно найти,
+если после 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ вставить
+неразрывный пробел или вместо 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BR&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+использовать “пустой” абзац:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;P&gt;&lt;/P&gt;&lt;HR
+WIDTH=&quot;75%&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И то и другое не очень
+эстетично с точки зрения кода.
+Правда, если страничка делается для
+броузеров Netscape (версии 3 и более
+поздних), можно использовать тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPACER&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, чтобы задать вертикальный
+отступ:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SPACER
+TYPE=&quot;vertical&quot; SIZE=&quot;25&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+собственно говоря, это то,
+что нужно, но другие броузеры не
+поддерживают этот тег и поэтому
+просто проигнорируют его. Поэтому
+ограничимся пока тегом &lt;BR&gt; с
+неразрывным пробелом. А в главе 4 вы
+узнаете, как можно легко решать
+такие проблемы с помощью CSS
+(каскадных таблиц стилей).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте посмотрим, что у
+нас получилось.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;title&gt;Домашняя
+страница Сергея Cepreesa&lt;/title&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/head&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;body&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;h1&gt;&lt;DIV
+aling=&quot;center&quot;&gt;Домашняя страница
+Сергея Сергеева &lt;/div&gt;&lt;/h1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;br&gt;
+Сергей Сергеев -
+писатель-авангардист, автор 20
+рассказов. &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр. &lt;br&gt; &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Некоторые
+его рассказы вы можете прочитать
+прямо здесь. &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+WIDTH=&quot;75%&quot;&gt; &lt;H2&gt;&lt;P
+ALIGN=&quot;center&quot;&gt;ИBAH-ЦАРЕВИЧ И СЕРЫЙ
+ЗАЯЦ &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+сказка&lt;/p&gt;&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font  face="Verdana, Arial, Helvetica, sans-serif">&nbsp;
+</font></p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;p
+align=&quot;right&quot;&gt;Hy, погоди!.. &lt;BR&gt;(Из
+мультфильма)&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;p
+align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Жил
+да 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+был
+Иван-Царевич, и все у него было: и
+злато-серебро, и невест 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+полный
+дворец, и книжек много умных, и
+тренажерный зал огромный... &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Долго
+ли, коротко ли ... &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;И
+они жили долго и счастливо 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и умерли в
+один день.&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+WIDTH=&quot;75%&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;h2&gt;&lt;p
+align=&quot;center&quot;&gt;MOЛOTOK &lt;br&gt;
+рассказ&lt;/p&gt;&lt;/h2&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;p
+ALIGN=&quot;right&quot;&gt;Mы кузнецы, и дух наш
+молод. &lt;br&gt; (Из песни)&lt;/P&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Это
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+случилось
+очень давно, уж и не помню в каком
+году, в каком веке 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и в каком
+тысячелетии... (Здесь располагается
+текст рассказа) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат наших трудов
+представлен на рис. 2.2. Что ж,
+страничка посте пенно становится
+все лучше. Но, не правда ли, хочется
+сделать вступи-
+</font>
+</p>
+<p align="center">
+<img src="2.2.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.2.
+Применение заголовочных стилей
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+тельный текст чуть
+крупней и выделить в нем некоторые
+моменты? Кроме того, текст эпиграфа
+обычно дается чуть более мелким
+шрифтом, а подзаголовки и подписи
+под эпиграфом неплохо бы выделить
+курсивом.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Управление
+шрифтом
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы изменить размер
+шрифта, можно использовать тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ с атрибутом SIZE=. Вообще говоря,
+WWW-консорциум не особенно
+рекомендует использовать тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ в HTML 4.0. Мы считаем, что
+злоупотреблять им действительно не
+нужно, когда есть возможность
+использования каскадных таблиц
+стилей CSS, о чем мы поговорим в главе
+4. Однако иногда для мелких
+корректив этот тег бывает очень
+удобен. Например, если мы поставим
+перед вступительным текстом тег
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT
+SIZE=&quot;+1&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+f поcле него — закрывающий
+тег &lt;/FONT&gt;, то весь текст,
+оказавшийся между этими тегами,
+будет отображен шрифтом на один
+“уровень” круп-нее обычного.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Возникает вопрос: а каков
+размер “обычного” шрифта? В языке
+HTML для тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ были
+определены семь основных размеров
+шрифта, измеряемых не в пунктах, а в
+некоторых условных единицах — от 1
+до 7. Как правило, обычный шрифт
+имеет размер “З”, если не
+определено иное с помощью тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BASEFONT&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+(например, так: 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BASEFONT SIZE=&quot;6&quot;&gt;)
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. В послед- нее время такое
+определение размеров не
+рекомендуется, поскольку с помощью
+CSS можно определить размеры шрифта
+в любых привычных единицах.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Необходимо различать
+записи 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;FONT
+SIZE=&quot;+1&quot; и &lt;FONT SIZE=&quot;1&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. В пер- вом случае указывается
+относительный размер шрифта, а во
+втором — абсолютный.
+Соответственно, для временного
+уменьшения размера шрифта можно
+использовать запись
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ &lt;FONT SIZE=&quot;-1&quot;&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Можно использо- вать также
+значения &quot;+2&quot;, &quot;-2&quot;, &quot;+3&quot;
+и т. д. Кстати, для увеличения или
+уменьшения шрифта на одну единицу
+можно использовать также теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BIG&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SMALL&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (они используются с
+закрывающими тегами).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте выделим
+еще некоторые элементы нашей
+страницы. Чтобы отобразить
+подзаголовки рассказов курсивом,
+их можно поместить между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;I&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/I&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;Н2&gt;&lt;Р
+АLIGN+&quot;center&quot;&gt;ИВАН-ЦАРЕВИЧ И
+СЕРЫЙ ЗАЯЦ&lt;ВК&gt;
+&lt;I&gt;сказка&lt;/I&gt;&lt;/Р&gt;&lt;/Н2&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Такой же результат, как
+тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;I&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, дает тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ЕМ&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Отличие
+их в том, что тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ЕМ&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+определяет лишь логически
+выделенный фрагмент, который
+броузеры обычно отображают
+курсивом, а тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;I&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ — это
+явное указание на кур сив. Впрочем,
+это уже несущественные детали.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Мы можем также выделить
+фамилию нашего героя во
+вступительном тексте полужирным
+шрифтом, используя тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;В&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;В&gt;Сергей
+Сергеев&lt;/В&gt; -
+писатель-авангардист, автор 20
+рассказов.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Такой же результат даст
+использование тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STRONG&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+.
+Более гибко управлять выделением
+можно с помощью CSS 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для выделения какой-либо
+части текста можно использовать
+подчеркивание, поместив текст
+между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;U&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/U&gt; 
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Однако злоупотреблять этим
+не следует, поскольку подчеркнутый
+текст в WWW ассоциируется с
+гиперссылками и читатель будет
+весьма разочарован, когда щелчок
+мыши по подчеркнутому тексту ни к
+чему не приведет.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Иногда требуется также
+зачеркнуть отдельные слова в
+тексте (например, при снижении цен
+на товары обычно указывают старую
+цену в зачеркнутом виде). Для этого
+служит тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STRIKE&gt;:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Старая
+цена: &lt;STRIKE&gt;168 рублей &lt;/STRIKE&gt;
+Новая цена: &lt;FONT SIZE=&quot;+1&quot;&gt;102
+рубля&lt;/FONТ&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат представлен на
+рис. 2.3. Некоторые броузеры понимают
+также сокращенное написание этого
+тега — 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;S&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Однако для хорошей совмести
+мости пользуйтесь лучше тегом 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;STRIKE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ (пока возможно, совместимость
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+со всеми броузерами все
+же лучше поддерживать, тем более
+что на данном этапе это совсем
+несложно).
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.3.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.3.
+Применение зачеркнутого текста
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Однако вернемся к нашему
+герою Сергею Сергееву. В таком виде
+страничка смотрится уже неплохо. Но
+вы, наверное, обратили внимание на
+то, что в Интернете почти не
+встречаются странички, написанные
+черными буквами на и белом фоне.
+Встретив такую страницу,
+пользователь, скорее всего, решит,
+что это что-то очень скучное. Кроме
+того, белый фон слишком ярок, а его
+контраст с черными буквами слишком
+велик, что быстро утомляет глаза.
+Поэтому давайте попытаемся
+изменить цвет фона и текста.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Цветовое
+оформление
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для этого проще всего
+установить соответствующие
+атрибуты тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Атрибут
+ТЕХТ= определяет цвет текста на
+страничке, а атрибут BGCOLOR= — цвет
+фона. Названия цветов можно вводить
+по названиям, например: &quot;black&quot;
+(черный), &quot;white&quot; (белый),
+&quot;yellow&quot; (желтый), &quot;green&quot;
+(зеленый), &quot;fuchsia&quot; (сиреневый) и т.
+д. Существует довольно много
+названий цветов, которые можно
+использовать в HTML, однако можно
+получить любой из цветов, введя его
+шестнадцатеричный номер. Причем
+это не так сложно, как может
+показаться.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Шестнадцатеричный номер
+цвета должен состоять из шести
+цифр. Первые две означают
+интенсивность красной
+составляющей, вторые две — зеленой
+и последние две — синей. Таким
+образом, красный цвет обозначается
+как FFOOOO, зеленый — OOFFOO и синий —
+OOOOFF. Цвет с номером 000000 — чер- ный
+(нет ни одной составляющей), a FFFFFF —
+белый. Если это понятно, то можно
+поэкспериментировать с
+интенсивностью каждой
+составляющей отдельно. Если FFOOOO —
+это красный цвет, то 880000 — уже
+темно-красный, а 440000 —
+красно-коричневый; 220000 похож на
+коричневый, а 110000 — черный с
+красноватым оттенком. Точно так же
+OOFFOO — это яркий зеле ный, ООААОО —
+приятный лиственно-зеленый, 007700 —
+темно-зеленый,
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+003300 — очень темный
+зеленый и 001100 — черный с
+зеленоватым оттенком. Немного
+поэкспериментировав с
+интенсивностью каждой
+составляющей, можно попробовать
+смешивать цвета. Таким образом,
+можно научиться быстро вводить
+цвет в цифровом виде. Конечно, в
+различных HTML-редакторах можно
+выбирать цвет из палитры обычным
+способом, “на глаз”, но всегда
+лучше знать точно, что происходит в
+коде. Кстати, если кому-то не по душе
+шестнадцатеричные числа, то с
+помощью CSS он сможет определять
+цвет и с помощью обычных,
+десятичных чисел.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Перед шестнадцатеричным
+номером цвета необходимо поставить
+знак #. Например, для нашей
+странички цвета можно определить
+так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+BGCOLOR=&quot;#BABAAO&quot; TEXT=&quot;#1D1D18&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Это даст при просмотре
+одинаковый коричневатый оттенок и
+цвета, и фона, однако цвет фона
+будет более тяготеть к
+серебряно-белому, а цвет текста — к
+темно коричневому. Давайте
+посмотрим, что у нас получилось.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;title&gt;Домашняя
+страница Сергея Cepreesa&lt;/title&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/head&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;body
+bgcolor=&quot;#babaa0&quot; text=&quot;1d1d18&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;h1&gt;&lt;DIV
+aling=&quot;center&quot;&gt;Домашняя страница
+Сергея Сергеева &lt;/div&gt;&lt;/h1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;br&gt;
+Сергей Сергеев -
+писатель-авангардист, автор 20
+рассказов. &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В жизни
+большой любитель собак и
+компьютерных игр. &lt;br&gt; &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Некоторые
+его рассказы вы можете прочитать
+прямо здесь. &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+WIDTH=&quot;75%&quot;&gt; &lt;H2&gt;&lt;P
+ALIGN=&quot;center&quot;&gt;ИBAH-ЦАРЕВИЧ И СЕРЫЙ
+ЗАЯЦ &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+сказка&lt;/p&gt;&lt;/H2&gt;
+</font>
+</p>
+<p>
+<font  face="Verdana, Arial, Helvetica, sans-serif">&nbsp;
+</font></p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;p
+align=&quot;right&quot;&gt;Hy, погоди!.. &lt;BR&gt;(Из
+мультфильма)&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;p
+align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Жил
+да 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+был
+Иван-Царевич, и все у него было: и
+злато-серебро, и невест 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+полный
+дворец, и книжек много умных, и
+тренажерный зал огромный... &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Долго
+ли, коротко ли ... &lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;И
+они жили долго и счастливо 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и умерли в
+один день.&lt;/Р&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+WIDTH=&quot;75%&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;h2&gt;&lt;p
+align=&quot;center&quot;&gt;MOЛOTOK &lt;br&gt;
+рассказ&lt;/p&gt;&lt;/h2&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;p
+ALIGN=&quot;right&quot;&gt;Mы кузнецы, и дух наш
+молод. &lt;br&gt; (Из песни)&lt;/P&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Это
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+случилось
+очень давно, уж и не помню в каком
+году, в каком веке 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+и в каком
+тысячелетии... (Здесь располагается
+текст рассказа) 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Он все более и более
+становится похожим на нормальную
+веб-страницу, которую можно вполне
+адекватно воспринять, случайно
+наткнувшись на нее в WWW. Однако пока
+что это только отформатированный
+текст, в котором отсутствуют самые
+главные элементы, являющиеся
+основой структуры WWW - гиперссылки.
+О них пойдет речь в следующем
+разделе, а пока давайте рассмотрим
+еще несколько редко Используемых
+возможностей форматирования
+текста в HTML.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Дополнительные
+варианты оформления
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+отображают текст,
+находящийся между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;CITY&gt;&lt;/CITY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ курсивом. Например, если вы
+напишете следующее&quot; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+А.С.
+Пушкин сам говорил,
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+что он
+&lt;CITY&gt;лиру посвятил народу
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+своему&lt;/CITY&gt;
+по этому есть все основания
+считать, что судьба русского народа
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+была для
+него не безразлична.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+то большинство броузеров
+отобразят это так. как показано на
+рис 2.5(ниже) 
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.5.jpg">
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Об этом хорошо сказал
+С.С.Сергеев в своей бессмертной
+повести &quot;Обыкновенный обрыв&quot;:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Мечтая об освобжденном
+времени и свернутом пространстве,
+мы иногда плохо представляем себе,
+что же будем делать, если вдруг
+сможем позволить себе
+распоряжаться ими. Если мне сегодня
+вечером скажут, что я могу свернуть
+пространство вокруг себя нажатием
+одной клавиши компьютера, я либо не
+буду знать, что же мне с этим делать,
+либо от радости наделаю чего-нибудь
+такого, что придется потом очень
+долго расхлебывать.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Но еще лучше ни о чем не
+мечтать, а спокойно почитать
+научные статьи и трезво оценить
+ситуацию.
+</font>
+</p>
+<p align="center">
+<font  face="Verdana, Arial, Helvetica, sans-serif">&nbsp;
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.6.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.5.
+Применение длинной цитаты
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+также отобразить и
+обычные типографские кавычки (“? ”)
+вместо машинописных (&quot; &quot;).
+Запись Книга &amp;laquo; Путеводитель по
+Атлантиде &amp;raquо; отобразится в
+броузере так:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Книга “Путеводитель по
+Атлантиде”
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Теперь давайте
+представим себе, что нам надо
+воспроизвести на веб-страничке
+фрагмент кода-HTML и
+проиллюстрировать его отображение.
+Причем код HTML мы хотим выделить
+моноширинным шрифтом (как это
+обычно и делается, например, в этой
+книге). Для этого можно применить
+тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;CODE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, как показано ниже.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если вы напишете
+следующий код:
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;br&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;code&gt;
+&amp;lt;hr WIDTH=&quot;80%&quot; SIZE=&quot;15&quot;&amp;gt;, 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/code&gt;&lt;br&gt;
+то это отобразится так: 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HR
+WIDTH=&quot;80%&quot; SIZE=&quot;15&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Нa рис. 2.6 показано, как это
+отобразится в броузере. Помимо тега
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;CODE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, обратите внимание на
+употребление специальных символов
+&amp;lt; и &amp;gt; для отображения угловых
+скобок, 
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вместо тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;CODE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ можно также употребить и тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТТ&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Разница между ними такая же,
+как между тегами 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ЕМ&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ и 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;I&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. То есть, тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;CODE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+определяет логический фрагмент,
+который обычно выводится
+моноширинным!
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+То есть шрифтом, в котором
+все символы имеют одинаковую
+ширину, на манер пишущей машинки.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="2.7.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 2.6.
+Отображение исходного кода
+программ в броузере
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+шрифтом, как код, а тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ТТ&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ просто применяет к фрагменту
+моноширинный шрифт. Разница, прямо
+скажем, небольшая.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Для отображения больших
+фрагментов кода существует еще
+один тег — 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;LISTING&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Весь
+текст, заключенный между ним и его
+закрывающим тегом, отображается не
+просто моноширинным шрифтом, а еще
+и с пропуском строки до и после
+кода, и обычно более мелким шрифтом.
+Кроме того, в этом тексте
+сохраняется исходное
+форматирование (как при
+использовании тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;PRE&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+).
+Однако использование этого тега
+уже давно не рекомендовано
+WWW-консорциумом.
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="2.2.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

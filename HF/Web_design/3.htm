@@ -1,0 +1,911 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="Version" content="8.0.3612">
+<meta name="Date" content="3/4/97">
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>
+3
+</title>
+</head>
+<body text="#000000" BGCOLOR="#E7E3E7" link="#004080" vlink="#004080" olink="#008080">
+<font  face="Verdana, Arial, Helvetica, sans-serif"><table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="3a.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>
+3.
+Графика на веб-странице
+</strong>
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+3.1.
+Основные способы применения
+графики
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В предыдущей главе мы
+рассмотрели несколько примеров
+создания веб-страниц. Вы, очевидно,
+уже обратили внимание, что все они
+смотрятся довольно “строго”. А все
+дело в том, что в них не
+использовались графические
+элементы. Сейчас, вообще говоря, в
+Интернете осталось не так много
+страниц без графических элементов,
+поскольку с помощью графики можно
+не только проиллюстрировать
+предлагаемый материал, но и немного
+“оживить” общее оформление, о чем
+речь пойдет в этой главе.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Фоновое
+изображение
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Итак, давайте разберемся,
+каким же образом можно
+использовать графические элементы
+на веб-странице. Рассмотрим такой
+пример. Допустим, мы хотим, чтобы
+читатели узнали достоинства нашего
+любимого электронного пианино —
+клавиновы. Мы уже написали
+соответствующий текст, но хотим его
+оформить не очень строго. И здесь
+самым простым решением будет
+разместить этот текст не на
+одноцветном, а на тематическом
+фоне.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Допустим, что у нас
+заготовлен соответствующий фоно
+вый рисунок (о том, как это сделать,
+см. в разделе 3.5) — он записан в
+файле под именем back1 .jpg (рис. 3.1). Если
+при отдельном просмотре этого
+рисунка он вам нравится, это еще
+ничего не значит. Чтобы определить,
+подходит ли рисунок в качестве фона
+к тексту, его нужно проверить “в
+деле”.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чтобы поместить рисунок
+на веб-страницу в качестве фона,
+нужно установить в теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ атрибут BACKGROUND= со значением,
+содержащим имя файла рисунка.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+BACKGROUND&quot;&quot;Images/back1.jpg&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Если рисунок меньше окна
+броузера, то он будет повторяться
+по горизонтали и по вертикали. Это
+происходит автоматически, и до
+недавнего времени это нельзя было
+отменить. Теперь же, если вы не
+хотите повторения
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="3.1.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 3.1. Фоновый
+рисунок
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Можно указать либо
+относительное местоположение
+файла рисунка (то есть путь доступа
+к нему относительно расположение
+исходного HTML-файла), либо его полный
+URL-адрес. Здесь и далее мы
+предполагаем, что вы разместили в
+той же папке, что и HTML-файл, папку
+\lmages, в которую складываете все
+графические файлы.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вернемся к нашему
+рисунку. Ясно, что на таком
+сероватом фоне черные буквы будут
+читаться плохо, поэтому сразу
+определим для текста белый цвет
+(или почти белый). Гиперссылок у нас
+пока нет, но о них все равно надо
+позаботиться заранее. Пока давайте
+определим для них желтый цвет.
+Посмотрим, что у нас получается:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;Клавинова&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+BACKGROUND=&quot;3.1.jpg&quot; TEXT=&quot;#F8F8F8&quot;
+LINK=&quot;Yellow&quot; VLINK=&quot;Yellow&quot;
+ALINK=&quot;Yellow&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;DIV
+ALIGN=&quot;center&quot;&gt;Клавинова&lt;/DIV&gt;&lt;/H1&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;P
+ALIGN=&quot;justify&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Инструменты
+серии 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BIG&gt;Клавинова&lt;/BIG&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+выпускаемые компанией Yamaha,
+являются достойной заменой 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;I&gt;обычных&lt;/I&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+пианино
+для массового пользователя.
+Во-первых, 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BIG&gt;KJIABHHOBA&lt;/BIG&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+стоит 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;В&gt;дешевле&lt;/В&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+маломальски
+хорошего пианино или тем более
+рояля, а во-вторых, ее звук и
+исполнительские ощущения зачастую
+не хуже, а 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;U&gt;лучше&lt;/U&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, чем на
+&amp;laquo;живых&amp;raquo; инструментах
+того же (или даже чуть более
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SUP&gt;высокого&lt;/SUP&gt;)
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ценового
+диапазона.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/Р&gt;
+&lt;/BODY&gt; &lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат показан на рис.
+3.2. Кстати, обратите внимание, что
+здесь мы немного “поработали” с
+элементами текста, чтобы чуть-чуть
+оживить их: название “клавинова”
+выделено крупным шрифтом,
+достоинства — где подчеркнуты, где
+выделены полужирным шрифтом, слово
+“обычных” для подчеркивания
+иронии выделено курсивом, а слово
+“высокого” поднято над основным
+текстом с помощью тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SUP&gt;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Все это хорошо задумано,
+но вся страничка выглядит не очень
+привлекательно. Во-первых, фон
+имеет ярко выраженную “клеточную
+структуру”. Во-вторых, текст
+читается не очень хорошо: для его
+восприятия приходится напрягать
+зрение, особенно при больших
+экранных разрешениях.
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<img src="3.2.jpg">
+</font>
+</p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 3.2. Не самое
+удачное применение фонового
+рисунка
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Попробуем решить эти
+проблемы. Во-первых, немного
+уменьшим размер фонового рисунка,
+чтобы оставить в нем только цвета
+приблизительно одной яркости.
+Во-вторых, поскольку текст белый,
+нужно для улучше ния его читаемости
+повысить контрастность текста с
+фоном. В любом графическом
+редакторе понизим яркость нашего
+рисунка, что сделает его темнее.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, согласно
+общему правилу, светлый текст на
+темном фоне лучше всегда делать
+немного крупнее. Поэтому заключим
+наш текст в теги 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BIG&gt;...&lt;/BIG&gt;.
+</font>
+</p>
+<p align="center">
+<font size="4" face="Verdana, Arial, Helvetica, sans-serif">
+Графические
+иллюстрации
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И, наконец,
+проиллюстрируем наш текст, вставив
+перед описанием фотографию
+клавиновы. Предположим, что
+фотография у нас уже готова и лежит
+в палке \lmages под именем clavi.gif.
+Вставить ее в текст можно с помо щью
+тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, например, вот так:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/clavi.gif&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+В принципе, этого уже
+достаточно — на месте этой записи
+броузер отобразит нашу картинку.
+Однако лучше указать в теге 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ еще несколько атрибутов.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Во-первых, надо помнить,
+что картинки загружаются из сети
+всегда намного медленнее, чем
+обычный текст. Это я говорю не к
+тому, что сам файл картинки должен
+быть не очень большого объема (это
+верно, но этот вопрос мы обсудим
+отдельно), а к тому, что при такой
+записи, как выше, многие броузеры,
+начав загружать картинку,
+приостановят загрузку
+последующего текста до тех пор,
+пока картинка не будет загружена
+полностью. Но для читателя было бы
+удобнее, если бы текст продолжал
+загружаться араллельно с
+картинкой: пока она догружается,
+можно было бы что-то уже читать.
+Чтобы броузер мог это сделать, ему
+нужно явно указать размеры будущей
+картинки с помощью атрибутов WIDTH= и
+HEIGHT=:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/clavi.gif&quot; WIDTH=&quot;300&quot;
+HEIGHT=&quot;200&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Вообще говоря, с помощью
+этих атрибутов можно задать какие
+угодно размеры картинки,
+“растянув” или сжав ее как душе
+угодно. Однако обычно этого не
+делают, и вот почему. Представлять
+картинку меньшей, чем она есть,
+нецелесообразно, поскольку зачем
+тогда грузить большой файл? Ведь
+файлы для картинок большого
+размера имеют большой размер и
+грузятся из Интернета,
+соответственно, намного дольше.
+Лучше уж сделать малень кий файл
+для картинки маленького размера и
+быстро загрузить его. А если
+представить картинку большей, чем
+она есть, то, как правило, она будет
+выглядеть малопривлекательно за
+счет появления “ступенчатости”
+как в формах, так и в цвете.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Далее, хорошим тоном
+является наличие так называемого
+альтернативного текста для тех
+случаев, когда в броузере отключен
+просмотр графики. Тогда на месте
+нашей картинки будет выведен
+прямоугольник соответ ствующего
+размера, который сопровождается
+пояснением, что за картинка на этом
+месте должна быть. Альтернативный
+текст вводится как значение
+атрибута ALT:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/clavi.gif&quot; WIDTH=&quot;300&quot;
+HEIGHT=&quot;200&quot; АLТ=&quot;Клавинова&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Наконец, вокруг рисунка
+можно отобразить рамку. Толщина
+этой рамки задается как значение
+атрибута BORDER=. Если мы, как в данном
+случае, не хотим отображать рамку
+вокруг рисунка, то можем ничего и не
+указывать, так как большинство
+броузеров по умолчанию рамку не
+рисуют. Но некоторые броузеры все
+же это делают, и “для верности”
+неплохо бы указать и отсутствие
+рамки тоже:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/clavi.gif&quot; WIDTH=&quot;300&quot;
+HEIGHT=&quot;200&quot; АLТ=&quot;Клавинова&quot;
+BORDER=&quot;0&quot;&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Чего еще не хватает
+нашему HTML-файлу? Конечно же,
+гиперссылок! Без них любой документ
+в Интернете воспринимается гораздо
+скучнее, поскольку посетитель
+сразу видит, что зашел в тупик.
+Поэтому обязательно добавляйте
+гиперссылки везде, где это только
+можно. В данном случае, например,
+слово “Yamaha” просто просится стать
+гиперссылкой на сайт
+соответствующей компании. Сделаем
+это:
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;http://www.yamaha.com&quot;&gt;Yamaha&lt;/A&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, картинки тоже
+могут содержать гиперссылки. Мы
+можем, напри мер, точно так же, как
+со словом “Yamaha”, поступить и с
+нашим тегом картинки. Тогда щелчок
+на изображении клавиновы также
+уведет пользователя на сайт
+компании Yamaha.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Давайте посмотрим, что у
+нас получается.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;!DOCTYPE HTML
+PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HTML&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;HEAD&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;TITLE&gt;KJIABHHOBA&lt;/TITLE&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HEAD&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BODY
+BACKGROUND=&quot;Images/back4.jpg&quot; TEXT=&quot;#F8F8F8&quot;
+LINK=&quot;Yellow&quot; VLlNK=&quot;Yellow&quot;
+ALINK=&quot;Yellow&quot; BGCOLOR=&quot;#OBOBOB&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;H1&gt;&lt;DIV
+ALIGN=&quot;center&quot;&gt;KJIABHHOBA&lt;/DIV&gt;&lt;/Hl&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;A
+HREF=&quot;http://www.yamaha.com&quot;&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG
+SRC=&quot;Images/clavi.gif&quot; WIDTH=&quot;300&quot;
+HEIGHT=&quot;200&quot; ALT=&quot;KJIABHHOBA&quot;
+BORDER=&quot;0&quot;&gt;&lt;/A&gt;&lt;/DIV&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BIG&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;P
+ALIGN=&quot;justify&quot;&gt;Инструменты серии 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;BIG&gt;KJIABMHOBA&lt;/BIG&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+,
+выпускаемые компанией 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;А
+HREF=&quot;http: //www.yamaha.com&quot;&gt;Yamaha &lt;/A&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+, являются
+достойной заменой
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;I&gt;обычных&lt;/I&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+пианино
+для массового пользователя.
+Во-первых, 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;ВIG&gt;КЛАВИНОВА&lt;/ВIG&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+стоит 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;В&gt;дешевле&lt;/В&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+мало-мальски
+хорошего пианино или тем более
+рояля, а во-вторых, ее звук и
+исполнительские ощущения зачастую
+не хуже, а &lt;U&gt;лучше&lt;/U&gt;, чем на
+&amp;lаquо;живых&amp;raquo; инструментах
+того же (или даже чуть более 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SUP&gt;Bыcoкoro&lt;/SUP&gt;
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+) ценового
+диапазона.
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/Р&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BIG&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/BODY&gt; 
+</font>
+</p>
+<p>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;/HTML&gt;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Результат наших трудов
+представлен на рис. 3.3. Обратите
+внимание на то, что для
+расположения картинки по центру мы
+поступили так же, как и при
+центрировании обычного текста —
+использовали конструкцию 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV
+ALIGN=&quot;center&quot;&gt;.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Текст теперь
+действительно воспринимается
+гораздо лучше. Правда, из-за
+использования слов разного размера
+и тега 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;SUP&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ наши строчки получились
+разной высоты, что не очень красиво.
+Однако пока не будем этим
+заниматься — гибко управлять
+высотой строк можно с помощью
+каскадных таблиц стилей, о чем
+пойдет речь в следующей главе.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Еще следует заметить, что
+мы не зря определили в нашем
+примере цвет фона (с помощью
+атрибута BGCOLOR=). Ведь если у
+пользователя в броузере отключена
+загрузка графики, то наш белый
+текст будет у него отображаться на
+заданном по умолчанию белом фоне, и
+в результате ничего не будет
+</font>
+</p>
+<p align="center">
+<img src="3.3.jpg">
+</font></p>
+<p align="center">
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Рис. 3.3. Пример
+странички с фоновым рисунком и
+иллюстрацией
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+видно! Да и вообще,
+фоновый рисунок может загрузиться
+и прорисоваться нe сразу, ведь это
+графический файл, имеющий гораздо
+большие размеры, чем текст! Поэтому
+всегда нелишне явно указать нужный
+цвет фона, желательно близкий по
+оттенку к фоновому рисунку.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кстати, тег 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;IMG&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ может иметь собственный
+атрибут ALIGN=, который управляет
+расположением рисунка
+относительно текста. В нашем
+примере это было не актуально,
+поскольку рисунок находился в
+отдельном блоке 
+</font>
+<font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+&lt;DIV&gt;
+</font>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+. Но
+если рисунок “встроен” в текст, то
+есть несколько вариантов его
+расположения:
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;left&quot; — текст
+обтекает рисунок, который
+располагается слева;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;right&quot; — текст
+обтекает рисунок, который
+располагается справа;
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;top&quot; — рисунок
+располагается внутри текстовой
+строки, и его верхняя граница
+совпадает с верхней границей букв
+текста (можно также применять
+значение &quot;texttop&quot;);
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;middle&quot; — рисунок
+располагается внутри текстовой
+строки, которая вертикально
+выравнивается по центру рисунка
+(можно также при менять значение
+&quot;absmiddle&quot;);
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+ALIGN=&quot;bottom&quot; — рисунок
+располагается внутри текстовой
+строки, и его нижняя граница
+совпадает с нижней границей букв
+текста (можно также применять
+значение &quot;absbottom&quot; или
+&quot;baseline&quot;).
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+Кроме того, чтобы рисунок
+не слишком “прижимался” к тексту,
+можно оставить между ними немного
+“воздуха”. Для этого в теге &lt;IMG&gt;
+используют атрибуты HSPACE= и VSРАСЕ=,
+значения которых задают
+соответственно горизонтальное и
+вертикальное “поля” рисунка.
+</font>
+</p>
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+И еще небольшое
+замечание: броузер Internet Explorer
+(версия 4 и выше) позволяет с помощью
+тега &lt;IMG&gt; загружать и
+просматривать также
+видеофрагменты в формате AVI (Video for
+Windows). Для этого можно установить
+атрибут DYNSRC=, в качестве значения
+которого указать имя AVT-файла. При
+этом можно дополнительно указать в
+атрибуте START=, когда следует
+начинать проигрывание видео:
+&quot;FILEOPEN&quot; — сразу после загрузки
+файла или &quot;MOUSEOVER&quot; — после
+наведения указателя мыши на
+изображение. Атрибут LOOP= позволяет
+установить количество
+проигрываний: &quot;О&quot; означает
+бесконечное повторение, алюбое
+другое число указывает точное
+количество повторов.
+</font>
+</p>
+<table border="0" cols="3">
+<tr>
+<td>
+<a href="index.htm">
+<img src="menu.gif" border="0"  >
+</a>
+</td>
+<td align="right">
+<a href="3a.htm">
+<img src="for.gif" border="0"  >
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>
