@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML lang="ru">
+<HEAD>
+<title>WEBalley - dhtml - переносимость</TITLE>
+<META name="author" content="Gerben Hoekstra">
+<META NAME="Keywords" CONTENT="dhtml, динамический html, javascript, слои, div, введение, web дизайн, webdesing, webdesgn, webdesgin, webdseign, webdsign, wbdesign, wedesign, webdesihn, html, htlm, hmtl, hlmt, webpagina, www, домашняя, страница, homepge, homepaeg, нидерланды, курс, учебник">
+<META NAME="Description" CONTENT="Эта страница знакомит вас с основами создания переносимого dhtml. Учебник по dhtml, входит в состав статей для начинающих на WEBalley.">
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+
+<body bgcolor="#FFFFFF" link="#006666" vlink="#009999">
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<!-- logo starts here -->
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="weballey_logo.gif" tppabs="http://www.weballey.net/resources/weballey_logo.gif" WIDTH=150 HEIGHT=96 BORDER=0 ALT="weballey logo"></A><BR>
+
+<!-- logo ends here -->
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+
+<!-- header starts here -->
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR>
+<td width="20" bgcolor="#99FFFF">
+<img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 alt="налево"></TD>
+<td width="288" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="4"><B>
+DHTML - переносимость</B></FONT></TD>
+
+<TD bgcolor="#99FFFF"><A HREF="movingelements.html" tppabs="http://www.weballey.net/russian/dhtml/movingelements.html"><IMG SRC="bar-lft.gif" tppabs="http://www.weballey.net/resources/bar-lft.gif" NAME="left" WIDTH=36 HEIGHT=25 BORDER=0 ALT="назад"></A><A HREF="index-2.html" tppabs="http://www.weballey.net/russian/webdesign/index.html"><IMG SRC="bar-rgt.gif" tppabs="http://www.weballey.net/resources/bar-rgt.gif" NAME="right" WIDTH=36 HEIGHT=25 BORDER=0 ALT="вперед"></A></TD>
+
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 alt="направо"></TD>
+
+</TR></TABLE>
+
+<A HREF="index-1.html" tppabs="http://www.weballey.net/russian/index.html"><IMG SRC="home.gif" tppabs="http://www.weballey.net/russian/graphics/home.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="домой"></A><A HREF="index.html" tppabs="http://www.weballey.net/russian/search/index.html"><IMG SRC="search.gif" tppabs="http://www.weballey.net/russian/graphics/search.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="поиск"></A><A HREF="sitemap.html" tppabs="http://www.weballey.net/russian/sitemap.html"><IMG SRC="sitemap.gif" tppabs="http://www.weballey.net/russian/graphics/sitemap.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="карта сайта"></A><A HREF="contact.html" tppabs="http://www.weballey.net/russian/misc/contact.html"><IMG SRC="email.gif" tppabs="http://www.weballey.net/russian/graphics/email.gif" WIDTH=100 HEIGHT=40 BORDER=0 ALT="e-mail"></A>
+
+<!-- header ends here -->
+
+</td></tr></table>
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+
+<TR>
+<TD WIDTH=150 VALIGN=TOP ALIGN="CENTER" BGCOLOR="#99FFFF">
+
+<CENTER>
+<FONT SIZE="-1" FACE="arial,helvetica">
+<B>
+
+<!-- navigation starts here -->
+
+<A HREF="index-5.html" tppabs="http://www.weballey.net/russian/dhtml/index.html">введение</A><BR>
+<a href="netscape.html" tppabs="http://www.weballey.net/russian/dhtml/netscape.html">netscape</a><br>
+<a href="internetexplorer.html" tppabs="http://www.weballey.net/russian/dhtml/internetexplorer.html">internet explorer</a><br>
+<a href="dynamiccontent.html" tppabs="http://www.weballey.net/russian/dhtml/dynamiccontent.html">динамика</a><br>
+<a href="movingelements.html" tppabs="http://www.weballey.net/russian/dhtml/movingelements.html">движение</a><br>
+&lt; переносимость &gt;<br>
+<a href="crossbrowser.html#resource" tppabs="http://www.weballey.net/russian/dhtml/crossbrowser.html#resource">литература</a><BR>
+
+
+
+<!-- navigation ends here -->
+
+</B>
+</FONT>
+</CENTER>
+
+</TD>
+<td width="25">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="400">
+<FONT SIZE=2 FACE="arial,helvetica,sans-serif">
+
+<!-- main section starts here -->
+
+&nbsp; &nbsp; До появления &quot;истинно&quot; переносимого DHTML (другими словами, пока в NS и IE не проснется разум), переносимый DHTML, в сущности, означает использование опыта, приобретенного за годы программирования на JavaScript, для выяснения типа браузера пользователя и затем выполнения кода, предназначенного именно для этого браузера. На этом уроке я сначала покажу способ создания &quot;переносимого&quot; слоя, а потом раскрою одну программную уловку (которую сам недавно узнал), позволяющую выяснить тип используемого браузера.<p>
+
+<B>Создание &quot;переносимого&quot; слоя</B><BR>
+&nbsp; &nbsp; Итак, мы имеем NS, понимающий тег &lt;layer&gt;, и IE, понимающий &lt;span&gt; и &lt;div&gt;. Если мы захотим создать простой DHTML эффект, например, движущийся рисунок, нам придется использовать два тега - тег layer для NS 4 и тег div или span для IE 4. Не слишком красиво, да? Раскрою секрет. Недавно я обнаружил, что на самом деле существует способ создания &quot;переносимого&quot; слоя, использующего всего лишь один тег, хотя это и не совсем корректно с точки зрения NS. Дело в том, что NS 4 обрабатывает абсолютно позиционированный div точно так же, как слой. Так что, не теряя времени, перейдем к примеру переносимого слоя:<p>
+
+<font face="Courier"><small>&lt;div id=&quot;crosslayer&quot; style=&quot;position:absolute&quot;&gt;&lt;/div&gt;</small></font><p>
+
+&nbsp; &nbsp; NS 4 обрабатывает этот div точно так же, как если бы это был слой. Подобно любому другому слою, для доступа к нему мы должны пройти через объект document и затем через идентификатор слоя:<p>
+
+<font face="Courier"><small>document.crosslayer</small></font><p>
+
+В IE 4 можно просто использовать идентификатор div:<p>
+
+<font face="Courier"><small>crosslayer</small></font><p>
+
+&nbsp; &nbsp; Я обнаружил, что определение слоя таким методом, хотя и удобно, с точки зрения переносимости, имеет в NS один существенный недостаток. Такой слой не всегда ведет себя, как нормальный слой, и иногда может привести к зависанию браузера. Так что приготовьтесь к неожиданностям!</p>
+
+<B>Выяснение типа браузера, обнаружение объекта</B><BR>
+&nbsp; &nbsp; До недавнего времени для определения типа браузера я, подобно большинству программистов на JavaScript, пользовался объектом navigator. Ниже показано использование этого объекта для определения NS 4 и IE 4:<p>
+
+<font face="Courier"><small>var ns4= (navigator.appName== &quot;Netscape&quot;&amp;&amp;navigator.appVersion&gt;=4)<br>
+var ns4= (navigator.appName== &quot;Microsoft Internet
+Explorer&quot;&amp;&amp;navigator.appVersion&gt;=4)</small></font><p>
+
+&nbsp; &nbsp; Лично я терпеть не могу этот объект из-за его сложности (вы только взгляните на этот пример!). Но, впрочем, есть и хорошие новости. На самом деле существует очень быстрый способ определения различных браузеров, и называется он обнаружением объекта.<br>
+
+&nbsp; &nbsp; Идея опирается на особенности работы JavaScript. Если браузер НЕ поддерживает некий объект, то при обращении к нему JavaScript возвращает ноль. Зная это, можно использовать обращение к объекту в операторе if (вместо объекта navigator) для определения типа браузера.<br>
+
+&nbsp; &nbsp; Вот конкретный пример. Известно, что NS 3+ и IE 4+ поддерживают объект document.images. Если мы хотим распознать эти браузеры, то можем поступить так:<p>
+
+<font face="Courier"><small>if (document.images)<br>
+alert(&quot;Вы используете NS 3+ или IE 4+&quot;)</small></font><p>
+
+&nbsp; &nbsp; В переводе на Русский это значит: "Если браузер поддерживает объекты рисунков (а это делают только NS 3+ и IE 4+), то выдать предупреждение.<BR>
+
+&nbsp; &nbsp; Обнаружение объекта, это косвенный способ определения типа браузера пользователя. Вместо того чтобы непосредственно узнать имя и версию браузера (через объект navigator), обнаружение объекта дает более универсальный и менее запутанный способ.<br>
+
+&nbsp; &nbsp; Итак, как же с помощью этого метода отличить NS 4 от IE 4? А очень просто. Только NS 4 поддерживает объект document.layers, и только IE 4 поддерживает document.all. Воспользовавшись этой информацией, мы с легкостью определим тип браузера:<p>
+
+<font face="Courier"><small>if (document.layers)<br>
+alert(&quot;Вы используете NS 4+&quot;)</small></font><p>
+
+<font face="Courier"><small>if (document.all)</small><br>
+<small>alert(&quot;Вы используете IE 4+&quot;)</small></font><p>
+
+<font face="Courier"><small>if (document.layers||document.all)</small><br>
+<small>alert(&quot;Вы используете NS 4 или IE 4+&quot;)</small></font><p>
+
+&nbsp; &nbsp; Теперь можете навсегда забыть об этом запутанном объекте navigator!<p>
+
+<A NAME="resource"></A>
+<B>Литература по DHTML</B><BR>
+
+&nbsp; &nbsp; Конечно, этот курс - всего лишь введение в DHTML. Ниже вы найдете пару адресов, которые помогут углубить полученные знания:<p>
+
+<p><b><a href="javascript:if(confirm('http://www.weballey.net/cgi-bin/links/jump.cgi?ID=351  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.weballey.net/cgi-bin/links/jump.cgi?ID=351'" tppabs="http://www.weballey.net/cgi-bin/links/jump.cgi?ID=351">Примеры DHTML на Dynamic Drive</a></b><br>
+<a href="javascript:if(confirm('http://www.weballey.net/cgi-bin/links/jump.cgi?ID=352  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.weballey.net/cgi-bin/links/jump.cgi?ID=352'" tppabs="http://www.weballey.net/cgi-bin/links/jump.cgi?ID=352"><b>Руководство по DHTML на MSDN</b></a><p>
+
+Этот учебник написал и предоставил <a href="mailto:davidgardner7@yahoo.com">David Gardner</a>.
+
+<p>
+<B>Помогите продвинуть этот сайт</B><BR>
+&nbsp; &nbsp; Если вам понравился этот учебник, почему бы не поспособствовать его продвижению. Лучше всего поместите ссылку на своем сайте. Достаточно простой текстовой ссылки, желательно на стартовой странице, где-нибудь поближе к верху. Почему? Да потому что поисковые серверы оценивают сайт по количеству ссылок на него. Просто вставьте в свой сайт следующий код:
+<p>
+&lt;a href=&quot;http://www.weballey.net/&quot;&gt;WEBalley&lt;/a&gt;
+
+<!-- main section ends here -->
+
+</font>
+</td></tr></table>
+
+<table width="575" border="0" cellspacing="0" cellpadding="0">
+<TR><td width="150" align="CENTER" valign="BOTTOM" bgcolor="#99FFFF"><A HREF="#top"><img src="bottom.gif" tppabs="http://www.weballey.net/resources/bottom.gif" WIDTH=150 HEIGHT=59 border=0 ALT="наверх"></A></TD>
+<td width="30">&nbsp;</td>
+<TD WIDTH="400" VALIGN="BOTTOM">
+
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<TR><td bgcolor="#99FFFF" width="20"><img src="left.gif" tppabs="http://www.weballey.net/resources/left.gif" WIDTH=20 HEIGHT=25 border=0 ALT="налево"></td>
+
+<td width="288" bgcolor="#99FFFF">
+<FONT FACE="arial,helvetica,sans-serif" COLOR="#009999" SIZE="1">Copyright &copy; Gerben Hoekstra - All rights reserved</FONT></TD>
+
+<td bgcolor="#99FFFF">
+<A HREF="movingelements.html" tppabs="http://www.weballey.net/russian/dhtml/movingelements.html"><IMG src="bar-lft.gif" tppabs="http://www.weballey.net/resources/bar-lft.gif" NAME="prev" WIDTH=36 HEIGHT=25 BORDER=0 ALT="назад"></A><A HREF="index-2.html" tppabs="http://www.weballey.net/russian/webdesign/index.html"><IMG src="bar-rgt.gif" tppabs="http://www.weballey.net/resources/bar-rgt.gif" NAME="next" WIDTH=36 HEIGHT=25 BORDER=0 ALT="вперед"></A></td>
+
+<td width="20" bgcolor="#99FFFF">
+<img src="right.gif" tppabs="http://www.weballey.net/resources/right.gif" WIDTH=20 HEIGHT=25 border=0 ALT="направо"></TD></TR></TABLE>
+
+</TD>
+</TR>
+</TABLE>
+</body>
+</HTML>
